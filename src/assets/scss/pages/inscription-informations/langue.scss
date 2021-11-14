@@ -1,0 +1,84 @@
+.acf-langue-maternelle {
+    margin: calc( #{$ratio} *  4 ) 0 0 0 !important;
+
+    label {
+        font-size: $h2;
+        font-family: $covik, sans-serif;
+        font-weight: 400 !important;
+        font-style: normal !important;
+        line-height: $h2;
+        text-align: center;
+
+        .acf-required {
+            display: none;
+        }
+    }
+
+    .acf-input-wrap {
+        input {
+            border: none;
+            border-bottom: 2px solid $color;
+            color: #000;
+            font-family: $covik;
+            font-size: $h4;
+            height: 35px;
+            outline: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+
+            &::-webkit-placeholder { /* Chrome/Opera/Safari */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: $color;
+                font-family: $covik;
+                font-size: /$smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-ms-placeholder { /* IE 10+ */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder {
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+            &::-moz-placeholder {
+                color: #000;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+        }
+    }
+}

@@ -1,0 +1,75 @@
+#login {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    width: 30%;
+    padding: 0;
+
+    @include respond(tablet) {
+        margin: 0 $ratio;
+        width: calc( 100% - calc( #{$ratio} * 2 ) );
+    }
+
+    h1 {
+        // LOGO ARCHIREVE
+        &:first-child {
+            margin: $ratio;
+            position: absolute;
+            top: 0;
+
+            a {
+                background-image: none, url('../images/logo-one-line.svg') !important;
+                background-size: 216px;
+                height: 20px;
+                margin: 0;
+                width: 216px;
+            }
+        }
+
+        // CONNEXION
+        &:nth-of-type(2) {
+            margin-bottom: $ratio;
+        }
+    }
+
+    // PHRASE D'ACCROCHE
+    h2 {
+        margin-bottom: $ratio2;
+        text-align: center;
+
+        @include respond(tablet) {
+            font-size: $h4;
+            line-height: $h4;
+            margin-bottom: calc( #{$ratio} * 2 );
+        }
+    }
+
+    // Register | Lost your password ?
+    #nav {
+        display: none;
+        a {
+            // Register
+            &:first-child {
+                // display: none;
+            }
+
+            // Lost your password ?
+            &:last-child {
+                // display: none;
+            }
+        }
+    }
+
+    // Message d'erreur et Déconnexion
+    .message,
+    #login_error {
+        background-color: $color;
+        color: $bg;
+        border-left-color: rgba(255, 255, 255,0);
+        font-family: $covik;
+    }
+}
+
+

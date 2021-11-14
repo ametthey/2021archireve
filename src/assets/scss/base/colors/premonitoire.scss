@@ -1,0 +1,36 @@
+.background-reve-premonitoire {
+    background-color: $premonitoire;
+}
+
+.border-reve-premonitoire {
+    border: 2px solid $premonitoire;
+}
+
+#rounded--reve-premonitoire {
+    border: 1.5px solid $premonitoire;
+    color: $premonitoire;
+
+    &:hover {
+        background-color: $premonitoire;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-reve-premonitoire {
+    border-top: 2px solid $premonitoire;
+}
+
+.border-right-reve-premonitoire {
+    border-right: 2px solid $premonitoire;
+}
+
+.border-bottom-reve-premonitoire {
+    border-bottom: 2px solid $premonitoire;
+}
+
+.border-left-reve-premonitoire {
+    border-left: 2px solid $premonitoire;
+}
+
+

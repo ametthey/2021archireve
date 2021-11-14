@@ -1,0 +1,198 @@
+$heightTax: 56px;
+// TAXONOMIES
+.article-reve--taxonomies {
+    display: flex;
+    justify-content: space-between;
+
+    // ADD AND REMOVE BORDER ON ACTIVE STATE
+    border-top-width: 1px !important;
+
+    &.-is-active {
+        border-top-width: 2px !important;
+
+    }
+
+    // TEMP HEIGHT
+    height: $heightTax;
+
+    @include respond(tablet) {
+        height: 40px;
+    }
+
+}
+
+.article-taxonomies--typologie {
+    display: grid;
+    overflow: hidden;
+    place-items: center;
+    position: relative;
+    height: $heightTax;
+    width: $heightTax;
+
+    @include respond(tablet) {
+        // height: 32px;
+        // width: 32px;
+    }
+
+    .article-taxonomies--typologie-icone {
+        display: block;
+        height: 44px;
+        width: 44px;
+        transform: scale(0.8);
+
+        // position: absolute;
+        // transform: translateX(-100%);
+        transition: transform $rythm2 cubic-bezier(0.25, 1, 0.5, 1);
+
+        &:hover {
+            transform: scale(1);
+        }
+
+        // MARQUEE
+        @include respond(tablet) {
+            height: 28px;
+            width: 28px;
+        }
+    }
+
+}
+
+.article-taxonomies--tag {
+    align-items: flex-start;
+    cursor: not-allowed;
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    margin: 6px 18px;
+    pointer-events: none;
+
+    height: calc( 100% - 12px );
+
+    @include respond(tablet) {
+        // height: 56px;
+    }
+
+    & > * {
+        height: 19px;
+        margin: 0 6px 0 0;
+        overflow: hidden;
+        transition: none !important;
+
+
+        // 300
+        @include respond(minimobile) {
+            // background-color: violet;
+            display: none;
+
+            &:nth-of-type(-n+1) {
+                display: block;
+            }
+        }
+
+        // 400
+        @include respond(minmobile) {
+            // background-color: violet;
+            display: none;
+
+            &:nth-of-type(-n+1) {
+                display: block;
+            }
+        }
+
+        // 768
+        @include respond(mintablet) {
+            // background-color: green;
+            display: none;
+
+            &:nth-of-type(-n+3) {
+                display: block;
+            }
+        }
+
+        // 982
+        @include respond(mincustommd) {
+            // background-color: yellow;
+            display: none;
+
+            &:nth-of-type(-n+6) {
+                display: block;
+            }
+        }
+
+        // 1280
+        @include respond(minmd) {
+            // background-color: red;
+            display: none;
+
+            &:nth-of-type(-n+10) {
+                display: block;
+            }
+        }
+
+
+
+    }
+
+    .taxonomy-tag {
+        @include respond(tablet) {
+            font-size: $smaller;
+            line-height: 1;
+        }
+    }
+}
+
+
+
+
+.article-taxonomies--lucidite {
+    cursor: not-allowed;
+    display: grid;
+    place-items: center;
+    pointer-events: none;
+    text-transform: uppercase;
+    width: 270px;
+
+    @include respond(tablet) {
+        padding: 0 5px;
+        width: max-content;
+    }
+
+    .button--rounded {
+        opacity: 1;
+
+        @include respond(tablet) {
+            span {
+                font-size: 12px;
+                line-height: 14px;
+                padding: 0;
+            }
+        }
+    }
+
+    p {
+        @include respond(tablet) {
+            font-size: $mh3 !important;
+            line-height: $mh3 !important;
+        }
+    }
+}
+
+.rounded--lucidite {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    overflow: hidden;
+    // height: 30px;
+
+    span {
+        font-size: $h3;
+        padding: 5px 0;
+    }
+
+    &:hover {
+        background-color: red;
+        span {
+            transform: translateY(100%);
+        }
+    }
+}

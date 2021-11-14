@@ -1,0 +1,250 @@
+#page {
+    .content--home {
+        .dessin--container {
+            position: absolute;
+        }
+    }
+}
+
+.dessin--wrapper {
+    background-color: rgba(0, 0, 0, 0.7);
+    height: 100vh;
+    width: 100vw;
+
+    top: 50%;
+    left: 50%;
+    // position: absolute;
+    // position: relative;
+    position: fixed;
+    transform: translate( -50%, -50% );
+    z-index: 3;
+
+    opacity: 0;
+    pointer-events: none;
+    visibility: hidden;
+
+    &.-is-active {
+        opacity: 1;
+        pointer-events: auto;
+        visibility: visible;
+    }
+}
+
+.dessin--container {
+    background-color: $bg;
+    display: inline-grid;
+    margin: auto;
+    top: 50%;
+    left: 50%;
+    position: absolute;
+    transform: translate( -50%, -50% );
+
+}
+
+#dessin--canvas {
+    background: $bg;
+    border: 2px solid $color;
+    cursor: crosshair;
+
+    @include respond(tablet) {
+        height: 93vh;
+        width: 95vw;
+    }
+}
+
+#buttons {
+    align-items: center;
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    margin: 30px 30px;
+    width: calc( 100% - 60px );
+}
+
+#buttons-commandes {
+    align-items: center;
+    bottom: 0;
+    display: flex;
+    position: absolute;
+    justify-content: space-evenly;
+    margin: 30px 30px;
+    width: calc( 100% - 60px );
+}
+
+#reset {
+    width: max-content;
+}
+
+.color--container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.color--texte {
+    margin: 0 0 10px 0;
+}
+
+.color--choice {
+    display: flex;
+}
+
+.color {
+    border: 1px solid $color;
+    border-radius: 50%;
+    color: $color;
+    width: 19px;
+    height: 19px;
+    opacity: 0.6;
+    line-height: 19px;
+    margin: 0 5px 0 0;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity $rythm0 ease-in-out;
+    transform: scale(0.8);
+    transform-origin: center center;
+
+    &.selected  {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+.eraser {
+    border: 2px solid $color;
+    border-radius: 5px;
+    color: $color;
+    width: 19px;
+    height: 19px;
+    opacity: 0.6;
+    line-height: 19px;
+    cursor: pointer;
+    text-align: center;
+    transition: opacity $rythm0 ease-in-out;
+    transform: scale(0.8);
+    transform-origin: center center;
+
+    &.selected  {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+
+#noir {
+    background-color: $color;
+}
+#cauchemar {
+    background-color: $cauchemar;
+}
+#concomitant {
+    background-color: $concomitant;
+}
+#creatif {
+    background-color: $creatif;
+}
+#actualite {
+    background-color: $actualite;
+}
+#recurrent {
+    background-color: $recurrent;
+}
+#sexuel {
+    background-color: $sexuel;
+}
+#premonitoire {
+    background-color: $premonitoire;
+}
+#lucide {
+    background-color: $lucide;
+}
+
+
+.size--container {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .size--texte {
+        margin: 0 0 10px 0;
+    }
+}
+
+.size--choice {
+    align-items: center;
+    display: flex;
+    width: 140px;
+    padding: 0 10px;
+
+    output {
+        margin: 0 0 0 5px;
+    }
+}
+
+#taille {
+    width: 100%;
+    -webkit-appearance: none;  /* Override default CSS styles */
+    appearance: none;
+    width: 100%; /* Full-width */
+    height: 2px; /* Specified height */
+    background: $color; /* Grey background */
+    outline: none; /* Remove outline */
+    opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+    -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+    transition: opacity .2s;
+
+    // barre horizontal du range
+    &::-webkit-slider-thumb {
+        -webkit-appearance: none; /* Override default look */
+        appearance: none;
+        background: $bg;
+        border: 1px solid $color;
+        border-radius: 50%;
+        width: 19px; /* Set a specific slider handle width */
+        height: 19px; /* Slider handle height */
+        cursor: pointer; /* Cursor on hover */
+    }
+
+    // point de sélection pour changer de valeurs
+    &::-moz-range-thumb {
+        border: 1px solid $color;
+        border-radius: 50%;
+        width: 19px;
+        height: 19px;
+        background: $bg;
+        cursor: pointer;
+    }
+    &::-webkit-range-thumb {
+        border: 1px solid $color;
+        border-radius: 50%;
+        width: 19px;
+        height: 19px;
+        background: $bg;
+        cursor: pointer;
+    }
+}
+
+#upload-button {
+    font-family: $covik;
+    font-size: $h4;
+    background-color: $bg;
+}
+
+output {
+    font-family: $covik, sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: $small;
+    line-height: $small;
+}
+
+.dessin--termine {
+    display: block;
+    height: auto;
+    margin: auto;
+    width: 100%;
+}
+
+

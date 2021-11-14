@@ -1,0 +1,123 @@
+// ANIMATION DU LOGO EN SVG ET DEPLACEMENT POUR ALLER SUR LE HEADER
+@keyframes logo {
+    0% {
+        stroke-dashoffset:800;
+    }
+    50% {
+        /* stroke-dashoffset:0; */
+        fill-opacity:0;
+    }
+    85% {
+        fill: rgba(0, 0, 0, 0);
+    }
+    100% {
+        stroke-dashoffset:0;
+        fill: rgba(0, 0, 0, 1);
+        fill-opacity:1;
+    }
+}
+
+.content--home-logo {
+    background-color: $bg;
+    display: grid !important;
+    height: 100%;
+    opacity: 1;
+    place-items: center;
+    pointer-events: auto;
+    position: absolute;
+    transition: all $rythm1 ease-in-out;
+    transition-delay: $rythm1;
+    width: 100%;
+    z-index: 1000;
+
+    &.is-hidden {
+        pointer-events: none;
+        opacity: 0;
+    }
+}
+
+
+// ANIMATION DES DIFFERENTS BANDEAUX
+.content--left {
+    transition: width $rythm3 $easeIOE !important;
+
+    .content--left-cover {
+        opacity: 1;
+        pointer-events: auto;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-invisible {
+            pointer-events: none;
+            opacity: 0;
+        }
+    }
+
+    .left--filter {
+        opacity: 0;
+        transition: all $rythm0 $easeIOE;
+    }
+
+    &.is-open {
+
+        #left--button {
+            &.is-open {
+                background-color: $color;
+                color: $bg;
+            }
+        }
+
+        .left--filter {
+            &.is-visible {
+                pointer-events: auto;
+                opacity: 1;
+            }
+        }
+    }
+}
+
+.content--right {
+    transition: width $rythm4 $easeIOE;
+    .content--right-oriented {
+        opacity: 1;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-hidden {
+            opacity: 0;
+        }
+    }
+
+    .right--container-propos {
+        opacity: 0 !important;
+        transition: all $rythm0 $easeIOE;
+
+        &.-is-visible {
+            opacity: 1 !important;
+            pointer-events: auto!important;
+        }
+    }
+}
+
+.content--home {
+
+    .content--home-text-border {
+        cursor: pointer;
+        opacity: 0;
+        pointer-events: auto;
+        transition: all $rythm0 $easeIOE;
+
+        &.is-visible {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+
+    .article-reve {
+        opacity: 1;
+        transition: opacity $quick $easeIOE;
+
+        &.is-hidden {
+            opacity: 0;
+        }
+    }
+
+}

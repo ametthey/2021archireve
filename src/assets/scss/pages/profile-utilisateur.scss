@@ -1,0 +1,714 @@
+.page-template-page-profil {
+h2 {
+    display: none;
+}
+
+.profil--utilisateur {
+    width: 40%;
+
+    @include respond(hd) {
+        width: 30%;
+    }
+}
+
+.form-table {
+    .acf-field-range {
+        display: flex;
+        flex-direction: column;
+        color: $color;
+        font-family: $covik;
+        font-size: $h3;
+        line-height: $h3;
+        position: relative;
+        width: 100%;
+
+        &:before {
+            bottom: 40px;
+            // position: relative;
+            width: max-content;
+            height: max-content;
+            left: -16px;
+        }
+
+        &:after {
+            bottom: 40px;
+            // position: relative;
+            width: max-content;
+            height: max-content;
+            right: -16px;
+
+        }
+
+        .acf-label {
+            align-items: center;
+            display: flex !important;
+            justify-content: center;
+            width: 100%;
+        }
+    }
+
+    .acf-range-wrap {
+        margin: $ratio 0 calc( #{$ratio} * 3  ) 0;
+
+        input[type="range"] {
+            margin: calc( #{$ratio} * 1 ) 0 0 0;
+        }
+    }
+}
+// STYLE ALL RANGE FROM ACF
+.acf-range {
+    .acf-label {
+        label {
+            font-size: $h2;
+            font-family: $covik, sans-serif;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            line-height: $h2;
+            text-align: center;
+
+            .acf-required {
+                display: none;
+            }
+        }
+    }
+
+    .acf-range-wrap {
+        align-items: center;
+        display: flex;
+        font-family: $covik;
+        font-size: $h3;
+        line-height: $h3;
+        flex-direction: column;
+        justify-content: center;
+        margin: $ratio 0;
+        position: relative;
+        width: 100%;
+
+        @include respond(tablet) {
+            width: 90%;
+            font-size: $h5;
+            line-height: $h5;
+            margin: calc( #{$ratio} / 2 ) 0;
+        }
+        @include respond(tablet) {
+            &:after {
+                right: -20px;
+            }
+        }
+
+        input[type="range"] {
+            margin: calc( #{$ratio} * 2 ) 0 0 0;
+            width: 100%;
+
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 2px; /* Specified height */
+            background: $color; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+
+            // barre horizontal du range
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                background: $bg;
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px; /* Set a specific slider handle width */
+                height: 19px; /* Slider handle height */
+                cursor: pointer; /* Cursor on hover */
+            }
+
+            // point de sélection pour changer de valeurs
+            &::-moz-range-thumb {
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background: $bg;
+                cursor: pointer;
+            }
+            &::-webkit-range-thumb {
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background: $bg;
+                cursor: pointer;
+            }
+        }
+
+        input[type="number"] {
+            border: none;
+            bottom: 37px;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            margin: 0;
+            // padding: 0;
+            position: absolute;
+            right: calc(50% - 66px);
+
+            &:nth-child(n+2){
+                display: none;
+                pointer-events: none;
+            }
+        }
+
+        .bubble-endpoints {
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            background: $color;
+
+            &.bubble-start {
+                bottom: -9px;
+                left: -18px;
+                position: absolute;
+            }
+
+            &.bubble-end {
+                bottom: -9px;
+                right: -19px;
+                position: absolute;
+            }
+
+        }
+
+        .bubble {
+            bottom: 0;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            // padding: 4px 12px;
+            margin-bottom: 22px;
+            position: absolute;
+            border-radius: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                // top: -1px;
+                left: 50%;
+            }
+        }
+    }
+}
+
+.acf-field-range {
+    color: $color;
+    font-family: $covik;
+    font-size: $h3;
+    line-height: $h3;
+
+    &:before {
+        bottom: 90px;
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        left: -14px;
+    }
+
+    &:after {
+        bottom: 90px;
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        right: -40px;
+
+    }
+
+    // AGE
+    &.acf-range-age {
+        &:before {
+            content: '0';
+            left: -3px;
+        }
+
+        &:after {
+            content: '100+';
+            right: -29px;
+
+        }
+
+        input[type="number"] {
+            display: block !important;
+        }
+    }
+
+
+    // GENRE - physiologie
+    &:nth-of-type(3) {
+
+        &:before {
+            content: 'F';
+            left: -3px;
+        }
+
+        &:after {
+            content: 'H';
+            right: -4px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    // GENRE - ressenti
+    &:nth-of-type(4) {
+
+        &:before {
+            content: 'F';
+            left: -3px;
+        }
+
+        &:after {
+            content: 'H';
+            right: -4px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    // GENRE - attirance
+    &:nth-of-type(5) {
+
+        &:before {
+            content: 'F';
+            left: -3px;
+        }
+
+        &:after {
+            content: 'H';
+            right: -4px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    // Milieux - origine
+    &.acf-range-milieux {
+
+        &:before {
+            content: 'Modeste';
+            left: -36px;
+        }
+
+        &:after {
+            content: 'Aisé';
+            right: -27px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    &.acf-range-metier {
+        &:before {
+            content: 'Travailleur';
+            left: -50px;
+        }
+
+        &:after {
+            content: 'Patron';
+        }
+
+    }
+
+    &#acf-range-metier-type {
+        &:before {
+            content: 'Indépendant';
+            left: -60px;
+        }
+
+        &:after {
+            content: 'Salarié';
+        }
+
+    }
+
+    &#acf-range-paysage-enfance-1,
+    &#acf-range-paysage-actuelle-1,
+    &#acf-range-paysage-attirance-1 {
+        &:before {
+            content: 'Ville';
+            left: -15px;
+        }
+
+        &:after {
+            content: 'Campagne';
+            right: -50px;
+        }
+    }
+
+    &#acf-range-paysage-enfance-2,
+    &#acf-range-paysage-actuelle-2,
+    &#acf-range-paysage-attirance-2 {
+        &:before {
+            content: 'Plaine';
+            left: -25px;
+        }
+
+        &:after {
+            content: 'Montagne';
+            right: -50px;
+        }
+    }
+
+    &#acf-range-paysage-enfance-3,
+    &#acf-range-paysage-actuelle-3,
+    &#acf-range-paysage-attirance-3 {
+        &:before {
+            content: 'Zone humide';
+            left: -45px;
+        }
+
+        &:after {
+            content: 'Zone sèche';
+            right: -65px;
+        }
+    }
+
+    &#acf-range-sommeil-1 {
+        &:before {
+            content: 'Bon dormeur';
+            left: -45px;
+        }
+
+        &:after {
+            content: 'Dormeur précaire';
+            right: -100px;
+        }
+    }
+
+    &#acf-range-sommeil-2 {
+        &:before {
+            content: 'J\'aime dormir';
+            left: -65px;
+        }
+
+        &:after {
+            content: 'Je m\'en passe';
+            right: -100px;
+        }
+    }
+
+    &#acf-range-reves-1 {
+        &:before {
+            content: 'Rêveur riche';
+            left: -60px;
+        }
+
+        &:after {
+            content: 'Peu rêveur';
+            right: -80px;
+        }
+    }
+
+    &#acf-range-reves-2 {
+        &:before {
+            content: 'Partie de ma vie';
+            left: -85px;
+        }
+
+        &:after {
+            content: 'Je m\'en passe';
+            right: -85px;
+        }
+    }
+}
+
+.acf-button-inscription-information {
+    background-color: $bg;
+    border: 1px solid #303030;
+    padding: 10px 30px;
+    border-radius: 100px 100px 100px 100px;
+    transition: all 0.325s ease-in-out;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $covik;
+    font-size: $h1;
+    justify-content: center;
+    line-height: $h1;
+    margin: auto;
+
+    @include respond(tablet) {
+        font-size: $h2;
+        line-height: $h2;
+    }
+}
+
+.container--inscription-informations {
+    h1 {
+        margin: calc( #{$ratio} *  2 ) 0;
+    }
+
+    h2 {
+        text-align: center;
+        margin: calc( #{$ratio} / 2 ) 0 0 0;
+
+        &.container--inscription-informations {
+            margin: calc( #{$ratio} *  4 ) 0 0 0;
+        }
+
+        &.questionnaire-categorie {
+            margin: calc( #{$ratio} *  3 ) 0 0 0;
+        }
+
+        &.questionnaire-subtitle {
+            margin: calc( #{$ratio} *  2 ) 0;
+            text-transform: uppercase;
+        }
+
+        @include respond(tablet) {
+            font-size: $h4;
+            line-height: $h4;
+        }
+    }
+}
+
+.acf-fields {
+    & > .acf-field {
+        border-top: none !important;
+    }
+}
+
+.acf-langue-maternelle {
+    label {
+        font-size: $h2 !important;
+        font-family: $covik, sans-serif;
+        font-weight: 400 !important;
+        font-style: normal !important;
+        line-height: $h2;
+        text-align: center;
+
+        .acf-required {
+            display: none;
+        }
+    }
+
+    .acf-input-wrap {
+        input {
+            border: none;
+            border-bottom: 2px solid $color;
+            color: #000;
+            font-family: $covik;
+            font-size: $h4;
+            height: 35px;
+            outline: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+
+            &::-webkit-placeholder { /* Chrome/Opera/Safari */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: $color;
+                font-family: $covik;
+                font-size: /$smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-ms-placeholder { /* IE 10+ */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder {
+                color: $color;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+            &::-moz-placeholder {
+                color: #000;
+                font-family: $covik;
+                font-size: $smaller;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+        }
+    }
+}
+
+.acf-pays-enfance {
+    label {
+        font-size: $h2 !important;
+        font-family: $covik, sans-serif;
+        font-weight: 400 !important;
+        font-style: normal !important;
+        line-height: $h2;
+        text-align: center;
+
+        .acf-required {
+            display: none;
+        }
+    }
+    .acf-input-wrap {
+        input {
+            border: none;
+            border-bottom: 2px solid $color;
+            color: #000;
+            font-family: $covik;
+            font-size: $h4;
+            height: 35px;
+            outline: none;
+            margin: 10px 0 0 0;
+            padding: 0;
+            text-align: center;
+            width: 100%;
+
+            &::-webkit-placeholder { /* Chrome/Opera/Safari */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::-moz-placeholder { /* Firefox 19+ */
+                color: $color;
+                font-family: $covik;
+                font-size: /$h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-ms-placeholder { /* IE 10+ */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &:-moz-placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder { /* Firefox 18- */
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+            &::placeholder {
+                color: $color;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+            &::-moz-placeholder {
+                color: #000;
+                font-family: $covik;
+                font-size: $h4;
+                opacity: 1;
+                padding: 10px 0;
+            }
+
+        }
+    }
+}
+    /*
+     * Reset Table CSS style
+     */
+table, caption, tbody, tfoot, thead, tr, th, td {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    outline: 0;
+    font-size: 100%;
+    vertical-align: baseline;
+    background: transparent;
+}
+
+#adduser table,
+#adduser thead,
+#adduser tbody,
+#adduser tfoot,
+#adduser tr,
+#adduser th,
+#adduser td {
+    display: block;
+    width: auto;
+    height: auto;
+    margin: 0;
+    padding: 0;
+    border: none;
+    border-collapse: inherit;
+    border-spacing: 0;
+    border-color: inherit;
+    vertical-align: inherit;
+    text-align: left;
+    font-weight: inherit;
+    -webkit-border-horizontal-spacing: 0;
+    -webkit-border-vertical-spacing: 0;
+}
+th, td {
+    display: inline;
+}
+}
+
+
+

@@ -1,0 +1,41 @@
+.background-reve-dactualite {
+    background-color: $actualite;
+    transition: all 0.325s ease-in-out;
+
+    &:hover {
+        background-color: $bg;
+    }
+}
+
+.border-reve-dactualite {
+    border: 2px solid $actualite;
+}
+
+#rounded--reve-dactualite {
+    border: 1.5px solid $actualite;
+    color: $actualite;
+
+    &:hover {
+        background-color: $actualite;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-reve-dactualite {
+    border-top: 2px solid $actualite;
+}
+
+.border-right-reve-dactualite {
+    border-right: 2px solid $actualite;
+}
+
+.border-bottom-reve-dactualite {
+    border-bottom: 2px solid $actualite;
+}
+
+.border-left-reve-dactualite {
+    border-left: 2px solid $actualite;
+}
+
+

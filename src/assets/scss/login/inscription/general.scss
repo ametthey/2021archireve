@@ -1,0 +1,17 @@
+.login-action-register {
+
+    // Texte ajouté
+    // INSCRIPTION + MESSAGE
+    .register {
+        // Overwrite Wordpress
+        background-color: $bg !important;
+        border: none !important;
+        box-shadow: none;
+        color: $color !important;
+
+
+        h1 {
+            position: relative !important;
+        }
+    }
+}

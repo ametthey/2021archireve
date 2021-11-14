@@ -1,0 +1,70 @@
+// -----------------------------------------------------------------------------
+// This file contains all application-wide Sass variables.
+// -----------------------------------------------------------------------------
+
+// Colors
+$bg: #fff;
+$color: #303030;
+// $color: #000000;
+$violet: #6453A3;
+
+$cauchemar: #6755AA;
+$concomitant: #2CAF38;
+$creatif: #F79D65;
+$actualite: #99BA22;
+$recurrent: #DB5931;
+$sexuel: #D67083;
+$premonitoire: #4CA58E;
+$lucide: #c12b2b;
+
+// Ratio
+$ratio: 30px;
+$ratio2: 12px;
+$collapseN: 100px;
+$collapseMN: 50px;
+
+
+// Changement de la largeur des filtres
+$filter: 350px;
+
+// Typography
+$solid: 'Solide Mirage';
+$covik: covik-sans-mono, helvetica, sans-serif;
+$good: 'GoodGlyphs';
+
+$huge: 124px;
+$bigger: 72px;
+$h1: 42px;
+$h2: 26px;
+$h3: 22px;
+$h4: 20px;
+$h5: 16px;
+$small: 14px;
+$smaller: 10px;
+
+$lh: 1.4;
+$mh1: 30px;
+$mh2: 20px;
+$mh3: 17px;
+
+
+// Ryhtm
+$quick: 0.075s;
+$rythm0: 0.250s;
+$rythm1: $rythm0 * 2; // 0,5
+$rythm2: $rythm0 * 3; // 0,75
+$rythm3: $rythm0 * 4; // 1
+$rythm4: $rythm0 * 5; // 1,25
+$rythm5: $rythm0 * 6; // 1,5
+$rythm6: $rythm0 * 7; // 1,75
+$rythm7: $rythm0 * 8; // 2
+
+
+// Transition Easing
+// $easeIOE: cubic-bezier(0.87, 0, 0.13, 1);
+$easeIOE: ease-in-out;
+$easeP: cubic-bezier(.17,.67,.83,.67);
+$easeO: cubic-bezier(0.85, 0, 0.15, 1);
+$easing: cubic-bezier(.25,.46,.45,.94);
+
+

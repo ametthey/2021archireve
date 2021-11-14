@@ -1,0 +1,100 @@
+.login-action-login {
+    #loginform {
+        align-items: center;
+        background: none;
+        border: none;
+        box-shadow: none;
+        display: flex;
+        flex-direction: column;
+        margin: 0;
+        padding: 0;
+        width: 100%;
+
+        // Mail
+        p {
+            text-align: center;
+            width: 100%;
+
+            input {
+                background: none;
+                border: 2px solid #303030;
+                color: #000;
+                outline: none;
+                width: 100%;
+            }
+        }
+
+        // Mot de passe
+        #user_login {
+            text-align: center;
+        }
+
+        input[type="password"] {
+            // font-size: 45px;
+            letter-spacing: -3px;
+            // line-height: 45px;
+            overflow: hidden;
+            text-align: center;
+        }
+
+        // Mail & Mot de passe
+        #user_login,
+        #user_pass {
+            background: none;
+            border-radius: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid #303030;
+            box-shadow: none;
+            outline: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            width: 100%;
+        }
+
+        // Mot de passe
+        .user-pass-wrap {
+            text-align: center;
+            margin: calc(#{$ratio} * 2 ) 0;
+            width: 100%;
+        }
+
+        // Continuer
+        .submit {
+            text-align: center;
+            width: auto;
+
+            #wp-submit {
+                background-color: $bg;
+                border: 1px solid #303030;
+                border-radius: 100px 100px 100px 100px;
+                font-size: $h1;
+                line-height: $h1;
+                padding: 10px 30px;
+                transition: all 0.325s ease-in-out;
+                text-transform: uppercase;
+                width: auto;
+
+                @include respond(tablet) {
+                    font-size: $mh1;
+                    line-height: $mh1;
+                }
+            }
+        }
+
+        // Remenber me - cacher pour l'instant
+        .forgetmenot {
+            display: none;
+        }
+
+
+
+    }
+
+    #backtoblog {
+        display: none;
+        pointer-events: none;
+    }
+}
+

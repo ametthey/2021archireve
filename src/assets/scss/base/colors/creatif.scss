@@ -1,0 +1,36 @@
+.background-reve-creatif {
+    background-color: $creatif;
+}
+
+.border-reve-creatif {
+    border: 2px solid $creatif;
+}
+
+#rounded--reve-creatif {
+    border: 1.5px solid $creatif;
+    color: $creatif;
+
+    &:hover {
+        border: 1.5px solid $creatif;
+        color: $bg;
+        background-color: $creatif;
+    }
+}
+
+.border-top-reve-creatif {
+    border-top: 2px solid $creatif;
+}
+
+.border-right-reve-creatif {
+    border-right: 2px solid $creatif;
+}
+
+.border-bottom-reve-creatif {
+    border-bottom: 2px solid $creatif;
+}
+
+.border-left-reve-creatif {
+    border-left: 2px solid $creatif;
+}
+
+

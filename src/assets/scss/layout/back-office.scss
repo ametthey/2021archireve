@@ -1,0 +1,242 @@
+.page-template-page-back-office {
+    #masthead {
+        justify-content: center;
+        position: relative;
+
+        @include respond(tablet) {
+            #header--mobile-apropos,
+            #mobile--connexion {
+                display: none;
+            }
+        }
+    }
+
+    #page {
+        overflow: auto;
+        background: #fff;
+        display: flex;
+        position: absolute;
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        padding: 0;
+        top: 0;
+        left: 0;
+    }
+}
+
+.page-template-page-profil {
+
+    #masthead {
+        border-bottom: none;
+
+        #header--mobile-apropos {
+            display: none;
+        }
+
+        #mobile--connexion {
+            display: none;
+        }
+    }
+}
+
+.content--profil {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 0 !important;
+}
+
+.profil--header {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: max-content;
+
+    .profil--header-links {
+        align-items: center;
+        display: flex;
+        margin: 0 0 calc( #{$ratio} / 1 ) 0;
+
+        a {
+            &:nth-of-type(2) {
+                margin: 0 $ratio2;
+            }
+        }
+
+        @include respond(tablet) {
+            flex-direction: column;
+            margin: 0;
+
+            a {
+                margin: 0 0 $ratio2 0;
+
+                &:nth-of-type(2) {
+                    margin: 0 0 $ratio2 0;
+                }
+            }
+        }
+    }
+
+    & > * {
+        text-transform: uppercase;
+    }
+
+    // Nom de l'utilisateur
+    h1 {
+        margin: calc( #{$ratio} * 1 ) 0 calc( #{$ratio} * 2 ) 0;
+        text-align: center;
+
+        @include respond(tablet) {
+            width: min-content;
+        }
+    }
+
+    // Modifier le profil
+    h3 {
+        width: max-content;
+
+        @include respond(tablet) {
+            font-size: $small;
+        }
+
+        &:hover {
+            background-color: $color;
+            border-color: $bg;
+            color: $bg;
+        }
+    }
+}
+
+.profil--no-reve {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+
+    a {
+        color: $color;
+        text-decoration: underline;
+    }
+}
+
+// Container des différents rêves
+.profil--reve {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    & > * {
+        margin: 0 0 $ratio 0;
+
+        &:nth-of-type(1) {
+            margin-top: calc( #{$ratio} * 2 );
+            height: 200px;
+            border-radius: 100px;
+            width: max-content;
+            height: max-content;
+            padding: 20px 40px;
+            margin: 100px auto;
+
+            @include respond(tablet) {
+                margin: 30px auto 60px;
+                padding: 10px 20px;
+            }
+
+            a {
+                display: flex;
+
+                img {
+                    margin: 0 0 0 10px;
+                    height: 20px;
+                }
+            }
+        }
+    }
+
+    .profil--reve-new {
+        border: 1px solid $color;
+        display: grid;
+        place-items: center;
+
+
+        &.profil--reve-new-inactive {
+            display: none;
+        }
+
+        a {
+            align-items: center;
+            color: $color;
+            text-decoration: none;
+            display: flex;
+        }
+
+        h2 {
+            @include respond(tablet) {
+                font-size: $h5;
+            }
+        }
+    }
+
+    .profil--reve-published {
+        border: none;
+        position: relative;
+
+        &.status-pending {
+            article {
+                opacity: 0.5;
+                pointer-events: none;
+            }
+        }
+
+        &.status-publish {
+            article {
+                opacity: 1;
+                visibility: visible;
+            }
+        }
+
+        .message--status-pending {
+            background-color: $bg;
+            border: 1px solid $color;
+            padding: $ratio;
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate( -50%, -50% );
+            width: max-content;
+
+            &.is-hidden {
+                display: none;
+            }
+        }
+
+        .article-reve--download {
+            padding: 12px 0 0 0;
+        }
+    }
+
+    button.contenu--edit {
+
+        img {
+            transform: scale(0.8) rotate(0);
+            transition: transform $rythm1 cubic-bezier(0.25, 1, 0.5, 1);
+        }
+
+        &:hover {
+            img {
+                transform: scale(1.1) rotate(10deg);
+            }
+        }
+    }
+}
+
+.backoffice-reve {
+    left: 0!important;
+    margin: 0 auto !important;
+    position: relative !important;
+    top: 0!important;
+    width: 100% !important;
+
+}

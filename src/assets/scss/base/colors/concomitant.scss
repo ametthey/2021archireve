@@ -1,0 +1,36 @@
+.background-reve-concomitant {
+    background-color: $concomitant;
+}
+
+.border-reve-concomitant {
+    border: 2px solid $concomitant;
+}
+
+#rounded--reve-concomitant {
+    border: 1.5px solid $concomitant;
+    color: $concomitant;
+
+    &:hover {
+        background-color: $concomitant;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-reve-concomitant {
+    border-top: 2px solid $concomitant;
+}
+
+.border-right-reve-concomitant {
+    border-right: 2px solid $concomitant;
+}
+
+.border-bottom-reve-concomitant {
+    border-bottom: 2px solid $concomitant;
+}
+
+.border-left-reve-concomitant {
+    border-left: 2px solid $concomitant;
+}
+
+

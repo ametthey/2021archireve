@@ -1,0 +1,92 @@
+#reve--humeur {
+    border: none;
+    margin: auto;
+    width: 50%;
+
+    &.acf-field-6101cb13a88d4 {
+        margin: auto !important;
+        width: 90%;
+
+
+        .acf-label {
+            margin: 0 0 calc( #{$ratio} *  0.5 ) 0 !important;
+
+            label {
+                font-family: $covik;
+                font-size: $h2;
+                font-weight: normal;
+                line-height: $h2;
+                text-transform: uppercase;
+                text-align: center;
+
+                margin: 0;
+            }
+        }
+
+        .acf-input {
+            .categorychecklist-holder {
+                border: none;
+                border-radius: 0px;
+                max-height: max-content;
+
+                // LISTE DES DIFFENTS ELEMENTS
+                .acf-checkbox-list {
+                    display: flex;
+                    flex-wrap: wrap;
+                    justify-content: center;
+
+                    li {
+                        margin: 0 calc( #{$ratio} / 3 ) calc( #{$ratio} / 3 ) 0;
+                    }
+
+                    label {
+                        border: 1px solid $color;
+                        font-size: $h3;
+                        line-height: $h3;
+                        padding: 2px 4px;
+                        position: relative;
+                        transition: all 0.325s ease-in-out;
+
+                        @include respond(tablet) {
+                            font-size: $small;
+                            line-height: 1.4;
+                        }
+
+                        &.-is-checked {
+                            border: 1px solid $bg;
+                            background-color: $color;
+                            color: $bg;
+                        }
+
+                        &.selected {
+                            border: 1px solid $bg;
+                            background-color: $color;
+                            color: $bg;
+                        }
+
+
+                        input {
+                            font-size: inherit;
+                            line-height: inherit;
+
+                            position: absolute;
+                            background-color: red;
+                            top: 0;
+                            left: 0;
+                            height: 100%;
+                            width: 100%;
+                            margin: 0;
+                            opacity: 0;
+                        }
+
+                        span {
+                            font-size: inherit;
+                            line-height: inherit;
+                            text-transform: uppercase;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

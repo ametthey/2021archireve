@@ -1,0 +1,31 @@
+// -----------------------------------------------------------------------------
+// This file contains all @font-face declarations, if any.
+// -----------------------------------------------------------------------------
+
+
+// SOLIDE MIRAGE
+@font-face {
+    font-family: 'Solide Mirage';
+    src:    url('../fonts/Mono/Solide_Mirage-Mono_web.eot');
+    src:    url('../fonts/Mono/Solide_Mirage-Mono_web.eot?#iefix') format('embedded-opentype'),
+            url('../fonts/Mono/Solide_Mirage-Mono_web.woff') format('woff'),
+            url('../fonts/Mono/Solide_Mirage-Mono_web.woff2') format('woff2'),
+            url('../fonts/Mono/Solide_Mirage-Mono_web.ttf') format('truetype'),
+            url('../fonts/Mono/Solide_Mirage-Mono_web.svg#svgFontName') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// GOODGLYPHS
+@font-face {
+    font-family: 'GoodGlyphs';
+    src:    url('../fonts/GoodGlyphs/GoodGlyphs-No1.woff');
+    src:    url('../fonts/GoodGlyphs/GoodGlyphs-No1.woff') format('woff'),
+            url('../fonts/GoodGlyphs/GoodGlyphs-No1.woff2') format('woff2'),
+            url('../fonts/GoodGlyphs/GoodGlyphs-No1.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+// Covik Sans Mono Regular / Italic / Bold
+// @import url("https://use.typekit.net/gta0mfy.css");

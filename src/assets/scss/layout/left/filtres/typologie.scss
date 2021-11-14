@@ -1,0 +1,144 @@
+// LISTES DES DIFFERENTES CATEGORIES DE TYPOLOGIE
+.typopologie--container {
+}
+
+.typologie--item {
+    font-size: $h5 !important;
+}
+
+.typologie--item {
+    display: flex;
+    align-items: center;
+
+    &:before {
+        height: 25px;
+        margin: 0 10px;
+    }
+
+    &.is-checked {
+        color: $color;
+    }
+
+    &:hover {
+        color: $color !important;
+    }
+
+    &.cauchemar {
+
+        &.is-checked {
+            background-color: $cauchemar;
+        }
+
+        &:hover {
+            background-color: $cauchemar;
+        }
+
+            &:before {
+                content: url(../images/typologie/cauchemar-noir.svg);
+            }
+    }
+
+    &.reve-concomitant {
+
+        &.is-checked {
+            background-color: $concomitant;
+        }
+
+        &:hover {
+            background-color: $concomitant;
+        }
+
+            &:before {
+                content: url(../images/typologie/concomitant-noir.svg);
+            }
+    }
+
+    &.reve-creatif {
+
+        &.is-checked {
+            background-color: $creatif;
+        }
+
+        &:hover {
+            background-color: $creatif;
+        }
+
+            &:before {
+                content: url(../images/typologie/creatif-noir.svg);
+            }
+    }
+
+    &.reve-dactualite {
+
+        &.is-checked {
+            background-color: $actualite;
+        }
+
+        &:hover {
+            background-color: $actualite;
+        }
+
+            &:before {
+                content: url(../images/typologie/actualite-noir.svg);
+            }
+    }
+
+    &.reve-recurrent {
+
+        &.is-checked {
+            background-color: $recurrent;
+        }
+
+        &:hover {
+            background-color: $recurrent;
+        }
+
+            &:before {
+                content: url(../images/typologie/recurrent-noir.svg);
+            }
+    }
+
+    &.reve-sexuel {
+
+        &.is-checked {
+            background-color: $sexuel;
+        }
+
+        &:hover {
+            background-color: $sexuel;
+        }
+
+            &:before {
+                content: url(../images/typologie/sexuel-noir.svg);
+            }
+    }
+
+    &.reve-premonitoire {
+
+        &.is-checked {
+            background-color: $premonitoire;
+        }
+
+        &:hover {
+            background-color: $premonitoire;
+        }
+
+            &:before {
+                content: url(../images/typologie/premonitoire-noir.svg);
+            }
+    }
+}
+
+.typologie--item-all {
+    background-color: $color;
+    color: $bg;
+    height: 30px;
+
+    &.is-checked {
+        color: $bg;
+
+        &:hover {
+            color: $bg !important;
+        }
+    }
+}

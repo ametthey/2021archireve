@@ -1,0 +1,43 @@
+.single-reve {
+
+    #masthead {
+        justify-content: center;
+    }
+
+    #header--mobile-apropos,
+    #mobile--connexion {
+        @include respond(tablet) {
+            display: none;
+        }
+    }
+
+    .content {
+        overflow: auto;
+    }
+
+    // Supprimer marge en dessous du contenu texte
+    .acf-field-610161fcb8f44 {
+        margin: 0 !important;
+        opacity: 1;
+        pointer-events: auto;
+    }
+
+    .contenu--button-dessin-edit {
+        width: max-content;
+        margin: calc( #{$ratio} / 2  ) auto;
+
+        &:hover {
+            background-color: $color;
+            color: $bg;
+        }
+    }
+
+    #page {
+        .content--home {
+            @include respond(tablet) {
+                height: 100% !important;
+                overflow: auto;
+            }
+        }
+    }
+}

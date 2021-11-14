@@ -1,0 +1,452 @@
+// Message d'update du formulaire
+
+.page-template-page-creation-reve {
+    overflow: auto;
+
+    #masthead {
+        justify-content: center;
+    }
+
+    #header--mobile-apropos,
+    #mobile--connexion {
+        @include respond(tablet) {
+            display: none;
+        }
+    }
+
+    input {
+        cursor: pointer;
+
+    }
+    .acf-checkbox-list {
+        label {
+            @include respond(tablet) {
+                font-size: $small;
+            }
+            &:hover {
+                background-color: $color;
+                color: $bg;
+            }
+        }
+    }
+    .acf-field-for-edit {
+        display: none;
+    }
+    #page {
+        .content--home {
+            @include respond(tablet) {
+                height: 100% !important;
+                overflow: auto;
+            }
+        }
+    }
+
+}
+#page {
+
+    .content--creation-reve {
+        #message {
+            align-items: center;
+            color: $cauchemar;
+            display: flex;
+            font-size: $h4;
+            justify-content: center;
+            line-height: $h4;
+            margin: 10px auto calc(#{$ratio} * 3) auto;
+            text-transform: uppercase;
+            width: 37%;
+
+            &:before {
+                content: 'H';
+                font-family: $good;
+                font-size: $h1;
+                margin: 0 10px 0 0 ;
+            }
+        }
+    }
+}
+
+
+.content--creation-reve {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    padding-top: 0 !important;
+
+    .profil--header {
+        order: 1;
+    }
+
+    #message {
+        order: 3;
+    }
+
+    #form--creation-reve {
+        order: 2;
+    }
+}
+
+#form--creation-reve {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.3s linear;
+    max-width: 90%;
+    width: 90%;
+
+    &.is-loaded {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+}
+
+.acf-field {
+    margin: 0 0 calc( #{$ratio} *  2 ) 0 !important;
+    position: relative;
+    padding: 15px 12px;
+}
+
+.acf-input {
+    margin: auto !important;
+    width: 60%;
+}
+
+// Input
+#acf-_post_title,
+.hasDatepicker {
+    border: none;
+    border-bottom: 2px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4 !important;
+    height: 35px;
+    outline: none;
+    margin: 10px 0 0 0 !important;
+    padding: 0 0 4px 0 !important;
+    text-align: center;
+    width: 100%;
+
+    @include respond(tablet) {
+        font-size: $small!important;
+        line-height: 1.4;
+    }
+
+    &::-webkit-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        font-family: $covik;
+        font-size: /$h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+    &:-ms-placeholder { /* IE 10+ */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+    &::placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+    &::placeholder {
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+
+    &::-moz-placeholder {
+        color: #000;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        padding: 10px 0;
+
+        @include respond(tablet) {
+            font-size: $small!important;
+            line-height: 1.4;
+        }
+    }
+}
+
+
+
+// Contenu
+.acf-field-contenu {
+    margin: 0 !important;
+}
+
+// Contenu dessin
+#contenu--dessin {
+    display: none;
+}
+
+// Selection du contenu
+.contenu--buttons {
+    display: flex;
+    justify-content: center;
+    margin: calc( #{$ratio} *  0.5 ) 0 0 0 !important;
+
+    .button--rounded {
+        margin: 0 4px;
+    }
+
+    @include respond(tablet) {
+        h4 {
+            font-size: $h5;
+        }
+    }
+}
+// Contenu
+.acf-field-610161fcb8f44,
+.acf-field-6101620bb8f45 {
+    // visibility: hidden;
+    opacity: 0.1;
+    transition: opacity $rythm0 ease-in-out;
+}
+
+.textearea--visible {
+    // visibility: visible;
+    opacity: 1;
+    pointer-events: auto!important;
+}
+
+// texte
+.acf-field-610161fcb8f44 {
+    pointer-events: none;
+    cursor: pointer;
+
+    &.as-drawing {
+        margin: 0 !important;
+        padding-bottom: 0 !important;
+    }
+
+    .acf-label {
+        display: none;
+    }
+
+    .acf-input {
+        align-items: flex-start;
+        border: 2px solid $color;
+        display: flex;
+        padding: 15px;
+
+        &:before {
+            background-image: url('../../assets/images/contenu_texte.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            height: 22px;
+            margin-top: 4px;
+            transform: scale(0.6);
+            width: 20px;
+        }
+
+        // textearea
+        #acf-field_610161fcb8f44 {
+            border: none;
+            box-shadow: none !important;
+            font-size: $h4;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            outline:0px !important;
+            padding: 0 0 0 10px;
+            -webkit-appearance:none;
+
+            @include respond(tablet) {
+                font-size: $h5;
+            }
+
+            &:hover {
+                outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+// Dessin
+.acf-field-6101620bb8f45 {
+    .acf-label {
+        display: none;
+    }
+
+    .acf-input {
+        align-items: flex-start;
+        border: 2px solid $color;
+        display: flex;
+
+        &:before {
+            background-image: url('../../assets/images/contenu_dessin.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            height: 22px;
+            left: 15px;
+            position: absolute;
+            top: 15px;
+            transform: scale(0.6);
+            width: 20px;
+            z-index: 2;
+        }
+
+        // textearea
+        #acf-field_6101620bb8f45 {
+            border: none;
+            box-shadow: none !important;
+            font-size: $h4;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            outline:0px !important;
+            padding: 0 0 0 10px;
+            -webkit-appearance:none;
+
+            display: none;
+
+            &:hover {
+                outline:0px !important;
+                -webkit-appearance:none;
+                box-shadow: none !important;
+            }
+        }
+    }
+}
+
+// Niveau de lucidité
+#reve--lucidite{
+    &.acf-field-60ec18ce6f71f {
+        margin: auto !important;
+        width: 90%;
+
+        .acf-label {
+            margin: 0 0 calc( #{$ratio} *  0.5 ) 0 !important;
+        }
+    }
+}
+
+.acf-field-dessin {
+    .image-container {
+        margin: auto;
+        position: relative;
+        width: 60%;
+
+        &:after {
+            background-image: url('../../assets/images/contenu_dessin.svg');
+            background-position: center;
+            background-repeat: no-repeat;
+            content: '';
+            height: 22px;
+            left: 15px;
+            position: absolute;
+            top: 15px;
+            transform: scale(0.6);
+            width: 20px;
+            z-index: 2;
+        }
+
+        img {
+            border: 2px solid $color;
+            width: 100%;
+        }
+    }
+}
+
+.dessin-close {
+    cursor: pointer;
+    opacity: 1;
+    pointer-events: auto;
+    padding: $ratio calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 );
+    position: fixed !important;
+    right: 0;
+    z-index: 10000 !important;
+
+    @include respond(tablet) {
+        padding: 40px calc( 40px / 2) calc( 30px / 2);
+    }
+
+    svg {
+        display: none;
+
+        path {
+            fill: $color;
+        }
+
+        @include respond(tablet) {
+            display: block;
+        }
+    }
+
+    img {
+
+        @include respond(tablet) {
+            display: none;
+        }
+
+    }
+}
+
+
+.contenu--button-dessin-edit {
+    width: max-content;
+    margin: calc( #{$ratio} / 2  ) auto;
+
+    &:hover {
+        background-color: $color;
+        color: $bg;
+    }
+}

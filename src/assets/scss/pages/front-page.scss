@@ -1,0 +1,17 @@
+.front-page {
+    display: grid !important;
+    height: 100%;
+    place-items: center;
+    width: 100%;
+
+    a {
+        img,
+        svg {
+            width: 85vmin;
+        }
+    }
+}
+
+
+
+

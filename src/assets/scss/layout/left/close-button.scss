@@ -1,0 +1,20 @@
+.content--left-close {
+    opacity: 0;
+    pointer-events: auto;
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: calc( #{$ratio} / 3 );
+    z-index: 100000;
+    transition: all 0.75s linear;
+
+    &.is-visible {
+        cursor: pointer;
+        opacity: 1;
+        // visibility: visible;
+    }
+
+    img {
+        cursor: pointer;
+    }
+}

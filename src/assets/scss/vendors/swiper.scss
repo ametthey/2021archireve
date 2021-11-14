@@ -1,0 +1,39 @@
+// import Swiper styles
+@import '../../../node_modules/swiper/swiper-bundle.css';
+
+.swiper-container {
+    height: 100%;
+    margin: auto;
+    // width: 330px;
+
+    .swiper-slide {
+        @include flex(center, center);
+    }
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+    color: $color;
+    outline: none;
+
+    &:after {
+        display: none;
+    }
+
+    &:before {
+        display: none;
+    }
+
+    img {
+        height: 10px !important;
+        width: 17px !important;
+    }
+}
+
+.swiper-button-prev {
+    left: 0;
+}
+
+.swiper-button-next {
+    right: 0;
+}

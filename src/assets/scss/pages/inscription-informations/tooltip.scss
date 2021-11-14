@@ -1,0 +1,60 @@
+// Tooltip
+.questionnaire-categorie-tooltip {
+    justify-content: center;
+    display: flex;
+    position: relative;
+
+    @include respond(tablet) {
+        width: 100%;
+    }
+
+    .tooltip-icon {
+        display: inline;
+        padding: 0 0 10px 0;
+
+        @include respond(tablet) {
+            display: inline-block;
+            right: unset;
+        }
+
+        &:hover {
+            & + .tooltip-text {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    .tooltip-text {
+        background-color: $bg;
+        border: 1px solid $color;
+        border-radius: 7px;
+        color: $color;
+        font-family: $covik;
+        height: max-content;
+        margin: 0 0 0 5px;
+        opacity: 0;
+        padding: 10px;
+        position: absolute;
+        text-align: left;
+        text-transform: uppercase;
+        transition: opacity $rythm0 ease-in, visibility $rythm0 ease-in;
+        visibility: hidden;
+        width: 350px;
+        z-index: 1;
+
+        @include respond(tablet) {
+            bottom: 50px;
+            transform: translateX( 0 ) translateY( 0 );
+            width: 90vw;
+
+            left: 0px !important;
+            top: 36px !important;
+        }
+
+        &.is-clicked {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}

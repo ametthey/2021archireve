@@ -1,0 +1,35 @@
+.container--inscription-informations {
+    h1 {
+        margin-bottom: calc( #{$ratio} *  3 );
+    }
+
+    h2 {
+        display: inline;
+        text-align: center;
+
+        &.questionnaire-subtitle {
+            margin: calc( #{$ratio} *  3 ) 0;
+            text-transform: uppercase;
+        }
+
+        @include respond(tablet) {
+            font-size: $h4;
+            line-height: $h4;
+        }
+    }
+}
+.acf-langue-maternelle,
+.acf-pays-enfance,
+.acf-field-title  {
+    margin-top: calc( #{$ratio} *  3 );
+}
+
+// En dessous de phrase de remerciement
+.acf-form-fields {
+    margin-bottom: calc( #{$ratio} *  3 );
+}
+
+// Submit button
+.acf-form-submit {
+    margin-top: calc( #{$ratio} *  3 );
+}

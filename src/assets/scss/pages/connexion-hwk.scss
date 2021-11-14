@@ -1,0 +1,18 @@
+.acf-form.acf-form-ajax .acf-error-message{
+    display:none;
+}
+.acf-form.acf-form-ajax .error.text-danger.small p{
+    margin:0;
+    margin-top:5px;
+}
+.acf-form.acf-form-ajax [data-name="remember_me"] ul{
+    list-style:none;
+    padding:0;
+}
+.acf-form.acf-form-ajax [data-name="remember_me"] input{
+    margin-right:7px;
+}
+.acf-hidden-wp-editor{
+    display:none;
+    visibility:hidden;
+}

@@ -1,0 +1,15 @@
+.content-error {
+    display: grid;
+    place-items: center;
+    height: calc( 100vh - 100px );
+    width: 100vw;
+
+    p {
+        text-align: center;
+    }
+
+    a {
+        color: $color;
+        text-decoration: underline;
+    }
+}

@@ -1,0 +1,427 @@
+.is-home {
+    #page {
+        display: block;
+        height: auto;
+        z-index: 1;
+    }
+}
+
+// FILTRES
+#container--filtres {
+    background-color: $bg;
+    border-right: 1px solid $color;
+    height: calc( 100vh - 50px );
+    transform: translateX(50px);
+    overflow: auto; // for scrolling into the filters list
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: auto;
+    position: fixed;
+    left: -#{$filter};
+    top: 50px;
+    transition: all 0.75s ease-in-out;
+    width: $filter;
+    z-index: 3;
+
+
+    @include respond(mobile) {
+        transform: translateX(32px);
+        width: calc(100% - 32px);
+
+    }
+
+    @include respond(tablet) {
+        transform: translateX(32px);
+        height: calc( 100vh - 50px );
+        top: 50px;
+
+        button {
+            &.lucidite--item {
+                font-size: $small !important;
+            }
+            &.typologie--item {
+                font-size: $small !important;
+            }
+            &.mois--item {
+                height: 19px;
+                width: 19px;
+            }
+        }
+    }
+
+    &:hover {
+        cursor: pointer;
+    }
+
+    &.is-open {
+        @include respond(tablet) {
+            transform: translateX(100%);
+        }
+
+
+        transform: translateX($filter);
+
+        .content--left-close {
+            opacity: 1;
+        }
+
+    }
+
+    &.is-forbidden {
+        pointer-events: none;
+    }
+}
+
+.filtres--list {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transition: opacity 0.5s ease;
+
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    // all details from each
+    .content--left-close {
+        opacity: 1;
+    }
+
+    .content-left-container-title {
+        display: block;
+        margin: calc( #{$ratio} / 2 ) 0 $ratio 0;
+    }
+}
+
+// REVES (CENTRALE)
+#container--reves {
+    height: calc( 100vh - 50px} );
+    overflow: auto;
+    position: relative;
+    transition: all 0.75s ease-in-out;
+    // width: 100vw;
+    z-index: 2;
+
+    margin: 0 50px;
+    width: calc( 100vw - 100px );
+
+    &.is-reduced {
+        margin-left: $filter;
+        margin-right: 50px;
+        width: calc( 100vw - calc( #{$filter} + 50px ) );
+
+        @include respond(tablet) {
+            width: calc( 100vw - 100px );
+        }
+
+        .container--articles {
+            width: auto;
+        }
+    }
+
+    @include respond(tablet) {
+        height: calc( 100vh - 32px} );
+        width: calc( 100vw - 32px );
+        margin: 0 0 0 32px;
+    }
+
+    .container--articles {
+        cursor: pointer;
+        // height: inherit;
+        margin: $ratio 50px;
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+        // width: calc( 100vw - 100px );
+        width: calc( 100% - 100px );
+
+        @include respond(tablet) {
+            margin: $ratio 10px $ratio 20px;;
+            width: calc( 100% - 30px );
+        }
+
+        &.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+
+    .popup--download {
+        margin: auto;
+        position: fixed !important;
+        left: 50px;
+        width: calc( 100vw - 100px );
+    }
+}
+
+// A PROPOS
+
+#container--apropos {
+    background-color: $color;
+    border-left: 1px solid $color;
+    height: calc( 100vh - 50px} );
+    transform: translateX(50px);
+    pointer-events: auto;
+    position: fixed;
+    right: 50px;
+    top: 50px;
+    width: 50px;
+    z-index: 3;
+    transition: transform 1.2s ease, background-color 1s ease;
+
+
+    // Temp avec le bandeau en noir
+    background-color: $color;
+    transform: translateX(100%);
+    transform-origin: right;
+    width: calc( 100vw - 100px );
+
+    @include respond(tablet) {
+        display: none;
+    }
+
+    &.is-open {
+        // background-color: $color;
+        transform: translateX(50px);
+    }
+
+    &.is-forbidden {
+        pointer-events: none;
+    }
+
+    &.is-fading {
+        background-color: $violet;
+    }
+}
+
+.apropos--elements {
+    height: 100%;
+    margin: auto;
+    opacity: 1;
+    overflow: scroll;
+    visibility: visible;
+    pointer-events: auto;
+    scrollbar-width: none;
+    width: calc( 100% - 100px) ;
+    z-index: 0;
+
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+
+    .apropos-close {
+        cursor: pointer;
+        opacity: 1;
+        pointer-events: auto;
+        padding: $ratio calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 );
+        position: fixed !important;
+        visibility: visible;
+        right: 0;
+        top: 0;
+        z-index: 10000 !important;
+
+        &.is-hidden {
+            opacity: 0;
+            visibility: hidden;
+            pointer-events: none;
+        }
+    }
+}
+
+
+/////////////////////////////////////////
+
+#container--filtres {
+    .container--cover {
+        pointer-events: none;
+        transition: all 0.5s ease;
+    }
+}
+
+
+.container--cover {
+    background-color: $bg;
+    cursor: pointer;
+    display: grid;
+    height: 100%;
+    opacity: 1;
+    padding-top: 30px;
+    place-content: center;
+    pointer-events: auto;
+    transition: all 0.5s 1s ease;
+    visibility: visible;
+    width: 50px;
+    writing-mode: tb;
+    white-space: pre;
+
+    &.container--filtres-cover {
+        height: min-content;
+        position: absolute;
+        right: 0;
+
+    }
+
+    &.container--apropos-cover {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: 100;
+
+        background-color: $color;
+        color: $bg; // Temp avec le bandeau en noir
+
+        &.is-fading {
+            color: $bg;
+        }
+
+        .cover--credits {
+            display: flex;
+            margin-bottom: 20px;
+
+            & > * {
+                color: $color;
+                font-family: $solid;
+                font-size: 8px;
+
+                // Temp avec le bandeau en noir
+                color: $bg;
+            }
+
+            .separator {
+                margin: 5px 0;
+            }
+        }
+    }
+
+    &.container--reves-cover {
+        cursor: default;
+        height: min-content;
+        margin-top: 0;
+        // padding: 30px 0 0 75px;
+        position: absolute;
+    }
+
+    &.is-hidden {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+    }
+}
+
+
+
+
+
+
+
+// FILTRES COMPONENTS
+
+// TITLE WITH TOOLTIP
+.content-left-container-title {
+    display: inline;
+    // padding: $ratio 0 0 0;
+    text-align: center;
+    text-transform: uppercase;
+    width: 100%;
+    position: relative;
+
+    @include respond(tablet) {
+        font-size: $small;
+    }
+
+    // Tooltip icon
+    .tooltip-icon {
+        display: inline;
+        padding: 0 0 10px 0;
+
+        // height: 14px;
+        width: 14px;
+
+        @include respond(tablet) {
+            display: inline-block;
+            right: unset;
+        }
+
+        &:hover {
+            & + .tooltip-text {
+                visibility: visible;
+                opacity: 1;
+            }
+        }
+    }
+
+    .tooltip-text {
+        background-color: $bg;
+        border: 1px solid $color;
+        border-radius: 7px;
+        color: $color;
+        font-family: $covik;
+        height: max-content;
+        margin: 0 0 0 5px;
+        opacity: 0;
+        padding: 10px;
+        position: absolute;
+        text-align: left;
+        text-transform: uppercase;
+        transition: opacity $rythm0 ease-in, visibility $rythm0 ease-in;
+        visibility: hidden;
+        width: 150px;
+        z-index: 1;
+
+        @include respond(tablet) {
+            bottom: 50px;
+            transform: translateX( 0 ) translateY( 0 );
+            width: 90vw;
+
+            left: 0px !important;
+            top: 36px !important;
+        }
+
+        &.is-clicked {
+            visibility: visible;
+            opacity: 1;
+        }
+    }
+}
+
+// CUSTOM FILTRES
+#container--filtres--test {
+    background-color: $bg;
+    border: 1px solid $color;
+    bottom: 20px;
+    height: auto;
+    left: 50%;
+    transform: translateX( -50% );
+    padding: 10px 20px;
+    position: fixed;
+    z-index: 10000000;
+    width: auto;
+}
+
+// .article-reve {
+// }
+
+// .page-template-page-home-new {
+//     #page {
+//         #container--filtres,
+//         #container--apropos {
+//             display: none;
+//         }
+//     }
+// }
+
+
+
+.js-radio-button-group {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+}

@@ -1,0 +1,46 @@
+#reve--title {
+    align-items: center;
+    border: none;
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 50%;
+
+    // Label
+    .acf-label {
+        margin: 0;
+
+        label {
+            font-family: $covik;
+            font-size: $h2;
+            font-weight: normal;
+            line-height: $h2;
+            text-transform: uppercase;
+
+            margin: 0;
+        }
+    }
+
+    // Input
+    .acf-input {
+        width: 100%;
+
+        input {
+            padding: 0;
+
+            background: none;
+            border-top: none;
+            border-right: none;
+            border-left: none;
+            border-bottom: 1px solid $color;
+            outline: none;
+
+            font-family: $covik;
+            font-size: $h2;
+            font-weight: 500;
+            line-height: $h2;
+            text-transform: uppercase;
+            text-align: center;
+        }
+    }
+}

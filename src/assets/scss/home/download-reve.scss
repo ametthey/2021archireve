@@ -1,0 +1,475 @@
+// Opacité des fonds
+$level: 0.7;
+$level2: 0.2;
+
+.post-type-reveur-info {
+    // display: none;
+}
+
+.container--reve-to-download {
+    display: flex;
+    // display: none;
+    flex-direction: column;
+    height: 100%;
+    overflow: auto;
+    width: 100%;
+}
+
+.reve--to-print {
+    height: auto;
+    margin: 0 0 20px 0;
+    width: auto;
+}
+
+.table--print {
+    display: none;
+    background-color: $bg;
+    width: 100%;
+    text-align: left;
+    border-collapse: collapse;
+    tr {
+        td {
+            border: 1px solid $color;
+            padding: 3px 2px;
+            font-size: 15px;
+            // 1ERE COLONNE
+            &:nth-of-type(1) {
+                background-color: rgba(214, 112, 131, $level);
+            }
+
+            // 2EME COLONNE
+            &:nth-of-type(2) {
+                background-color: rgba(214, 112, 131, $level);
+            }
+
+            // 3EME COLONNE
+            &:nth-of-type(3) {
+                background-color: rgba(44, 175, 56, $level);
+            }
+
+            // 4EME COLONNE
+            &:nth-of-type(4) {
+                background-color: rgba(44, 175, 56, $level2);
+            }
+        }
+
+        // DONNE DU COMPTE
+        &:nth-of-type(1) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, 1);
+                }
+            }
+        }
+
+        // GENRE
+        &:nth-of-type(4) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // MILIEUX
+        &:nth-of-type(11) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // RAPPORT AU TRAVAIL
+        &:nth-of-type(14) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // RELATION A UN PAYSAGE
+        &:nth-of-type(18) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // ATTIRANCE
+        &:nth-of-type(25) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // FOI SPIRITUELLE
+        &:nth-of-type(29) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // RELATION AU SOMMEIL
+        &:nth-of-type(32) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // RELATIONA AUX REVES
+        &:nth-of-type(35) {
+            td {
+                &:nth-of-type(3) {
+                    text-align: center;
+                }
+            }
+        }
+
+        // Modalité du sommeil
+        &:nth-of-type(7) {
+            td {
+                &:nth-of-type(1) {
+                    background-color: rgba(214, 112, 131, 1);
+                    text-align: center;
+                }
+            }
+        }
+
+        // SOUVENIR DU RÊVE
+        &:nth-of-type(11) {
+            td {
+                &:nth-of-type(1) {
+                    background-color: rgba(214, 112, 131, 1);
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+// WHITE BACKGROUND
+@for $i from 15 through 37 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(1) {
+                    border: none;
+                    background-color: $bg;
+                }
+                &:nth-of-type(2) {
+                    border: none;
+                    background-color: $bg;
+                }
+            }
+        }
+    }
+}
+
+// GENRE
+@for $i from 5 through 9 {
+    .table--print{
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// MILIEUX
+@for $i from 12 through 13 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// RAPPORT AU TRAVAIL
+@for $i from 15 through 17 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// RELATION A UN PAYSAGE
+@for $i from 19 through 24 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// ATTIRANCE
+@for $i from 26 through 28 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// FOI SPIRITUELLE
+@for $i from 30 through 31 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// RELATION AU SOMMEIL
+@for $i from 33 through 34 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// RELATION AUX RÊVES
+@for $i from 36 through 38 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: rgba(44, 175, 56, $level2);
+                    text-align: right;
+                    font-style: italic;
+                }
+            }
+        }
+    }
+}
+
+// HUMEUR SENS LIEU
+@for $i from 8 through 10 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(1) {
+                    text-align: right;
+                    font-style: italic;
+                    padding: 0 5px 0 0;
+                }
+            }
+        }
+    }
+}
+
+// OU QUAND COMMENT
+@for $i from 12 through 14 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(1) {
+                    text-align: right;
+                    font-style: italic;
+                    padding: 0 5px 0 0;
+                }
+            }
+        }
+    }
+}
+
+
+/*
+ * Debug print elements
+ */
+
+.article-reve {
+    // display: none;
+}
+
+// .container--articles {
+//     height: auto !important;
+// }
+//
+// .container--reve-to-download {
+//     display: flex !important;
+// }
+//
+// .table--print {
+//     display: block;
+// }
+
+.container--reve-to-download {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    margin: 0 0 0 10vw;
+    width: 75vw;
+}
+
+
+
+.container--print-popup {
+    border: 2px solid $color;
+    background-color: $bg;
+    display: none;
+    position: absolute;
+    pointer-events: none;
+    top: 30%;
+    left: 50%;
+    transform: translate( -50%, -30% );
+    height: 75vh;
+    width: 75vw;
+
+    &.is-selected {
+        display: flex;
+        pointer-events: auto;
+    }
+
+    .print-popup-close {
+        cursor: pointer;
+        position: absolute;
+        top: 25px;
+        right: 25px;
+    }
+}
+
+
+// test-print
+.test-print-button {
+    background-color: $bg;
+    border: 1px solid $color;
+    position: fixed;
+    bottom: 50px;
+    padding: 3px;
+    left: 50px;
+}
+.test-merge-button {
+    background-color: $bg;
+    border: 1px solid $color;
+    position: fixed;
+    bottom: 85px;
+    padding: 3px;
+    left: 50px;
+}
+
+
+
+// NEW TABLES
+
+.table--print-reve {
+    // display: none;
+    border: 1px solid $color;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    th {
+        border:1px solid $color;
+        padding:5px;
+        color: $color;
+    }
+    td {
+        text-align:center;
+        color: $color;
+        border: 1px solid $color;
+        padding: 3px 2px;
+        font-size: 15px;
+        width: 50%;
+    }
+}
+
+.table--print-author {
+    border: 1px solid $color;
+    width: 100%;
+    text-align: center;
+    border-collapse: collapse;
+
+    th {
+        border:1px solid $color;
+        padding:5px;
+        color: $color;
+    }
+    td {
+        text-align:center;
+        color: $color;
+        border: 1px solid $color;
+        padding: 3px 2px;
+        font-size: 15px;
+        width: 25%;
+    }
+}
+
+
+
+
+.article-reve {
+    // display: none;
+}
+
+.container--reve-to-download {
+    display: none;
+
+    &.clicked {
+        display: block;
+    }
+}
+
+.download-reve {
+    position: absolute;
+    bottom: 50px;
+    left: 85px;
+    border: 1px solid $color;
+    padding: 10px 20px;
+
+    &:hover {
+        background-color: $color;
+        color: $bg;
+    }
+}

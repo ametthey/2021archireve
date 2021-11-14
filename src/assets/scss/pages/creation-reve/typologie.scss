@@ -1,0 +1,188 @@
+#reve--typologie {
+    border: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin: auto !important;
+    width: 80%;
+
+    .acf-label {
+        margin: 0;
+
+        label {
+            font-family: $covik;
+            font-size: $h2;
+            font-weight: normal;
+            line-height: $h2;
+            text-transform: uppercase;
+            text-align: center;
+
+            margin: 0;
+        }
+    }
+
+    .acf-input {
+        width: 75%;
+        .categorychecklist-holder {
+            border: none;
+            border-radius: 0px;
+            max-height: max-content;
+
+            // LISTE DES DIFFENTS ELEMENTS
+            .acf-checkbox-list {
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: center;
+
+                @include respond(tablet) {
+                    display: grid;
+                    grid-template-columns: repeat(1, 1fr);
+                    grid-template-rows: 150px;
+
+                    &:before,
+                    &:after {
+                        display: none;
+                    }
+                }
+
+                li {
+                    margin: 0 calc( #{$ratio} / 2 ) calc( #{$ratio} / 3 ) calc( #{$ratio} / 2 );
+
+                    // SELECTION DES DIFFERENTS TYPES DE TYPOLOGIES
+                    label {
+                        &:before {
+                            height: 70px;
+                            width: 70px;
+                        }
+                    }
+
+                    // Cauchemar
+                    &:nth-of-type(1) {
+                        label {
+                            &:before {
+                                content: url(../images/Cauchemar.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Concomitant
+                    &:nth-of-type(2) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-concomitant.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Créatif
+                    &:nth-of-type(3) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-creatif.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Actualite
+                    &:nth-of-type(4) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-dactualite.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Lucide
+                    &:nth-of-type(5) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-lucide.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Premonitoire
+                    &:nth-of-type(6) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-premonitoire.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Recurrent
+                    &:nth-of-type(7) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-recurrent.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+
+                    // reve-Sexuel
+                    &:nth-of-type(8) {
+                        label {
+                            &:before {
+                                content: url(../images/reve-sexuel.svg);
+                                transform: scale(0.8);
+                                transition: transform 0.325s ease-out;
+                            }
+                        }
+                    }
+                }
+
+                label {
+                    align-items: center;
+                    display: flex;
+                    flex-direction: column;
+                    font-size: $h3;
+                    line-height: $h3;
+                    margin: 0 0 15px 0;
+                    @include respond(tablet) {
+                        font-size: $small;
+                        line-height: 1.4;
+                    }
+
+                    &:hover {
+                        background: none;
+                        color: $color;
+                    }
+
+                    input {
+                        font-size: inherit;
+                        line-height: inherit;
+                        order: 2;
+                    }
+
+                    span {
+                        font-size: inherit;
+                        line-height: inherit;
+                        margin: 0 0 15px 0;
+                        order: 1;
+                    }
+
+                    &.selected {
+
+                        &:before {
+                            transform: scale(1) !important;
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

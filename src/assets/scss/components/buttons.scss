@@ -1,0 +1,168 @@
+
+.button--squared,
+.button--rounded,
+.button--round {
+    cursor: pointer;
+}
+
+// BOUTON ROND
+.button--round {
+    border-radius: 999px;
+    color: $color;
+    height: 19px;
+    width: 19px;
+    transition: all 0.325s ease-in-out;
+
+    &.round--black {
+        background-color: $color;
+        color: $bg;
+        border: 1px solid $color;
+
+        // &:hover {
+        //     background-color: $bg;
+        //     border: 1px solid $color;
+        //     color: $color;
+        // }
+    }
+
+    &.round--white {
+        background-color: $bg;
+        border: 1px solid $color;
+
+        // &:hover {
+        //     background-color: $color;
+        //     // border: 1px solid $bg;
+        //     color: $bg;
+        // }
+
+        &.is-active {
+            background-color: $color;
+            // border: 1px solid $bg;
+            color: $bg;
+        }
+    }
+
+    &.round--white-border {
+        background-color: $color;
+        border: 1px solid $bg;
+    }
+
+    &.round--small {
+        height: 14px;
+        width: 14px;
+    }
+
+    @include respond(tablet) {
+        height: 13px;
+        width: 13px;
+    }
+}
+
+// BOUTON ARRONDI AVEC MOT
+.button--rounded {
+    border: 1px solid $color;
+    color: $color;
+    padding: 1.5px 10px;
+    border-radius: 100px 100px 100px 100px;
+    transition: all 0.325s ease-in-out;
+    overflow: hidden;
+
+    &.rounded--black {
+        background-color: $color;
+        border: 1px solid $bg;
+        color: $bg;
+
+        a {
+            color: $bg;
+        }
+
+        // &:hover {
+        //     background-color: $bg;
+        //     border: 1px solid $color;
+        //
+        //     & > * {
+        //         color: $color;
+        //     }
+        // }
+    }
+
+    &.rounded--white-border {
+        background-color: $color;
+        border: 1px solid $bg;
+
+        a {
+            color: $bg;
+            font-weight: normal;
+        }
+    }
+
+    &.rounded--big {
+        p {
+            font-size: $h4;
+            line-height: $h4;
+        }
+    }
+
+
+    &.rounded--bigger {
+        padding: 10px 20px;
+        a {
+            display: inline-block;
+            height: $h1;
+            font-weight: normal !important;
+        }
+
+        p {
+            font-size: $h1;
+            line-height: $h1;
+        }
+    }
+
+    &.rounded--lucidite {
+        p {
+            font-size: $h3;
+            line-height: $h3;
+        }
+    }
+
+    p {
+        // font-size: $small;
+        font-size: 12px; // le texte est plus centré comme ça
+        line-height: $small;
+    }
+}
+
+.button--squared {
+    border: 1px solid $color;
+    padding: 1.5px 10px;
+    border-radius: 0px;
+    transition: all 0.325s ease-in-out;
+
+    // &:hover {
+    //     background-color: $color;
+    //     border: 1px solid $color;
+    //
+    //     & > * {
+    //         color: $bg;
+    //     }
+    // }
+
+    &.squared--black {
+        background-color: $color;
+        border: 1px solid $color;
+        color: $bg;
+    }
+
+    &.squared--big {
+        p {
+            font-size: $h4;
+            line-height: $h4;
+        }
+    }
+
+    p {
+        font-size: $small;
+        line-height: $small;
+    }
+
+}

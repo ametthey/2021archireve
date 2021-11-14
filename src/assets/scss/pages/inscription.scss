@@ -1,0 +1,304 @@
+.page-template-page-inscription-alternative {
+    #masthead {
+        border: none;
+        position: relative;
+        left: 0;
+        transform: translateX(0);
+        justify-content: center;
+
+        #header--mobile-apropos {
+            display: none;
+        }
+
+        #mobile--connexion {
+            display: none;
+        }
+    }
+
+    .content {
+        overflow: auto;
+    }
+
+    #page {
+        height: 100vh;
+        // margin: 5% 0 0 0;
+        overflow: auto;
+
+        @include respond(tablet) {
+            height: calc( 100vh - 50px );
+        }
+    }
+
+    .container--inscription {
+        height: 100%;
+        overflow: auto;
+    }
+}
+
+
+.container--inscription {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    justify-content: center;
+    margin: auto;
+    width: 42%;
+
+    @include respond(mil) {
+        margin: auto;
+        width: 90% !important;
+    }
+
+    @include respond(tablet) {
+        margin: auto;
+        width: 90%;
+    }
+
+    h1 {
+        @include respond(tablet) {
+            font-size: $h4;
+        }
+    }
+
+    h3 {
+        text-align: center;
+        margin: calc( #{$ratio} / 2 ) 0 0 0;
+
+        @include respond(tablet) {
+            font-size: $h5;
+            line-height: 1.4;
+        }
+    }
+}
+
+// HEADER
+#header-user {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    height: 50px;
+    position: fixed;
+    top: 0;
+    left: 50%;
+    transform: translateX( -50% );
+    width: 100%; // en attente des bandeau latéraux
+    z-index: 2;
+
+    .header-user {
+        @include respond(tablet) {
+            position: absolute;
+            left: 50%;
+            transform: translateX( -50% );
+        }
+
+        svg {
+            transition: filter $rythm2 ease-in-out;
+            height: 19px;
+
+            @include respond(tablet) {
+                height: 10px;
+            }
+        }
+    }
+}
+
+// STYLE GLOBAL AVEC MARGES
+.container--inscription {
+    align-items: center;
+    display: flex;
+    width: 50%;
+
+    .container--inscription-title {
+        position: relative;
+        text-align: center;
+        z-index: 1;
+    }
+
+    .container--inscription-subtitle {
+        text-align: center;
+        margin-top: $ratio;
+        position: relative;
+        z-index: 1;
+        display: inline-block;
+        width: 75%;
+
+        @include respond(mil) {
+            width: 60%;
+        }
+
+        @include respond(tablet) {
+            width: 100%;
+        }
+    }
+}
+
+.form--inscription {
+    position: relative;
+    z-index: 1;
+
+    .username {
+        margin-bottom: $ratio;
+    }
+
+    .email {
+        margin-bottom: $ratio;
+    }
+
+    .password {
+        margin-bottom: $ratio;
+    }
+
+    label {
+        margin-bottom: calc( #{$ratio2} / 2 );
+    }
+}
+
+
+// STYLE SPECIFIQUE
+.form--inscription {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+
+    .username,
+    .email,
+    .password {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        margin: auto;
+        width: 80%;
+
+        label {
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+        }
+
+        input {
+            background: none;
+            border-radius: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid $color;
+            box-shadow: none;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            outline: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .user-submit {
+        background-color: $bg;
+        border: 1px solid $color;
+        border-radius: 100px 100px 100px 100px;
+        color: $color;
+        cursor: pointer;
+        font-family: $covik;
+        font-size: $h1;
+        line-height: $h1;
+        padding: 10px 30px;
+        transition: all 0.325s ease-in-out;
+        text-transform: uppercase;
+        width: auto;
+
+        @include respond(tablet) {
+            font-size: $mh1;
+            line-height: $mh1;
+        }
+    }
+
+}
+
+
+// MESSAGE D'ERREUR
+.registration--error-container {
+    align-items: center;
+    background-color: $bg;
+    border: 1px solid $color;
+    display: flex;
+    flex-direction: column;
+    left: 50%;
+    justify-content: center;
+    padding: $ratio2;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    transition: all $rythm0 ease-in-out;
+
+    pointer-events: none;
+    opacity: 0;
+    visibility: hidden;
+
+    // TEMP
+    z-index: 2;
+
+    &.is-active {
+        pointer-events: auto;
+        opacity: 1;
+        visibility: visible;
+    }
+
+    .button--round {
+        cursor: pointer;
+        margin: $ratio2;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+
+    h2 {
+        font-family: $solid;
+        font-weight: bold;
+    }
+
+    h3 {
+        color: $lucide;
+        font-family: $covik;
+        font-weight: normal;
+    }
+}
+
+// MESSAGE DE REMERCIEMENT
+.wrapper--merci {
+    background-color: $bg;
+    display: grid;
+    height: calc( 100vh - 100px );
+    left: 50%;
+    place-items: center;
+    position: absolute;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    width: 100vw;
+    z-index: 20;
+}
+.container--merci {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    width: 40%;
+}
+
+
+// AJUSTEMENTS
+.ur-field-item {
+    margin: 0 auto $ratio auto !important;
+    width: 80%;
+
+    &:nth-of-type(1) {
+        margin-top: $ratio !important;
+    }
+}
+
+.ur-label {
+    font-size: $small !important;
+}

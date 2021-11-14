@@ -1,0 +1,410 @@
+.acf-range {
+    .acf-label {
+        margin: 0 !important;
+        label {
+            font-size: $h2;
+            font-family: $covik, sans-serif;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            line-height: $h2;
+            text-align: center;
+
+            .acf-required {
+                display: none;
+            }
+        }
+    }
+
+    .acf-range-wrap {
+        align-items: center;
+        display: flex;
+        font-family: $covik;
+        font-size: $h3;
+        line-height: $h3;
+        flex-direction: column;
+        justify-content: center;
+        margin: 0 0 $ratio 0;
+        position: relative;
+        width: 100%;
+
+        @include respond(tablet) {
+            width: 100%;
+            font-size: $h5;
+            line-height: $h5;
+            margin: calc( #{$ratio} / 2 ) 0 !important;
+        }
+        @include respond(tablet) {
+            &:after {
+                right: -20px;
+            }
+        }
+
+        input[type="range"] {
+            margin: calc( #{$ratio} * 1 ) 0 0 0;
+            width: 100%;
+
+            -webkit-appearance: none;  /* Override default CSS styles */
+            appearance: none;
+            width: 100%; /* Full-width */
+            height: 2px; /* Specified height */
+            background: $color; /* Grey background */
+            outline: none; /* Remove outline */
+            opacity: 0.7; /* Set transparency (for mouse-over effects on hover) */
+            -webkit-transition: .2s; /* 0.2 seconds transition on hover */
+            transition: opacity .2s;
+
+            // barre horizontal du range
+            &::-webkit-slider-thumb {
+                -webkit-appearance: none; /* Override default look */
+                appearance: none;
+                background: $bg;
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px; /* Set a specific slider handle width */
+                height: 19px; /* Slider handle height */
+                cursor: pointer; /* Cursor on hover */
+            }
+
+            // point de sélection pour changer de valeurs
+            &::-moz-range-thumb {
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background: $bg;
+                cursor: pointer;
+            }
+            &::-webkit-range-thumb {
+                border: 1px solid $color;
+                border-radius: 50%;
+                width: 19px;
+                height: 19px;
+                background: $bg;
+                cursor: pointer;
+            }
+        }
+
+
+        input[type="number"] {
+            display: none;
+            pointer-events: none;
+            // border: none;
+            // bottom: -43px;
+            // color: $color;
+            // font-family: $covik;
+            // font-size: $h3;
+            // line-height: $h3;
+            // margin: 0;
+            // // padding: 0;
+            // position: absolute;
+            // right: calc(50% - 66px);
+            //
+            // &:nth-child(n+2){
+            //     display: none;
+            //     pointer-events: none;
+            // }
+        }
+
+        .bubble-endpoints {
+            border-radius: 50%;
+            width: 19px;
+            height: 19px;
+            background: $color;
+
+            &.bubble-start {
+                bottom: -9px;
+                left: -18px;
+                position: absolute;
+            }
+
+            &.bubble-end {
+                bottom: -9px;
+                right: -19px;
+                position: absolute;
+            }
+
+        }
+
+        .bubble {
+            bottom: 0;
+            color: $color;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            // padding: 4px 12px;
+            margin-bottom: 22px;
+            position: absolute;
+            border-radius: 4px;
+            left: 50%;
+            transform: translateX(-50%);
+
+            @include respond(tablet) {
+                font-size: $small;
+            }
+
+            &:after {
+                content: "";
+                position: absolute;
+                width: 2px;
+                height: 2px;
+                // top: -1px;
+                left: 50%;
+            }
+        }
+    }
+}
+
+.acf-field-range {
+    color: $color;
+    font-family: $covik;
+    font-size: $h3;
+    line-height: $h3;
+
+    &:before {
+        bottom: 90px;
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        left: -14px;
+
+        @include respond(tablet) {
+            left: 0 !important;
+            font-size: $small;
+        }
+    }
+
+    &:after {
+        bottom: 90px;
+        position: absolute;
+        width: max-content;
+        height: max-content;
+        right: -40px;
+
+        @include respond(tablet) {
+            right: 0 !important;
+            font-size: $small;
+        }
+
+    }
+
+    // AGE
+    &.acf-range-age {
+        &:before {
+            content: '0';
+            left: -3px;
+        }
+
+        &:after {
+            content: '100+';
+            right: -29px;
+
+        }
+
+        label {
+            margin: 0 0 25px 0 !important;
+        }
+    }
+
+
+    // GENRE - physiologie
+    &:nth-of-type(3) {
+
+        &:before {
+            content: 'F';
+            left: -3px;
+        }
+
+        &:after {
+            content: 'H';
+            right: -4px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    // GENRE - ressenti
+    &:nth-of-type(4) {
+
+        &:before {
+            content: 'F';
+            left: -3px;
+        }
+
+        &:after {
+            content: 'H';
+            right: -4px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    // GENRE - attirance
+    &:nth-of-type(5) {
+
+        &:before {
+            content: 'F';
+            left: -3px;
+        }
+
+        &:after {
+            content: 'H';
+            right: -4px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    // Milieux - origine
+    &.acf-range-milieux {
+
+        &:before {
+            content: 'Modeste';
+            left: -36px;
+        }
+
+        &:after {
+            content: 'Aisé';
+            right: -27px;
+        }
+
+        input {
+            margin: $ratio 0 0 0;
+        }
+
+        .bubble {
+            display: none;
+        }
+    }
+
+    &.acf-range-metier {
+        &:before {
+            content: 'Travailleur';
+            left: -50px;
+        }
+
+        &:after {
+            content: 'Patron';
+        }
+
+    }
+
+    &#acf-range-metier-type {
+        &:before {
+            content: 'Indépendant';
+            left: -60px;
+        }
+
+        &:after {
+            content: 'Salarié';
+        }
+
+    }
+
+    &#acf-range-paysage-enfance-1,
+    &#acf-range-paysage-actuelle-1,
+    &#acf-range-paysage-attirance-1 {
+        &:before {
+            content: 'Ville';
+            left: -15px;
+        }
+
+        &:after {
+            content: 'Campagne';
+            right: -50px;
+        }
+    }
+
+    &#acf-range-paysage-enfance-2,
+    &#acf-range-paysage-actuelle-2,
+    &#acf-range-paysage-attirance-2 {
+        &:before {
+            content: 'Plaine';
+            left: -25px;
+        }
+
+        &:after {
+            content: 'Montagne';
+            right: -50px;
+        }
+    }
+
+    &#acf-range-paysage-enfance-3,
+    &#acf-range-paysage-actuelle-3,
+    &#acf-range-paysage-attirance-3 {
+        &:before {
+            content: 'Zone humide';
+            left: -45px;
+        }
+
+        &:after {
+            content: 'Zone sèche';
+            right: -65px;
+        }
+    }
+
+    &#acf-range-sommeil-1 {
+        &:before {
+            content: 'Bon dormeur';
+            left: -45px;
+        }
+
+        &:after {
+            content: 'Dormeur précaire';
+            right: -100px;
+        }
+    }
+
+    &#acf-range-sommeil-2 {
+        &:before {
+            content: 'J\'aime dormir';
+            left: -65px;
+        }
+
+        &:after {
+            content: 'Je m\'en passe';
+            right: -100px;
+        }
+    }
+
+    &#acf-range-reves-1 {
+        &:before {
+            content: 'Rêveur riche';
+            left: -60px;
+        }
+
+        &:after {
+            content: 'Peu rêveur';
+            right: -80px;
+        }
+    }
+
+    &#acf-range-reves-2 {
+        &:before {
+            content: 'Partie de ma vie';
+            left: -85px;
+        }
+
+        &:after {
+            content: 'Je m\'en passe';
+            right: -85px;
+        }
+    }
+}

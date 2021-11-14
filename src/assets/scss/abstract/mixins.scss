@@ -1,0 +1,109 @@
+/****************************************************
+ * Layout System
+ * *************************************************/
+
+
+// Compile grid-template-columns and grid-template-rows
+@mixin grid($columns, $rows, $columnsSmall, $rowsSmall) {
+    display: grid;
+    grid-template-columns: $columns;
+    grid-template-rows: $rows;
+
+    @include respond(tablet) {
+        grid-template-columns: $columnsSmall;
+        grid-template-rows: $rowsSmall;
+    }
+}
+
+@mixin flex($align, $justify) {
+    align-items: $align;
+    display: flex;
+    justify-content: $justify;
+}
+
+/****************************************************
+ *	MIXINS: MEDIA QUERIES
+ * *************************************************/
+
+@mixin respond($breakpoint) {
+
+    @if $breakpoint==hd {
+        @media only screen and (max-width: 1440px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==md {
+        @media only screen and (max-width: 1280px) {
+            @content;
+        }
+    }
+
+    // min-width
+    @if $breakpoint==minmd {
+        @media only screen and (min-width: 1280px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==mil {
+        @media only screen and (max-width: 1000px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==custommd {
+        @media only screen and (max-width: 982px) {
+            @content;
+        }
+    }
+
+    // min-width
+    @if $breakpoint==mincustommd {
+        @media only screen and (min-width: 982px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==tablet {
+        @media only screen and (max-width: 768px) {
+            @content;
+        }
+    }
+
+    // min-width
+    @if $breakpoint==mintablet {
+        @media only screen and (min-width: 768px) {
+            @content;
+        }
+    }
+
+    // @if $breakpoint==mobile {
+    //     @media only screen and (max-width: 599px) {
+    //         @content;
+    //     }
+    // }
+
+    @if $breakpoint==mobile {
+        @media only screen and (max-width: 400px) {
+            @content;
+        }
+    }
+
+    @if $breakpoint==minimobile {
+        @media only screen and (min-width: 300px) {
+            @content;
+        }
+    }
+}
+
+/****************************************************
+ * Margin and Paddding
+ * *************************************************/
+@mixin margin {
+    margin:2%;
+}
+
+@mixin padding {
+    padding: 2%;
+}

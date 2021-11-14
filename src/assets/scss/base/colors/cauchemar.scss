@@ -1,0 +1,36 @@
+.background-cauchemar {
+    background-color: $cauchemar;
+}
+
+.border-cauchemar {
+    border: 2px solid $cauchemar;
+}
+
+#rounded--cauchemar {
+    border: 1.5px solid $cauchemar;
+    color: $cauchemar;
+
+    &:hover {
+        background-color: $cauchemar;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-cauchemar {
+    border-top: 2px solid $cauchemar;
+}
+
+.border-right-cauchemar {
+    border-right: 2px solid $cauchemar;
+}
+
+.border-bottom-cauchemar {
+    border-bottom: 2px solid $cauchemar;
+}
+
+.border-left-cauchemar {
+    border-left: 2px solid $cauchemar;
+}
+
+

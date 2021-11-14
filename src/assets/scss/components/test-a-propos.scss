@@ -1,0 +1,63 @@
+.page-template-page-a-propos {
+    overflow: unset;
+
+    .content--apropos-fading-container {
+        // height: 100%;
+        // width: 100%;
+        .propos--section {
+            opacity: 1 !important;
+            height: 100vh;
+            margin: 0;
+            width: 100vw;
+            font-size: $huge;
+            position: relative;
+
+            display: grid;
+            place-items: center;
+            overflow-x: hidden !important;
+            font-size: 5rem;
+            overflow-y: hidden !important;
+
+            &.propos--section-1 {
+                background-color: violet;
+                height: 300vh;
+                display: flex;
+                align-items: center;
+                flex-direction: row;
+            }
+
+            &.propos--section-2 {
+                background-color: cyan;
+            }
+        }
+    }
+
+    .propos--section-3 {
+        background-color: orange;
+    }
+
+    .propos--section-4 {
+        background-color: blue;
+    }
+    .propos--section-5 {
+        background-color: green;
+    }
+    .propos--section-6 {
+        background-color: red;
+    }
+}
+
+.bandeau {
+    overflow: hidden;
+    width: max-content;
+    background-color: $bg;
+    color: $color;
+    position: absolute;
+    top: 45%;
+    left: 50%;
+    transform: rotate(15deg);
+
+    h4 {
+        font-size: 150px;
+    }
+}

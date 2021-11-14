@@ -1,0 +1,7 @@
+// full height for taxonomies
+
+.acf-taxonomy-field {
+    .categorychecklist-holder {
+        max-height: max-content !important;
+    }
+}

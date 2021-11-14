@@ -1,0 +1,36 @@
+.background-reve-sexuel {
+    background-color: $sexuel;
+}
+
+.border-reve-sexuel {
+    border: 2px solid $sexuel;
+}
+
+#rounded--reve-sexuel {
+    border: 1.5px solid $sexuel;
+    color: $sexuel;
+
+    &:hover {
+        background-color: $sexuel;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-reve-sexuel {
+    border-top: 2px solid $sexuel;
+}
+
+.border-right-reve-sexuel {
+    border-right: 2px solid $sexuel;
+}
+
+.border-bottom-reve-sexuel {
+    border-bottom: 2px solid $sexuel;
+}
+
+.border-left-reve-sexuel {
+    border-left: 2px solid $sexuel;
+}
+
+

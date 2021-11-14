@@ -1,0 +1,101 @@
+.user-registration--custom {
+    width: 100%;
+
+    .ur-field-item {
+        margin-bottom: calc( #{$ratio} * 1 );
+
+        .form-row {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+        }
+    }
+    label {
+        font-family: $covik;
+        font-size: $h5;
+        line-height: $h5;
+
+        abbr[title] {
+            text-decoration: none;
+        }
+    }
+
+    .input-wrapper {
+        width: 40%; // avant 50% quand c'étiat sur une page
+
+        @include respond(tablet) {
+            width: 75%;
+        }
+
+        input {
+            background: none;
+            border-radius: 0px;
+            border-top: none;
+            border-left: none;
+            border-right: none;
+            border-bottom: 2px solid $color;
+            box-shadow: none;
+            color: $color;
+            font-family: $covik;
+            font-size: $h4;
+            line-height: $h4;
+            outline: none;
+            padding: 0 !important;
+            margin: 0 !important;
+            text-align: center;
+            width: 100%;
+        }
+    }
+
+    .ur-button-container {
+        text-align: center;
+
+        .ur-submit-button {
+            background-color: $bg;
+            border: 1px solid $color;
+            border-radius: 100px 100px 100px 100px;
+            color: $color;
+            cursor: pointer;
+            font-family: $covik;
+            font-size: $h3;
+            line-height: $h3;
+            padding: 10px 30px;
+            transition: all 0.325s ease-in-out;
+            text-transform: uppercase;
+            width: auto;
+
+            @include respond(tablet) {
+                font-size: $h4;
+                line-height: 1.4;
+            }
+
+            &:hover {
+                background-color: $color;
+                border-color: $bg;
+                color: $bg;
+            }
+        }
+    }
+}
+
+// HIDDEN USER IF USER IS LOGGED IN
+#ur_register_pre_form_message {
+    a {
+        color: $color;
+    }
+}
+
+// REGISTRATION USER DONE
+#ur-submit-message-node {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+    ul {
+        color: $color;
+        font-family: $covik;
+        font-size: $small;
+        line-height: $small;
+        margin: calc( #{$ratio} / 2 ) 0 0 0;
+}
+}

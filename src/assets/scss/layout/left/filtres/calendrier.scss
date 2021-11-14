@@ -1,0 +1,51 @@
+#calendrier--container {
+    // margin: calc( #{$ratio} / 2 ) 0 $ratio 0;
+    // padding: 0 calc( 30px / 2 ) $ratio !important;
+    width: 100%;
+}
+
+.calendrier--container {
+    padding: 0 0 $ratio 0!important;
+    // padding: 0!important;
+    border-bottom: 1px solid $color;
+    // pointer-events: none;
+    width: 100%;
+
+    .calendrier--item{
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        &.is-inactive {
+            display: none;
+        }
+
+        h4 {
+            margin: 0 0 calc( #{$ratio} / 2 ) 0;
+        }
+
+        .calendrier--mois {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(3, 1fr);
+            gap: 6px 6px;
+
+            .mois--item {
+                cursor: pointer;
+                display: grid;
+                font-family: $covik;
+                font-size: $smaller;
+                overflow: hidden;
+                padding: 3px;
+                place-items: center;
+                text-transform: uppercase;
+
+                &.is-checked {
+                    background-color: $color;
+                    color: $bg;
+                }
+            }
+        }
+    }
+}
+

@@ -1,0 +1,35 @@
+.tagitems--container {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 calc( 30px / 2 ) 30px;
+    padding: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    pointer-events: none;
+    width: 100%;
+
+    .tagitem {
+        display: none;
+        margin: 0 8px 8px 0;
+        width: auto;
+
+        // show the first 3 results
+        &:nth-child(-n+10) {
+            display: block;
+        }
+
+        button {
+            all: none !important;
+        }
+
+        h4 {
+            font-size: $h5;
+            text-transform: uppercase;
+        }
+
+        &:hover {
+            background-color: $color;
+            color: $bg;
+        }
+    }
+}

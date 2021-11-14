@@ -1,0 +1,218 @@
+// HEADER
+.article-reve--header {
+    align-items: center;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    position: relative;
+
+    // ADD AND REMOVE BORDER ON ACTIVE STATE
+    border-bottom-width: 1px !important;
+
+    &.-is-active {
+        border-bottom-width: 2px !important;
+    }
+
+    // TEMP HEIGHT (TEXT)
+    height: 130px;
+    width: 100%;
+
+    @include respond(tablet) {
+        height: 100%;
+    }
+
+
+    // TITLE
+    h1 {
+        cursor: pointer;
+        margin: 11px 0 0 22px;
+        text-transform: uppercase;
+        width: calc( 100% - calc( 42px + 22px ) );
+
+        @include respond(mil) {
+            font-size: $mh1;
+        }
+
+        @include respond(tablet) {
+            font-size: $h5;
+            line-height: 1.4;
+            margin: 24px 0 10px 10px;
+            height: calc( 100% - 24px );
+            width: calc( 100% - calc( 61px * 1 ) );
+
+            align-items: flex-start;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: flex-start;
+        }
+    }
+
+    // SECTION DOWNLOAD
+    .article-reve--download {
+        background-color: $bg;
+        height: 100%;
+        width: 42px;
+        position: absolute;
+        right: 0;
+        top: 0;
+
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+
+        padding: 24px 0 0 0;
+
+        @include respond(tablet) {
+            padding: 10px 0 0 0;
+            width: 38px;
+        }
+
+
+        .button--round {
+            background: none;
+            color: none;
+            border-radius: 50%;
+            cursor: pointer;
+            transition: none;
+            position: relative;
+
+            @include respond(tablet) {
+                height: 9px;
+                width: 9px;
+            }
+            // CLICK
+            &.-is-selected {
+
+                .button--smaller {
+                    border: 1px solid $bg;
+                    background-color: $color;
+                    transform: scale(1);
+                }
+            }
+
+            .button--smaller {
+                // border: 2px solid $color;
+                border-radius: 50%;
+                background-color: $bg;
+                height: 12px;
+                margin: -6px 0px 0px -6px;
+                width: 12px;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transition: transform $quick $easeO;
+                transform: scale(0.2);
+            }
+        }
+
+        .contenu--edit {
+            img {
+                margin: 0;
+            }
+        }
+
+        // ICONE TEXTE OU DESSIN
+        #contenu--texte {
+            display: block;
+            margin: 14px 0 0 0;
+
+            @include respond(tablet) {
+                margin: 6px 0 0 0;
+                width: 11px;
+            }
+
+            &.is-selected {
+                .rect--short {
+                    animation: linesShort 1s both running ease-out;
+                }
+                .rect--long {
+                    animation: linesLong 1s both running ease-out;
+                }
+            }
+
+            .rect--long {
+                width: 21px;
+            }
+
+            .rect--short {
+                width: 15px;
+            }
+
+            &.wrong {
+                display: none;
+            }
+        }
+
+        #contenu--dessin {
+            display: block;
+            margin: 14px 0 0 0;
+
+            @include respond(tablet) {
+                display: none !important;
+            }
+
+            .icone-dessin-path {
+                // stroke: $color;
+                // stroke-dasharray: 450;
+                // stroke-dashoffset: 0;
+                // stroke-miterlimit:10;
+                // stroke-width:18;
+            }
+
+            &.wrong {
+                display: none;
+            }
+        }
+
+        #contenu--dessin-mobile {
+            display: none;
+            margin: 10px 0 0 0;
+
+            @include respond(tablet) {
+                display: block;
+
+                &.wrong {
+                    display: none;
+                }
+            }
+        }
+    }
+}
+
+// AUTHOR AND DATE
+.article-header--author-and-date {
+    color: $bg;
+    left: 0;
+    position: absolute;
+    top: 0;
+
+    padding: 0 6px;
+
+    @include respond(tablet) {
+        padding: 0 4px;
+
+        span {
+            font-size: $smaller;
+            line-height: 1.4;
+        }
+    }
+
+    span {
+
+        // AUTHOR
+        &:nth-of-type(1) {
+            text-transform: uppercase;
+            font-weight: 700;
+
+            &:after {
+                content: '-';
+                margin: 0 4px;
+            }
+        }
+
+        // DATE
+        &:nth-of-type(2) {
+            font-style: italic;
+        }
+    }
+}

@@ -1,0 +1,60 @@
+.page-template-page-creation-reve,
+.reve-template-default {
+    #ui-datepicker-div {
+        border-color: $color !important;
+        border-radius: 5px;
+        padding: 25px;
+        left: 50% !important;
+        position: absolute !important;
+        transform: translate( -50%, 0 ) !important;
+        width: max-content;
+
+        //header
+        .ui-datepicker-header {
+            background: $bg;
+            color: $color;
+
+            .ui-datepicker-month,
+            .ui-datepicker-year {
+                font-family: $covik;
+                outline: none;
+            }
+        }
+
+        .ui-datepicker-calendar {
+            thead {
+                background: $bg;
+                color: $color;
+
+                th {
+                    color: $color;
+                    border-bottom: 1px solid $bg;
+                    background: $bg;
+
+                }
+            }
+
+            .ui-state-default {
+                color: $color;
+                font-family: $covik;
+
+                &.ui-state-hover,
+                &.ui-state-active {
+                    background: $color !important;
+                    color: $bg !important;
+                }
+            }
+        }
+
+        .ui-datepicker-buttonpane {
+            button {
+                border: 1px solid #303030 !important;
+                border-radius: 100px 100px 100px 100px !important;
+                color: #303030 !important;
+                font-family: $covik;
+                padding: 1.5px 10px !important;
+
+            }
+        }
+    }
+}

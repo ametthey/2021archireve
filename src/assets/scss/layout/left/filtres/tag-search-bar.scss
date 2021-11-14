@@ -1,0 +1,113 @@
+.tagsearch--container {
+    border-bottom: 1px solid $color;
+    padding: calc( #{$ratio} / 2 ) 0 $ratio 0;
+    // padding: 0 calc( 30px / 2 ) $ratio !important;
+    // pointer-events: none;
+    width: 100%;
+}
+
+.tagsearch-wrapper {
+    position: relative;
+    width: 80%;
+    margin: auto;
+
+    img {
+        background-color: $bg;
+        margin: 0 10px 10px 2px;
+        padding: 0 0 0 2px;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+    }
+}
+
+.tagsearch {
+    border: none;
+    border-bottom: 1px solid $color;
+    color: #000;
+    font-family: $covik;
+    font-size: $h4;
+    height: 28px;
+    outline: none;
+    width: 100%;
+    padding: 0 0 0 10px;
+
+    @include respond(tablet) {
+        font-size: $small;
+        height: 20px;
+    }
+
+    &::-webkit-placeholder { /* Chrome/Opera/Safari */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+    &::-moz-placeholder { /* Firefox 19+ */
+        color: $color;
+        font-family: $covik;
+        font-size: /$h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+    &:-ms-placeholder { /* IE 10+ */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+    &:-moz-placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+    &::placeholder { /* Firefox 18- */
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+    &::placeholder {
+        color: $color;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+
+    &::-moz-placeholder {
+        color: #000;
+        font-family: $covik;
+        font-size: $h4;
+        opacity: 1;
+        // padding: 10px 0;
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+
+}

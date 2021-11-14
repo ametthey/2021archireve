@@ -1,0 +1,142 @@
+.popup--download {
+    cursor: pointer;
+    background-color: $bg;
+    border-top: 1px solid $color;
+    bottom: 0;
+    height: 115px;
+    opacity: 1;
+    pointer-events: auto;
+    padding: 20px;
+    position: sticky !important;
+    pointer-events: auto;
+    width: 100%;
+    z-index: 2;
+
+    transition: transform $rythm1 $easeO;
+    transform: translateY(100%);
+
+    &.is-visible {
+        transform: translateY(0);
+    }
+
+    &.is-hidden-scrolled {
+        transform: translateY(100%);
+    }
+}
+
+.popup--download-close-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: calc( #{$ratio} / 3 );
+    z-index: 100000;
+}
+
+// BOUTON TÉLÉCHARGER ET SÉLECTIONNER
+.button--download {
+    cursor: pointer;
+    margin: 0 auto calc( #{$ratio} / 2 ) auto;
+    position: relative;
+    // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
+    width: max-content;
+
+    @include respond(tablet) {
+        // margin: 0 auto 30px;
+        margin: 0 auto calc( 30px / 2 );
+        width: 80%;
+    }
+
+    // CLICK
+    &.-is-selected {
+        .button--rounded {
+            background-color: #303030;
+            border: 1px solid #303030;
+            color: #FFF;
+        }
+    }
+
+    h4 {
+        text-align: center;
+    }
+
+    .button--rounded {
+        position: relative;
+    }
+
+    // PASTILLE AVEC LE NOMBRE DE RÊVES SÉLECTIONNÉS
+    .button--selected-number {
+        border: 1px solid $bg !important;
+        display: block;
+        height: 25px;
+        right: -11px;
+        opacity: 0;
+        position: absolute;
+        top: 20px;
+        transition: transform $quick $easeO, opacity $quick $easeO;
+        transform: scale(0.2);
+        width: 25px;
+        display: grid;
+        place-items: center;
+
+
+        &.is-visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        p {
+            font-size: $small;
+            line-height: $small;
+            text-align: center;
+        }
+    }
+}
+
+.button--select {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    margin: 0 calc( 30px / 2 ) 0;
+    position: relative;
+    width: calc( 100% - 30px );
+
+    .button--round {
+        position: relative;
+    }
+
+    // CLICK
+    &.-is-selected {
+        .button--round {
+            // background-color: #303030;
+            // border: 1px solid #303030;
+            // color: #FFF;
+
+            .button--smaller {
+                border: 1px solid $bg;
+                background-color: $color;
+                transform: scale(1);
+            }
+        }
+    }
+
+    p {
+        margin: 0 0 0 4px;
+    }
+
+    .button--smaller {
+        // border: 2px solid $color;
+        border-radius: 50%;
+        background-color: $bg;
+        height: 17px;
+        margin: -8.5px 0px 0px -8.5px;
+        width: 17px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transition: transform $quick $easeO;
+        transform: scale(0.2);
+
+        // transform: translate( -50%, -50% );
+    }
+}

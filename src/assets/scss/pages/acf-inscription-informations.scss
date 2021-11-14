@@ -1,0 +1,149 @@
+body {
+    &.page-template-page-inscription-informations {
+        overflow: auto;
+    }
+}
+
+.container--inscription-informations {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    width: 45%;
+
+    @include respond(tablet) {
+        margin: auto;
+        width: 90%;
+    }
+}
+
+.form-inscription-information {
+    position: relative;
+    width: 100%;
+}
+
+// STYLE ALL RANGE FROM ACF
+.acf-field {
+    .acf-label {
+        position: relative;
+        margin: 0 !important;
+        text-align: center;
+
+        label {
+            font-size: $h2;
+            font-family: $covik, sans-serif;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            line-height: $h2;
+            text-align: center;
+
+            @include respond(tablet) {
+                font-size: $h5 !important;
+                line-height: 1.4;
+            }
+
+            .acf-required {
+                display: none;
+            }
+        }
+    }
+}
+
+#acf-range-metier-type {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+#ne-travaille-pas {
+    height: max-content;
+    padding-top: 0;
+
+    .acf-radio-list {
+        li {
+            width: inherit;
+            label {
+                align-items: center;
+                display: flex !important;
+                flex-direction: row;
+                &:before {
+                    display: none;
+                }
+
+                input {
+                    margin: 0 10px 0 0 !important;
+                }
+            }
+        }
+    }
+}
+
+// Bouton VALIDER
+.acf-button-inscription-information {
+    background-color: $bg;
+    border: 1px solid #303030;
+    color: $color;
+    padding: 10px 30px;
+    border-radius: 100px 100px 100px 100px;
+    transition: all 0.325s ease-in-out;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $covik;
+    font-size: $h1;
+    justify-content: center;
+    line-height: $h1;
+    margin: $ratio auto calc( #{$ratio} * 1 );
+
+    @include respond(tablet) {
+        font-size: $h5;
+        line-height: 1.4;
+    }
+}
+
+.acf-fields {
+    & > .acf-field {
+        border-top: none !important;
+    }
+}
+
+input[type="submit"] {
+    cursor: pointer;
+}
+
+.merci--beaucoup {
+    display: block !important;
+    margin-left: -10%;
+    width: 120%;
+}
+
+// FOI ORIGINE & ACTUELLE
+#acf-radio-foi-origine,
+#acf-radio-foi-actuelle {
+    padding: 0;
+}
+
+
+#acf-radio-foi-actuelle {
+    margin: 0 0 calc( #{$ratio} *  2 ) 0 !important;
+}
+
+// RELATION AU SOMMEIL
+#acf-range-sommeil-1 {
+    &.acf-range {
+        .acf-label {
+            margin-bottom: calc( #{$ratio} *  2 ) !important;
+        }
+    }
+}
+
+// RELATION AUX RÊVES
+#acf-range-reves-1 {
+    &.acf-range {
+        .acf-label {
+            margin-bottom: calc( #{$ratio} *  2 ) !important;
+        }
+    }
+}

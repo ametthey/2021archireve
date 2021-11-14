@@ -1,0 +1,12 @@
+.button--rounded-submit {
+    background-color: $bg;
+    font-family: $covik;
+    font-size: $h1;
+    line-height: $h1;
+
+    @include respond(tablet) {
+        font-size: $h2;
+        line-height: $h2;
+    }
+
+}

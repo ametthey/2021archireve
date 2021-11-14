@@ -1,0 +1,92 @@
+// LISTE DES DIFFERENTS NIVEAU DE LUCIDITE
+.lucidite--container {
+    align-items: flex-start;
+    display: flex;
+    flex-wrap: wrap;
+    height: auto !important;
+    margin: 0 calc( 30px / 2 ) 30px;
+    position: relative;
+    width: calc( 100% - 30px );
+
+    // INPUT
+    .lucidite--label-input {
+        display: none;
+
+        &.checkbox--is-selected {
+            & + label {
+                background-color: $color;
+                border: 1px solid $color;
+                color: $bg;
+
+                & > * {
+                    color: $bg;
+                }
+            }
+        }
+    }
+
+    // LABEL
+    .lucidite--item {
+        background-color: $bg;
+        cursor: pointer;
+        font-size: $h5;
+        text-transform: uppercase;
+        font-family: $covik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        margin: 0 8px 8px 0;
+        width: auto;
+
+        position: relative !important;
+        top: auto !important;
+        left: 0 !important;
+
+        &:hover {
+            background-color: $color;
+            color: $bg;
+        }
+
+
+        // Checkboxes
+        &.lucidite--label {
+            position: relative;
+            display: inline-block;
+
+            &:before {
+                content: '';
+                display: block;
+                position: absolute;
+            }
+        }
+
+        &.lucidite--label-radio {
+            // padding-left: 18px;
+            padding-left: 32px;
+
+            &:before {
+                width: 10px;
+                height: 10px;
+                border-radius: 50%;
+                border: 1px solid #222;
+                opacity: 0;
+                top: 50%;
+                left: 50%;
+                transform: translate( -50%, -50% );
+            }
+        }
+
+    }
+}
+
+.lucidite--item {
+    &.is-checked {
+        border: 1px solid $color;
+        background: $color;
+        color: $bg;
+
+        &:hover {
+            color: $bg;
+        }
+    }
+}

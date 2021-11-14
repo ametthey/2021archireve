@@ -1,0 +1,493 @@
+$numero: 200px;
+$numeroSmall: 60px;
+
+// temp for debug
+.page-template-page-a-propos {
+    overflow: scroll;
+
+    #page {
+        overflow: scroll;
+        height: 100%;
+    }
+}
+
+.right--container-propos {
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+    margin: auto;
+    overflow: scroll;
+    padding: 0 50px;
+    pointer-events: none;
+    position: absolute !important;
+    right: 0;
+    width: 100%;
+    z-index: 2 !important;
+}
+
+.content--apropos-fading-container {
+    position: relative;
+    display: block;
+    cursor: auto;
+    // padding: calc( #{$ratio} * 3 ) 0 0;
+    // min-height: 100vh;
+    // height: 100vh;
+    overflow: scroll;
+    scrollbar-width: none;
+}
+
+.content--apropos {
+    background-color: $color;
+    transition: background-color $rythm4 $easeIOE, opacity $rythm0 $easeIOE !important;
+    width: 100%;
+
+    &.is-fading {
+        background-color: $violet;
+    }
+
+}
+.propos--section {
+    align-items: center;
+    color: $bg;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    height: auto;
+    justify-content: center;
+    margin: 20vh auto;
+    opacity: 0;
+    transition: opacity $rythm1 $easeIOE !important;
+    width: 92%;
+
+    @include respond(tablet) {
+        width: auto !important;
+        margin-left: 15px !important;
+        margin-right: 15px !important;
+    }
+
+    &:last-child {
+        margin-bottom: 10vh;
+    }
+
+    &.is-visible {
+        opacity: 1;
+    }
+
+    &.is-hidden {
+        opacity: 0;
+    }
+
+    // TITRE GLOBAL
+    h1 {
+        text-align: center;
+        font-size: $bigger;
+        line-height: 1.4;
+        margin: 0 0 calc( #{$ratio} * 2 ) 0;
+
+        @include respond(tablet) {
+            font-size: $h3 !important;
+        }
+    }
+
+    // TEXTE GLOBAL
+    h2 {
+        // font-size: $h3;
+        font-size: $h2;
+        line-height: 1.4;
+
+        @include respond(tablet) {
+            font-size: $small;
+        }
+    }
+
+    // LIEN DE LA SECTION CONTACT
+    .propos-links {
+        color: $bg;
+
+        h1 {
+            font-family: $covik !important;
+            font-size: $h2;
+            line-height: 1.4;
+            margin: 0;
+
+            @include respond(tablet) {
+                font-size: $small !important;
+            }
+        }
+    }
+
+    .button--rounded {
+        background-color: rgba(255, 255, 255, 0) !important;
+
+            @include respond(tablet) {
+                padding: 5px 10px !important;
+                p {
+                    font-size: $h5 !important;
+                    line-height: 1.4 !important;
+
+                    a {
+                        height: inherit !important;
+                    }
+                }
+        }
+    }
+
+
+}
+
+.propos--section-texte {
+    width: 80%;
+    margin-left: auto;
+    margin-right: auto;
+
+
+    // TEXTE QUI CHANGE AU HOVER
+    h2 {
+        font-family: $covik;
+        // overflow: hidden;
+
+        &.colored-hover {
+            span {
+                font-family: inherit;
+                font-size: inherit;
+
+                &.char {
+                    cursor: pointer;
+                    // text-transform: uppercase;
+                    transition: all $rythm0 $easeIOE !important;
+
+                    &:hover {
+                        text-transform: lowercase;
+                    }
+                }
+            }
+        }
+    }
+
+    &.propos--section-5 {
+        h1 {
+            &.huge {
+                margin: 0 0 calc( #{$ratio} / 2 ) 0;
+            }
+        }
+        h2 {
+            font-size: $h4;
+            text-align: center;
+
+            @include respond(tablet) {
+                font-size: $small;
+            }
+        }
+    }
+
+    &.propos--section-6 {
+        h1 {
+            &.huge {
+                font-family: $covik !important;
+                font-style: normal;
+                font-weight: 400;
+                font-size: $h1;
+                line-height: 35px;
+                text-transform: uppercase;
+                margin: 0 0 calc( #{$ratio} / 2 ) 0;
+            }
+        }
+        h2 {
+            font-size: $h4;
+            text-align: center;
+
+            @include respond(tablet) {
+                font-size: $small;
+            }
+        }
+    }
+}
+
+.propos--section-collapse {
+
+    // CONTAINER DES COLLAPES
+    .propos--collapse-container {
+        color: $bg;
+        width: 100%;
+
+        // TITRE
+        .propos--collapse-header {
+            border: 1px solid $bg;
+            border-bottom: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: center;
+
+            .propos--collapse-title {
+                font-size: $h1 !important;
+                font-family: $solid;
+                line-height: 1.2 !important;
+                text-transform: uppercase;
+
+                @include respond(custommd) {
+                    font-size: $h3 !important;
+                }
+
+                @include respond(tablet) {
+                    font-size: $h5 !important;
+                }
+            }
+        }
+
+        // TEXTE CACHE
+        .propos--collapse-texte {
+            border: 1px solid $bg;
+            border-top: none;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height $rythm1 $easeIOE;
+
+
+            display: flex;
+            justify-content: center;
+
+            // NUMEROTATION CACHE DANS TEXTE
+            .propos--collapse-number {
+                p {
+                    opacity: 0;
+                }
+            }
+
+            // STYLE DU TEXTE
+            .propos--collapse-title {
+                font-family: $covik !important;
+                font-style: normal;
+                font-weight: 400;
+                font-size: $h3;
+                line-height: 1.4;
+                // text-transform: uppercase;
+
+                height: 100%;
+
+                @include respond(tablet) {
+                    font-size: $small !important;
+                }
+            }
+        }
+
+        // STYLE GLOBAL DES TEXTE DE COLLAPSE
+        .propos--collapse-title {
+            align-items: center;
+            display: flex;
+            justify-content: flex-start;
+            padding: $ratio;
+            width: calc( 100% - #{ $numero } );
+
+            @include respond(custommd) {
+                width: calc( 100% - #{ $numeroSmall } );
+            }
+
+            @include respond(tablet) {
+                padding: 10px;
+            }
+
+        }
+
+        // STYLE DES NUMEROTATIONS DES COLLAPSES
+        .propos--collapse-number {
+            border-right: 1px solid $bg;
+            display: grid;
+            font-size: calc( #{$h1} * 1.4 );
+            font-family: $covik;
+            line-height: calc( #{$h1} * 1.4 );
+            place-items: center;
+            text-transform: uppercase;
+
+            width: $numero;
+            padding: $ratio2;
+
+
+            @include respond(custommd) {
+                font-size: $h1 !important;
+                line-height: $h1 !important;
+                width: $numeroSmall;
+            }
+
+            @include respond(tablet) {
+                font-size: $h5 !important;
+            }
+        }
+    }
+
+    // TEXTE QUI ACCOMPAGNE LES COLLAPSES
+    .collapse-texte-follow{
+        align-self: flex-start;
+
+        p {
+            color: $bg;
+            font-family: $covik !important;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $h2;
+            line-height: 35px;
+            padding: $ratio2 $ratio2 $ratio2 0;
+            text-transform: uppercase;
+
+            @include respond(tablet) {
+                font-size: $small;
+                line-height: 1.4;
+            }
+        }
+
+        h1 {
+            color: $bg;
+            font-family: $covik !important;
+            font-style: normal;
+            font-weight: 400;
+            font-size: $h1;
+            line-height: 35px;
+            margin: 0 0 calc( #{$ratio} * 0.5 ) 0;
+            // padding: $ratio2 $ratio2 $ratio2 0;
+            text-transform: uppercase;
+        }
+    }
+}
+
+.propos--section-1 {
+    opacity: 1!important;
+}
+
+
+.propos--section-4 {
+    .propos--collapse-number {
+        font-family: "GoodGlyphs" !important;
+        font-size: calc( #{$h1} * 2 ) !important;
+        line-height: calc( #{$h1} * 1.4 ) !important;
+        text-transform: inherit !important;
+    }
+}
+
+
+
+.apropos-vertical-text {
+    align-items: center;
+    cursor: pointer;
+    display: flex;
+    justify-content: end;
+    left: 0;
+    opacity: 0;
+    margin: $ratio 0 0 0;
+    pointer-events: none;
+    position: absolute !important;
+    text-orientation: mixed;
+    transform: rotate(180deg);
+    transform-origin: center;
+    transition: opacity $rythm1 ease-in-out;
+    writing-mode: tb;
+    width: 50px;
+    height: 220px;
+    z-index: 3 !important;
+
+    h3 {
+        align-self: center;
+        color: $bg;
+        text-align: right !important;
+    }
+}
+
+.apropos-close {
+    cursor: pointer;
+    opacity: 0;
+    pointer-events: none;
+    padding: $ratio calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 );
+    position: fixed !important;
+    right: 0;
+    z-index: 10000 !important;
+}
+
+.content--right {
+    &.is-open {
+        .apropos-vertical-text {
+            opacity: 1;
+            pointer-events: auto;
+        }
+
+        .apropos-close {
+            opacity: 1;
+            pointer-events: auto;
+        }
+    }
+}
+
+
+
+
+.propos--section-1 {
+    // background-color: violet;
+
+    h2 {
+        margin: 0 0 calc( #{$ratio} * 2 ) 0;
+    }
+}
+
+.propos--section-2 {
+    // background-color: cyan;
+}
+
+.propos--section-3 {
+    // background-color: orange;
+
+    .collapse-texte-follow {
+        margin: $ratio 0 0 0;
+    }
+}
+
+.propos--section-4 {
+    // background-color: blue;
+}
+.propos--section-5 {
+    // background-color: green;
+
+    h2 {
+        margin: 5% 0 0 0;
+    }
+}
+.propos--section-6 {
+    // background-color: red;
+}
+
+
+/*////////////////////////////////////////////////
+ * Test with fixed title
+ */////////////////////////////////////////////////
+.propos--section-7 {
+    background-color: green;
+    // height: 200vh;
+    justify-content: flex-start;
+    position: relative;
+
+    #propos--section-title {
+        position: fixed;
+        background-color: red;
+    }
+
+    .fixed_wrapper {
+        position: relative;
+        overflow: hidden;
+        height: 100vh;
+        width: 100%;
+    }
+
+    .fixed_target {
+        background-color: blue;
+        bottom: -100vh;
+    }
+    .fixed,
+    .fixed_target {
+        position: absolute;
+        top: -100vh;
+        right: 0;
+        left: 0;
+    }
+    .fixed {
+        height: 100%;
+        background-size: cover;
+        background-position: center;
+    }
+}

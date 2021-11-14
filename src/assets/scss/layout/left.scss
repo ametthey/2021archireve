@@ -1,0 +1,268 @@
+@keyframes balance {
+    0% {
+        transform: rotate(180deg) scale(0.8);
+    }
+    50% {
+        transform: rotate(180deg) scale(1);
+    }
+    100% {
+        transform: rotate(180deg) scale(0.8);
+    }
+
+}
+.content--left {
+    border-right: 1px solid $color;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    // pointer-events: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding: calc( #{$ratio} * 1 ) 0;
+    position: relative;
+    scrollbar-width: none;
+    z-index: 2;
+    // transition: width $rythm2 $rythm1 ease-in-out;
+    // transition: width $rythm2 $rythm3 ease-in-out;
+    // width: calc( 51px - 1px );
+    // width: 50px;
+    // transform: translateX(0);
+
+    background-color: $bg;
+
+    // height: calc( 100vh - calc( #{$ratio} * 2) );
+    height: 100vh;
+
+    &.is-open {
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    &.is-unclickable {
+        pointer-events: none !important;
+    }
+
+    @include respond(tablet) {
+        z-index: 1;
+    }
+
+    // & > *:not(.content--left-header) {
+    //     pointer-events: none;
+    // }
+
+
+    // Header de navigation avec les différents boutons
+    // o + connexion + inscription
+    .content--left-header {
+        align-items: center;
+        margin: calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 ) $ratio;
+        display: flex;
+        width: max-content;
+        // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
+
+        @include respond(tablet) {
+            // display: none;
+            margin: calc( #{$ratio} * 0.2 ) calc( #{$ratio} *0.2 ) $ratio;
+        }
+
+        #left--button {
+            cursor: pointer;
+        }
+
+        #left--connexion,
+        #left--inscription {
+            overflow: hidden;
+            pointer-events: none;
+        }
+
+        #left--connexion {
+            // transform: translateX(-100%);
+            // transform: translateX(0);
+
+            // Loggded-in user
+            &.left--connexion-user {
+                p {
+                    font-family: $solid;
+                    font-size: $smaller;
+                }
+            }
+        }
+
+        #left--inscription {
+            // transform: translateX(-200%);
+        }
+    }
+
+    // Quand le bandeau est fermé
+    // Loupe + Filtres
+    .content--left-cover {
+        align-items: center;
+        display: flex;
+        height: 100px;
+        justify-content: flex-end;
+        position: absolute;
+        writing-mode: tb;
+        text-orientation: mixed;
+        // top: 60px;
+        top: $ratio;
+        transform: rotate(180deg);
+        transform-origin: center;
+        width: 50px;
+
+        @include respond(tablet) {
+            top: 30px;
+            width: inherit;
+        }
+
+        h3 {
+            // margin: 0 0 10px 0; // remove because there is no loupe anymore
+            text-transform: uppercase;
+        }
+
+        img {
+            animation: balance 3s cubic-bezier(0.66, 0, 0, 1) infinite both;
+            transform-origin: center;
+            height: 20px;
+            width: 20px;
+
+            @include respond(tablet) {
+                height: 13px;
+                width: 13px;
+            }
+        }
+    }
+
+    // Etat Actif du bandeau
+    &.is-open {
+        cursor: auto;
+        width: calc( 360px - 1px );
+
+        @include respond(tablet) {
+            width: calc( 100% - 25px );
+        }
+
+        .content--left-header {
+            align-items: center;
+            justify-content: flex-start;
+
+        }
+
+        .content--left-cover {
+            // opacity: 0;
+            // pointer-events: none;
+
+        }
+
+        // Mobile
+        .tagsearch--container {
+            @include respond(tablet) {
+                margin: calc( 30px / 2 ) 30px;
+                width: calc( 100% - 60px);
+            }
+        }
+
+        .tagitems--container,
+        .lucidite--container {
+            @include respond(tablet) {
+                margin: 0 30px calc( 30px / 2 );
+                width: calc( 100% - 60px);
+            }
+        }
+
+        .typopologie--container,
+        .calendrier--container {
+            @include respond(tablet) {
+                margin: 0 30px calc( 30px / 2 );
+                width: calc( 100% - 60px);
+
+                .swiper-container {
+                    @include respond(tablet) {
+                        width: 80%;
+
+                        .swiper-slide {
+                            // border: 1px solid black;
+                            // background-color: red;
+                            width: 50% !important;
+                        }
+                    }
+                }
+            }
+        }
+
+        .tagsearch--container,
+        .tagitems--container,
+        .lucidite--container,
+        .typopologie--container,
+        .calendrier--container,
+        .button--download,
+        .button--select {
+            // opacity: 1;
+            pointer-events: auto;
+
+        }
+
+        // Mobile
+        & + .content--home {
+
+            @include respond(tablet) {
+                width: 25px !important;
+
+                // Languette les rêsves
+                padding-top: 15px !important;
+            }
+
+            .article-reve {
+                @include respond(tablet) {
+                    display: none;
+                }
+            }
+
+            .content--home-text-border {
+                @include respond(tablet) {
+                    opacity: 1 !important;
+                    width: 100% !important;
+                }
+            }
+        }
+    }
+
+}
+
+
+.tagitems--container,
+.lucidite--container {
+    border-bottom: 1px solid $color;
+    margin: calc( #{$ratio} / 2 ) 0 $ratio 0;
+    padding: 0 calc( 30px / 2 ) $ratio !important;
+    // pointer-events: none;
+    width: 100%;
+}
+
+.lucidite--container {
+    &:last-child {
+        border: none;
+    }
+}
+
+.content--left-reset-filters {
+    justify-content: center;
+    display: flex;
+    cursor: pointer;
+    margin: $ratio 0;
+    padding: 0 calc( 30px / 2 ) 0 !important;
+    width: 100%;
+
+    .js-radio-button-group {
+        display: flex;
+        justify-content: center;
+    }
+
+    .btn {
+        display: inline-flex;
+        text-transform: uppercase;
+    }
+
+    img {
+        margin: 0 $ratio2 0 0;
+    }
+}

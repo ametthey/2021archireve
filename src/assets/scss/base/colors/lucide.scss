@@ -1,0 +1,36 @@
+.background-reve-lucide {
+    background-color: $lucide;
+}
+
+.border-reve-lucide {
+    border: 2px solid $lucide;
+}
+
+#rounded--reve-lucide {
+    border: 1.5px solid $lucide;
+    color: $lucide;
+
+    &:hover {
+        background-color: $lucide;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-reve-lucide {
+    border-top: 2px solid $lucide;
+}
+
+.border-right-reve-lucide {
+    border-right: 2px solid $lucide;
+}
+
+.border-bottom-reve-lucide {
+    border-bottom: 2px solid $lucide;
+}
+
+.border-left-reve-lucide {
+    border-left: 2px solid $lucide;
+}
+
+

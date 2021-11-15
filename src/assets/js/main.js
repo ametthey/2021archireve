@@ -24,7 +24,7 @@ import './components/header-mobile.js';
 import './components/dessin.js';
 
 
-import './components/selection-reves.js';
+// import './components/selection-reves.js';
 
 
 

@@ -23,9 +23,11 @@
 
         $args = array(
             // 'author'        =>  $author_id,
-            'post_type' => [ 'reveur_info', 'reve' ],
+            'post_type' => [ 'reve', 'reveur_info' ],
             // 'p' => $custom_post,
             'posts_per_page' => -1,
+            'order' => 'ASC',
+            'orderby' => 'type',
         );
 
         $home_projects = new WP_Query( $args );
@@ -59,7 +61,7 @@
                 echo '<div class="reve--to-print post-type-reve" id="reve--print' . $i . '" data-number="' . $i . '">';
                 echo '<table class="table--print" id="print--' . $i . '">';
             } else if ( get_post_type() == 'reveur_info' ) {
-                echo '<div class="reve--to-print post-type-reveur-info" id="reve--print' . $i . '" data-number="' . $i . '">';
+                echo '<div class="reve--to-print post-type-reveur-info" id="reve--print-one" data-number="one">';
                 echo '<table class="table--print" id="print--' . $i . '">';
             }
         ?>

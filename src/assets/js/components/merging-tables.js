@@ -198,7 +198,7 @@ function reallyMergeTheTwoTables() {
 
 
             } else {
-                console.log('ERROR');
+                // Silence is golden;
             }
         });
     });

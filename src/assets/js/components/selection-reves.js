@@ -6,24 +6,26 @@ import html2canvas from 'html2canvas';
 // https://github.com/thawkin3/html-to-pdf-demo/blob/master/scripts/pdfExportMethods.js
 // https://github.com/parallax/jsPDF
 // Ajouter à la pastille le nombre de rêve sélectionné
-const home = document.querySelector('.is-home');
 
-// document.addEventListener( 'load', (e) => {
+window.addEventListener( 'load', (e) => {
+    const home = document.querySelector('.is-home');
     if ( home ) {
         const elementsSelected = document.querySelectorAll('.button--select-to-download');
         const popup = document.querySelector('.popup--download');
         const closeB = document.querySelector('.popup--download-close-button');
         const pastille = document.querySelector('.button--selected-number');
-        const downloadButton = document.querySelector('.button--download');
         const downloadTable = document.querySelector('.container--reve-to-download');
-        const tables = downloadTable.querySelectorAll('.reve--to-print');
+        const tables = downloadTable.querySelectorAll('.reve--to-print:not(.post-type-reveur-info)');
         const downloadReve = document.querySelector('.download-reve');
-
+        const toutSelectionner = document.querySelector('.button--select');
+        const downloadButton = document.querySelector('.button--download');
         let COUNT = 0;
+
 
         if ( elementsSelected && pastille ) {
             const pastilleText = pastille.querySelector('p');
 
+            const tableToAdd = [];
 
             elementsSelected.forEach( element => {
                 const iconText = element.nextElementSibling ;
@@ -47,215 +49,47 @@ const home = document.querySelector('.is-home');
                         COUNT++;
                         pastilleText.innerHTML = COUNT;
 
-                        // popup.classList.add('is-visible');
+                        popup.classList.add('is-visible');
                         const popupVisible = popup.classList.contains('is-visible');
 
-                        // Show table
-                        downloadTable.classList.add('clicked');
                         tables.forEach( table => {
+
                             const tableNumber = table.dataset.number;
                             if ( tableNumber === reveContainerNumber ) {
                                 const theGoodTable = table;
-                                const theGoodTableTitle = table.querySelector('.table--print-title').innerText.replace(/ /g,'-');
                                 theGoodTable.classList.add('selected--table');
-                                console.log( theGoodTable );
-                                console.log( theGoodTableTitle );
+                                console.log(`On ajoute le tableau ${theGoodTable.dataset.number} à la liste`);
 
-                                const options = {
-                                    orientation: 'l',
-                                    format: 'a4',
-                                    unit: 'px',
+                                tableToAdd.push(theGoodTable);
+                                console.log(tableToAdd);
+
+                                if ( tableToAdd.length === 4 ) {
+                                    console.log('on a TOUT SELECTIONNE');
+                                    toutSelectionner.classList.add('-is-selected');
                                 }
 
-                                const vert = [44, 175, 56];
-                                const vertClair = [96, 183, 104];
-                                const vertFonce = [14, 104, 22];
-                                const rose = [214, 112, 131];
-                                const roseClair = [213, 170, 178];
-                                const blanc = [255, 255, 255];
-                                const noir = [48, 48, 48];
-                                const doc = new jsPDF( options );
-                                doc.autoTable({
-                                    html: theGoodTable.querySelector('.table--print'),
-                                    columnStyles: {
-                                        0: {
-                                            halign: 'left',
-                                            fillColor: rose,
-                                            textColor: noir,
-                                            font: 'times',
-                                            fontStyle: 'bold',
-                                        },
-                                        1: {
-                                            halign: 'left',
-                                            fillColor: roseClair,
-                                            textColor: noir,
-                                            font: 'times',
-                                        },
-                                        2: {
-                                            halign: 'left',
-                                            // fillColor: vertClair,
-                                            textColor: noir,
-                                            font: 'times',
-                                        },
-                                        3: {
-                                            halign: 'left',
-                                            // fillColor: vertClair,
-                                            textColor: noir,
-                                            font: 'times',
-                                        },
-                                    },
-                                    margin: { top: 10 },
-                                    didParseCell: function(data) {
-
-                                        // TABLE #1
-                                        // Modalite du sommeil
-                                        if ( data.row.index >= 7 && data.row.index <= 9 && data.column.index === 0 ) {
-                                            data.cell.styles.halign = 'right'
-                                            data.cell.styles.fontStyle = 'italic'
-                                            data.cell.styles.fillColor = roseClair;
-                                        }
-                                        // Souvenir du reve
-                                        if ( data.row.index >= 11 && data.row.index <= 13 && data.column.index === 0 ) {
-                                            data.cell.styles.halign = 'right'
-                                            data.cell.styles.fontStyle = 'italic'
-                                            data.cell.styles.fillColor = roseClair;
-                                        }
-                                        // WHITE AT THE END - COLUMN 1
-                                        if ( data.row.index >= 14 && data.column.index === 0 ) {
-                                            data.cell.styles.fillColor = blanc
-                                        }
-                                        // WHITE AT THE END - COLUMN 2
-                                        if ( data.row.index >= 14 && data.column.index === 1 ) {
-                                            data.cell.styles.fillColor = blanc
-                                        }
-                                        // ROSE FONCE MODALITE COLUMN 2
-                                        if ( data.row.index === 6 && data.column.index === 1 ) {
-                                            data.cell.styles.fillColor = rose
-                                        }
-                                        // ROSE FONCE SOUVENIR COLUMN 2
-                                        if ( data.row.index === 10 && data.column.index === 1 ) {
-                                            data.cell.styles.fillColor = rose
-                                        }
-
-                                        // DONNE DU COMPTE
-                                        if ( data.row.index === 0 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertFonce
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-
-                                        // PSEUDO AGE GENRE
-                                        if ( data.row.index >= 1 && data.row.index <= 3 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-                                        // GENRE CENTRER
-                                        if ( data.row.index === 3  && data.column.index === 2 ) {
-                                            data.cell.styles.halign = 'center'
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-
-                                        // PHYSIOLOGIE RESSENTI ATTIRANCE
-                                        if ( data.row.index >= 4 && data.row.index <= 7 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-
-                                        // LANGUE & PAYS D'ENFANCE
-                                        if ( data.row.index >= 8 && data.row.index <= 10 && data.column.index === 2 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.halign = 'left'
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-
-                                        // MILIEUX
-                                        if ( data.row.index === 10 && data.column.index === 2 && data.column.index === 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.halign = 'center'
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-
-                                        // DATA LANGUE & PAYS & MILIEUX
-                                        if ( data.row.index >= 8 && data.row.index <= 10 && data.column.index === 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-                                        // MILIEUX ORIGINE & ACTUELLE
-                                        if ( data.row.index >= 11 && data.row.index <= 12 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-                                        // RAPPORT AU TRAVAIL
-                                        if ( data.row.index === 13 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-                                        // RAPPORT AU TRAVAIL - PATRON - INDEPENDANT
-                                        if ( data.row.index >= 14 && data.row.index <= 16 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-                                        // RELATION A UN PAYSAGE
-                                        if ( data.row.index === 17 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-                                        // RELATION A UN PAYSAGE - DATAS
-                                        if ( data.row.index >= 18 && data.row.index <= 27 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-                                        // FOI
-                                        if ( data.row.index === 28 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-                                        // FOI - DATA
-                                        if ( data.row.index >= 29 && data.row.index <= 30 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-                                        // RELATION AU SOMMEIL
-                                        if ( data.row.index === 31 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-                                        // RELATION AU SOMMEIL - DATA
-                                        if ( data.row.index >= 32 && data.row.index <= 33 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-                                        // RELATION AU REVES
-                                        if ( data.row.index === 34 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vert
-                                            data.cell.styles.fontStyle = 'bold'
-                                        }
-                                        // RELATION AU REVES - DATA
-                                        if ( data.row.index >= 35 && data.row.index <= 36 && data.column.index >= 2 && data.column.index <= 3 ) {
-                                            data.cell.styles.fillColor = vertClair
-                                            data.cell.styles.halign = 'right'
-                                        }
-
-                                    }
-                                });
-                                doc.save(`${theGoodTableTitle}.pdf`);
                             }
-                        })
+                        });
 
                         // Decrement le nombre de rêve sélectionné
                     } else if ( !elementTarget.classList.contains('-is-selected') ){
                         COUNT--;
                         pastilleText.innerHTML = COUNT;
 
-                        // Show table
-                        downloadTable.classList.remove('clicked');
                         tables.forEach( table => {
                             const tableNumber = table.dataset.number;
                             if ( tableNumber === reveContainerNumber ) {
                                 const theGoodTable = table;
                                 theGoodTable.classList.remove('selected--table');
+                                console.log(`On enlève le tableau ${theGoodTable.dataset.number} à la liste`);
+
+                                tableToAdd.pop(theGoodTable);
+                                console.log(tableToAdd);
+
                             }
-                        })
+                        });
                     }
+
 
                     // Enleve la pastille si le nombre est nul
                     if ( COUNT === 0 ) {
@@ -267,7 +101,6 @@ const home = document.querySelector('.is-home');
             });
 
             // SELECTION DE TOUT LES RÊVES
-            const toutSelectionner = document.querySelector('.button--select');
             toutSelectionner.addEventListener( 'click', (e) => {
                 const buttonSelectGood = e.currentTarget;
 
@@ -282,8 +115,15 @@ const home = document.querySelector('.is-home');
                     COUNT = elementsSelected.length;
                     // Si la pastille n'est plus la
                     if ( !pastille.classList.contains('is-visible') ) {
-                        pastille.classList.add('is-visible')
+                        pastille.classList.add('is-visible');
                     }
+
+                    tables.forEach( table => {
+                        table.classList.add('selected--table');
+                        console.log(`On ajoute le tableau ${table.dataset.number} à la liste`);
+                        tableToAdd.push(table);
+                    });
+                    console.log(tableToAdd);
                 } else if ( buttonSelectGood.classList.contains('-is-selected') ) {
                     // Suppreson du nombre de rêve dans la pastille
                     // pastilleText.innerHTML = 0;
@@ -295,8 +135,15 @@ const home = document.querySelector('.is-home');
                     COUNT = 0;
                     // On vire la pastille
                     if ( pastille.classList.contains('is-visible') ) {
-                        pastille.classList.remove('is-visible')
+                        pastille.classList.remove('is-visible');
                     }
+                    tables.forEach( table => {
+                        table.classList.remove('selected--table');
+                        console.log(`On enleve le tableau ${table.dataset.number} à la liste`);
+                    });
+                    tableToAdd.length = 0;
+                    console.log( tableToAdd );
+
                 }
             });
 
@@ -318,10 +165,200 @@ const home = document.querySelector('.is-home');
                     }
                 }
             });
+
+            downloadButton.addEventListener( 'click', (e) => {
+                tableToAdd.reverse();
+                tableToAdd.forEach( table => tableToPDF(table) );
+            }, false );
         }
+
 
 
     }
 
-// });
+});
 
+
+function tableToPDF(theGoodTable) {
+    const options = {
+        orientation: 'l',
+        format: 'a4',
+        unit: 'px',
+    }
+
+    const vert = [44, 175, 56];
+    const vertClair = [96, 183, 104];
+    const vertFonce = [14, 104, 22];
+    const rose = [214, 112, 131];
+    const roseClair = [213, 170, 178];
+    const blanc = [255, 255, 255];
+    const noir = [48, 48, 48];
+    const doc = new jsPDF( options );
+    const theGoodTableTitle = theGoodTable.querySelector('.table--print-title').innerText.replace(/ /g,'-');
+    doc.autoTable({
+        html: theGoodTable.querySelector('.table--print'),
+        columnStyles: {
+            0: {
+                halign: 'left',
+                fillColor: rose,
+                textColor: noir,
+                font: 'times',
+                fontStyle: 'bold',
+            },
+            1: {
+                halign: 'left',
+                fillColor: roseClair,
+                textColor: noir,
+                font: 'times',
+            },
+            2: {
+                halign: 'left',
+                // fillColor: vertClair,
+                textColor: noir,
+                font: 'times',
+            },
+            3: {
+                halign: 'left',
+                // fillColor: vertClair,
+                textColor: noir,
+                font: 'times',
+            },
+        },
+        margin: { top: 10 },
+        didParseCell: function(data) {
+
+            // TABLE #1
+            // Modalite du sommeil
+            if ( data.row.index >= 7 && data.row.index <= 9 && data.column.index === 0 ) {
+                data.cell.styles.halign = 'right'
+                data.cell.styles.fontStyle = 'italic'
+                data.cell.styles.fillColor = roseClair;
+            }
+            // Souvenir du reve
+            if ( data.row.index >= 11 && data.row.index <= 13 && data.column.index === 0 ) {
+                data.cell.styles.halign = 'right'
+                data.cell.styles.fontStyle = 'italic'
+                data.cell.styles.fillColor = roseClair;
+            }
+            // WHITE AT THE END - COLUMN 1
+            if ( data.row.index >= 14 && data.column.index === 0 ) {
+                data.cell.styles.fillColor = blanc
+            }
+            // WHITE AT THE END - COLUMN 2
+            if ( data.row.index >= 14 && data.column.index === 1 ) {
+                data.cell.styles.fillColor = blanc
+            }
+            // ROSE FONCE MODALITE COLUMN 2
+            if ( data.row.index === 6 && data.column.index === 1 ) {
+                data.cell.styles.fillColor = rose
+            }
+            // ROSE FONCE SOUVENIR COLUMN 2
+            if ( data.row.index === 10 && data.column.index === 1 ) {
+                data.cell.styles.fillColor = rose
+            }
+
+            // DONNE DU COMPTE
+            if ( data.row.index === 0 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertFonce
+                data.cell.styles.fontStyle = 'bold'
+            }
+
+            // PSEUDO AGE GENRE
+            if ( data.row.index >= 1 && data.row.index <= 3 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.fontStyle = 'bold'
+            }
+            // GENRE CENTRER
+            if ( data.row.index === 3  && data.column.index === 2 ) {
+                data.cell.styles.halign = 'center'
+                data.cell.styles.fontStyle = 'bold'
+            }
+
+            // PHYSIOLOGIE RESSENTI ATTIRANCE
+            if ( data.row.index >= 4 && data.row.index <= 7 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+
+            // LANGUE & PAYS D'ENFANCE
+            if ( data.row.index >= 8 && data.row.index <= 10 && data.column.index === 2 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.halign = 'left'
+                data.cell.styles.fontStyle = 'bold'
+            }
+
+            // MILIEUX
+            if ( data.row.index === 10 && data.column.index === 2 && data.column.index === 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.halign = 'center'
+                data.cell.styles.fontStyle = 'bold'
+            }
+
+            // DATA LANGUE & PAYS & MILIEUX
+            if ( data.row.index >= 8 && data.row.index <= 10 && data.column.index === 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+            // MILIEUX ORIGINE & ACTUELLE
+            if ( data.row.index >= 11 && data.row.index <= 12 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+            // RAPPORT AU TRAVAIL
+            if ( data.row.index === 13 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.fontStyle = 'bold'
+            }
+            // RAPPORT AU TRAVAIL - PATRON - INDEPENDANT
+            if ( data.row.index >= 14 && data.row.index <= 16 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+            // RELATION A UN PAYSAGE
+            if ( data.row.index === 17 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.fontStyle = 'bold'
+            }
+            // RELATION A UN PAYSAGE - DATAS
+            if ( data.row.index >= 18 && data.row.index <= 27 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+            // FOI
+            if ( data.row.index === 28 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.fontStyle = 'bold'
+            }
+            // FOI - DATA
+            if ( data.row.index >= 29 && data.row.index <= 30 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+            // RELATION AU SOMMEIL
+            if ( data.row.index === 31 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.fontStyle = 'bold'
+            }
+            // RELATION AU SOMMEIL - DATA
+            if ( data.row.index >= 32 && data.row.index <= 33 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+            // RELATION AU REVES
+            if ( data.row.index === 34 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vert
+                data.cell.styles.fontStyle = 'bold'
+            }
+            // RELATION AU REVES - DATA
+            if ( data.row.index >= 35 && data.row.index <= 36 && data.column.index >= 2 && data.column.index <= 3 ) {
+                data.cell.styles.fillColor = vertClair
+                data.cell.styles.halign = 'right'
+            }
+
+        }
+    });
+
+    doc.save(`${theGoodTableTitle}.pdf`);
+
+
+}

@@ -51,5 +51,4 @@ require_once( 'lib/dashboard.php' );
 // https://gist.github.com/Rarst/1739714
 require_once( 'lib/r-debug.php' );
 
-
 ?>

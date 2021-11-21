@@ -30,7 +30,7 @@ get_header();
             <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
-            <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>">
+            <a href="<?php echo esc_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Voir les rêves</h3>
             </a>
             <a href="<?php echo wp_logout_url( get_permalink( 194 ) ); ?>">
@@ -77,7 +77,8 @@ get_header();
 		'post_title'	=> true,
         'submit_value'  => __('MODIFIER LE RÊVE'),
         'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
-	));
+        'html_submit_spinner' => '<span class="acf-spinner"></span>',
+    ));
 
 	?>
 

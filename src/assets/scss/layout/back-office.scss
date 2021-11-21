@@ -86,7 +86,7 @@
 
     // Nom de l'utilisateur
     h1 {
-        margin: calc( #{$ratio} * 1 ) 0 calc( #{$ratio} * 2 ) 0;
+        margin: calc( #{$ratio} * 1 ) 0 calc( #{$ratio} * 3 ) 0;
         text-align: center;
 
         @include respond(tablet) {
@@ -138,6 +138,15 @@
             height: max-content;
             padding: 20px 40px;
             margin: 100px auto;
+
+            &:hover {
+                background-color: $color;
+                color: $bg;
+
+                a {
+                    color: inherit;
+                }
+            }
 
             @include respond(tablet) {
                 margin: 30px auto 60px;

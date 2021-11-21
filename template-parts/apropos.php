@@ -1,5 +1,5 @@
 <div class="container--cover container--apropos-cover">
-    <h3>A PROPOS</h3>
+    <h3 class="title--apropos-cover">A PROPOS</h3>
 
     <div class="cover--credits">
         <p>©  ARCHIREVE2021</p>

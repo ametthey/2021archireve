@@ -10,6 +10,14 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'		=> false,
 	));
 
+	acf_add_options_page( array(
+		'page_title'	=> 'Informations lors de l\'inscription',
+		'menu_title'	=> 'Informations lors de l\'inscription',
+		'menu_slug' 	=> 'acf-informations-lors-de-linscription',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+	));
+
 }
 
 // Enable the option show in rest

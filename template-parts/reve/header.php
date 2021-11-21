@@ -1,7 +1,7 @@
+<?php $author_id=$post->post_author; ?>
 <!-- AUTHOR ET DATE DU POST -->
 <div class="article-header--author-and-date background-<?php echo esc_html( $term_typologie->slug ); ?>">
-    <!-- <span class="article&#45;header&#45;author"><?php echo get_the_author_meta( 'nickname', false ); ?></span> &#45; <span class="article&#45;header&#45;date"><?php echo get_the_date( 'd/m/Y' );?></span> -->
-    <span class="article-header-author"><?php echo get_the_author_meta( 'nickname', false ); ?></span><span class="article-header-date"><?php echo the_field('date_du_reve'); ?></span>
+    <span class="article-header-author"><?php echo get_the_author_meta( 'nickname', $author_id ); ?></span><span class="article-header-date"><?php echo the_field('date_du_reve'); ?></span>
     <span class="date--reve"><?php echo the_field( 'date_du_reve' ); ?></span>
 </div>
 

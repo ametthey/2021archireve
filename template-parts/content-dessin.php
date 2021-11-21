@@ -62,7 +62,10 @@
             <input class="button--rounded" href="#" download="illustration.png" type="button" name="upload-button" id="upload-button" value="Valider son dessin">
             <input type="hidden" name="image-url" id="image-url" value="">
 
-            <div id="annuler" class="button--rounded">Annuler</div>
+            <?php if ( is_single() ) { ?>
+                <div id="annuler" class="button--rounded">Annuler</div>
+            <?php } else {} ?>
+
         </div>
     </div>
 </div>

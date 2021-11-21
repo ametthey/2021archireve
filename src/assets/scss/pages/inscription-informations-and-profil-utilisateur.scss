@@ -1,0 +1,268 @@
+// -----------------------------------------------------------------------------
+// CONTAINER CENTRAL
+// -----------------------------------------------------------------------------
+.container--inscription-informations {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    justify-content: center;
+    margin: auto;
+    width: 45%;
+
+    @include respond(tablet) {
+        margin: auto;
+        width: 90%;
+    }
+
+    overflow: auto;
+    position: relative;
+    transition: all 0.75s ease-in-out;
+    z-index: 2;
+    margin: 0 50px;
+    width: calc( 100vw - 100px);
+}
+
+// -----------------------------------------------------------------------------
+// Formulaire
+// -----------------------------------------------------------------------------
+
+#form--inscription-informations {
+    .acf-label {
+        position: relative;
+        margin: 0;
+        text-align: center;
+
+        label {
+            font-size: $h2;
+            font-family: $covik, sans-serif;
+            font-weight: 400 !important;
+            font-style: normal !important;
+            line-height: $h2;
+            text-align: center;
+
+            @include respond(tablet) {
+                font-size: $h5 !important;
+                line-height: 1.4;
+            }
+
+            .acf-required {
+                display: none;
+            }
+        }
+    }
+
+    .acf-input {
+        width: 100%;
+    }
+
+    .acf-field {
+        border-top: none;
+        margin: 0 0 calc( #{$ratio} *  1 ) 0 !important;
+        position: relative;
+        padding: 15px 12px;
+
+        // LABEL SPACING
+        &.field-label {
+            margin: calc( #{$ratio} * 4 ) 0 calc( #{$ratio} *  1 ) 0 !important;
+            padding: 0;
+        }
+    }
+
+
+}
+// -----------------------------------------------------------------------------
+// LABEL - hide input just to show the label
+// -----------------------------------------------------------------------------
+
+.field-label {
+    label {
+        text-transform: uppercase;
+    }
+}
+
+.acf-field-6199f6970cc56,  // AGE
+.acf-field-6191ed80b5d66,  // GENRE
+.acf-field-6191ef4267933,  // MILIEUX
+.acf-field-6191f14105fa6,  // RAPPORT AU TRAVAIL
+.acf-field-6191f1952e089,  // RELATION A UN PAYSAGE
+.acf-field-6191f28b9abec,  // FOI SPIRITUELLE
+.acf-field-6199f2bca5250,  // RELATION AU SOMMEIL
+.acf-field-6199f2a3a524f { // RELATION AUX RÊVES
+    .acf-input {
+        display: none;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// LANGUES MATERNELLES
+// -----------------------------------------------------------------------------
+@import 'pages/inscription-informations/langues-maternelles';
+
+// -----------------------------------------------------------------------------
+// PAYS D'ENFANCE
+// -----------------------------------------------------------------------------
+@import 'pages/inscription-informations/pays-d-enfance';
+// -----------------------------------------------------------------------------
+// RAPPORT AU TRAVAIL
+// -----------------------------------------------------------------------------
+#form--inscription-informations {
+    #acf-range-metier-type {
+        margin-bottom: 0 !important;
+    }
+
+    #ne-travaille-pas {
+        padding: 0 12px;
+
+        li {
+            text-align: center;
+
+            label {
+                font-family: $covik, sans-serif;
+                font-weight: 400;
+                font-style: normal;
+                font-size: $h4 !important;
+                line-height: $h4 !important;
+
+                @include respond(md) {
+                    font-size: $h5 !important;
+                    line-height: $h5 !important;
+                }
+
+                @include respond(tablet) {
+                    font-size: $h5 !important;
+                    line-height: $h5 !important;
+                }
+
+                input {
+
+                    &:focus {
+                        outline: none;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+// -----------------------------------------------------------------------------
+// FOI SPIRITUELLE
+// -----------------------------------------------------------------------------
+
+@import 'pages/inscription-informations/foi-spirituelle';
+
+
+// -----------------------------------------------------------------------------
+// SUBMIT BUTTON
+// -----------------------------------------------------------------------------
+
+// label
+.acf-button-inscription-information {
+    background-color: $bg;
+    border: 1px solid #303030;
+    cursor: pointer;
+    color: $color;
+    padding: 10px 30px;
+    border-radius: 100px 100px 100px 100px;
+    transition: all 0.325s ease-in-out;
+    text-transform: uppercase;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    font-family: $covik;
+    font-size: $h1;
+    justify-content: center;
+    line-height: $h1;
+    margin: $ratio auto calc( #{$ratio} * 1 );
+
+    @include respond(tablet) {
+        font-size: $h5;
+        line-height: 1.4;
+    }
+
+    &:hover {
+        background-color: $color;
+        color: $bg;
+    }
+}
+
+// -----------------------------------------------------------------------------
+// THANK YOU MESSAGE
+// -----------------------------------------------------------------------------
+
+// label
+.merci--beaucoup {
+    display: block !important;
+    margin-left: -10%;
+    width: 120%;
+}
+
+
+
+// -----------------------------------------------------------------------------
+// BANDEAU D'INFORMATIONS
+// -----------------------------------------------------------------------------
+@import 'pages/inscription-informations/informations';
+
+
+// -----------------------------------------------------------------------------
+// RANGE
+// -----------------------------------------------------------------------------
+@import 'pages/inscription-informations/range';
+
+
+// -----------------------------------------------------------------------------
+// COMMON STYLES
+// -----------------------------------------------------------------------------
+
+.page-template-page-inscription-informations,
+.reveur_info-template-default {
+    overflow: auto;
+
+    #masthead {
+        justify-content: center;
+    }
+
+}
+
+// -----------------------------------------------------------------------------
+// PAGE INSCRIPTION INFORMATIONS
+// -----------------------------------------------------------------------------
+.page-template-page-inscription-informations {
+
+    #masthead {
+        justify-content: center;
+
+        #header--mobile-apropos,
+        #mobile--connexion {
+            @include respond(tablet) {
+                display: none;
+            }
+
+        }
+    }
+}
+
+// -----------------------------------------------------------------------------
+// PAGE PROFIL UTILSATEUR
+// -----------------------------------------------------------------------------
+.reveur_info-template-default {
+
+    #masthead {
+        justify-content: center;
+
+        @include respond(tablet) {
+            justify-content: space-between;
+        }
+
+        #header--mobile-apropos,
+        #mobile--connexion {
+            @include respond(tablet) {
+                display: block;
+            }
+
+        }
+    }
+}
+

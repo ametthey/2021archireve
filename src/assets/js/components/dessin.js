@@ -80,7 +80,10 @@ document.addEventListener('DOMContentLoaded', (e) => {
          * Drawing functions
          *********************************************/
 
-        annuler.addEventListener('click' , Undo);
+        if ( annuler ) {
+            annuler.addEventListener('click' , Undo);
+        }
+
 
         recommencer.addEventListener('click', () => {
             ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -313,6 +316,17 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 buttonText.classList.remove('rounded--black');
                 buttonDessin.classList.add('rounded--black');
             }
+
+            const dessinEdit = document.querySelector('.acf-field-for-edit');
+            const imgDessinEdit = dessinEdit.querySelector('img').getAttribute('src');
+            const buttonDessin = document.querySelector('.contenu--button-dessin');
+
+            if ( imgDessinEdit === '' || imgDessinEdit === null || imgDessinEdit === undefined ) {
+                dessinEdit.classList.add('hidden');
+                // buttonDessin.classList.remove('rounded--black');
+
+            }
+
         }
         insertButtonRedo();
 

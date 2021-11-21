@@ -24,7 +24,7 @@
             "name": "date_du_reve",
             "type": "date_picker",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -103,7 +103,7 @@
             "name": "typologie_de_reve",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -130,14 +130,14 @@
             "name": "niveau_de_lucidite",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": "reve--lucidite"
             },
-            "show_in_rest": 1,
+            "show_in_rest": 0,
             "edit_in_rest": 0,
             "taxonomy": "niveaudelucidite",
             "field_type": "radio",
@@ -157,7 +157,7 @@
             "name": "tag",
             "type": "textarea",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -195,7 +195,7 @@
             "name": "sommeil",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -222,7 +222,7 @@
             "name": "hummeur",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -249,7 +249,7 @@
             "name": "sens",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -276,7 +276,7 @@
             "name": "lieu",
             "type": "taxonomy",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -319,7 +319,7 @@
             "name": "quand",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -340,7 +340,7 @@
             "name": "ou",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -361,7 +361,7 @@
             "name": "comment",
             "type": "text",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -429,6 +429,7 @@
     ],
     "active": true,
     "description": "",
+    "show_in_rest": 0,
     "acfe_display_title": "",
     "acfe_autosync": [
         "json"
@@ -436,5 +437,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1636008064
+    "modified": 1636943134
 }

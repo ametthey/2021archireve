@@ -74,7 +74,7 @@
 
                     <!-- Site branding -->
                     <div class="site-branding">
-                        <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>" >
+                        <a href="<?php echo esc_url( home_url() ); ?>" >
                             <?php get_template_part( 'template-parts/content', 'logo' ); ?>
                         </a>
                     </div>

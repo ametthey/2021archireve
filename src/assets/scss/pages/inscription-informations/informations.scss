@@ -1,0 +1,62 @@
+$filter: 550px;
+
+// TOOLTIP
+.container--inscription-informations-tooltip {
+    background-color: $bg;
+    border-left: 1px solid $color;
+    border-top: 1px solid $color;
+    height: calc( 100vh - 50px );
+    transform: translateX(-50px);
+    outline: none;
+    -webkit-tap-highlight-color: transparent;
+    pointer-events: auto;
+    position: fixed;
+    right: -#{$filter};
+    top: 50px;
+    transition: all 0.75s ease-in-out;
+    width: $filter;
+    z-index: 3;
+    display: flex;
+
+    &.is-open {
+        @include respond(tablet) {
+            transform: translateX(100%);
+        }
+
+
+        transform: translateX(-#{$filter});
+
+        .content--left-close {
+            opacity: 1;
+        }
+
+    }
+}
+
+.container--tooltip-cover {
+    border-right: 1px solid $color;
+    cursor: pointer;
+    min-width: 50px !important;
+}
+
+.inscription-tooltip-cover {
+    position: absolute;
+    top: 30px;
+    left: 9.6px;
+}
+
+.inscription-tooltip-texte {
+    padding:  50px 50px 50px 50px;
+    overflow: auto; // for scrolling into the filters list
+    // overflow: auto;
+
+    h2 {
+        margin: 50px 0 12.5px;
+
+        &:first-child {
+            margin-top: 0;
+        }
+    }
+
+    width: 100%;
+}

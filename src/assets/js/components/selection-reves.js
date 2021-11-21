@@ -1,362 +1,179 @@
-import jsPDF from "jspdf";
-import autoTable from 'jspdf-autotable';
-import dompurify from 'dompurify';
-import html2canvas from 'html2canvas';
+import { tableToPDF } from '../components/table-to-pdf.js';
+import { replaceCellsFromTable } from '../components/selection-reves-functions.js';
 
-// https://github.com/thawkin3/html-to-pdf-demo/blob/master/scripts/pdfExportMethods.js
-// https://github.com/parallax/jsPDF
-// Ajouter à la pastille le nombre de rêve sélectionné
-
-window.addEventListener( 'load', (e) => {
-    const home = document.querySelector('.is-home');
-    if ( home ) {
-        const elementsSelected = document.querySelectorAll('.button--select-to-download');
-        const popup = document.querySelector('.popup--download');
-        const closeB = document.querySelector('.popup--download-close-button');
-        const pastille = document.querySelector('.button--selected-number');
-        const downloadTable = document.querySelector('.container--reve-to-download');
-        const tables = downloadTable.querySelectorAll('.reve--to-print');
-        const toutSelectionner = document.querySelector('.button--select');
-        const downloadButton = document.querySelector('.button--download');
-        let COUNT = 0;
+const buttonsSelectionReve = document.querySelectorAll(".button--select-to-download");
+const pastille = document.querySelector(".button--selected-number");
+const pastilleText = document.querySelector(".button--selected-number p");
+const popup = document.querySelector(".popup--download");
+const closeB = document.querySelector(".popup--download-close-button");
+const downloadTable = document.querySelector(".container--reve-to-download");
+const tables = document.querySelectorAll(".reve--to-print");
+const buttonAllSelected = document.querySelector(".button--select");
+const downloadButton = document.querySelector(".button--download");
+const tableToAdd = [];
+let COUNT = 0;
 
 
-        if ( elementsSelected && pastille ) {
-            const pastilleText = pastille.querySelector('p');
 
-            const tableToAdd = [];
-
-            elementsSelected.forEach( element => {
-                const iconText = element.nextElementSibling ;
-
-                const downloadContainer = element.closest('.article-reve--download');
-                const headerContainer = downloadContainer.closest('.article-reve--header');
-                const reveContainer = headerContainer.closest('.article-reve');
-                const reveContainerNumber = reveContainer.dataset.number;
-
-                // Click sur le bouton de téléchargement
-                element.addEventListener( 'click', (e) => {
-                    const elementTarget = e.currentTarget;
-
-                    element.classList.toggle('-is-selected');
-                    iconText.classList.toggle('is-selected');
-
-                    // Incremente le nombre de rêve sélectionné
-                    if ( elementTarget.classList.contains('-is-selected') ) {
-                        // Mintre la pastille si le nombre est nul
-                        pastille.classList.add('is-visible');
-                        COUNT++;
-                        pastilleText.innerHTML = COUNT;
-
-                        popup.classList.add('is-visible');
-
-                        tables.forEach( table => {
-
-                            const tableNumber = table.dataset.number;
-                            if ( tableNumber === reveContainerNumber ) {
-                                const theGoodTable = table;
-                                theGoodTable.classList.add('selected--table');
-                                console.log(`On ajoute le tableau ${theGoodTable.dataset.number} à la liste`);
-
-                                tableToAdd.push(theGoodTable);
-                                console.log(tableToAdd);
-
-                                if ( tableToAdd.length === 4 ) {
-                                    console.log('on a TOUT SELECTIONNE');
-                                    toutSelectionner.classList.add('-is-selected');
-                                }
-
-                            }
-                        });
-
-                        // Decrement le nombre de rêve sélectionné
-                    } else if ( !elementTarget.classList.contains('-is-selected') ){
-                        COUNT--;
-                        pastilleText.innerHTML = COUNT;
-
-                        tables.forEach( table => {
-                            const tableNumber = table.dataset.number;
-                            if ( tableNumber === reveContainerNumber ) {
-                                const theGoodTable = table;
-                                theGoodTable.classList.remove('selected--table');
-                                console.log(`On enlève le tableau ${theGoodTable.dataset.number} à la liste`);
-
-                                tableToAdd.pop(theGoodTable);
-                                console.log(tableToAdd);
-
-                            }
-                        });
-                    }
+if ( buttonsSelectionReve && pastille ) {
 
 
-                    // Enleve la pastille si le nombre est nul
-                    if ( COUNT === 0 ) {
-                        pastille.classList.remove('is-visible');
-                        popup.classList.remove('is-visible');
+    buttonsSelectionReve.forEach( ( element ) => {
+        const iconText = element.nextElementSibling ;
+        const downloadContainer = element.closest(".article-reve--download");
+        const headerContainer = downloadContainer.closest(".article-reve--header");
+        const reveContainer = headerContainer.closest(".article-reve");
+        const reveContainerNumber = reveContainer.dataset.number;
+
+        // Click sur le bouton de téléchargement
+        element.addEventListener( "click", (e) => {
+            const elementTarget = e.currentTarget;
+
+            element.classList.toggle("-is-selected");
+            iconText.classList.toggle("is-selected");
+
+            // Incremente le nombre de rêve sélectionné
+            if ( elementTarget.classList.contains("-is-selected") ) {
+                COUNT++;
+                pastilleText.innerHTML = COUNT;
+                // Mintre la pastille si le nombre est nul
+                pastille.classList.add("is-visible");
+                popup.classList.add("is-visible");
+                let theGoodTable;
+                tables.forEach( table => {
+                    if ( table.dataset.number === reveContainerNumber ) {
+                        theGoodTable = table;
+                        theGoodTable.classList.add("selected--table");
+                        tableToAdd.push(theGoodTable);
+
+                        mergeTheTables(theGoodTable);
+
                     }
                 });
 
-            });
-
-            // SELECTION DE TOUT LES RÊVES
-            toutSelectionner.addEventListener( 'click', (e) => {
-                const buttonSelectGood = e.currentTarget;
-
-                if ( !buttonSelectGood.classList.contains('-is-selected') ) {
-                    // Ajout du nombre de rêve dans la pastille
-                    pastilleText.innerHTML = elementsSelected.length;
-                    // Ajout de la classe pour rendre le bouton active
-                    toutSelectionner.classList.add('-is-selected');
-                    // Ajout la classe active a tout les boutons des reves
-                    elementsSelected.forEach(element => element.classList.add('-is-selected'));
-                    // On met le compteur au nombre de reve
-                    COUNT = elementsSelected.length;
-                    // Si la pastille n'est plus la
-                    if ( !pastille.classList.contains('is-visible') ) {
-                        pastille.classList.add('is-visible');
-                    }
-
-                    tables.forEach( table => {
-                        table.classList.add('selected--table');
-                        console.log(`On ajoute le tableau ${table.dataset.number} à la liste`);
-                        tableToAdd.push(table);
-                    });
-                    console.log(tableToAdd);
-                } else if ( buttonSelectGood.classList.contains('-is-selected') ) {
-                    // Suppreson du nombre de rêve dans la pastille
-                    // pastilleText.innerHTML = 0;
-                    // Suppression de la classe pour rendre le bouton active
-                    toutSelectionner.classList.remove('-is-selected');
-                    // suppression la classe active a tout les boutons des reves
-                    elementsSelected.forEach(element => element.classList.remove('-is-selected'));
-                    // On remet le compteur à zero
-                    COUNT = 0;
-                    // On vire la pastille
-                    if ( pastille.classList.contains('is-visible') ) {
-                        pastille.classList.remove('is-visible');
-                    }
-                    tables.forEach( table => {
-                        table.classList.remove('selected--table');
-                        console.log(`On enleve le tableau ${table.dataset.number} à la liste`);
-                    });
-                    tableToAdd.length = 0;
-                    console.log( tableToAdd );
-
+                // Si tout les rêves sont cochés, le bouton TOUT SÉLECTIONNER est actif
+                if ( tableToAdd.length >= 4 ) {
+                    buttonAllSelected.classList.add("-is-selected")
                 }
-            });
 
-            closeB.addEventListener( 'click', (e) => {
-                if ( popup.classList.contains('is-visible') ) {
-                    popup.classList.remove('is-visible');
-
-                    // ENLEVER LA CLASS IS SELECTED DES BOUTONS
-                    const selectedElements = Array.from(document.querySelectorAll('.-is-selected'));
-                    selectedElements.forEach(selectedElement => {
-                        selectedElement.classList.remove('-is-selected');
-                    });
-
-                    // REMETTRE LE COMPTEUR A ZERO
-                    if ( COUNT !== 0 ) {
-                        pastilleText.innerHTML = 0;
-                        COUNT = 0;
-                        console.log(COUNT);
+            // Decrement le nombre de rêve sélectionné
+            } else if ( !elementTarget.classList.contains("-is-selected") ){
+                COUNT--;
+                pastilleText.innerHTML = COUNT;
+                tables.forEach( table => {
+                    if ( table.dataset.number === reveContainerNumber ) {
+                        const theGoodTable = table;
+                        theGoodTable.classList.remove("selected--table");
+                        tableToAdd.pop(theGoodTable);
                     }
+                });
+                if ( tableToAdd.length < 4 ) {
+                    buttonAllSelected.classList.remove("-is-selected")
                 }
-            });
+                console.log( tableToAdd );
+            }
+            // Enleve la pastille si le nombre est nul
+            if ( COUNT === 0 ) {
+                pastille.classList.remove("is-visible");
+                popup.classList.remove("is-visible");
+            }
+        });
 
-            downloadButton.addEventListener( 'click', (e) => {
-                tableToAdd.reverse();
-                tableToAdd.forEach( table => tableToPDF(table) );
-            }, false );
-        }
-
-
-
-    }
-
-});
-
-
-function tableToPDF(theGoodTable) {
-    const options = {
-        orientation: 'l',
-        format: 'a4',
-        unit: 'px',
-    };
-
-    const vert = [44, 175, 56];
-    const vertClair = [96, 183, 104];
-    const vertFonce = [14, 104, 22];
-    const rose = [214, 112, 131];
-    const roseClair = [213, 170, 178];
-    const blanc = [255, 255, 255];
-    const noir = [48, 48, 48];
-    const doc = new jsPDF( options );
-    const theGoodTableTitle = theGoodTable.querySelector('.table--print-title').innerText.replace(/ /g,'-');
-    doc.autoTable({
-        html: theGoodTable.querySelector('.table--print'),
-        columnStyles: {
-            0: {
-                halign: 'left',
-                fillColor: rose,
-                textColor: noir,
-                font: 'times',
-                fontStyle: 'bold',
-            },
-            1: {
-                halign: 'left',
-                fillColor: roseClair,
-                textColor: noir,
-                font: 'times',
-            },
-            2: {
-                halign: 'left',
-                // fillColor: vertClair,
-                textColor: noir,
-                font: 'times',
-            },
-            3: {
-                halign: 'left',
-                // fillColor: vertClair,
-                textColor: noir,
-                font: 'times',
-            },
-        },
-        margin: { top: 10 },
-        didParseCell: function(data) {
-
-            // TABLE #1
-            // Modalite du sommeil
-            if ( data.row.index >= 7 && data.row.index <= 9 && data.column.index === 0 ) {
-                data.cell.styles.halign = 'right';
-                data.cell.styles.fontStyle = 'italic';
-                data.cell.styles.fillColor = roseClair;
-            }
-            // Souvenir du reve
-            if ( data.row.index >= 11 && data.row.index <= 13 && data.column.index === 0 ) {
-                data.cell.styles.halign = 'right';
-                data.cell.styles.fontStyle = 'italic';
-                data.cell.styles.fillColor = roseClair;
-            }
-            // WHITE AT THE END - COLUMN 1
-            if ( data.row.index >= 14 && data.column.index === 0 ) {
-                data.cell.styles.fillColor = blanc;
-            }
-            // WHITE AT THE END - COLUMN 2
-            if ( data.row.index >= 14 && data.column.index === 1 ) {
-                data.cell.styles.fillColor = blanc;
-            }
-            // ROSE FONCE MODALITE COLUMN 2
-            if ( data.row.index === 6 && data.column.index === 1 ) {
-                data.cell.styles.fillColor = rose;
-            }
-            // ROSE FONCE SOUVENIR COLUMN 2
-            if ( data.row.index === 10 && data.column.index === 1 ) {
-                data.cell.styles.fillColor = rose;
-            }
-
-            // DONNE DU COMPTE
-            if ( data.row.index === 0 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertFonce;
-                data.cell.styles.fontStyle = 'bold';
-            }
-
-            // PSEUDO AGE GENRE
-            if ( data.row.index >= 1 && data.row.index <= 3 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.fontStyle = 'bold';
-            }
-            // GENRE CENTRER
-            if ( data.row.index === 3  && data.column.index === 2 ) {
-                data.cell.styles.halign = 'center';
-                data.cell.styles.fontStyle = 'bold';
-            }
-
-            // PHYSIOLOGIE RESSENTI ATTIRANCE
-            if ( data.row.index >= 4 && data.row.index <= 7 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-
-            // LANGUE & PAYS D'ENFANCE
-            if ( data.row.index >= 8 && data.row.index <= 10 && data.column.index === 2 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.halign = 'left';
-                data.cell.styles.fontStyle = 'bold';
-            }
-
-            // MILIEUX
-            if ( data.row.index === 10 && data.column.index === 2 && data.column.index === 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.halign = 'center';
-                data.cell.styles.fontStyle = 'bold';
-            }
-
-            // DATA LANGUE & PAYS & MILIEUX
-            if ( data.row.index >= 8 && data.row.index <= 10 && data.column.index === 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-            // MILIEUX ORIGINE & ACTUELLE
-            if ( data.row.index >= 11 && data.row.index <= 12 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-            // RAPPORT AU TRAVAIL
-            if ( data.row.index === 13 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.fontStyle = 'bold';
-            }
-            // RAPPORT AU TRAVAIL - PATRON - INDEPENDANT
-            if ( data.row.index >= 14 && data.row.index <= 16 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-            // RELATION A UN PAYSAGE
-            if ( data.row.index === 17 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.fontStyle = 'bold';
-            }
-            // RELATION A UN PAYSAGE - DATAS
-            if ( data.row.index >= 18 && data.row.index <= 27 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-            // FOI
-            if ( data.row.index === 28 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.fontStyle = 'bold';
-            }
-            // FOI - DATA
-            if ( data.row.index >= 29 && data.row.index <= 30 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-            // RELATION AU SOMMEIL
-            if ( data.row.index === 31 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.fontStyle = 'bold';
-            }
-            // RELATION AU SOMMEIL - DATA
-            if ( data.row.index >= 32 && data.row.index <= 33 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-            // RELATION AU REVES
-            if ( data.row.index === 34 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vert;
-                data.cell.styles.fontStyle = 'bold';
-            }
-            // RELATION AU REVES - DATA
-            if ( data.row.index >= 35 && data.row.index <= 36 && data.column.index >= 2 && data.column.index <= 3 ) {
-                data.cell.styles.fillColor = vertClair;
-                data.cell.styles.halign = 'right';
-            }
-
-        }
     });
 
-    doc.save(`${theGoodTableTitle}.pdf`);
+    buttonAllSelected.addEventListener( "click", toggleSelection , false);
+    closeB.addEventListener( "click", closeDownloadPopup, false);
+    downloadButton.addEventListener( "click", DLTableToPDF, false );
+}
+
+function DLTableToPDF() {
+    tableToAdd.forEach( ( table ) => (tableToPDF(table) ) );
+}
+
+function toggleSelection(e) {
+    const buttonAllSelected = e.currentTarget;
+    if ( !buttonAllSelected.classList.contains("-is-selected") ) {
+        selectEverything();
+    } else  {
+        deselectEverything();
+    }
+}
+
+function selectEverything() {
+    pastilleText.innerHTML = buttonsSelectionReve.length;
+    buttonAllSelected.classList.add("-is-selected");
+    buttonsSelectionReve.forEach(element => element.classList.add("-is-selected"));
+    COUNT = buttonsSelectionReve.length;
+    if ( !pastille.classList.contains("is-visible") ) pastille.classList.add("is-visible");
+    tables.forEach( ( table ) => ( table.classList.add("selected--table") , tableToAdd.push(table) ) );
+}
+
+function deselectEverything() {
+    buttonAllSelected.classList.remove("-is-selected");
+    buttonsSelectionReve.forEach(element => element.classList.remove("-is-selected"));
+    COUNT = 0;
+    if ( pastille.classList.contains("is-visible") ) pastille.classList.remove("is-visible");
+    tables.forEach( ( table ) => ( table.classList.remove("selected--table") , tableToAdd.length = 0 ) );
+}
+
+function closeDownloadPopup(e) {
+    popup.classList.remove("is-visible");
+    const selectedElements = Array.from(document.querySelectorAll(".-is-selected"));
+    selectedElements.forEach(selectedElement => {
+        selectedElement.classList.remove("-is-selected");
+    });
+
+    // On réinitialise tout !
+    if ( COUNT !== 0 ) ( pastilleText.innerHTML = 0 , COUNT = 0 );
 
 
+    if ( tableToAdd.length === 0 ) {
+        // Silence is golden
+    } else {
+        tableToAdd.length = 0;
+    }
+}
+
+function mergeTheTables(tableReve) {
+    const pseudoReve = tableReve.querySelector('.table-pseudo').innerText.trim();
+    const tablesInfoReveur = document.querySelectorAll('.reve--to-print.post-type-reveur-info');
+    let irPseudo, infoReveurKeys, infoReveurValues, same;
+    const infoReveurObject = new Object();
+
+    // On cherche la class table-pseudo pour comparer avec le tableau avec le reve
+    tablesInfoReveur.forEach( infoReveur => {
+        const cellsReveur = infoReveur.querySelectorAll('td');
+
+        // On a trouvé la cellule
+        irPseudo = Array.from(cellsReveur).find( cell => cell.classList.contains('table-pseudo') );
+        const pseudoReveur = irPseudo.innerText.trim();
+
+        // On les compare
+        if ( pseudoReveur === pseudoReve ) {
+
+            console.log('pseudos are the same !');
+
+            //On recupere le tableau avec les informations du rêveur
+            const infoReveurCells = infoReveur;
+
+            // On récupere toutes les cellules avec une class et leurs contenus
+            const infoReveurCellWithClass = Array.from(infoReveurCells.querySelectorAll('td')).filter( cell => cell.getAttribute('class') );
+
+            // On stocke la class et le contenu de la cellule dans un object
+            let content, name ;
+            infoReveurCellWithClass.forEach( cell => ( name = cell.getAttribute('class'), content = cell.innerText.trim() , infoReveurObject[`${name}`] = content ));
+            infoReveurKeys = Object.keys(infoReveurObject);
+            infoReveurValues = Object.values(infoReveurObject);
+
+            // On crééer une fonction pour ajouter les infos
+            replaceCellsFromTable(tableReve, infoReveurKeys, infoReveurValues);
+
+        } else {
+            // Silence is golden
+        }
+    });
+}
+
+function listForEach( elements ) {
+    elements.forEach( element => console.log(`Le nom de l'élément est ${element}`) );
 }

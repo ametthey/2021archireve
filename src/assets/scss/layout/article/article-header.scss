@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     justify-content: flex-start;
     position: relative;
+    padding-right: 42px;
 
     // ADD AND REMOVE BORDER ON ACTIVE STATE
     border-bottom-width: 1px !important;
@@ -94,6 +95,7 @@
                 // border: 2px solid $color;
                 border-radius: 50%;
                 background-color: $bg;
+                cursor: pointer;
                 height: 12px;
                 margin: -6px 0px 0px -6px;
                 width: 12px;

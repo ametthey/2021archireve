@@ -58,18 +58,9 @@
 @import 'pages/connexion';
 @import 'pages/inscription';
 @import 'pages/erreur';
-@import 'pages/profil-utilisateur';
 
-@import 'pages/inscription-informations';
-@import 'pages/acf-inscription-informations';
-@import 'pages/inscription-informations/tooltip';
-@import 'pages/inscription-informations/foi-spirituelle';
-@import 'pages/inscription-informations/espacement';
-@import 'pages/inscription-informations/radio-buttons';
-@import 'pages/inscription-informations/range';
-@import 'pages/inscription-informations/langue';
-@import 'pages/inscription-informations/enfance';
-
+// QUESTIONNAIRE D'INSCRIPTION & PROFIL D'UTILISATEUR
+@import 'pages/inscription-informations-and-profil-utilisateur';
 
 @import 'pages/creation-reve';
 @import 'pages/creation-reve/typologie';
@@ -81,7 +72,9 @@
 @import 'pages/creation-reve/modalite-lieu';
 @import 'pages/creation-reve/souvenirs';
 @import 'pages/creation-reve/dessin';
+
 @import 'pages/modification-reve';
+
 
 
 @import 'components/test';
@@ -96,6 +89,8 @@
 // @import 'pages/reves/contenu';
 // @import 'pages/reves/tag-texte';
 // @import 'pages/reves/submit';
+// @import 'pages/modification-reve';
+// @import 'pages/inscription-informations/tooltip';
 
 
 

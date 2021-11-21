@@ -3,11 +3,10 @@ import './components/home.js';
 import './components/apropos.js';
 import './components/articles.js';
 import './components/filters.js';
-import './components/merging-tables.js';
 
 // INSCRIPTION INFORMATIONS
 import './components/inscription-informations.js';
-import './components/inscription-informations-titles.js'; // Remplacer peut-être par tooltip ?
+// import './components/inscription-informations-titles.js'; // Remplacer peut-être par tooltip ?
 
 // BACK OFFICE
 import './components/back-office.js';
@@ -25,6 +24,8 @@ import './components/dessin.js';
 
 
 import './components/selection-reves.js';
+import './components/table-to-pdf.js';
+import './components/selection-reves-functions.js';
 
 
 

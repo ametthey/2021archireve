@@ -2,7 +2,7 @@
 const articles = document.querySelectorAll('.article-reve');
 
 articles.forEach( article => {
-    const articleHeader = article.querySelector('.article-reve--header h1');
+    const articleHeader = article.querySelector('.article-reve--header');
     const articleTexte = article.querySelector('.article-reve--text');
     const articleTaxonomies = article.querySelector('.article-reve--taxonomies');
 
@@ -12,7 +12,8 @@ articles.forEach( article => {
          * Affichage du contenu
          ******************************************************************************/
         article.addEventListener( 'click' , (e) => {
-            if ( e.target === articleHeader || e.target === articleTaxonomies ) {
+            // console.log( e.target );
+            if ( e.target === articleHeader || e.target === articleHeader.querySelector('.article-reve--taxonomies') || e.target === articleHeader.querySelector('.article-header-date') || e.target === articleTaxonomies.querySelector('.article-taxonomies--typologie-icone') || e.target === articleTexte || e.target === articleTexte.querySelector('img') || e.target === articleHeader.querySelector('h1') || e.target === articleTaxonomies ) {
 
                 if ( articleTexte.classList.contains('-is-active') ) {
                     articleHeader.classList.remove('-is-active');

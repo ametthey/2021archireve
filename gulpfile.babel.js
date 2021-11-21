@@ -79,7 +79,7 @@ export const styles = () => {
         .pipe(gulpif(!PRODUCTION,sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
         .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ({
-            grid: true,
+            grid: 'autoplace',
             flexbox: true,
         })])))
         .pipe(gulpif(PRODUCTION, cleanCSS({compatibility: 'ie8'})))

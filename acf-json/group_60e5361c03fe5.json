@@ -3,8 +3,32 @@
     "title": "Inscription avec les informations de l'utilisateur",
     "fields": [
         {
+            "key": "field_6199f6970cc56",
+            "label": "AGE",
+            "name": "age",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
             "key": "field_60e537a66ad5a",
-            "label": "Âge",
+            "label": "",
             "name": "age",
             "type": "range",
             "instructions": "",
@@ -16,12 +40,38 @@
                 "id": ""
             },
             "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": 50,
             "min": "",
             "max": "",
             "step": "",
             "prepend": "",
             "append": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
+            "key": "field_6191ed80b5d66",
+            "label": "GENRE",
+            "name": "genre",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
             "acfe_settings": "",
             "acfe_validate": ""
         },
@@ -104,16 +154,19 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "acf-langue-maternelle",
+                "class": "acf-langue-maternelle field-label",
                 "id": ""
             },
+            "acfe_permissions": "",
             "show_in_rest": 0,
             "edit_in_rest": 0,
             "default_value": "",
             "placeholder": "écrivez les langues séparées d'une virgule.",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
         },
         {
             "key": "field_60fe40a90c4eb",
@@ -125,21 +178,47 @@
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
-                "class": "acf-pays-enfance",
+                "class": "acf-pays-enfance field-label",
                 "id": ""
             },
+            "acfe_permissions": "",
             "show_in_rest": 0,
             "edit_in_rest": 0,
-            "hide_admin": 0,
             "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": ""
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
+            "key": "field_6191ef4267933",
+            "label": "MILIEUX",
+            "name": "milieux",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
         },
         {
             "key": "field_60fe40b10c4ec",
-            "label": "ORIGINE",
+            "label": "Origine",
             "name": "milieux_origine",
             "type": "range",
             "instructions": "",
@@ -151,6 +230,8 @@
                 "id": "acf-separator-milieux"
             },
             "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": 50,
             "min": "",
             "max": 100,
@@ -162,7 +243,7 @@
         },
         {
             "key": "field_60fe40c70c4ed",
-            "label": "ACTUEL",
+            "label": "Actuel",
             "name": "milieux_actuel",
             "type": "range",
             "instructions": "",
@@ -174,12 +255,38 @@
                 "id": ""
             },
             "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": 50,
             "min": "",
             "max": 100,
             "step": "",
             "prepend": "",
             "append": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
+            "key": "field_6191f14105fa6",
+            "label": "RAPPORT AU TRAVAIL",
+            "name": "rapport_au_travail",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
             "acfe_settings": "",
             "acfe_validate": ""
         },
@@ -251,6 +358,30 @@
             "layout": "vertical",
             "return_format": "value",
             "save_other_choice": 0
+        },
+        {
+            "key": "field_6191f1952e089",
+            "label": "RELATION À UN PAYSAGE",
+            "name": "relation_a_un_paysage",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
         },
         {
             "key": "field_60fe41080c4f0",
@@ -460,6 +591,30 @@
             "acfe_validate": ""
         },
         {
+            "key": "field_6191f28b9abec",
+            "label": "FOI SPIRITUELLE",
+            "name": "foi_spirituelle",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
             "key": "field_60fe42100c4fa",
             "label": "Origine",
             "name": "foi_spirituel_origine",
@@ -518,8 +673,32 @@
             "save_other_choice": 0
         },
         {
-            "key": "field_60fe425e0c4fc",
+            "key": "field_6199f2bca5250",
             "label": "RELATION AU SOMMEIL",
+            "name": "relation_au_sommeil",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
+            "key": "field_60fe425e0c4fc",
+            "label": "",
             "name": "relation_au_sommeil_bon_mauvais",
             "type": "range",
             "instructions": "",
@@ -531,6 +710,8 @@
                 "id": "acf-range-sommeil-1"
             },
             "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": 50,
             "min": "",
             "max": 100,
@@ -564,8 +745,32 @@
             "acfe_validate": ""
         },
         {
-            "key": "field_60fe42870c4fe",
+            "key": "field_6199f2a3a524f",
             "label": "RELATION AUX RÊVES",
+            "name": "relation_aux_reves",
+            "type": "text",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "field-label",
+                "id": ""
+            },
+            "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
+            "default_value": "",
+            "placeholder": "",
+            "prepend": "",
+            "append": "",
+            "maxlength": "",
+            "acfe_settings": "",
+            "acfe_validate": ""
+        },
+        {
+            "key": "field_60fe42870c4fe",
+            "label": "",
             "name": "relation_aux_reves_reveur_non",
             "type": "range",
             "instructions": "",
@@ -577,6 +782,8 @@
                 "id": "acf-range-reves-1"
             },
             "acfe_permissions": "",
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "default_value": 50,
             "min": "",
             "max": 100,
@@ -650,6 +857,7 @@
     ],
     "active": true,
     "description": "",
+    "show_in_rest": 0,
     "acfe_display_title": "",
     "acfe_autosync": [
         "json"
@@ -661,5 +869,5 @@
     "acfe_form": 1,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1635950351
+    "modified": 1637480258
 }

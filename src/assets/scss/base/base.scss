@@ -6,7 +6,7 @@
  * Make all elements inherit from `html` box-sizing
  */
 * {
-    box-sizing: inherit;
+    box-sizing: border-box;
     scrollbar-width: none;
 
     &::-webkit-scrollbar {
@@ -14,11 +14,11 @@
     }
 
     & :before {
-        box-sizing: inherit;
+        box-sizing: border-box;
     }
 
     & :after {
-        box-sizing: inherit;
+        box-sizing: border-box;
     }
 }
 

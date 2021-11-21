@@ -1,35 +1,164 @@
-input[type="radio"] {
-    height: 15px;
-    width: 15px;
+#acf-radio-foi-origine,
+#acf-radio-foi-actuelle {
+    .acf-radio-list {
+        align-items: center;
+        display: flex !important;
+        justify-content: center;
+        flex-wrap: wrap;
+        margin: $ratio -10% !important;
+        width: 120%;
+        overflow: visible;
 
-    &:focus {
-        outline: none;
+        @include respond(tablet) {
+            margin: $ratio 0 !important;
+        }
+
+        li {
+            align-items: center;
+            display: flex;
+            flex-direction: column;
+            // flex: 1;
+            justify-content: center;
+            height: 100%;
+            margin: 0 !important;
+            width: calc( 100% / 6 );
+
+            @include respond(tablet) {
+                margin: 0 0 $ratio 0 !important;
+                width: calc( 100% / 2 )
+            }
+
+            // Animiste
+            &:nth-of-type(1) {
+                label {
+                    &:before {
+                        background-image: url('/../../wp-content/themes/_themename/dist/assets/images/foi/animiste.svg');
+                    }
+                }
+            }
+            // Théiste
+            &:nth-of-type(2) {
+
+                label {
+                    &:before {
+                        background-image: url('/../../wp-content/themes/_themename/dist/assets/images/foi/theiste.svg');
+                    }
+                }
+            }
+            // Déiste
+            &:nth-of-type(3) {
+
+                label {
+                    &:before {
+                        background-image: url('/../../wp-content/themes/_themename/dist/assets/images/foi/deiste.svg');
+                    }
+                }
+            }
+            // Agnostique
+            &:nth-of-type(4) {
+
+                label {
+                    &:before {
+                        background-image: url('/../../wp-content/themes/_themename/dist/assets/images/foi/agnostique.svg');
+                    }
+                }
+            }
+            // Athéiste
+            &:nth-of-type(5) {
+                label
+                {
+                    &:before {
+                        background-image: url('/../../wp-content/themes/_themename/dist/assets/images/foi/atheiste.svg');
+                    }
+                }
+            }
+            // Panthéiste
+            &:nth-of-type(6) {
+                label {
+
+                    &:before {
+                        background-image: url('/../../wp-content/themes/_themename/dist/assets/images/foi/pantheiste.svg');
+                    }
+
+                }
+            }
+        }
+
+        @include respond(tablet) {
+            width: 100%;
+        }
+
+        label {
+            align-items: center;
+            display: flex !important;
+            flex-direction: column;
+            font-family: $covik, sans-serif;
+            font-weight: 400;
+            font-style: normal;
+            font-size: $h4 !important;
+            justify-content: center;
+            line-height: $h4 !important;
+
+            @include respond(md) {
+                font-size: $h5 !important;
+                line-height: $h5 !important;
+            }
+
+            @include respond(tablet) {
+                font-size: $h5 !important;
+                line-height: $h5 !important;
+            }
+
+
+            &:before {
+                background-repeat: no-repeat;
+                background-position: center;
+                content:'';
+                height: 50px;
+                margin: auto;
+                width: 80px;
+            }
+
+            input {
+
+                margin: calc( #{$ratio} * 0.7 ) 0 calc( #{$ratio} * 0.4 ) !important;
+                height: 15px;
+                width: 15px;
+
+                &:focus {
+                    outline: none;
+                }
+
+                &:after {
+                    background-color: $bg;
+                    border: 1px solid $color;
+                    border-radius: 50%;
+                    content: '';
+                    display: inline-block;
+                    height: 15px;
+                    position: relative;
+                    visibility: visible;
+                    width: 15px;
+
+                    margin: 0 0 3px 0px;
+                }
+
+                &:checked:after {
+                    background-color: $color;
+                    border: 2px solid $color;
+                    border-radius: 50%;
+                    content: '';
+                    display: inline-block;
+                    height: 15px;
+                    position: relative;
+                    visibility: visible;
+                    width: 15px;
+
+                }
+
+            }
+        }
+
     }
 
-    &:after {
-        background-color: $bg;
-        border: 1px solid $color;
-        border-radius: 50%;
-        content: '';
-        display: inline-block;
-        height: 15px;
-        position: relative;
-        visibility: visible;
-        width: 15px;
-
-        margin: 0 0 3px 0px;
-    }
-
-    &:checked:after {
-        background-color: $color;
-        border: 2px solid $color;
-        border-radius: 50%;
-        content: '';
-        display: inline-block;
-        height: 15px;
-        position: relative;
-        visibility: visible;
-        width: 15px;
-
-    }
 }

@@ -1,19 +1,4 @@
 .acf-range {
-    .acf-label {
-        margin: 0 !important;
-        label {
-            font-size: $h2;
-            font-family: $covik, sans-serif;
-            font-weight: 400 !important;
-            font-style: normal !important;
-            line-height: $h2;
-            text-align: center;
-
-            .acf-required {
-                display: none;
-            }
-        }
-    }
 
     .acf-range-wrap {
         align-items: center;
@@ -88,21 +73,6 @@
         input[type="number"] {
             display: none;
             pointer-events: none;
-            // border: none;
-            // bottom: -43px;
-            // color: $color;
-            // font-family: $covik;
-            // font-size: $h3;
-            // line-height: $h3;
-            // margin: 0;
-            // // padding: 0;
-            // position: absolute;
-            // right: calc(50% - 66px);
-            //
-            // &:nth-child(n+2){
-            //     display: none;
-            //     pointer-events: none;
-            // }
         }
 
         .bubble-endpoints {
@@ -161,7 +131,7 @@
     line-height: $h3;
 
     &:before {
-        bottom: 90px;
+        bottom: 79px;
         position: absolute;
         width: max-content;
         height: max-content;
@@ -174,7 +144,7 @@
     }
 
     &:after {
-        bottom: 90px;
+        bottom: 79px;
         position: absolute;
         width: max-content;
         height: max-content;

@@ -30,8 +30,8 @@ $heightTax: 56px;
     width: $heightTax;
 
     @include respond(tablet) {
-        // height: 32px;
-        // width: 32px;
+        height: 40px;
+        width: $heightTax;
     }
 
     .article-taxonomies--typologie-icone {

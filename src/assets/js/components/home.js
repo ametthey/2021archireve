@@ -31,7 +31,12 @@ if ( homeContainer ) {
     conFilClose.addEventListener('click', closeFiltresSection, true);
 
     // Click event on A propos
-    containerAPropos.addEventListener('click', aproposReveal, true);
+    document.addEventListener('click', function(e) {
+        // console.log(e.target)
+        if ( e.target === containerAPropos.querySelector('.container--apropos-cover') || e.target === containerAPropos.querySelector('.title--apropos-cover')  ) {
+            aproposReveal(e);
+        }
+    }, true);
     conProposClose.addEventListener('click', aproposClose, true);
 
     containerReves.addEventListener('click', aproposClose, true);
@@ -71,14 +76,14 @@ if ( homeContainer ) {
         conRevesArticles.classList.remove('is-hidden');
     }
     function aproposReveal(e) {
-        containerAPropos.classList.add('is-open');
-        containerFiltres.classList.add('is-forbidden');
-        conRevCover.classList.remove('is-hidden');
-        conRevesArticles.classList.add('is-hidden');
-        conRevesArticles.classList.add('is-hidden');
-        conProposElements.classList.remove('is-hidden');
+        containerAPropos.classList.toggle('is-open');
+        containerFiltres.classList.toggle('is-forbidden');
+        conRevCover.classList.toggle('is-hidden');
+        conRevesArticles.classList.toggle('is-hidden');
+        conRevesArticles.classList.toggle('is-hidden');
+        conProposElements.classList.toggle('is-hidden');
         if ( conProposClose.classList.contains('is-hidden') ) {
-            conProposClose.classList.remove('is-hidden');
+            conProposClose.classList.toggle('is-hidden');
         }
     }
 }

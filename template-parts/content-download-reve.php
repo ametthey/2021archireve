@@ -1,33 +1,13 @@
 <div class="container--reve-to-download">
 
-    <button class="download-reve">Télécharger le rêve</button>
-
     <?php
-
-    // $custom_post = 631;
-
-
-    // get the user name
-    // https://www.intelliwolf.com/get-author-id-from-post-id/
-    $author_id = get_post_field( 'post_author', $custom_post );
-    $author_name = get_the_author_meta( 'user_nicename', $author_id );
-
-    // get the user_info page from the name
-    echo '<div class="test-print-user-info">';
-    echo "l'ID de l'auteur est $author_id";
-    echo '<br>';
-    echo "le nom de l'auteur est $author_name";
-    echo '<br>';
-    echo '</div>';
-
-
         $args = array(
             // 'author'        =>  $author_id,
             'post_type' => [ 'reve', 'reveur_info' ],
             // 'p' => $custom_post,
             'posts_per_page' => -1,
-            'order' => 'ASC',
-            'orderby' => 'type',
+            'orderby' => 'date',
+            'order'   => 'DESC',
         );
 
         $home_projects = new WP_Query( $args );
@@ -65,7 +45,6 @@
                 echo '<table class="table--print" id="print--' . $i . '">';
             }
         ?>
-                <!-- <table class="table&#45;&#45;print" id="print&#45;&#45;<?php echo $i; ?>"> -->
                     <!-- 1 -->
                     <tr>
                         <td>Donnée du rêve</td>
@@ -88,7 +67,7 @@
                         <td><?php echo $i ?></td>
                         <td>Pseudo</td>
                         <td class="table-pseudo">
-                            <?php the_author_meta( 'nickname' , false ); ?>
+                            <?php echo get_the_author_meta( 'nickname', false ); ?>
                         </td>
                     </tr>
 
@@ -103,7 +82,7 @@
                     <!-- 4 -->
                     <tr>
                         <td>Date</td>
-                        <td><?php echo get_the_date( 'd/m/Y' );?></td>
+                        <td><?php echo the_field('date_du_reve'); ?></td>
                         <td>Genre</td>
                         <td></td>
                     </tr>

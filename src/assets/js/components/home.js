@@ -19,65 +19,75 @@ if ( homeContainer ) {
     const conProposElements = document.querySelector('.apropos--elements');
     const conProposClose = document.querySelector('.apropos-close');
 
-    // Click event on Filtres
-    window.addEventListener( 'click', function(e) {
+    // -----------------------------------------------------------------------------
+    // EVENEMENTS SUR LE BANDEAU FILTRES
+    // -----------------------------------------------------------------------------
+
+    // Click sur le bandeau filtre
+    document.addEventListener( 'click', function(e) {
         if ( e.target.closest('#container--filtres') ) {
             filtresReveal(e);
-        } else if ( e.target.closest('#container--apropos') || e.target.closest('#container--reves') ) {
-            closeFiltresSection(e);
+            aproposClose(e);
+        }
+        // Si on clique dehors du bandeau filtre, il se ferme
+        else if ( e.target.closest('#container--apropos') || e.target.closest('#container--reves') ) {
+            filtresClose(e);
         }
     }, true);
 
-    conFilClose.addEventListener('click', closeFiltresSection, true);
+    // Click sur le bouton close du bandeau filtre
+    conFilClose.addEventListener('click', filtresClose, true);
 
-    // Click event on A propos
+    // -----------------------------------------------------------------------------
+    // EVENEMENTS SUR LE BANDEAU A PROPOS
+    // -----------------------------------------------------------------------------
+
+    // Click sur le bandeau apropos
     document.addEventListener('click', function(e) {
-        // console.log(e.target)
         if ( e.target === containerAPropos.querySelector('.container--apropos-cover') || e.target === containerAPropos.querySelector('.title--apropos-cover')  ) {
             aproposReveal(e);
         }
     }, true);
+
     conProposClose.addEventListener('click', aproposClose, true);
 
     containerReves.addEventListener('click', aproposClose, true);
 
 
+    // -----------------------------------------------------------------------------
+    // FONCTIONS POUR LES DIFFÉRENTS ÉVÉNEMENTS
+    // -----------------------------------------------------------------------------
+
     function filtresReveal(e) {
         containerFiltres.classList.add('is-open');
-        containerAPropos.classList.add('is-forbidden');
+        // containerAPropos.classList.add('is-forbidden');
         containerReves.classList.add('is-reduced');
         conFilCover.classList.add('is-hidden');
         conFilList.classList.remove('is-hidden');
 
     }
-    function closeFiltresSection(e) {
+    function filtresClose(e) {
         e.preventDefault();
         if ( containerFiltres.classList.contains('is-open') && conFilCover.classList.contains('is-hidden') ) {
             containerFiltres.classList.remove('is-open');
-            containerAPropos.classList.remove('is-forbidden');
+            // containerAPropos.classList.remove('is-forbidden');
             containerReves.classList.remove('is-reduced');
             conFilCover.classList.remove('is-hidden');
             conFilList.classList.add('is-hidden');
+            // setTimeout( (e) => {
+            //     containerFiltres.scrollTo({
+            //         top: 0,
+            //         behavior: 'auto'
+            //     });
+            // }, 500 );
         }
 
     }
-    function aproposClose(e) {
-        // if ( e.target.closest('#container--filtres') ) {
-        //     console.log('on clique sur les filtres ! ');
-        // } else if ( e.target.closest('#container--reves') ) {
-        //     console.log('on clique sur les reves');
-        // }
-        containerAPropos.classList.remove('is-open');
-        containerFiltres.classList.remove('is-forbidden');
-        conRevCover.classList.add('is-hidden');
-        conRevesArticles.classList.remove('is-hidden');
-        conProposElements.classList.add('is-hidden');
-        conProposClose.classList.add('is-hidden');
-        conRevesArticles.classList.remove('is-hidden');
-    }
+
+    // A PROPOS
     function aproposReveal(e) {
         containerAPropos.classList.toggle('is-open');
-        containerFiltres.classList.toggle('is-forbidden');
+        // containerFiltres.classList.toggle('is-forbidden');
         conRevCover.classList.toggle('is-hidden');
         conRevesArticles.classList.toggle('is-hidden');
         conRevesArticles.classList.toggle('is-hidden');
@@ -85,5 +95,14 @@ if ( homeContainer ) {
         if ( conProposClose.classList.contains('is-hidden') ) {
             conProposClose.classList.toggle('is-hidden');
         }
+    }
+    function aproposClose(e) {
+        containerAPropos.classList.remove('is-open');
+        // containerFiltres.classList.remove('is-forbidden');
+        conRevCover.classList.add('is-hidden');
+        conRevesArticles.classList.remove('is-hidden');
+        conProposElements.classList.add('is-hidden');
+        conProposClose.classList.add('is-hidden');
+        conRevesArticles.classList.remove('is-hidden');
     }
 }

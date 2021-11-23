@@ -1,0 +1,41 @@
+.background-reve-commun {
+    background-color: $commun;
+    transition: all 0.325s ease-in-out;
+    //
+    // &:hover {
+    //     background-color: $bg;
+    // }
+}
+
+.border-reve-commun {
+    border: 2px solid $commun;
+}
+
+#rounded--reve-commun {
+    border: 1.5px solid $commun;
+    color: $commun;
+
+    &:hover {
+        background-color: $commun;
+        border-color: $bg;
+        color: $bg;
+    }
+}
+
+.border-top-reve-commun {
+    border-top: 2px solid $commun;
+}
+
+.border-right-reve-commun {
+    border-right: 2px solid $commun;
+}
+
+.border-bottom-reve-commun {
+    border-bottom: 2px solid $commun;
+}
+
+.border-left-reve-commun {
+    border-left: 2px solid $commun;
+}
+
+

@@ -365,31 +365,31 @@ $numeroSmall: 60px;
 
 
 
-.apropos-vertical-text {
-    align-items: center;
-    cursor: pointer;
-    display: flex;
-    justify-content: end;
-    left: 0;
-    opacity: 0;
-    margin: $ratio 0 0 0;
-    pointer-events: none;
-    position: absolute !important;
-    text-orientation: mixed;
-    transform: rotate(180deg);
-    transform-origin: center;
-    transition: opacity $rythm1 ease-in-out;
-    writing-mode: tb;
-    width: 50px;
-    height: 220px;
-    z-index: 3 !important;
-
-    h3 {
-        align-self: center;
-        color: $bg;
-        text-align: right !important;
-    }
-}
+// .apropos-vertical-text {
+//     align-items: center;
+//     cursor: pointer;
+//     display: flex;
+//     justify-content: end;
+//     left: 0;
+//     opacity: 0;
+//     margin: $ratio 0 0 0;
+//     pointer-events: none;
+//     position: absolute !important;
+//     text-orientation: mixed;
+//     transform: rotate(180deg);
+//     transform-origin: center;
+//     transition: opacity $rythm1 ease-in-out;
+//     writing-mode: tb;
+//     width: 50px;
+//     height: 220px;
+//     z-index: 3 !important;
+//
+//     h3 {
+//         align-self: center;
+//         color: $bg;
+//         text-align: right !important;
+//     }
+// }
 
 .apropos-close {
     cursor: pointer;

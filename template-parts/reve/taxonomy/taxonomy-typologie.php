@@ -54,4 +54,11 @@
         <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-sexuel.svg">
         </div>
     <?php endif; ?>
+
+    <?php if ( $term_typologie->name === 'Rêve commun') : ?>
+        <!-- REVE SEXUEL -->
+        <div class="article-taxonomies--typologie border-right-<?php echo esc_html( $term_typologie->slug ); ?>">
+        <img class="article-taxonomies--typologie-icone" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/reve-commun.svg">
+        </div>
+    <?php endif; ?>
 <?php endif; ?>

@@ -18,9 +18,9 @@
     p {
         font-size: $h2;
         line-height: 35px;
+        padding: 11px 22px;
         pointer-events: none;
 
-        margin: 11px 0 0 22px;
 
         @include respond(tablet) {
             font-size: $small;

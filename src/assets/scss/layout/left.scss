@@ -232,7 +232,7 @@
 .tagitems--container,
 .lucidite--container {
     border-bottom: 1px solid $color;
-    margin: calc( #{$ratio} / 2 ) 0 $ratio 0;
+    margin: 0 !important;
     padding: 0 calc( 30px / 2 ) $ratio !important;
     // pointer-events: none;
     width: 100%;
@@ -248,7 +248,7 @@
     justify-content: center;
     display: flex;
     cursor: pointer;
-    margin: $ratio 0;
+    margin: $ratio 0 !important;
     padding: 0 calc( 30px / 2 ) 0 !important;
     width: 100%;
 

@@ -6,25 +6,25 @@
 </div>
 
 <?php
-    // echo '<div class="tagitems--container left--filter">';
-    //     $args = array(
-    //         'orderby' => 'date',
-    //         'order'   => 'DESC',
-    //         'post_type'      => 'reve',
-    //         'posts_per_page' => -1,
-    //     );
-    //     $home_projects = new WP_Query( $args );
-    //     if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;
-    //
-    //         $tagString = get_field( 'tag' );
-    //         $tagArray = explode(",", str_replace(" ","",$tagString));
-    //         shuffle( $tagArray );
-    //
-    //         foreach ( $tagArray as $tag ) {
-    //             echo '<button class="tagitem button--squared no-button-style"><h4>' .  $tag . '</h4></button>';
-    //         }
-    //
-    //     endwhile; endif; wp_reset_postdata();
-    //
-    // echo '</div>';
+    echo '<div class="tagitems--container left--filter">';
+        $args = array(
+            'orderby' => 'date',
+            'order'   => 'DESC',
+            'post_type'      => 'reve',
+            'posts_per_page' => -1,
+        );
+        $home_projects = new WP_Query( $args );
+        if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;
+
+            $tagString = get_field( 'tag' );
+            $tagArray = explode(",", str_replace(" ","",$tagString));
+            shuffle( $tagArray );
+
+            foreach ( $tagArray as $tag ) {
+                echo '<button class="tagitem button--squared no-button-style"><h4>' .  $tag . '</h4></button>';
+            }
+
+        endwhile; endif; wp_reset_postdata();
+
+    echo '</div>';
 ?>

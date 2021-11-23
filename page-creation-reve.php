@@ -8,7 +8,7 @@ acf_form_head();
 get_header();
 ?>
 
-<div class="content--home content--creation-reve">
+<div class="content--creation-reve">
 
     <?php
 
@@ -31,7 +31,7 @@ get_header();
             <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
-            <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>">
+            <a href="<?php echo esc_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Voir les rêves</h3>
             </a>
             <a href="<?php echo wp_logout_url( get_permalink( 194 ) ); ?>">
@@ -97,11 +97,7 @@ il sera bientôt en ligne ! ", 'acf'),
 </div>
 
 
-<!-- ATTENTION C'EST SPECIFIQUE A CE TEMPLATE ET AU FOOTER -->
-</div><!-- #page -->
-
-
 <?php get_template_part('template-parts/content', 'dessin'); ?>
 
-<?php get_footer( 'creation-reve' ); ?>
+<?php get_footer(); ?>
 

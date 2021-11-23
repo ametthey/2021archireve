@@ -1,21 +1,3 @@
-.page-template-page-connexion {
-    #masthead {
-        border: none;
-        position: relative;
-        left: 0;
-        transform: translateX(0);
-        justify-content: center;
-
-        #header--mobile-apropos {
-            display: none;
-        }
-
-        #mobile--connexion {
-            display: none;
-        }
-    }
-}
-
 .container--connexion {
     align-items: center;
     display: flex;
@@ -24,6 +6,9 @@
     justify-content: center;
     margin: auto;
     width: 42%;
+    position: absolute;
+    left: 50%;
+    transform: translateX( -50% );
 
     @include respond(tablet) {
         margin: auto;

@@ -44,9 +44,9 @@ $heightTax: 56px;
         // transform: translateX(-100%);
         transition: transform $rythm2 cubic-bezier(0.25, 1, 0.5, 1);
 
-        &:hover {
-            transform: scale(1);
-        }
+        // &:hover {
+        //     transform: scale(1);
+        // }
 
         // MARQUEE
         @include respond(tablet) {

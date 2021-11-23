@@ -47,7 +47,11 @@
         }
 
         .ui-datepicker-buttonpane {
+            background: none !important;
+            border-top: none !important;
+
             button {
+                background-color: $bg !important;
                 border: 1px solid #303030 !important;
                 border-radius: 100px 100px 100px 100px !important;
                 color: #303030 !important;

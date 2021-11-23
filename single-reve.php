@@ -8,7 +8,7 @@ acf_form_head();
 get_header();
 ?>
 
-<div class="content--home content--creation-reve">
+<div class="content--creation-reve">
 
     <?php
 
@@ -33,7 +33,7 @@ get_header();
             <a href="<?php echo esc_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Voir les rêves</h3>
             </a>
-            <a href="<?php echo wp_logout_url( get_permalink( 194 ) ); ?>">
+            <a href="<?php echo wp_logout_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Se déconnecter</h3>
             </a>
         </div>
@@ -87,10 +87,7 @@ get_header();
 </div>
 
 
-<!-- ATTENTION C'EST SPECIFIQUE A CE TEMPLATE ET AU FOOTER -->
-</div><!-- #page -->
-
 <?php get_template_part('template-parts/content', 'dessin'); ?>
 
-<?php get_footer( 'creation-reve' ); ?>
+<?php get_footer(); ?>
 

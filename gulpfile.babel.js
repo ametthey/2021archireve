@@ -16,6 +16,7 @@ import info from './package.json';
 
 import postcss from 'gulp-postcss';
 import autoprefixer from 'autoprefixer';
+import purgecss from 'gulp-purgecss';
 
 const server = browserSync.create();
 
@@ -78,12 +79,12 @@ export const styles = () => {
     // verify in Google Chrome inspector that CSS sourcemap is active
         .pipe(gulpif(!PRODUCTION,sourcemaps.init()))
         .pipe(sass().on('error', sass.logError))
-        .pipe(gulpif(PRODUCTION, postcss([ autoprefixer ({
-            grid: 'autoplace',
-            flexbox: true,
-        })])))
+        .pipe(gulpif(PRODUCTION, postcss([ autoprefixer () ]) ) )
         .pipe(gulpif(PRODUCTION, cleanCSS({compatibility: 'ie8'})))
         .pipe(gulpif(!PRODUCTION, sourcemaps.write()))
+        // .pipe(purgecss({
+        //     content: ['*.php', '**/*.php', '**/**/*.php', '**/**/**/*.php' ]
+        // }))
         .pipe(gulp.dest(path.styles.dest))
         .pipe(server.stream	());
 }
@@ -95,17 +96,19 @@ export const images = () => {
 }
 
 // watch the sass folder for any change and save it
+// interval:750
+// https://doc.xuwenliang.com/docs/nodejs/2190
 export const watch = () => {
     // I will watch the src/assets/scss/blabla files and if any change I'll run the styles task
-    gulp.watch('src/assets/scss/**/*.scss', styles);
+    gulp.watch('src/assets/scss/**/*.scss',  { interval: 750 }, styles);
     // I will watch the src/assets/js/blabla files and if any change I'll run the styles task
-    gulp.watch('src/assets/js/**/*.js', gulp.series(scripts, reload));
+    gulp.watch('src/assets/js/**/*.js',  { interval: 750 }, gulp.series(scripts, reload));
     // I will watch for any change for ALL php files
-    gulp.watch('**/*.php', reload);
+    gulp.watch('**/*.php',  { interval: 750 }, reload);
     // I will watch the path.images.src and if any changes I'll run the images task
-    gulp.watch(path.images.src, gulp.series(copy, images, reload));
+    gulp.watch(path.images.src,  { interval: 750 }, gulp.series(copy, images, reload));
     // I will watch the path.other.src and if any changes I'll run the copy task
-    gulp.watch(path.other.src, gulp.series(copy, reload));
+    gulp.watch(path.other.src,  { interval: 750 }, gulp.series(copy, reload));
 }
 
 export const copy = () => {

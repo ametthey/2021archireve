@@ -14,9 +14,7 @@
 
         <?php echo "<script>console.log('We are using the file header-home.php');</script>"; ?>
 
-        <?php // get_template_part('template-parts/content', 'logo-home-animation'); ?>
-
-        <!-- <div class="content"> -->
+        <?php get_template_part('template-parts/content', 'logo-home-animation'); ?>
 
 
         <header id="masthead" class="site-header header-home" role="banner">
@@ -37,11 +35,11 @@
                     </div>
                     <div id="left--connexion" class="left--filter button--rounded left--connexion-user">
                         <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
-                            <p>Mon profil</p>
+                            <p><?php echo $pseudo; ?></p>
                         </a>
                     </div>
                     <div id="left--inscription" class="left--filter button--rounded left--inscription">
-                        <a href="<?php echo esc_url( get_page_link( 182 ) ) ;?>">
+                        <a href="<?php echo esc_url( get_permalink(  get_page_by_title('back-office', OBJECT , 'page')) ); ?>">
                             <p>Mes rêves</p>
                         </a>
                     </div>
@@ -54,12 +52,12 @@
 
                 <div class="site-header-user">
                     <div id="left--connexion" class="left--filter button--rounded">
-                        <a href="<?php echo esc_url( get_page_link( 194 ) ); ?>">
+                        <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
                             <p>CONNEXION</p>
                         </a>
                     </div>
                     <div id="left--inscription" class="left--filter button--rounded">
-                        <a href="<?php echo esc_url( get_page_link( 190 ) ) ;?>">
+                        <a href="<?php echo esc_url( get_permalink(  get_page_by_title('inscription', OBJECT , 'page')) ); ?>">
                             <p>INSCRIPTION</p>
                         </a>
                     </div>
@@ -75,7 +73,7 @@
                     <!-- Site branding -->
                     <div class="site-branding">
                         <a href="<?php echo esc_url( home_url() ); ?>" >
-                            <?php get_template_part( 'template-parts/content', 'logo' ); ?>
+                            <?php // get_template_part( 'template-parts/content', 'logo' ); ?>
                         </a>
                     </div>
 
@@ -89,7 +87,11 @@
                             $pseudo = $current_user->user_nicename;
                             wp_get_current_user();
                     ?>
-                        <div id="mobile--connexion" class="button--rounded connexion"><a href="<?php echo esc_url( get_page_link( 194 ) ); ?>"><p>CONNEXION</p></a></div>
+                        <div id="mobile--connexion" class="button--rounded connexion">
+                            <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
+                                <p>CONNEXION</p>
+                            </a>
+                        </div>
 
                     <?php
                         }

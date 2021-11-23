@@ -22,7 +22,7 @@ get_header(); ?>
             ?>
 
         <div class="profil--header-links">
-            <a href="<?php echo esc_url( get_permalink( 182 ) ); ?>">
+            <a href="<?php echo esc_url( get_permalink(  get_page_by_title('back-office', OBJECT , 'page')) ); ?>">
                 <h3 class="button--rounded rounded--big">Voir mes rêves</h3>
             </a>
             <a href="<?php echo wp_logout_url( home_url( '/home/' ) ); ?>">
@@ -38,7 +38,7 @@ get_header(); ?>
     ?>
     </div>
 
-    <div class="profil--utilisateur">
+    <!-- <div class="profil&#45;&#45;utilisateur"> -->
 
         <?php
 
@@ -95,13 +95,17 @@ get_header(); ?>
 
         ?>
 
-    </div>
+    <!-- </div> -->
 
 </div>
 <div class="container--inscription-informations-tooltip">
+
+    <!-- COVER AVEC LE TEXTE EN VERTICAL -->
     <div class="container--cover container--tooltip-cover">
         <h3 class="inscription-tooltip-cover">INFORMATIONS</h3>
     </div>
+
+    <!-- TEXTES AVEC LES EXPLICATIONS -->
     <div class="inscription-tooltip-texte">
         <h2>Genre</h2>
         <p><?php the_field( 'genre', 'option' ); ?></p>
@@ -121,6 +125,10 @@ get_header(); ?>
         <p><?php the_field( 'relation_aux_reves', 'option' ); ?></p>
     </div>
 
+    <!-- BOUTON CLOSE -->
+    <div class="inscription-tooltip-close">
+        <img class="inscription-tooltip-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">
+    </div>
 
 </div>
 

@@ -5,22 +5,16 @@
     align-items: center;
     display: flex;
     flex-direction: column;
-    height: 100%;
-    justify-content: center;
-    margin: auto;
-    width: 45%;
+    position: absolute;
+    transition: all 0.75s ease-in-out;
+    z-index: 2;
+    margin: 50px;
+    width: calc( 100% - 100px);
 
     @include respond(tablet) {
         margin: auto;
         width: 90%;
     }
-
-    overflow: auto;
-    position: relative;
-    transition: all 0.75s ease-in-out;
-    z-index: 2;
-    margin: 0 50px;
-    width: calc( 100vw - 100px);
 }
 
 // -----------------------------------------------------------------------------

@@ -1,4 +1,6 @@
-    <h3 class="container--cover container--filtres-cover">FILTRES</h3>
+    <div class="container--cover container--filtres-cover">
+        <h3 class="title--apropos-cover">FILTRES</h3>
+    </div>
     <div class="content--left-close left--filter">
         <img class="content--left-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">
     </div>

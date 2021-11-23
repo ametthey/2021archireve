@@ -12,7 +12,8 @@
     border-right: 1px solid $color;
     height: calc( 100vh - 50px );
     transform: translateX(50px);
-    overflow: auto; // for scrolling into the filters list
+    // overflow-x: hidden;
+    // overflow-y: hidden;
     outline: none;
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
@@ -73,6 +74,8 @@
 }
 
 .filtres--list {
+    overflow-y: auto;
+    overflow-x: hidden;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -262,11 +265,18 @@
 
     &.container--filtres-cover {
         cursor: pointer;
-        height: auto;
+        // height: auto;
+        // position: absolute;
+        // right: 0;
+        // top: 0;
+
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
         position: absolute;
         right: 0;
         top: 0;
-
+        z-index: 100;
     }
 
     &.container--apropos-cover {

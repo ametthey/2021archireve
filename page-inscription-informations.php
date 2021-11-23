@@ -111,9 +111,18 @@
 	?>
 </div>
 <div class="container--inscription-informations-tooltip">
+
+    <!-- COVER AVEC LE TEXTE EN VERTICAL -->
     <div class="container--cover container--tooltip-cover">
         <h3 class="inscription-tooltip-cover">INFORMATIONS</h3>
     </div>
+
+    <!-- BOUTON CLOSE -->
+    <div class="inscription-tooltip-close">
+        <img class="inscription-tooltip-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">
+    </div>
+
+    <!-- TEXTES AVEC LES EXPLICATIONS -->
     <div class="inscription-tooltip-texte">
         <h2>Genre</h2>
         <p><?php the_field( 'genre', 'option' ); ?></p>
@@ -132,7 +141,6 @@
         <h2>Relation aux rêves</h2>
         <p><?php the_field( 'relation_aux_reves', 'option' ); ?></p>
     </div>
-
 
 </div>
 

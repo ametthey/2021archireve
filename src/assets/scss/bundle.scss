@@ -8,20 +8,18 @@
 @import 'vendors/normalize';
 @import 'vendors/normalize-button';
 @import 'vendors/wordpress-core';
-// @import 'vendors/hamburger';
 @import 'vendors/swiper';
-// @import 'vendors/swup';
 @import 'vendors/acf/daypicker';
 @import 'vendors/plugins/user-registration';
 @import 'vendors/locomotive';
 
 // Base
 @import 'base/base';
-@import 'base/fonts';
-@import 'base/helpers';
-@import 'base/helpers-debug';
-@import 'base/typography';
 @import 'base/colors';
+@import 'base/fonts';
+@import 'base/helpers'; ////////
+@import 'base/helpers-debug'; ///////
+@import 'base/typography'; //////
 
 @import 'layout/left/filtres/tag-search-bar';
 @import 'layout/left/filtres/tag-cloud';
@@ -52,6 +50,7 @@
 
 // Home
 @import 'home/download-reve';
+@import 'pages/home-new';
 
 // Pages
 @import 'pages/front-page';
@@ -63,16 +62,6 @@
 @import 'pages/inscription-informations-and-profil-utilisateur';
 
 @import 'pages/creation-reve';
-@import 'pages/creation-reve/typologie';
-@import 'pages/creation-reve/tag';
-@import 'pages/creation-reve/lucidite';
-@import 'pages/creation-reve/modalite-sommeil';
-@import 'pages/creation-reve/modalite-humeur';
-@import 'pages/creation-reve/modalite-sens';
-@import 'pages/creation-reve/modalite-lieu';
-@import 'pages/creation-reve/souvenirs';
-@import 'pages/creation-reve/dessin';
-
 @import 'pages/modification-reve';
 
 
@@ -94,5 +83,3 @@
 
 
 
-@import 'pages/home-new';
-// @import 'test/search-and-filter';

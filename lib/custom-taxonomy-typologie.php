@@ -23,7 +23,7 @@ function create_typologiedereve_tax() {
 		'public' => true,
 		'publicly_queryable' => true,
         // Cacher de l'admin
-		'show_ui' => false,
+		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
 		'show_tagcloud' => true,
@@ -38,9 +38,9 @@ function create_typologiedereve_tax() {
         'capabilities' => array(
             // 'manage_terms' => '',
             // SO WE CAN NOT EDIT TERMS
-            'edit_terms' => '',
+            // 'edit_terms' => '',
             // 'delete_terms' => '',
-            'assign_terms' => 'edit_posts',
+            // 'assign_terms' => 'edit_posts',
         ),
 	);
 	register_taxonomy( 'typologiedereve', array('reve'), $args );

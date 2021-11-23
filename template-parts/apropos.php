@@ -1,7 +1,7 @@
 <div class="container--cover container--apropos-cover">
     <h3 class="title--apropos-cover">A PROPOS</h3>
-
     <div class="cover--credits">
+
         <p>©  ARCHIREVE2021</p>
         <div class="separator">–</div>
         <a href="#">contact</a>

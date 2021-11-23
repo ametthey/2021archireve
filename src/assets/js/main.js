@@ -1,5 +1,5 @@
 // HOME
-import './components/home.js';
+import './components/home.js'; // tout les clicks events
 import './components/apropos.js';
 import './components/articles.js';
 import './components/filters.js';
@@ -20,7 +20,7 @@ import './components/lottie-animations.js';
 import './components/tooltip.js';
 import './components/header.js';
 import './components/header-mobile.js';
-import './components/dessin.js';
+// import './components/dessin.js';
 
 
 import './components/selection-reves.js';

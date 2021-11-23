@@ -23,6 +23,21 @@
         color: $color !important;
     }
 
+    &.reve-commun {
+
+        &.is-checked {
+            background-color: $commun;
+        }
+
+        &:hover {
+            background-color: $commun;
+        }
+
+            &:before {
+                content: url(../images/typologie/commun-noir.svg);
+            }
+    }
+
     &.cauchemar {
 
         &.is-checked {

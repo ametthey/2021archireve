@@ -5,12 +5,14 @@
     cursor: pointer;
 }
 
+$round: 24px;
+
 // BOUTON ROND
 .button--round {
     border-radius: 999px;
     color: $color;
-    height: 19px;
-    width: 19px;
+    height: $round;
+    width: $round;
     transition: all 0.325s ease-in-out;
 
     &.round--black {

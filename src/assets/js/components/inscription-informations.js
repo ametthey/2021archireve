@@ -27,10 +27,10 @@ geran.forEach( range => {
     if ( range.classList.contains('acf-range-age') ) {
         document.addEventListener('DOMContentLoaded', function() {
             const bubble = range.querySelector('.bubble');
-                rangeInput.addEventListener("input", () => {
-                    setBubble(rangeInput, bubble);
-                });
+            rangeInput.addEventListener("input", () => {
                 setBubble(rangeInput, bubble);
+            });
+            setBubble(rangeInput, bubble);
         });
     } else {
         // silence is golden
@@ -58,15 +58,21 @@ const pageII = document.querySelector('.page-template-page-inscription-informati
 const pageProfil = document.querySelector('.single-reveur_info');
 const tooltipII = document.querySelector('.container--inscription-informations-tooltip');
 const tooltipCoverII = document.querySelector('.inscription-tooltip-cover');
+const tooltipCloseII = document.querySelector('.inscription-tooltip-close');
+const tooltipCloseImgII = document.querySelector('.inscription-tooltip-close-button');
 
 if ( pageII || pageProfil ) {
-   document.addEventListener( 'click', function(e) {
+    document.addEventListener( 'click', function(e) {
 
         if ( e.target === tooltipCoverII ) {
             tooltipII.classList.toggle('is-open');
         }
 
-   }, true );
+        if ( e.target === tooltipCloseII || e.target === tooltipCloseImgII ) {
+            tooltipII.classList.remove('is-open');
+        }
+
+    }, true );
 }
 
 

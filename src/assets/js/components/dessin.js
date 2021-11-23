@@ -314,7 +314,7 @@ document.addEventListener('DOMContentLoaded', (e) => {
                 buttonDessin.classList.add('rounded--black');
             } else if ( buttonText || buttonDessin ) {
                 buttonText.classList.remove('rounded--black');
-                buttonDessin.classList.add('rounded--black');
+                // buttonDessin.classList.remove('rounded--black');
             }
 
             const dessinEdit = document.querySelector('.acf-field-for-edit');

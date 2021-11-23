@@ -1,7 +1,8 @@
 import { tableToPDF } from '../components/table-to-pdf.js';
 import { replaceCellsFromTable } from '../components/selection-reves-functions.js';
 
-const buttonsSelectionReve = document.querySelectorAll(".button--select-to-download");
+// const buttonsSelectionReve = document.querySelectorAll(".button--select-to-download"); // BOUTON
+const buttonsSelectionReve = document.querySelectorAll(".article-reve--download");
 const pastille = document.querySelector(".button--selected-number");
 const pastilleText = document.querySelector(".button--selected-number p");
 const popup = document.querySelector(".popup--download");
@@ -18,19 +19,26 @@ let COUNT = 0;
 if ( buttonsSelectionReve && pastille ) {
 
 
-    buttonsSelectionReve.forEach( ( element ) => {
-        const iconText = element.nextElementSibling ;
+    // buttonsSelectionReve.forEach( ( element ) => { // BOUTON
+    buttonsSelectionReve.forEach( ( buttonSelection ) => {
+        const element = buttonSelection.querySelector('.button--select-to-download');
+        // animation de l'icone texte dans le reve
+        // const iconText = element.nextElementSibling ;
         const downloadContainer = element.closest(".article-reve--download");
         const headerContainer = downloadContainer.closest(".article-reve--header");
         const reveContainer = headerContainer.closest(".article-reve");
         const reveContainerNumber = reveContainer.dataset.number;
 
         // Click sur le bouton de téléchargement
-        element.addEventListener( "click", (e) => {
-            const elementTarget = e.currentTarget;
+        // element.addEventListener( "click", (e) => { // BOUTON
+        buttonSelection.addEventListener( "click", (e) => {
+            // const elementTarget = e.currentTarget; // BOUTON
+            const elementTarget = element;
 
             element.classList.toggle("-is-selected");
-            iconText.classList.toggle("is-selected");
+
+            // animation de l'icone texte dans le reve
+            // iconText.classList.toggle("is-selected");
 
             // Incremente le nombre de rêve sélectionné
             if ( elementTarget.classList.contains("-is-selected") ) {

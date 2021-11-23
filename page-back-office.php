@@ -10,7 +10,7 @@ get_header(); ?>
 
 
 
-<div class="content--home content--profil">
+<div class="content--backoffice">
 
     <?php
 
@@ -36,7 +36,7 @@ get_header(); ?>
             <a href="<?php echo esc_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Voir les rêves</h3>
             </a>
-            <a href="<?php echo wp_logout_url( get_permalink( 194 ) ); ?>">
+            <a href="<?php echo wp_logout_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Se déconnecter</h3>
             </a>
         </div>
@@ -45,7 +45,9 @@ get_header(); ?>
             <div class="profil--reve">
 
                 <div class="profil--reve-new profil--reve-new-active">
-                    <h2><a href="<?php echo esc_url( get_permalink( 325 ) ); ?>">PUBLIER UN NOUVEAU RÊVE <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/coucou.svg" alt=""></a></h2>
+                    <h2>
+                        <a href="<?php echo esc_url( get_permalink( 325 ) ); ?>">PUBLIER UN NOUVEAU RÊVE <span>H</span></a>
+                    </h2>
                 </div>
 
             <?php

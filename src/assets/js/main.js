@@ -20,15 +20,18 @@ import './components/lottie-animations.js';
 import './components/tooltip.js';
 import './components/header.js';
 import './components/header-mobile.js';
-// import './components/dessin.js';
+import './components/dessin.js';
 
 
 import './components/selection-reves.js';
 import './components/table-to-pdf.js';
 import './components/selection-reves-functions.js';
 
+import './components/test.js';
 
 
+// PLUGINS WP
+import './components/cookie-notice.js';
 
 
 // SERT PEUT-ÊTRE LORS QU'IL Y A UNE ERREUR QUAND ON S'INSCRIT

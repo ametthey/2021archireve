@@ -8,7 +8,7 @@ export function tableToPDF(theGoodTable) {
     // COULEURS
     const vert = [44, 175, 56];
     const vertClair = [96, 183, 104];
-    const vertFonce = [14, 104, 22];
+    const vertFonce = [38, 149, 48];
     const rose = [214, 112, 131];
     const roseClair = [213, 170, 178];
     const blanc = [255, 255, 255];

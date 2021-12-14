@@ -14,16 +14,20 @@ $tooltip: 550px;
     top: 0;
     transition: all 0.75s ease-in-out;
     width: $tooltip;
-    z-index: 3;
+    z-index: 95;
     display: flex;
 
+    @include respond(tablet) {
+        width: 100%;
+        right: -100%;
+    }
+
     &.is-open {
-        @include respond(tablet) {
-            transform: translateX(100%);
-        }
-
-
         transform: translateX(-#{$tooltip});
+
+        @include respond(tablet) {
+            transform: translateX(-100%);
+        }
 
         .content--left-close {
             opacity: 1;
@@ -49,6 +53,10 @@ $tooltip: 550px;
     position: relative;
     overflow: auto; // for scrolling into the tooltips list
     z-index: 1;
+
+    @include respond(tablet) {
+        padding: 25px;
+    }
 
     h2 {
         margin: 50px 0 12.5px;

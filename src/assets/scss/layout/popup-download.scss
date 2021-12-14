@@ -15,6 +15,10 @@
     transition: transform $rythm1 $easeO;
     transform: translateY(100%);
 
+    @include respond(tablet) {
+        height: 100px;
+    }
+
     &.is-visible {
         transform: translateY(0);
     }
@@ -41,7 +45,6 @@
     width: max-content;
 
     @include respond(tablet) {
-        // margin: 0 auto 30px;
         margin: 0 auto calc( 30px / 2 );
         width: 80%;
     }
@@ -57,6 +60,10 @@
 
     h4 {
         text-align: center;
+
+        @include respond(tablet) {
+            font-size: 12px;
+        }
     }
 
     .button--rounded {
@@ -79,6 +86,13 @@
         display: grid;
         place-items: center;
 
+        @include respond(tablet) {
+            height: 20px;
+            right: -10px;
+            top: 10px;
+            width: 20px;
+        }
+
 
         &.is-visible {
             opacity: 1;
@@ -89,6 +103,10 @@
             font-size: $small;
             line-height: $small;
             text-align: center;
+
+            @include respond(tablet) {
+                font-size: 10px;
+            }
         }
     }
 }
@@ -123,6 +141,10 @@
 
     p {
         margin: 0 0 0 4px;
+
+        @include respond(tablet) {
+            font-size: 10px;
+        }
     }
 
     .button--smaller {

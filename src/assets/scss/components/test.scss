@@ -1,197 +1,33 @@
-// LAYOUT FOR TESTING FILTERING ISOTOPE
-.page-test {
-    display: flex;
-    height: 100vh;
-    overflow: auto;
+.page-template-page-test-2 {
+    #page {
+        display: grid;
+        height: 100vh;
+        place-items: center;
+    }
+
+}
+
+.container {
+    cursor: none;
+    background-color: red;
+    width: 500px;
+    height: 500px;
+}
+
+#cursor {
+    z-index: 99;
     position: fixed;
-    top: 0;
     left: 0;
+    top: 0;
+    pointer-events: auto;
+    will-change: transform;
 
-    // Filtering search bar
-    .container-test-filtres {
-        // background-color: red;
-        width: 30vw;
-    }
-
-    // Filtering content
-    .container-test-grid {
-        // background-color: green;
-        width: 70vw;
-    }
-}
-
-
-
-
-
-.page-template-page-test {
-    overflow: auto;
-
-    // WTF WPADMINBAR
-    #wpadminbar {
-        display: none;
-    }
-
-    // HIDE HEADER
-    #masthead {
-        display: none;
+    .cursor--inner {
+        width: 5vw;
+        height: 5vw;
+        border-radius: 50%;
+        transform: translate(-50%, -50%);
+        border: solid 1px #1d213f;
     }
 }
-
-
-.container-test {
-    align-items: flex-start;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    margin: auto;
-    margin-top: 50px;
-    overflow: hidden;
-    width: 95%;
-    height: 100vh;
-
-    .container-test-filtres {
-        border-right: 1px solid $color;
-        height: calc( 100vh - 50px );
-        text-align: center;
-        width: 359px;
-        // position: absolute;
-        // overflow: hidden;
-
-        h3 {
-            margin: 10px 0;
-        }
-
-        .container-test-grid {
-        }
-    }
-}
-
-.container-test-grid {
-    // margin: 50px 0;
-    // width: calc( 100vw - 359px );
-    overflow: auto;
-}
-
-@keyframes linesLong {
-    0% {
-        width: 21px;
-    }
-    50% {
-        width: 15px;
-    }
-    100% {
-        width: 21px;
-    }
-}
-
-@keyframes linesShort {
-    0% {
-        width: 15px;
-    }
-    50% {
-        width: 21px;
-    }
-    100% {
-        width: 15px;
-    }
-}
-
-.rect--short {
-    // animation-name: linesShort;
-    // animation-duration: 1s;
-    // animation-fill-mode: both;
-    // animation-play-state: running;
-    // animation-timing-function: ease-out;
-}
-
-.rect--long {
-    // animation-name: linesLong;
-    // animation-duration: 1s;
-    // animation-fill-mode: both;
-    // animation-play-state: running;
-    // animation-timing-function: ease-out;
-}
-
-
-$number: 100;
-
-@keyframes lineThrough {
-    to {
-        stroke-dasharray: $number, 0;
-    }
-}
-
-// #contenu--texte {
-    // transform: scale(4);
-    //
-    // .rect--long,
-    // #haut--long,
-    // #bas--long {
-    //     stroke-dasharray: 0, $number;
-    //     // stroke-dashoffset: 100;
-    //     // animation-name: linesLong;
-    //     animation-name: lineThrough;
-    //     animation-duration: 5s;
-    //     animation-fill-mode: forwards;
-    //     animation-iteration-count: infinite;
-    //     // animation-play-state: running;
-    //     animation-timing-function: ease-out;
-    //
-    // }
-    // #haut--court,
-    // #bas--court {
-    //     stroke-dasharray: 0, $number;
-    //     // stroke-dashoffset: 100;
-    //     // animation-name: linesLong;
-    //     animation-name: lineThrough;
-    //     animation-duration: 5s;
-    //     animation-fill-mode: forwards;
-    //     animation-iteration-count: infinite;
-    //     // animation-play-state: running;
-    //     animation-timing-function: ease-out;
-    // }
-    // .rect--short {
-    // }
-// }
-
-// .borderSVG {
-//     width: 200px;
-//     height: 200px;
-//     position: relative;
-//     // overflow: hidden;
-//     background: #ddd;
-//
-//     svg {
-//         position: absolute;
-//         top: 0;
-//         left: 0;
-//
-//         line {
-//             stroke-width: 10;
-//             stroke: #000;
-//             stroke-linejoin: round;
-//             stroke-linecap: round;
-//             fill: none;
-//             stroke-dasharray: 200;
-//             transition: transform .6s ease-out;
-//         }
-//     }
-//
-//
-//     &:hover {
-//         svg {
-//             line {
-//                 transform: translateX(-400px);
-//             }
-//         }
-//     }
-// }
-//
-// .container-lottie {
-//     background-color: red;
-//     height: 100vh;
-//     width: 100vw;
-// }
-
 

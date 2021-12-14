@@ -66,10 +66,6 @@ window.addEventListener( 'DOMContentLoaded', (e) => {
         buttonDessin.addEventListener( 'click', (e) => {
             buttonDessin.classList.toggle('rounded--black');
             containerDessin.classList.add('-is-active');
-            console.log(`
-            On click sur .contenu--button-dessin pour ouvrir le canvas de dessin
-            fichier: creation-reve.js
-            `);
         });
     }
 });
@@ -88,10 +84,8 @@ modaliteSommeilInputs.forEach( input => {
     const label = input.closest('label');
     input.addEventListener('change', (e) => {
         if ( input.checked ) {
-            console.log('check');
             label.classList.add('-is-checked');
         } else {
-            console.log('uncheck');
             label.classList.remove('-is-checked');
         }
     });

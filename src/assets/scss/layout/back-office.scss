@@ -1,15 +1,4 @@
 .page-template-page-back-office {
-    #masthead {
-        justify-content: center;
-        position: relative;
-
-        @include respond(tablet) {
-            #header--mobile-apropos,
-            #mobile--connexion {
-                display: none;
-            }
-        }
-    }
 
     #page {
         overflow: auto;
@@ -52,6 +41,11 @@
     width: 60% !important;
     left: 50%;
     transform: translateX( -50% );
+
+    @include respond(tablet) {
+        justify-content: flex-start;
+        width: 90% !important;
+    }
 }
 
 .profil--header {
@@ -91,7 +85,7 @@
 
     // Nom de l'utilisateur
     h1 {
-        margin: calc( #{$ratio} * 1 ) 0 calc( #{$ratio} * 3 ) 0;
+        margin: calc( #{$ratio} * 1 ) 0 calc( #{$ratio} * 2 ) 0;
         text-align: center;
 
         @include respond(tablet) {
@@ -136,13 +130,13 @@
         margin: 0 0 $ratio 0;
 
         &:nth-of-type(1) {
-            margin: calc( #{$ratio} * 2 ) 0 !important;
+            margin: calc( #{$ratio} * 2 ) 0;
             cursor: pointer;
             height: 200px;
 
 
             @include respond(tablet) {
-                margin: 30px auto 60px;
+                margin: 0 auto !important;
                 padding: 10px 20px;
             }
 
@@ -166,6 +160,7 @@
             color: $color;
             text-decoration: none;
             display: flex;
+            padding: 20px 40px;
 
             span {
                 font-family: $good;
@@ -180,8 +175,6 @@
             border-radius: 100px;
             width: max-content;
             height: max-content;
-            padding: 20px 40px;
-            // margin: 100px auto;
 
             &:hover {
                 background-color: $color;
@@ -233,6 +226,10 @@
 
         .article-reve--download {
             padding: 12px 0 0 0;
+
+            a {
+                padding: 0;
+            }
         }
     }
 

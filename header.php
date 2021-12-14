@@ -15,24 +15,11 @@
 
         <div id="page">
 
-
             <header id="masthead" class="site-header site-back-office" role="banner">
-
-                <!-- Trigger a propos pour mobile -->
-                <div id="header--mobile-apropos" class="button--round round--black"></div>
 
                 <!-- Site branding -->
                 <div class="site-branding">
-                    <a href="<?php echo esc_url( get_home_url() ); ?>" >
-                        <?php // get_template_part( 'template-parts/content', 'logo' ); ?>
-                    </a>
-                </div>
-
-                <!-- Connexion pour mobile -->
-                <div id="mobile--connexion" class="button--rounded">
-                    <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
-                        <p>CONNEXION</p>
-                    </a>
+                    <a href="<?php echo esc_url( get_home_url() ); ?>"></a>
                 </div>
 
             </header>

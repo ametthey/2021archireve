@@ -11,11 +11,6 @@
     margin: 50px;
     width: calc( 100vw - 100px);
 
-    @include respond(tablet) {
-        margin: auto;
-        width: 90%;
-    }
-
     .profil--header {
         order: 1;
     }
@@ -160,7 +155,7 @@
     }
 
     input {
-        cursor: pointer;
+        // cursor: pointer;
 
     }
     .acf-checkbox-list {
@@ -173,9 +168,6 @@
                 color: $bg;
             }
         }
-    }
-    .acf-field-for-edit {
-        display: none;
     }
     #page {
         .content--home {

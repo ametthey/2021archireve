@@ -1,7 +1,5 @@
 .page-template-page-home {
     #page {
-        // background: linear-gradient(#303030, #6755AA );
-
         .content--home {
             border-right: 1px solid $color;
         }
@@ -16,7 +14,18 @@
 
     @include respond(tablet) {
         height: calc( 100vh - 32px );
-        overflow: hidden;
+        // overflow: hidden;
+    }
+
+    &.header-mobile-active {
+        @include respond(tablet) {
+            height: 100vh;
+            overflow: auto;
+
+            .site-back-office {
+                background-color: rgba(48, 48, 48, 1) !important;
+            }
+        }
     }
 
     .content--home {

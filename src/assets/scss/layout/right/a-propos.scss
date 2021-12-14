@@ -491,3 +491,9 @@ $numeroSmall: 60px;
         background-position: center;
     }
 }
+
+.propos--section-title {
+    width: 70%;
+    height: auto;
+    margin: 0 0 calc( #{$ratio} * 2 ) 0;
+}

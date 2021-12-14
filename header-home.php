@@ -12,10 +12,7 @@
     </head>
     <body <?php body_class('is-home') ?>>
 
-        <?php echo "<script>console.log('We are using the file header-home.php');</script>"; ?>
-
         <?php get_template_part('template-parts/content', 'logo-home-animation'); ?>
-
 
         <header id="masthead" class="site-header header-home" role="banner">
             <div class="container--header">
@@ -30,9 +27,6 @@
                 ?>
 
                 <div class="site-header-user">
-                    <div class="header--user rounded--black button--rounded">
-                        <p><?php echo $pseudo; ?></p>
-                    </div>
                     <div id="left--connexion" class="left--filter button--rounded left--connexion-user">
                         <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
                             <p><?php echo $pseudo; ?></p>
@@ -72,14 +66,13 @@
 
                     <!-- Site branding -->
                     <div class="site-branding">
-                        <a href="<?php echo esc_url( home_url() ); ?>" >
-                            <?php // get_template_part( 'template-parts/content', 'logo' ); ?>
-                        </a>
+                        <a href="<?php echo esc_url( home_url() ); ?>" ></a>
                     </div>
 
                     <!-- Connexion pour mobile -->
                     <?php
 
+                    // UTILISATEUR CONNECTE
                     if ( is_user_logged_in() ) {
                         if(current_user_can('administrator')) {
                         } else if ( current_user_can('author') ){
@@ -88,19 +81,20 @@
                             wp_get_current_user();
                     ?>
                         <div id="mobile--connexion" class="button--rounded connexion">
-                            <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
-                                <p>CONNEXION</p>
+                            <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
+                                <p><?php echo $pseudo; ?></p>
                             </a>
                         </div>
 
                     <?php
                         }
+                    // UTILISATEUR NON CONNECTE
                     } else if ( ! is_user_logged_in() ) {
                     ?>
 
                         <div id="mobile--connexion" class="button--rounded connected">
-                            <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
-                                <p>Mon profil</p>
+                            <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
+                                <p>CONNEXION</p>
                             </a>
                         </div>
 
@@ -111,13 +105,6 @@
 
                     <!-- placeholder for centering -->
                     <div class="header-empty is-hidden"><div class="back-reve button--rounded"><p>Retour aux rêves</p></div></div>
-            </div>
-
-
-
-            <div class="container--header-back-office">
-                <?php get_template_part( 'template-parts/content', 'connexion' ); ?>
-                <?php get_template_part( 'template-parts/content', 'inscription' ); ?>
             </div>
 
         </header>

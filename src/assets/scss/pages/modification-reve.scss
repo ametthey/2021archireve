@@ -5,13 +5,6 @@
         justify-content: center;
     }
 
-    #header--mobile-apropos,
-    #mobile--connexion {
-        @include respond(tablet) {
-            display: none;
-        }
-    }
-
     .content {
         // overflow: auto;
     }

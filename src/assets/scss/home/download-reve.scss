@@ -446,6 +446,17 @@ $level2: 0.2;
     }
 }
 
+// DEBUG - selection-reves.js line39
+.container--reve-to-download {
+    &.is-selected {
+        display: block!important;
+        .selected--table {
+            .table--print {
+                display: table;
+            }
+        }
+    }
+}
 
 
 
@@ -457,7 +468,7 @@ $level2: 0.2;
     display: none;
 
     &.clicked {
-        // display: block;
+        display: block;
     }
 }
 

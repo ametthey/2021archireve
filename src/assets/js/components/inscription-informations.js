@@ -75,4 +75,49 @@ if ( pageII || pageProfil ) {
     }, true );
 }
 
+// window.addEventListener('load' , (e) => {
+// const foiSpirituels = document.querySelectorAll('.page-template-page-inscription-informations .acf-radio-list input');
+// foiSpirituels.forEach(foi => {
+//     const label = foi.closest('label');
+//     const customInput = `<span class="custom--input"></span>`;
+//     const customEmpty = ``;
+//     foi.insertAdjacentHTML('afterend', customInput);
+// });
+//
+// const travaillePas = document.querySelector('#ne-travaille-pas');
+// const labelTP = travaillePas.querySelector('label');
+// const inputTP = travaillePas.querySelector('input');
+// const customTP = travaillePas.querySelector('.custom--input');
+// const foiOInput = document.querySelectorAll('#acf-radio-foi-origine .acf-radio-list input');
+// const foiOLabel = document.querySelectorAll('#acf-radio-foi-origine .acf-radio-list label');
+//
+//     if ( travaillePas ) {
+//         travaillePas.addEventListener('click', showHideCustom, false);
+//     }
+//
+//     if ( foiOInput ) {
+//         foiOInput.forEach( foi => {
+//             foi.addEventListener('click', function(e) {
+//                 console.log( foi );
+//                 const label = foi.closest('label');
+//                 const custom = foi.nextSibling;
+//                 custom.classList.add('visible');
+//
+//                 if ( !label.classList.contains('selected') ) {
+//                     console.log(label);
+//                 }
+//
+//
+//             }, false);
+//         });
+//     }
+//
+// });
 
+function showHideCustom() {
+    if ( !labelTP.classList.contains('selected') ) {
+        customTP.classList.add('visible');
+    } else {
+        customTP.classList.remove('visible');
+    }
+}

@@ -31,6 +31,9 @@ function _themename_my_deregister_styles() {
     wp_deregister_style( 'user-registration-general' );
     wp_deregister_style( 'user-registration-smallscreen' );
     wp_deregister_style( 'user-registration-my-account-layout' );
+
+    // COOKIE-NOTICE
+    // wp_deregister_style( 'cookie-notice-front' );
 }
 add_action( 'wp_print_styles', '_themename_my_deregister_styles', 100 );
 

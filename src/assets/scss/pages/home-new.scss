@@ -12,8 +12,6 @@
     border-right: 1px solid $color;
     height: calc( 100vh - 50px );
     transform: translateX(50px);
-    // overflow-x: hidden;
-    // overflow-y: hidden;
     outline: none;
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
@@ -23,13 +21,8 @@
     transition: all 0.75s ease-in-out;
     width: $filter;
     z-index: 3;
+    white-space: nowrap;
 
-
-    @include respond(mobile) {
-        transform: translateX(32px);
-        width: calc(100% - 32px);
-
-    }
 
     @include respond(tablet) {
         transform: translateX(32px);
@@ -95,6 +88,10 @@
     .content-left-container-title {
         display: block;
         margin: calc( #{$ratio} / 2 ) 0 $ratio 0;
+
+        &:first-child {
+            margin-bottom: calc( #{$ratio} / 2 ) ;
+        }
     }
 }
 
@@ -137,12 +134,17 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+        user-select: none;
         // width: calc( 100vw - 100px );
         width: calc( 100% - 100px );
 
         @include respond(tablet) {
             margin: $ratio 10px $ratio 20px;;
             width: calc( 100% - 30px );
+        }
+
+        &:focus {
+            outline: none;
         }
 
         &.is-hidden {
@@ -157,6 +159,11 @@
         position: fixed !important;
         left: 50px;
         width: calc( 100vw - 100px );
+
+        @include respond(tablet) {
+            left: 0;
+            width: 100%;
+        }
     }
 }
 
@@ -262,6 +269,10 @@
     width: 50px;
     writing-mode: tb;
     white-space: pre;
+
+    @include respond(tablet) {
+        width: 32px;
+    }
 
     &.container--filtres-cover {
         cursor: pointer;

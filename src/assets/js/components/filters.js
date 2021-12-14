@@ -21,8 +21,16 @@ if ( articlesContainer ) {
                     opacity: 1
                 },
                 getSortData: {
-                    tag: '.taxonomy-tag parseInt'
+                    // tag: '.taxonomy-tag parseInt'
+                    tag: '.taxonomy-tag'
                 },
+                filter: function() {
+                    var $this = $(this);
+                    var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+                    // var selectResult = filterValue ? $this.is(filterValue) : true;
+                    // return searchResult && selectResult;
+                    return searchResult;
+                }
             });
 
             // SEARCH TAG
@@ -61,7 +69,6 @@ if ( articlesContainer ) {
                 var isChecked = $target.hasClass('is-checked');
                 var buttonfilter = $target.attr('data-filter');
 
-                console.log(buttonfilter);
 
                 if ( isChecked ) {
                     addFilter( buttonfilter );

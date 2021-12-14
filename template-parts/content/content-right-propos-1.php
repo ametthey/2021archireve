@@ -1,6 +1,6 @@
 <!-- <div class="propos&#45;&#45;section propos&#45;&#45;section&#45;1 propos&#45;&#45;section&#45;texte"> -->
 <div data-scroll-section class="propos--section propos--section-1 propos--section-texte">
-    <h1 class="huge" >Archirêve</h1>
+    <div class="propos--section-title"></div>
 
     <!-- Texte 1 -->
     <h2 class="colored-hover"><?php the_field( 'bienvenu', 'option' ); ?></h2>

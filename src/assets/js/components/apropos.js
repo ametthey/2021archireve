@@ -117,7 +117,9 @@ if ( home ) {
                 char.style.color = randomColor;
             });
             char.addEventListener( 'mouseleave', (e) => {
-                char.style.color = '#fff';
+                setTimeout( function() {
+                    char.style.color = '#fff';
+                }, 1500 );
             });
         });
     });

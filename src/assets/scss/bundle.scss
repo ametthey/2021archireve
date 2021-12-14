@@ -12,6 +12,7 @@
 @import 'vendors/acf/daypicker';
 @import 'vendors/plugins/user-registration';
 @import 'vendors/locomotive';
+@import 'vendors/cookie-notice';
 
 // Base
 @import 'base/base';
@@ -21,12 +22,31 @@
 @import 'base/helpers-debug'; ///////
 @import 'base/typography'; //////
 
+// COMMON
+@import 'layout/header';
+
+// HOME
+
+
+// CONNEXION
+// INSCRIPTION
+
+
+// BACK OFFICE
+
+// MON PROFIL
+// INSCRIPTION INFORMATION
+
+// CREATION REVE
+// MODIFICATION REVE
+
 @import 'layout/left/filtres/tag-search-bar';
 @import 'layout/left/filtres/tag-cloud';
 @import 'layout/left/filtres/lucidite';
 @import 'layout/left/filtres/typologie';
 @import 'layout/left/filtres/calendrier';
 @import 'layout/left/close-button';
+@import 'layout/left/tooltip';
 
 @import 'layout/article/article';
 @import 'layout/article/article-header';
@@ -41,7 +61,6 @@
 @import 'components/animations';
 
 // Layout
-@import 'layout/header';
 @import 'layout/home';
 @import 'layout/left';
 @import 'layout/right';

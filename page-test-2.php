@@ -5,20 +5,22 @@
 
 get_header(); ?>
 
-<div class="container-test">
-    <div class="lucidite--container typopologie--container left--filter">
-        <?php
-        $terms = get_terms( 'typologiedereve');
+<div class="js-radio-button-group">
+
+    <?php
+        // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
+        $terms = get_terms( 'niveaudelucidite' );
+        $field_lucidite = the_field('niveau_de_lucidite_tooltip');
         $o = 0;
 
         foreach ( $terms as $term ) {
 
             // EACH
-            echo '<input id="radio-input-' . $o . '"type="checkbox" value=".' . $term->slug . '" class=" lucidite--label-input ' . $term->slug . ' "><label for="radio-input-' . $o . '" class="lucidite--label lucidite--label-radio lucidite--item typologie--item button--rounded ' . $term->slug . '"><div class="typologie--image ' . $term->slug . '"></div>' . $term->name . '</label>';
+            echo '<button class="button button--filter lucidite--item button--rounded ' . $term->slug . '" data-filter=".' . $term->slug .'" aria-hidden="true">' . $term->name . '<span class="tooltip--lucidite-item">This is a tooltip test</span></button>';
             $o++;
         }
-        ?>
-    </div>
+    ?>
+
 </div>
 
 <?php get_footer(); ?>

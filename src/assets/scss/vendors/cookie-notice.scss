@@ -1,0 +1,22 @@
+#cookie-notice {
+    border: 1px solid $color;
+
+}
+
+.cookie-notice-container {
+    // align-items: center;
+    display: flex !important;
+    justify-content: space-between;
+    // width: auto;
+
+    #cn-notice-text {
+        text-align: left;
+    }
+}
+
+
+
+// BOUTON OK
+#cn-accept-cookie {
+    margin: 0 10px;
+}

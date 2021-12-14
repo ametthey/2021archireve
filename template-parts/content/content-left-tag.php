@@ -6,7 +6,7 @@
 </div>
 
 <?php
-    echo '<div class="tagitems--container left--filter">';
+    echo '<div class="tagitems--container js-radio-button-group left--filter">';
         $args = array(
             'orderby' => 'date',
             'order'   => 'DESC',
@@ -21,7 +21,7 @@
             shuffle( $tagArray );
 
             foreach ( $tagArray as $tag ) {
-                echo '<button class="tagitem button--squared no-button-style"><h4>' .  $tag . '</h4></button>';
+                echo '<button class="button tagitem button--squared no-button-style ' . $tag . '" data-filter=".' . $tag .'" aria-hidden="true" ><h4>' .  $tag . '</h4></button>';
             }
 
         endwhile; endif; wp_reset_postdata();

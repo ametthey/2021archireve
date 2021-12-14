@@ -8,8 +8,8 @@
     display: flex;
     justify-content: space-between;
     height: 50px;
-    // height: 100vh;
     padding: 0 calc( #{$ratio} / 2 );
+    position: relative;
     opacity: 1;
     transition: background-color $rythm1 ease-in-out;
     transition: opacity $rythm1 ease-in-out;
@@ -17,55 +17,17 @@
     width: 100%;
     z-index: 92;
 
-    // transform: translateY( calc( -90% - 50px ) );
-    position: relative;
-
-    &.header-is-open {
-        .container--header-back-office {
-            transform: translateY(0);
-            top: 0;
-        }
-    }
-
+    // HOME PAGE
     &.header-home {
         border-bottom: 1px solid $color;
     }
 
-    &.is-hidden {
-        opacity: 0;
+    // ALL OTHER PAGES
+    &.site-back-office {
+        border-bottom: none;
+        justify-content: center;
     }
 
-    &.is-faded {
-        background-color: $color;
-
-        & > * {
-            background-color: $color;
-        }
-
-        #mobile--connexion {
-            background-color: $color;
-            border: 1px solid $bg;
-
-            @include respond(tablet) {
-                background-color: $color;
-                border: 1px solid $bg;
-
-                a {
-                    color: $bg !important;
-                }
-            }
-
-            a {
-                color: $bg;
-            }
-        }
-
-        .site-branding {
-            svg {
-                fill: $bg;
-            }
-        }
-    }
 
     @include respond(tablet) {
         background-color: rgba(255, 255, 255, 1);
@@ -80,7 +42,7 @@
     }
 }
 
-
+// COMMON
 .site-branding {
     text-align: center;
     @include respond(tablet) {
@@ -90,7 +52,6 @@
     }
 
     svg {
-        transition: filter $rythm2 ease-in-out;
         width: 210px !important;
 
         @include respond(tablet) {
@@ -99,6 +60,21 @@
     }
 }
 
+// HOME HEADER
+.is-header-faded {
+    & > * {
+        background-color: $color !important;
+    }
+
+    #mobile--connexion {
+        background-color: $color;
+        border: 1px solid $bg;
+
+        a {
+            color: $bg;
+        }
+    }
+}
 // Bouton connexion mobile
 #mobile--connexion {
     display: none;
@@ -131,18 +107,6 @@
 
     @include respond(tablet) {
         display: none;
-    }
-}
-
-.header--user {
-    pointer-events: none;
-    text-transform: capitalize;
-    display: none;
-
-    // color: $bg;
-
-    & > * {
-        color: $bg !important;
     }
 }
 
@@ -204,7 +168,6 @@
         }
     }
 }
-
 .container--header {
     align-items: center;
     // border-bottom: 1px solid $color;
@@ -226,38 +189,6 @@
 
         @include respond(tablet) {
             flex: initial;
-        }
-    }
-}
-
-.container--header-back-office {
-    height: 100vh;
-    background-color: $bg;
-    border-bottom: 1px solid $color;
-    width: 100%;
-    transition: all 1s ease-in-out;
-    transform-origin: top;
-    transform: translateY( -100% );
-    position: fixed;
-    top: 50px;
-    left: 0;
-    z-index: 1;
-
-    display: none;
-
-    .container--connexion,
-    .container--inscription {
-        background-color: $bg;
-        position: absolute;
-        top: 50%;
-        left: 50%;
-        transform: translate( -50%, -50% );
-        z-index: 1;
-        width: 90%;
-        height: calc( 100vh - 2px );
-
-        &.is-active {
-            z-index: 2 !important;
         }
     }
 }
@@ -284,6 +215,7 @@
         .propos-links {
             h1 {
                 @include respond(tablet) {
+                    text-align: center;
                     font-size: $h2;
                     line-height: $h2;
                 }
@@ -328,14 +260,4 @@
         // transform: translateX(100%);
         transition: transform $rythm1 ease-in-out !important;
     }
-}
-
-
-// FOR HEADER.PHP
-.site-back-office {
-    background-color: rgba(0,0,0,0) !important;
-    left: 50%;
-    position: relative !important;
-    transform: translateX( -50%);
-    width: max-content !important;
 }

@@ -157,12 +157,17 @@
                         line-height: 1.4;
                     }
 
+                    &:focus-within {
+                        color: $color;
+                    }
+
                     &:hover {
                         background: none;
                         color: $color;
                     }
 
                     input {
+                        accent-color: $color;
                         font-size: inherit;
                         line-height: inherit;
                         order: 2;

@@ -48,7 +48,7 @@
             "wrapper": {
                 "width": "",
                 "class": "",
-                "id": ""
+                "id": "contenu--text"
             },
             "show_in_rest": 1,
             "edit_in_rest": 0,
@@ -437,5 +437,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1636943134
+    "modified": 1639466108
 }

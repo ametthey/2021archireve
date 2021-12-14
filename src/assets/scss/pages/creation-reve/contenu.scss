@@ -18,6 +18,15 @@
         margin: 0 4px;
     }
 
+    .contenu--button-dessin,
+    .contenu--button-texte  {
+        pointer-events: auto;
+
+        &.is-active {
+            pointer-events: none;
+        }
+    }
+
     @include respond(tablet) {
         h4 {
             font-size: $h5;
@@ -175,6 +184,7 @@
     padding: $ratio calc( #{$ratio} / 2 ) calc( #{$ratio} / 2 );
     position: fixed !important;
     right: 0;
+    top: 0;
     z-index: 10000 !important;
 
     @include respond(tablet) {

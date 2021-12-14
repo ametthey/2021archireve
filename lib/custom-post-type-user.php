@@ -6,8 +6,8 @@ function _themename_reveur_infour_info() {
 	$labels = array(
 		'name' => _x( 'reveur_infos', 'Post Type General Name', '_themename' ),
 		'singular_name' => _x( 'reveur_info', 'Post Type Singular Name', '_themename' ),
-		'menu_name' => _x( 'reveur_infos', 'Admin Menu text', '_themename' ),
-		'name_admin_bar' => _x( 'reveur_info', 'Add New on Toolbar', '_themename' ),
+		'menu_name' => _x( 'Informations Rêveur', 'Admin Menu text', '_themename' ),
+		'name_admin_bar' => _x( 'Informations Rêveur', 'Add New on Toolbar', '_themename' ),
 		'archives' => __( 'reveur_info Archives', '_themename' ),
 		'attributes' => __( 'reveur_info Attributes', '_themename' ),
 		'parent_item_colon' => __( 'Parent reveur_info:', '_themename' ),

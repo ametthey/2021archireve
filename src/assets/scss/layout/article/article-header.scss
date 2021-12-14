@@ -37,7 +37,7 @@
         @include respond(tablet) {
             font-size: $h5;
             line-height: 1.4;
-            margin: 24px 0 10px 10px;
+            margin: 34px 0 10px 10px;
             height: calc( 100% - 24px );
             width: calc( 100% - calc( 61px * 1 ) );
 

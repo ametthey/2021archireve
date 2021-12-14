@@ -12,8 +12,8 @@
     width: calc( 100% - 100px);
 
     @include respond(tablet) {
-        margin: auto;
-        width: 90%;
+        margin: 50px;
+        width: calc( 100% - 125px );
     }
 }
 
@@ -100,46 +100,7 @@
 // -----------------------------------------------------------------------------
 // RAPPORT AU TRAVAIL
 // -----------------------------------------------------------------------------
-#form--inscription-informations {
-    #acf-range-metier-type {
-        margin-bottom: 0 !important;
-    }
-
-    #ne-travaille-pas {
-        padding: 0 12px;
-
-        li {
-            text-align: center;
-
-            label {
-                font-family: $covik, sans-serif;
-                font-weight: 400;
-                font-style: normal;
-                font-size: $h4 !important;
-                line-height: $h4 !important;
-
-                @include respond(md) {
-                    font-size: $h5 !important;
-                    line-height: $h5 !important;
-                }
-
-                @include respond(tablet) {
-                    font-size: $h5 !important;
-                    line-height: $h5 !important;
-                }
-
-                input {
-
-                    &:focus {
-                        outline: none;
-                    }
-                }
-            }
-        }
-    }
-}
-
-
+@import 'pages/inscription-informations/rapport-au-travail';
 // -----------------------------------------------------------------------------
 // FOI SPIRITUELLE
 // -----------------------------------------------------------------------------
@@ -253,7 +214,7 @@
         #header--mobile-apropos,
         #mobile--connexion {
             @include respond(tablet) {
-                display: block;
+                // display: block;
             }
 
         }

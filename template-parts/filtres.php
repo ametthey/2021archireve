@@ -6,15 +6,11 @@
     </div>
 
     <div class="filtres--list is-hidden filters">
-        <h4 class="content-left-container-title left--filter">TagS<img class="tooltip-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/infoBulle.svg">
-            <span class="tooltip-text"><?php the_field( 'recherche_tag', 'option'  ); ?></span>
-        </h4>
+        <h4 class="content-left-container-title left--filter">TagS</h4>
         <?php get_template_part('template-parts/content/content', 'left-tag'); ?>
 
         <div class="ui-group lucidite--container left--filter">
-            <h4 class="content-left-container-title left--filter">Niveau de lucidité <img class="tooltip-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/infoBulle.svg">
-                <span class="tooltip-text"><?php the_field( 'niveau_de_lucidite_tooltip', 'option'  ); ?></span>
-            </h4>
+            <h4 class="content-left-container-title left--filter">Niveau de lucidité</h4>
             <div class="js-radio-button-group">
 
                 <?php
@@ -35,9 +31,7 @@
         </div>
 
         <div class="ui-group lucidite--container typopologie--container left--filter">
-            <h4 class="content-left-container-title left--filter">Typologie de rêve <img class="tooltip-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/infoBulle.svg">
-                <span class="tooltip-text"><?php the_field( 'recherce_typologie_de_reves', 'option'  ); ?></span>
-            </h4>
+            <h4 class="content-left-container-title left--filter">Typologie de rêve</h4>
             <div class="js-radio-button-group">
 
                 <?php
@@ -56,9 +50,7 @@
         </div>
 
         <div class="ui-group calendrier--container left--filter">
-            <h4 class="content-left-container-title left--filter">Période <img class="tooltip-icon" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/infoBulle.svg">
-                <span class="tooltip-text"><?php the_field( 'recherche_periode', 'option'  ); ?></span>
-            </h4>
+            <h4 class="content-left-container-title left--filter">Période</h4>
             <div class="js-radio-button-group">
                 <?php get_template_part('template-parts/content/content', 'left-date'); ?>
             </div>

@@ -1,7 +1,7 @@
 import { tableToPDF } from '../components/table-to-pdf.js';
 import { replaceCellsFromTable } from '../components/selection-reves-functions.js';
 
-// const buttonsSelectionReve = document.querySelectorAll(".button--select-to-download"); // BOUTON
+const buttonsSelectionRevePastille = document.querySelectorAll(".button--select-to-download"); // BOUTON
 const buttonsSelectionReve = document.querySelectorAll(".article-reve--download");
 const pastille = document.querySelector(".button--selected-number");
 const pastilleText = document.querySelector(".button--selected-number p");
@@ -36,6 +36,8 @@ if ( buttonsSelectionReve && pastille ) {
             const elementTarget = element;
 
             element.classList.toggle("-is-selected");
+
+
 
             // animation de l'icone texte dans le reve
             // iconText.classList.toggle("is-selected");
@@ -111,6 +113,7 @@ function selectEverything() {
     pastilleText.innerHTML = buttonsSelectionReve.length;
     buttonAllSelected.classList.add("-is-selected");
     buttonsSelectionReve.forEach(element => element.classList.add("-is-selected"));
+    buttonsSelectionRevePastille.forEach(element => element.classList.add("-is-selected"));
     COUNT = buttonsSelectionReve.length;
     if ( !pastille.classList.contains("is-visible") ) pastille.classList.add("is-visible");
     tables.forEach( ( table ) => ( table.classList.add("selected--table") , tableToAdd.push(table) ) );
@@ -119,6 +122,7 @@ function selectEverything() {
 function deselectEverything() {
     buttonAllSelected.classList.remove("-is-selected");
     buttonsSelectionReve.forEach(element => element.classList.remove("-is-selected"));
+    buttonsSelectionRevePastille.forEach(element => element.classList.remove("-is-selected"));
     COUNT = 0;
     if ( pastille.classList.contains("is-visible") ) pastille.classList.remove("is-visible");
     tables.forEach( ( table ) => ( table.classList.remove("selected--table") , tableToAdd.length = 0 ) );

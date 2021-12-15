@@ -163,10 +163,10 @@
             @include respond(tablet) {
                 font-size: $small;
             }
-            &:hover {
-                background-color: $color;
-                color: $bg;
-            }
+            // &:hover {
+            //     background-color: $color;
+            //     color: $bg;
+            // }
         }
     }
     #page {
@@ -202,10 +202,3 @@
         }
     }
 }
-
-
-
-
-
-
-

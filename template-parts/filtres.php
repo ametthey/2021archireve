@@ -12,7 +12,6 @@
         <div class="ui-group lucidite--container left--filter">
             <h4 class="content-left-container-title left--filter">Niveau de lucidité</h4>
             <div class="js-radio-button-group">
-
                 <?php
                     // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
                     $terms = get_terms( 'niveaudelucidite' );
@@ -26,8 +25,23 @@
                         $o++;
                     }
                 ?>
-
             </div>
+            <!-- <div class="tooltip&#45;radio&#45;button&#45;group"> -->
+                <?php
+                    // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
+                    $terms = get_terms( 'niveaudelucidite' );
+                    $field_lucidite = the_field('niveau_de_lucidite_tooltip');
+                    $o = 0;
+
+                        echo '<div class="tooltip-lucidite--item tooltip-lucidite--item-' . $term->slug . '">The content of the tooltip will go here, and the maximum length will be the double of this span</div>';
+                    foreach ( $terms as $term ) {
+
+                        // EACH
+                        // echo '<span class="tooltip-lucidite--item ' . $term->slug . '">The content of the tooltip will go here, and the maximum length will be the double of this span</span>';
+                        $o++;
+                    }
+                ?>
+            <!-- </div> -->
         </div>
 
         <div class="ui-group lucidite--container typopologie--container left--filter">

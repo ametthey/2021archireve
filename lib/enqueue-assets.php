@@ -8,9 +8,15 @@
 
 // Bundle stylesheet
 function _themename_bundle_assets() {
-    wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], filemtime( get_template_directory().'/dist/assets/css/bundle.css' ) ,  'all' );
-    wp_enqueue_script( '_themename-isotope', 'https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js' , ['jquery'], '3.0.0' ,   true );
-    wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/main.js',['jquery'] , filemtime( get_template_directory().'/dist/assets/js/main.js' ) ,   true );
+    // if ( is_front_page() && is_home() ) {
+    //     wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], filemtime( get_template_directory().'/dist/assets/css/bundle.css' ) ,  'all' );
+    //     wp_enqueue_script( '_themename-isotope', 'https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js' , ['jquery'], '3.0.0' ,   true );
+    //     wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/home.js',['jquery'] , filemtime( get_template_directory().'/dist/assets/js/home.js' ) ,   true );
+    // } else {
+    // }
+        wp_enqueue_style( '_themename-stylesheet', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', [], filemtime( get_template_directory().'/dist/assets/css/bundle.css' ) ,  'all' );
+        wp_enqueue_script( '_themename-isotope', 'https://npmcdn.com/isotope-layout@3/dist/isotope.pkgd.js' , ['jquery'], '3.0.0' ,   true );
+        wp_enqueue_script( '_themename-scripts', get_stylesheet_directory_uri() . '/dist/assets/js/main.js',['jquery', 'acf-input'] , filemtime( get_template_directory().'/dist/assets/js/main.js' ) ,   true );
 }
 add_action( 'wp_enqueue_scripts', '_themename_bundle_assets' );
 

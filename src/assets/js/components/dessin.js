@@ -185,7 +185,6 @@ if ( container ) {
                     case 'lucide':
                         ctx.globalCompositeOperation = 'source-over';
                         ctx.strokeStyle = lucide;
-                        console.log(`La couleur ${colorName.id} à la classe selected`);
                         break;
                     default:
                         break;

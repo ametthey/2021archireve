@@ -74,7 +74,7 @@ get_header();
             'field_6101d0f126bbf', // Quand
             'field_6101d12d26bc0', // Ou
             'field_6101d13426bc1', // Comment
-            'field_6101b366df9c6'
+            'field_6101b366df9c6',
         ),
 		'post_title'	=> true,
 		'new_post'		=> array(

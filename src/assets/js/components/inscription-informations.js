@@ -60,19 +60,27 @@ const tooltipII = document.querySelector('.container--inscription-informations-t
 const tooltipCoverII = document.querySelector('.inscription-tooltip-cover');
 const tooltipCloseII = document.querySelector('.inscription-tooltip-close');
 const tooltipCloseImgII = document.querySelector('.inscription-tooltip-close-button');
+const tooltipCoverContainer = document.querySelector('.container--tooltip-cover');
+const tooltipTexte = document.querySelector('.inscription-tooltip-texte');
 
 if ( pageII || pageProfil ) {
     document.addEventListener( 'click', function(e) {
 
-        if ( e.target === tooltipCoverII ) {
+        if ( e.target === tooltipCoverII || e.target === tooltipCoverContainer) {
             tooltipII.classList.toggle('is-open');
         }
 
         if ( e.target === tooltipCloseII || e.target === tooltipCloseImgII ) {
             tooltipII.classList.remove('is-open');
+            setTimeout( function() {
+                tooltipTexte.scrollTo({
+                    top: 0,
+                    behavior: 'instant',
+                })
+            }, 750);
         }
 
-    }, true );
+    }, false );
 }
 
 // window.addEventListener('load' , (e) => {

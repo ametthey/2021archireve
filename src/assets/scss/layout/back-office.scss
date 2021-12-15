@@ -204,8 +204,8 @@
 
         &.status-publish {
             article {
-                opacity: 1;
-                visibility: visible;
+                // opacity: 1;
+                // visibility: visible;
             }
         }
 
@@ -253,7 +253,13 @@
     margin: 0 auto !important;
     position: relative !important;
     top: 0!important;
-    visibility: visible;
     width: 100% !important;
+    opacity: 1 !important;
+    visibility: visible;
+    transition: opacity 0.25s linear;
+
+    &.profil--reve-hidden {
+        opacity: 1;
+    }
 
 }

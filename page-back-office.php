@@ -149,7 +149,7 @@ get_header(); ?>
 
                     <?php endif; ?>
 
-                    <div class="message--status-pending">
+                    <div class="message--status-pending is-hidden">
                         <h3>Votre rêve est en attente de validation</h3>
                     </div>
                 </div>

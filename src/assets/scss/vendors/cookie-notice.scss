@@ -1,22 +1,45 @@
-#cookie-notice {
-    border: 1px solid $color;
+body {
+    #cookie-notice {
+        border: 1px solid $color;
+        bottom: 10px;
+        left: 50%;
+        min-width: 70%;
+        transform: translateX( -50% );
 
-}
-
-.cookie-notice-container {
-    // align-items: center;
-    display: flex !important;
-    justify-content: space-between;
-    // width: auto;
-
-    #cn-notice-text {
-        text-align: left;
+        @include respond(tablet) {
+            min-width: 90%;
+        }
     }
-}
+
+    .cookie-notice-container {
+        align-items: center;
+        display: flex !important;
+        justify-content: space-between;
+
+        @include respond(tablet) {
+            align-items: flex-start;
+        }
+
+        #cn-notice-text {
+            line-height: 1.4;
+            margin: 0;
+            text-align: left;
+        }
+    }
+
+    // CLOSE BUTTON
+    #cn-close-notice {
+        display: none;
+    }
 
 
+    .cn-effect-fade {
+        pointer-events: none;
+    }
 
-// BOUTON OK
-#cn-accept-cookie {
-    margin: 0 10px;
+    // BOUTON OK
+    #cn-accept-cookie {
+        margin: 0 10px;
+    }
+
 }

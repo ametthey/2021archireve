@@ -4,7 +4,7 @@ const header = document.querySelector('#masthead');
 const page = document.querySelector('#page');
 const aproposContainerMobile = document.querySelectorAll('.right--container-propos-header .propos--collapse-container');
 
-// if ( headerButton ) {
+if ( headerButton ) {
     headerButton.addEventListener( 'click', (e) => {
         e.preventDefault();
         headerAPropos.classList.toggle('is-active');
@@ -56,7 +56,7 @@ const aproposContainerMobile = document.querySelectorAll('.right--container-prop
             }
         });
     });
-// }
+}
 
 
 function removeActiveState() {

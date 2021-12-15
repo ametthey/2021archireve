@@ -143,3 +143,28 @@ modaliteLieuInputs.forEach( input => {
         }
     });
 });
+
+// MODIFIER L'EMPLACEMENT DE LA SPAN AVEC LE NOM DE LA TYPOLOGIE
+const typologieListItems = document.querySelectorAll('#reve--typologie .categorychecklist-holder .acf-checkbox-list li');
+
+    typologieListItems.forEach( ( li ) => {
+        const label = li.querySelector('label');
+        const span = li.querySelector('span');
+        const input = li.querySelector('input');
+        const newSpan = document.createElement('span');
+        li.setAttribute('class', 'typologie--item');
+        label.setAttribute('class', 'typologie--label');
+        input.setAttribute('class', 'typologie--input');
+        newSpan.classList.add('typologie--span');
+        newSpan.innerHTML = span.innerHTML;
+        span.remove();
+
+        console.log(input);
+        // insertAfter(newSpan, input);
+        input.parentNode.insertBefore(newSpan, input);
+    });
+
+
+function insertAfter(newNode, existingNode) {
+    existingNode.parentNode.insertBefore(newNode, existingNode.nextSibling);
+}

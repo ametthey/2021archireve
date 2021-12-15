@@ -43,6 +43,7 @@ body {
     opacity: 1;
     visibility: visible;
     transition: all 1s ease-out;
+    -webkit-tap-highlight-color: transparent;
 
 
     // Temp for a propos in header

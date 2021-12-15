@@ -8,6 +8,7 @@ window.addEventListener( 'load', function(e) {
 } );
 
 function firstVisit() {
+    console.log('first visit');
     const contentHomeLogo = document.querySelector('.content--home-logo');
 
     if ( contentHomeLogo ) {
@@ -23,12 +24,13 @@ function firstVisit() {
 }
 
 function loadLottieAnimation(contentHomeLogo) {
+    console.log('load lottie animation');
     const logoAnimation = lottie.loadAnimation({
         container: contentHomeLogo,
         renderer: 'svg',
         loop: false,
         path: '/wp-content/themes/_themename/dist/assets/images/animation/archireve.json',
-
+        autoplay: true,
     });
 
     logoAnimation.addEventListener( 'complete', (e) => {
@@ -37,6 +39,7 @@ function loadLottieAnimation(contentHomeLogo) {
 }
 
 function loadLottieAProposDesktop() {
+    console.log('load lottie animation desktop');
     const aproposTitle = lottie.loadAnimation({
         container: document.querySelector('.apropos--elements .propos--section-title') ,
         renderer: 'svg',
@@ -48,6 +51,7 @@ function loadLottieAProposDesktop() {
 
 }
 function loadLottieAProposMobile() {
+    console.log('load lottie animation mobile');
     const aproposTitleM = lottie.loadAnimation({
         container: document.querySelector('.right--container-propos-header .propos--section-title') ,
         renderer: 'svg',
@@ -57,3 +61,5 @@ function loadLottieAProposMobile() {
     })
     aproposTitleM.play();
 }
+
+export { loadLottieAProposDesktop, loadLottieAProposMobile };

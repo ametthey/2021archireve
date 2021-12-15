@@ -113,7 +113,8 @@
         width: calc( 100vw - calc( #{$filter} + 50px ) );
 
         @include respond(tablet) {
-            width: calc( 100vw - 100px );
+            // width: calc( 100vw - 100px );
+
         }
 
         .container--articles {
@@ -449,4 +450,12 @@
     width: 100%;
     display: flex;
     flex-wrap: wrap;
+    position: relative;
+}
+
+.tooltip-lucidite--item {
+    position: absolute;
+    display: flex;
+    width: 50%;
+    height: 100%;
 }

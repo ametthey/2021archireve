@@ -96,6 +96,7 @@ modaliteSommeilInputs.forEach( input => {
  * Modalités de l'humeur
  */
 
+
 const modaliteHumeurInputs = document.querySelectorAll('#reve--humeur .acf-checkbox-list label input');
 modaliteHumeurInputs.forEach( input => {
     const label = input.closest('label');

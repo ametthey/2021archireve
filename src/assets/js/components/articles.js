@@ -14,7 +14,6 @@ articles.forEach( article => {
          * Affichage du contenu
          ******************************************************************************/
         article.addEventListener( 'click' , (e) => {
-            console.log( e.target );
             if ( e.target === articleHeader || e.target === articleHeader.querySelector('.article-reve--taxonomies') || e.target === articleHeader.querySelector('.article-header-date') || e.target === articleTaxonomies.querySelector('.article-taxonomies--typologie-icone') || e.target === articleTexte || e.target === articleTexte.querySelector('img') || e.target === articleHeader.querySelector('h1') || e.target === articleTaxonomies ) {
 
                 if ( articleTexte.classList.contains('-is-active') ) {
@@ -142,7 +141,6 @@ const home = document.querySelector('.home');
 if ( home ) {
     filteredYears(yearsToFilter);
 }
-
 
 /******************************************************************************
  *

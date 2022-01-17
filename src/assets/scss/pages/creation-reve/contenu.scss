@@ -156,6 +156,10 @@
         position: relative;
         width: 60%;
 
+        @include respond(tablet) {
+            width: 100%;
+        }
+
         &:after {
             background-image: url('../../assets/images/contenu_dessin.svg');
             background-position: center;

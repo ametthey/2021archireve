@@ -21,6 +21,13 @@
 
     &.is-visible {
         transform: translateY(0);
+
+        .button--selected-number {
+            &.is-visible {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
     }
 
     &.is-hidden-scrolled {
@@ -39,14 +46,13 @@
 // BOUTON TÉLÉCHARGER ET SÉLECTIONNER
 .button--download {
     cursor: pointer;
-    margin: 0 auto calc( #{$ratio} / 2 ) auto;
+    // margin: 0 auto calc( #{$ratio} / 2 ) auto;
     position: relative;
     // transition: transform $rythm1 $rythm1 ease-in-out, opacity $rythm1 $rythm3 ease-in-out !important;
     width: max-content;
 
     @include respond(tablet) {
         margin: 0 auto calc( 30px / 2 );
-        width: 80%;
     }
 
     // CLICK
@@ -93,12 +99,6 @@
             width: 20px;
         }
 
-
-        &.is-visible {
-            opacity: 1;
-            transform: scale(1);
-        }
-
         p {
             font-size: $small;
             line-height: $small;
@@ -116,7 +116,7 @@
     cursor: pointer;
     display: flex;
     justify-content: center;
-    margin: 0 calc( 30px / 2 ) 0;
+    margin: 15px calc( 30px / 2 ) 0;
     position: relative;
     width: calc( 100% - 30px );
 
@@ -162,4 +162,16 @@
 
         // transform: translate( -50%, -50% );
     }
+}
+
+
+.button--container {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+
+}
+
+.button--preview {
+    margin-right: 50px;
 }

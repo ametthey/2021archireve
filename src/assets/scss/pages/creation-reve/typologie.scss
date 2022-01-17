@@ -1,3 +1,4 @@
+// https://moderncss.dev/pure-css-custom-styled-radio-buttons/
 // -----------------------------------------------------------------------------
 // LAYOUT SETTINGS
 // -----------------------------------------------------------------------------
@@ -21,8 +22,9 @@
 
                 @include respond(tablet) {
                     display: grid;
-                    grid-template-columns: repeat(1, 1fr);
-                    grid-template-rows: 150px;
+                    grid-template-columns: repeat(2, 1fr);
+                    grid-template-rows: auto;
+                    width: 100%;
 
                     &:before,
                     &:after {
@@ -38,11 +40,12 @@
 // LI
 // -----------------------------------------------------------------------------
 .typologie--item {
-    width: 20%;
+    width: 45%;
     align-items: center;
     display: flex !important;
-    flex-direction: column;
+    flex-direction: row;
     margin: 0 calc( #{$ratio} / 2 ) calc( #{$ratio} / 3 ) calc( #{$ratio} / 2 ) !important;
+    justify-self: center;
 }
 
 // -----------------------------------------------------------------------------
@@ -90,7 +93,7 @@
         height: 20px;
         border-radius: 50%;
         transform: scale(0);
-        transition: 120ms transform linear;
+        transition: 0.025s all ease-in-out;
         box-shadow: inset 1em 1em $color;
     }
 

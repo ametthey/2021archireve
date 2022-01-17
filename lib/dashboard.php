@@ -1,6 +1,6 @@
 <?php
 
-
+add_action( 'wp_dashboard_setup', '_themename_remove_all_dashboard_metaboxes' );
 function _themename_remove_all_dashboard_metaboxes() {
 
     // Remove Welcome panel
@@ -13,5 +13,3 @@ function _themename_remove_all_dashboard_metaboxes() {
     remove_meta_box( 'dashboard_activity', 'dashboard', 'normal');
 
 }
-add_action( 'wp_dashboard_setup', '_themename_remove_all_dashboard_metaboxes' );
-

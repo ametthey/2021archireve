@@ -16,9 +16,9 @@ const backofficeReves = document.querySelectorAll('.backoffice-reve');
         postsPublishedStatus.forEach( post => {
             const postMessage = post.querySelector('.message--status-pending');
 
-            // if ( post.classList.contains('status-publish') ) {
-            //     postMessage.classList.add('is-hidden');
-            // }
+            if ( post.classList.contains('status-pending') ) {
+                postMessage.classList.add('is-hidden');
+            }
         });
     }
 

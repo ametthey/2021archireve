@@ -7,10 +7,10 @@
 
     <div class="filtres--list is-hidden filters">
         <h4 class="content-left-container-title left--filter">TagS</h4>
-        <?php get_template_part('template-parts/content/content', 'left-tag'); ?>
+        <?php get_template_part('template-parts/filtres/content', 'left-tag'); ?>
 
         <div class="ui-group lucidite--container left--filter">
-            <h4 class="content-left-container-title left--filter">Niveau de lucidité</h4>
+            <h4 class="content-left-container-title left--filter">Niveau de lucidité<div class="filter--title-information" data-filtre="lucidite">i</div></h4>
             <div class="js-radio-button-group">
                 <?php
                     // https://designorbital.com/snippets/how-to-get-all-taxonomies-for-a-post-type/
@@ -33,7 +33,6 @@
                     $field_lucidite = the_field('niveau_de_lucidite_tooltip');
                     $o = 0;
 
-                        echo '<div class="tooltip-lucidite--item tooltip-lucidite--item-' . $term->slug . '">The content of the tooltip will go here, and the maximum length will be the double of this span</div>';
                     foreach ( $terms as $term ) {
 
                         // EACH
@@ -45,7 +44,7 @@
         </div>
 
         <div class="ui-group lucidite--container typopologie--container left--filter">
-            <h4 class="content-left-container-title left--filter">Typologie de rêve</h4>
+            <h4 class="content-left-container-title left--filter">Typologie de rêve<div class="filter--title-information" data-filtre="typologie">i</div></h4>
             <div class="js-radio-button-group">
 
                 <?php
@@ -66,12 +65,9 @@
         <div class="ui-group calendrier--container left--filter">
             <h4 class="content-left-container-title left--filter">Période</h4>
             <div class="js-radio-button-group">
-                <?php get_template_part('template-parts/content/content', 'left-date'); ?>
+                <?php get_template_part('template-parts/filtres/content', 'left-date'); ?>
             </div>
         </div>
-
-        <?php // get_template_part('template-parts/content/content', 'left-lucidite'); ?>
-        <?php // get_template_part('template-parts/content/content', 'left-typologie'); ?>
 
         <!-- Supprimer les filtres  -->
         <div class="content--left-reset-filters lucidite--container left--filter ui-group">

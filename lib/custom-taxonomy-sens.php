@@ -2,6 +2,7 @@
 
 // Register Taxonomy Modalite du sens
 // Taxonomy Key: sens
+add_action( 'init', '_themename_create_modalite_sens' );
 function _themename_create_modalite_sens() {
 
 	$labels = array(
@@ -42,6 +43,3 @@ function _themename_create_modalite_sens() {
 	register_taxonomy( 'modalite_sens', array('reve'), $args );
 
 }
-add_action( 'init', '_themename_create_modalite_sens' );
-
-?>

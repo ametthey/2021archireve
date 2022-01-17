@@ -1,6 +1,7 @@
 <?php
 // Register Taxonomy Typologie de rêve
 // Taxonomy Key: typologiedereve
+add_action( 'init', 'create_typologiedereve_tax' );
 function create_typologiedereve_tax() {
 
 	$labels = array(
@@ -46,4 +47,3 @@ function create_typologiedereve_tax() {
 	register_taxonomy( 'typologiedereve', array('reve'), $args );
 
 }
-add_action( 'init', 'create_typologiedereve_tax' );

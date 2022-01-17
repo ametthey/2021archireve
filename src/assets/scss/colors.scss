@@ -1,0 +1,15 @@
+$roseC: rgba(214, 112, 131, $level2);
+$rose: rgba(214, 112, 131, $level);
+$roseF: rgba(214, 112, 131, 1);
+$vertC: rgba(44, 175, 56, $level2);
+$vert: rgba(44, 175, 56, $level);
+$vertF: rgba(44, 175, 56, 1);
+
+:export {
+    roseClair: $roseC,
+    rose: $rose,
+    roseFonce: $roseF,
+    vertClair: $vertC,
+    vert: $vert,
+    vertFonce: $vertF,
+}

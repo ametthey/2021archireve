@@ -8,6 +8,7 @@
         <link rel="profile" href="https://gmpg.org/xfn/11" />
         <link rel="dns-prefetch" href="https://use.typekit.net">
         <link rel="stylesheet" href="https://use.typekit.net/gta0mfy.css">
+        <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/Mono/Solide_Mirage-Mono_web.woff2" as="font" type="font/woff2" crossorigin>
 
         <?php wp_head(); ?>
     </head>
@@ -24,7 +25,5 @@
 
             </header>
 
-        <!-- A Propos for mobile -->
-        <?php get_template_part( 'template-parts/content/content', 'right-propos-header' ); ?>
 
 

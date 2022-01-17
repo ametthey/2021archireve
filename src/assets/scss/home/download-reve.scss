@@ -1,14 +1,20 @@
 // Opacité des fonds
 $level: 0.7;
 $level2: 0.2;
+$roseC: rgba(214, 112, 131, $level2);
+$rose: rgba(214, 112, 131, $level);
+$roseF: rgba(214, 112, 131, 1);
+$vertC: rgba(44, 175, 56, $level2);
+$vert: rgba(44, 175, 56, $level);
+$vertF: rgba(44, 175, 56, 1);
 
 .post-type-reveur-info {
     // display: none;
 }
 
 .container--reve-to-download {
-    display: flex;
-    // display: none;
+    // display: flex;
+    display: none;
     flex-direction: column;
     height: 100%;
     overflow: auto;
@@ -21,6 +27,7 @@ $level2: 0.2;
     width: auto;
 }
 
+
 .table--print {
     display: none;
     background-color: $bg;
@@ -32,41 +39,98 @@ $level2: 0.2;
             border: 1px solid $color;
             padding: 3px 2px;
             font-size: 15px;
-            // 1ERE COLONNE
-            &:nth-of-type(1) {
-                background-color: rgba(214, 112, 131, $level);
-            }
-
-            // 2EME COLONNE
-            &:nth-of-type(2) {
-                background-color: rgba(214, 112, 131, $level);
-            }
-
-            // 3EME COLONNE
-            &:nth-of-type(3) {
-                background-color: rgba(44, 175, 56, $level);
-            }
-
-            // 4EME COLONNE
-            &:nth-of-type(4) {
-                background-color: rgba(44, 175, 56, $level2);
-            }
         }
 
-        // DONNE DU COMPTE
+        // DONNES DU REVE & DONNES DU COMPTE
         &:nth-of-type(1) {
             td {
+                font-weight: bold;
+
+                &:nth-of-type(1) {
+                    background-color: $roseF !important;
+                }
+                &:nth-of-type(2) {
+                    background-color: $roseF !important;
+                }
                 &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, 1);
+                    background-color: $vertF !important;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertF !important;
                 }
             }
         }
 
-        // GENRE
+        &:nth-of-type(2) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: $vert;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertC;
+                    text-align: center;
+                }
+            }
+        }
+
+        &:nth-of-type(3) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: $vert;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertC;
+                }
+            }
+        }
         &:nth-of-type(4) {
             td {
                 &:nth-of-type(3) {
+                    background-color: $vert;
                     text-align: center;
+                }
+            }
+        }
+        &:nth-of-type(7) {
+            td {
+                &:nth-of-type(1) {
+                    text-align: center!important;
+                }
+                &:nth-of-type(2) {
+                    background-color: $vertC !important;
+                    text-align: right!important;
+                    font-style: italic;
+                }
+                &:nth-of-type(3) {
+                    background-color: $vertC;
+                    text-align: center;
+                }
+            }
+        }
+        &:nth-of-type(8) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: $vertC !important;
+                }
+            }
+        }
+        &:nth-of-type(9) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: $vert !important;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertC !important;
+                }
+            }
+        }
+        &:nth-of-type(10) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: $vert !important;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertC !important;
                 }
             }
         }
@@ -74,249 +138,193 @@ $level2: 0.2;
         // MILIEUX
         &:nth-of-type(11) {
             td {
-                &:nth-of-type(3) {
+                &:nth-of-type(1) {
+                    background-color: $rose;
                     text-align: center;
+                }
+                &:nth-of-type(2) {
+                    background-color: $vert !important;
+                    text-align: center!important;
                 }
             }
         }
 
-        // RAPPORT AU TRAVAIL
         &:nth-of-type(14) {
             td {
                 &:nth-of-type(3) {
-                    text-align: center;
+                    background-color: $vert;
+                    text-align: center!important;
                 }
             }
         }
 
-        // RELATION A UN PAYSAGE
-        &:nth-of-type(18) {
-            td {
-                &:nth-of-type(3) {
-                    text-align: center;
-                }
-            }
-        }
-
-        // ATTIRANCE
-        &:nth-of-type(25) {
-            td {
-                &:nth-of-type(3) {
-                    text-align: center;
-                }
-            }
-        }
-
-        // FOI SPIRITUELLE
-        &:nth-of-type(29) {
-            td {
-                &:nth-of-type(3) {
-                    text-align: center;
-                }
-            }
-        }
-
-        // RELATION AU SOMMEIL
-        &:nth-of-type(32) {
-            td {
-                &:nth-of-type(3) {
-                    text-align: center;
-                }
-            }
-        }
-
-        // RELATIONA AUX REVES
+        &:nth-of-type(18),
+        &:nth-of-type(25),
+        &:nth-of-type(29),
+        &:nth-of-type(32),
         &:nth-of-type(35) {
             td {
+                background-color: $vert;
+                text-align: center!important;
+            }
+        }
+
+        &:nth-of-type(12),
+        &:nth-of-type(13) {
+            td {
                 &:nth-of-type(3) {
+                    background-color: $vertC;
+                    text-align: right!important;
+                    font-style: italic;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertC;
                     text-align: center;
                 }
             }
         }
 
-        // Modalité du sommeil
-        &:nth-of-type(7) {
+        &:nth-of-type(15) {
             td {
-                &:nth-of-type(1) {
-                    background-color: rgba(214, 112, 131, 1);
+                &:nth-of-type(2) {
+                    background-color: $vertC;
+                    text-align: right!important;
+                    font-style: italic;
+                }
+                &:nth-of-type(3) {
+                    background-color: $vertC;
                     text-align: center;
                 }
             }
         }
 
-        // SOUVENIR DU RÊVE
-        &:nth-of-type(11) {
+        &:nth-of-type(16),
+        &:nth-of-type(17),
+        &:nth-of-type(19),
+        &:nth-of-type(20),
+        &:nth-of-type(21),
+        &:nth-of-type(22) {
             td {
                 &:nth-of-type(1) {
-                    background-color: rgba(214, 112, 131, 1);
-                    text-align: center;
-                }
-            }
-        }
-    }
-}
-// WHITE BACKGROUND
-@for $i from 15 through 37 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(1) {
-                    border: none;
-                    background-color: $bg;
+                    background-color: $vertC;
+                    text-align: right!important;
+                    font-style: italic;
                 }
                 &:nth-of-type(2) {
-                    border: none;
-                    background-color: $bg;
+                    background-color: $vertC;
+                    text-align: center;
                 }
             }
         }
-    }
-}
 
-// GENRE
-@for $i from 5 through 9 {
-    .table--print{
-        tr:nth-of-type(#{$i}) {
+        &:nth-of-type(23) {
             td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
+                &:nth-of-type(2) {
+                    background-color: $vertC;
+                    text-align: right!important;
                     font-style: italic;
                 }
+                &:nth-of-type(3) {
+                    background-color: $vertC;
+                    text-align: center;
+                }
+            }
+        }
+        &:nth-of-type(24),
+        &:nth-of-type(26),
+        &:nth-of-type(27),
+        &:nth-of-type(28),
+        &:nth-of-type(30),
+        &:nth-of-type(31),
+        &:nth-of-type(33),
+        &:nth-of-type(34),
+        &:nth-of-type(36),
+        &:nth-of-type(37) {
+            td {
+                &:nth-of-type(1) {
+                    background-color: $vertC;
+                    text-align: right!important;
+                    font-style: italic;
+                }
+                &:nth-of-type(2) {
+                    background-color: $vertC;
+                    text-align: center;
+                }
             }
         }
     }
 }
 
-// MILIEUX
-@for $i from 12 through 13 {
+// COLONNE 1 - 2 -> 7
+@for $i from 2 through 7 {
     .table--print {
         tr:nth-of-type(#{$i}) {
             td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
+                &:nth-of-type(1) {
+                    background-color: $rose;
                 }
             }
         }
     }
 }
 
-// RAPPORT AU TRAVAIL
-@for $i from 15 through 17 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
-                }
-            }
-        }
-    }
-}
-
-// RELATION A UN PAYSAGE
-@for $i from 19 through 24 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
-                }
-            }
-        }
-    }
-}
-
-// ATTIRANCE
-@for $i from 26 through 28 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
-                }
-            }
-        }
-    }
-}
-
-// FOI SPIRITUELLE
-@for $i from 30 through 31 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
-                }
-            }
-        }
-    }
-}
-
-// RELATION AU SOMMEIL
-@for $i from 33 through 34 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
-                }
-            }
-        }
-    }
-}
-
-// RELATION AUX RÊVES
-@for $i from 36 through 38 {
-    .table--print {
-        tr:nth-of-type(#{$i}) {
-            td {
-                &:nth-of-type(3) {
-                    background-color: rgba(44, 175, 56, $level2);
-                    text-align: right;
-                    font-style: italic;
-                }
-            }
-        }
-    }
-}
-
-// HUMEUR SENS LIEU
+// COLONNE 1 - MODALITE DU SOMMEIL
 @for $i from 8 through 10 {
     .table--print {
         tr:nth-of-type(#{$i}) {
             td {
                 &:nth-of-type(1) {
-                    text-align: right;
+                    background-color: $roseC;
                     font-style: italic;
-                    padding: 0 5px 0 0;
+                    text-align: right;
                 }
             }
         }
     }
 }
 
-// OU QUAND COMMENT
+// COLONNE 1 - SOUVENIR DU REVE
 @for $i from 12 through 14 {
     .table--print {
         tr:nth-of-type(#{$i}) {
             td {
                 &:nth-of-type(1) {
+                    background-color: $roseC;
+                    font-style: italic;
+                    text-align: right;
+                }
+            }
+        }
+    }
+}
+
+// COLONNE 2 - 1 -> 14
+@for $i from 1 through 14 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(2) {
+                    background-color: $roseC;
+                    text-align: center;
+                }
+            }
+        }
+    }
+}
+
+// COLONNE 2 - 5 -> 7
+@for $i from 5 through 6 {
+    .table--print {
+        tr:nth-of-type(#{$i}) {
+            td {
+                &:nth-of-type(3) {
+                    background-color: $vertC;
                     text-align: right;
                     font-style: italic;
-                    padding: 0 5px 0 0;
+                }
+                &:nth-of-type(4) {
+                    background-color: $vertC;
+                    text-align: center;
                 }
             }
         }
@@ -324,25 +332,6 @@ $level2: 0.2;
 }
 
 
-/*
- * Debug print elements
- */
-
-.article-reve {
-    // display: none;
-}
-
-// .container--articles {
-//     height: auto !important;
-// }
-//
-// .container--reve-to-download {
-//     display: flex !important;
-// }
-//
-// .table--print {
-//     display: block;
-// }
 
 .container--reve-to-download {
     position: fixed;
@@ -446,17 +435,6 @@ $level2: 0.2;
     }
 }
 
-// DEBUG - selection-reves.js line39
-.container--reve-to-download {
-    &.is-selected {
-        display: block!important;
-        .selected--table {
-            .table--print {
-                display: table;
-            }
-        }
-    }
-}
 
 
 
@@ -465,7 +443,7 @@ $level2: 0.2;
 }
 
 .container--reve-to-download {
-    display: none;
+    // display: none;
 
     &.clicked {
         display: block;
@@ -484,3 +462,68 @@ $level2: 0.2;
         color: $bg;
     }
 }
+
+#start {
+    background-color: rgb(76, 165, 142);
+    font-size: $h5 !important;
+    padding: 10px !important;
+    width: calc( 65vw / 2 - 20px );
+}
+
+#start-dessin {
+    background: none;
+    background-position: center;
+    background-size: 100px 100px;
+    // background-color: $lucide;
+    position: relative;
+}
+
+// PDF VIEWER
+.container--pdf-viewer {
+    display: none;
+    background-color: $premonitoire;
+    position: fixed;
+    width: calc(100vw - 100px);
+    height: calc(100vh - 165px);
+    top: 47%;
+    left: 50%;
+    transform: translate( -50%, -50% );
+
+    place-items: center;
+
+    &.open {
+        display: grid;
+    }
+
+    embed {
+        height: 100%;
+        position: relative;
+        width: 100%;
+    }
+
+    button {
+        background-color: $commun;
+        font-size: 25px;
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        z-index: 2;
+    }
+}
+// DEBUG - selection-reves.js line39
+// .container--reve-to-download {
+//     &.is-selected {
+//         display: grid !important;
+//         place-items: center;
+//         margin: 0;
+//         width: 100vw;
+//
+//
+//         // .selected--table {
+//             .table--print {
+//                 display: table;
+//                 width: 65vw;
+//             }
+//         // }
+//     }
+// }

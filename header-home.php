@@ -12,7 +12,7 @@
     </head>
     <body <?php body_class('is-home') ?>>
 
-        <?php get_template_part('template-parts/content', 'logo-home-animation'); ?>
+        <?php get_template_part('template-parts/header/content', 'logo-home-animation'); ?>
 
         <header id="masthead" class="site-header header-home" role="banner">
             <div class="container--header">
@@ -110,7 +110,7 @@
         </header>
 
         <!-- A Propos for mobile -->
-        <?php get_template_part( 'template-parts/content/content', 'right-propos-header' ); ?>
+        <?php get_template_part( 'template-parts/header/apropos-mobile' ); ?>
 
         <div id="page">
 

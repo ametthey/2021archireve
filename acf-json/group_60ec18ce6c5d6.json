@@ -245,7 +245,7 @@
         },
         {
             "key": "field_6101cc6fc7157",
-            "label": "Sens",
+            "label": "Activité",
             "name": "sens",
             "type": "taxonomy",
             "instructions": "",
@@ -375,29 +375,6 @@
             "prepend": "",
             "append": "",
             "maxlength": ""
-        },
-        {
-            "key": "field_613ad55152195",
-            "label": "Auteur",
-            "name": "auteur",
-            "type": "user",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_rest": 1,
-            "edit_in_rest": 0,
-            "role": "",
-            "allow_null": 0,
-            "multiple": 0,
-            "return_format": "array",
-            "acfe_bidirectional": {
-                "acfe_bidirectional_enabled": "0"
-            }
         }
     ],
     "location": [
@@ -437,5 +414,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1639466108
+    "modified": 1642030181
 }

@@ -126,6 +126,10 @@
     flex-direction: column;
     width: 100%;
 
+    @include respond(tablet) {
+        margin: $ratio 0 0 0;
+    }
+
     & > * {
         margin: 0 0 $ratio 0;
 
@@ -197,15 +201,23 @@
 
         &.status-pending {
             article {
-                opacity: 0.2;
+                opacity: 0.2 !important;
                 pointer-events: none;
+
+                & + .message--status-pending {
+                    display: flex;
+                }
             }
         }
 
         &.status-publish {
             article {
-                // opacity: 1;
-                // visibility: visible;
+                opacity: 1;
+                visibility: visible;
+
+                & + .message--status-pending {
+                    display: none;
+                }
             }
         }
 
@@ -220,7 +232,7 @@
             width: max-content;
 
             &.is-hidden {
-                display: none;
+                display: flex;
             }
         }
 
@@ -254,7 +266,7 @@
     position: relative !important;
     top: 0!important;
     width: 100% !important;
-    opacity: 1 !important;
+    opacity: 1;
     visibility: visible;
     transition: opacity 0.25s linear;
 

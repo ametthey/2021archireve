@@ -2,6 +2,7 @@
 
 // Register Taxonomy Modalite du humeur
 // Taxonomy Key: humeur
+add_action( 'init', '_themename_create_modalite_humeur' );
 function _themename_create_modalite_humeur() {
 
 	$labels = array(
@@ -42,6 +43,3 @@ function _themename_create_modalite_humeur() {
 	register_taxonomy( 'modalite_humeur', array('reve'), $args );
 
 }
-add_action( 'init', '_themename_create_modalite_humeur' );
-
-?>

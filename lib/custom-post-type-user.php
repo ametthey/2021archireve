@@ -1,6 +1,7 @@
 <?php
 // Register Custom Post Type reveur_infour_info
 // Post Type Key: reveur_infour_info
+add_action( 'init', '_themename_reveur_infour_info', 0 );
 function _themename_reveur_infour_info() {
 
 	$labels = array(
@@ -45,7 +46,7 @@ function _themename_reveur_infour_info() {
 		'show_in_admin_bar' => true,
 		'show_in_nav_menus' => true,
 		'can_export' => true,
-		'has_archive' => true,
+		'has_archive' => false,
 		'hierarchical' => false,
 		'exclude_from_search' => false,
 		'show_in_rest' => true,
@@ -57,6 +58,26 @@ function _themename_reveur_infour_info() {
 	register_post_type( 'reveur_info', $args );
 
 }
-add_action( 'init', '_themename_reveur_infour_info', 0 );
 
-?>
+add_action('wp','change_mypost_date');
+function change_mypost_date(){
+    $args = array(
+        'post_type' =>  'reveur_info',
+        'posts_per_page' => -1
+    );
+    $the_query = new WP_Query( $args );
+    if ( $the_query->have_posts() ) {
+        echo '<ul>';
+        while ( $the_query->have_posts() ) {
+            $the_query->the_post();
+            $datetime  = date( 'Y-m-d H:i:s', current_time( 'timestamp', 0 ) );
+            $current_post = array(
+                  'ID'           => get_the_ID(),
+                  'post_modified' => $datetime
+              );
+            // Update the post into the database
+              wp_update_post( $current_post );
+        }
+        wp_reset_postdata();
+    }
+}

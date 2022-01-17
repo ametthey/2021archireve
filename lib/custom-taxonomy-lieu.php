@@ -2,6 +2,7 @@
 
 // Register Taxonomy Modalite du lieu
 // Taxonomy Key: lieu
+add_action( 'init', '_themename_create_modalite_lieu' );
 function _themename_create_modalite_lieu() {
 
 	$labels = array(
@@ -42,6 +43,3 @@ function _themename_create_modalite_lieu() {
 	register_taxonomy( 'modalite_lieu', array('reve'), $args );
 
 }
-add_action( 'init', '_themename_create_modalite_lieu' );
-
-?>

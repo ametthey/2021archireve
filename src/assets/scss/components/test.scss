@@ -1,33 +1,10 @@
-.page-template-page-test-2 {
-    #page {
-        display: grid;
-        height: 100vh;
-        place-items: center;
-    }
-
-}
-
-.container {
-    cursor: none;
-    background-color: red;
-    width: 500px;
-    height: 500px;
-}
-
-#cursor {
-    z-index: 99;
-    position: fixed;
-    left: 0;
+#container--test {
+    background-color: $bg;
+    color: $color;
+    height: 100vh;
+    width: 100vw;
+    position: absolute;
     top: 0;
-    pointer-events: auto;
-    will-change: transform;
-
-    .cursor--inner {
-        width: 5vw;
-        height: 5vw;
-        border-radius: 50%;
-        transform: translate(-50%, -50%);
-        border: solid 1px #1d213f;
-    }
+    left: 0;
+    z-index: 1111111111111;
 }
-

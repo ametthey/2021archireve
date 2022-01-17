@@ -1,6 +1,7 @@
 <?php
 // Register Taxonomy Modalite du sommeil
 // Taxonomy Key: sommeils
+add_action( 'init', 'create_modalite_sommeil_tax' );
 function create_modalite_sommeil_tax() {
 
 	$labels = array(
@@ -42,6 +43,3 @@ function create_modalite_sommeil_tax() {
 	register_taxonomy( 'modalite_sommeil', array('reve'), $args );
 
 }
-add_action( 'init', 'create_modalite_sommeil_tax' );
-
-?>

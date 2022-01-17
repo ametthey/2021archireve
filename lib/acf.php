@@ -18,6 +18,14 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'		=> false,
 	));
 
+	acf_add_options_page( array(
+		'page_title'	=> 'Popup filtres',
+		'menu_title'	=> 'Popup filtres',
+		'menu_slug' 	=> 'acf-popup-filtres',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+	));
+
 }
 
 // Enable the option show in rest
@@ -27,6 +35,7 @@ add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
 
 // Add values to taxonomy tag
+add_filter('acf/update_value/key=field_60ec18ce6f727', 'my_acf_update_value', 10, 4);
 function my_acf_update_value( $value, $post_id, $field, $original ) {
     if( is_string($value) ) {
         $tagString = $value;
@@ -54,6 +63,3 @@ function my_acf_update_value( $value, $post_id, $field, $original ) {
     }
     return $value;
 }
-add_filter('acf/update_value/key=field_60ec18ce6f727', 'my_acf_update_value', 10, 4);
-
-?>

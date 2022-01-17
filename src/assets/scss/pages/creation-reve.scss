@@ -34,6 +34,10 @@
     margin: 100px 0 0 0;
     width: 75%;
 
+    @include respond(tablet) {
+        width: 100%;
+    }
+
     &.is-loaded {
         opacity: 1;
         visibility: visible;
@@ -67,6 +71,10 @@
     .acf-input {
         margin: auto;
         width: 60%;
+
+        @include respond(tablet) {
+            width: 100%;
+        }
     }
 
     .acf-field {

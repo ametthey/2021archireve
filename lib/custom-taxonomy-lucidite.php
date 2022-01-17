@@ -2,6 +2,7 @@
 
 // Taxonomy Key: niveaudelucidite
 // Register Taxonomy Niveau de lucidité
+add_action( 'init', 'create_niveaudelucidit_tax' );
 function create_niveaudelucidit_tax() {
 
 	$labels = array(
@@ -44,7 +45,3 @@ function create_niveaudelucidit_tax() {
 	register_taxonomy( 'niveaudelucidite', array('reve'), $args );
 
 }
-add_action( 'init', 'create_niveaudelucidit_tax' );
-
-
-?>

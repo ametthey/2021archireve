@@ -22,12 +22,16 @@
     width: $filter;
     z-index: 3;
     white-space: nowrap;
+    overflow-y: scroll;
+    overflow-x: hidden;
 
 
     @include respond(tablet) {
         transform: translateX(32px);
         height: calc( 100vh - 50px );
         top: 50px;
+        left: -100vw;
+        width: 100vw;
 
         button {
             &.lucidite--item {
@@ -67,8 +71,8 @@
 }
 
 .filtres--list {
-    overflow-y: auto;
-    overflow-x: hidden;
+    // overflow-y: auto;
+    // overflow-x: hidden;
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -97,7 +101,7 @@
 
 // REVES (CENTRALE)
 #container--reves {
-    height: calc( 100vh - 50px} );
+    height: calc( 100vh - 50px);
     overflow: auto;
     position: relative;
     transition: all 0.75s ease-in-out;
@@ -113,8 +117,9 @@
         width: calc( 100vw - calc( #{$filter} + 50px ) );
 
         @include respond(tablet) {
-            // width: calc( 100vw - 100px );
-
+            height: calc( 100vh - 32px );
+            width: calc( 100vw - 32px );
+            margin: 0 0 0 32px;
         }
 
         .container--articles {
@@ -123,7 +128,7 @@
     }
 
     @include respond(tablet) {
-        height: calc( 100vh - 32px} );
+        height: calc( 100vh - 32px );
         width: calc( 100vw - 32px );
         margin: 0 0 0 32px;
     }
@@ -173,7 +178,7 @@
 #container--apropos {
     background-color: $color;
     border-left: 1px solid $color;
-    height: calc( 100vh - 50px} );
+    height: calc( 100vh - 50px );
     transform: translateX(50px);
     pointer-events: auto;
     position: fixed;

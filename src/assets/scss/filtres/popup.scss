@@ -1,0 +1,105 @@
+// BOUTON POPUP
+.content-left-container-title {
+    align-items: center;
+    display: flex !important;
+    justify-content: center;
+}
+
+.filter--title-information {
+    display: grid;
+    font-family: $solid;
+    font-size: 5px;
+    height: 10px;
+    place-items: center;
+    width: 10px;
+    border: 1px solid $color;
+    border-radius: 50%;
+    margin: 0 0 12px 0;
+}
+
+// POPUP
+.filtres-popup {
+    background-color: $bg;
+    border: 1px solid $color;
+    height: 50vh;
+    position: absolute;
+    overflow: scroll;
+    padding: 30px;
+    width: calc( 50vw - 60px);
+
+    left: 65%;
+    top: 50%;
+    transform: translate( -50%, -50% );
+    z-index: 10000;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+    transition: all 0.2s linear;
+
+    @include respond(tablet) {
+        height: 100vh;
+        width: calc( 100vw );
+        top: -1px;
+        left: 0;
+        transform: translate( 0%, 0% );
+    }
+
+    &.is-visible {
+        opacity: 1;
+        visibility: visible;
+        pointer-events: auto;
+    }
+
+    p {
+        margin: 30px 0;
+    }
+
+    img {
+        cursor: pointer;
+        position: absolute;
+        right: 15px;
+        top: 15px;
+
+        @include respond(tablet) {
+            right: calc( #{$ratio} / 3 );
+            top: calc( #{$ratio} / 3 );
+        }
+    }
+
+    &#popup-typologie {
+    }
+
+    &#popup-lucidite {
+    }
+}
+
+.filtres--elements-item {
+    display: flex;
+    flex-direction: column;
+
+    button {
+        background-color: $bg;
+        cursor: pointer;
+        font-size: $h5;
+        text-transform: uppercase;
+        font-family: $covik, sans-serif;
+        font-weight: 400;
+        font-style: normal;
+        text-transform: uppercase;
+        margin: 0 8px 8px 0;
+        width: max-content;
+
+        position: relative !important;
+        top: auto !important;
+        left: 0 !important;
+
+        &:hover {
+            background-color: $color;
+            color: $bg;
+        }
+    }
+}

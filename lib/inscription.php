@@ -201,4 +201,3 @@ function custom_registration_shortcode() {
     _themename_custom_registration_function();
     return ob_get_clean();
 }
-

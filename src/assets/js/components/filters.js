@@ -1,8 +1,15 @@
-import Swiper from 'swiper/bundle';
+import Swiper, { Navigation } from 'swiper/bundle';
 import imagesLoaded from 'imagesLoaded';
+import isotope from 'isotope-layout';
+// import $ from "jquery";
+import jQueryBridget from 'jquery-bridget';
+jQueryBridget( 'isotope' , isotope, jQuery );
+
+/**********************************************************************
+ * BARRE DE FILTRES
+ **********************************************************************/
 
 const articlesContainer = document.querySelector('.container--articles');
-
 if ( articlesContainer ) {
     let $grid;
     const imageL = imagesLoaded( articlesContainer );
@@ -10,6 +17,7 @@ if ( articlesContainer ) {
     imageL.on( 'done', function( instance ) {
 
         (function($) {
+            // $ = require( "jquery" )( window );
 
             $grid = $('.container--articles').isotope({
                 itemSelector: '.article-reve',
@@ -33,12 +41,14 @@ if ( articlesContainer ) {
                 }
             });
 
+            console.log( $grid.isotope({ sortBy: 'tag' }) );
+
             // SEARCH TAG
             var qsRegex;
 
             var $quicksearch = $('.tagsearch').keyup( debounce( function() {
-                qsRegex = new RegExp( $quicksearch.val(), 'gi' );
                 $grid.isotope({ sortBy: 'tag' });
+                qsRegex = new RegExp( $quicksearch.val(), 'gi' );
             }));
 
 
@@ -225,3 +235,8 @@ if ( articlesContainer ) {
         },
     });
 }
+
+
+/**********************************************************************
+ * Bulles d'informations
+ **********************************************************************/

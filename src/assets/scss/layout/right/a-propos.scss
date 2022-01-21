@@ -109,6 +109,7 @@ $numeroSmall: 60px;
             font-family: $covik !important;
             font-size: $h2;
             line-height: 1.4;
+            text-align: center;
             margin: 0;
 
             @include respond(tablet) {
@@ -151,6 +152,7 @@ $numeroSmall: 60px;
             span {
                 font-family: inherit;
                 font-size: inherit;
+                line-height: 1.4;
 
                 &.char {
                     cursor: pointer;

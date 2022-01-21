@@ -38,7 +38,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.2s linear;
+    transition: all 0.75s ease-in-out;
 
     @include respond(tablet) {
         height: 100vh;
@@ -52,6 +52,10 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
+
+        & + #container--reves {
+            opacity: 0.5;
+        }
     }
 
     p {
@@ -59,10 +63,11 @@
     }
 
     img {
+        align-self: end;
         cursor: pointer;
-        position: absolute;
-        right: 15px;
-        top: 15px;
+        position: sticky;
+        top: 0;
+        right: 0;
 
         @include respond(tablet) {
             right: calc( #{$ratio} / 3 );
@@ -89,6 +94,7 @@
         font-family: $covik, sans-serif;
         font-weight: 400;
         font-style: normal;
+        pointer-events: none;
         text-transform: uppercase;
         margin: 0 8px 8px 0;
         width: max-content;
@@ -101,5 +107,41 @@
             background-color: $color;
             color: $bg;
         }
+
+        &.reve-dactualite {
+            background-color: $actualite;
+        }
+
+        &.cauchemar {
+            background-color: $cauchemar;
+        }
+
+        &.reve-commun {
+            background-color: $commun;
+        }
+
+        &.reve-concomitant {
+            background-color: $concomitant;
+        }
+
+        &.reve-creatif {
+            background-color: $creatif;
+        }
+
+        &.reve-premonitoire {
+            background-color: $premonitoire;
+        }
+
+        &.reve-recurrent {
+            background-color: $recurrent;
+        }
+
+        &.reve-sexuel {
+            background-color: $sexuel;
+        }
+    }
+
+    p {
+        margin-top: 0;
     }
 }

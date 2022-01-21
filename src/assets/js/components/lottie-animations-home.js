@@ -1,20 +1,26 @@
 import lottie from 'lottie-web';
 import barba from '@barba/core';
 
-// barba.init({
-//     // debug: true,
-//     transitions: [{
-//         once(data) {
-//             const contentHomeLogo = data.next.container;
-//             if ( contentHomeLogo ) {
-//                 loadLottieAnimation(contentHomeLogo);
-//                 headerAnimation();
-//             } else {
-//                 headerAnimation();
-//             }
-//         }
-//     }]
-// });
+barba.init({
+    // debug: true,
+    transitions: [{
+        once(data) {
+            const contentHomeLogo = data.next.container;
+            if ( contentHomeLogo ) {
+                loadLottieAnimation(contentHomeLogo);
+                headerAnimation();
+            } else {
+                headerAnimation();
+            }
+        }
+    }]
+});
+
+// Without Barbajs
+// const contentHomeLogo  = document.querySelector('   ')
+// loadLottieAnimation(contentHomeLogo);
+
+// headerAnimation();
 
 function loadLottieAnimation(contentHomeLogo) {
     const logoAnimation = lottie.loadAnimation({
@@ -40,6 +46,7 @@ function headerAnimation() {
             container: headerLottie,
             renderer: 'svg',
             path: '/wp-content/themes/_themename/dist/assets/images/animation/header.json',
+            assetsPath: '/wp-content/themes/_themename/',
             progressiveLoad: true,
         })
 
@@ -79,6 +86,7 @@ function loadLottieAProposMobile() {
         loop: true,
         autoplay: true,
         path: '/wp-content/themes/_themename/dist/assets/images/animation/archireve-white.json',
+        progressiveLoad: true,
     })
     aproposTitleM.play();
 

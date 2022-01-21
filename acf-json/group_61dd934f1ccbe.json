@@ -3,28 +3,6 @@
     "title": "Popup Filtres Lucidité",
     "fields": [
         {
-            "key": "field_61dd93653ff1f",
-            "label": "Niveau de lucidité",
-            "name": "_niveau_de_lucidite",
-            "type": "textarea",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "show_in_rest": 0,
-            "edit_in_rest": 0,
-            "default_value": "",
-            "placeholder": "",
-            "maxlength": "",
-            "rows": "",
-            "new_lines": "",
-            "acfe_textarea_code": 0
-        },
-        {
             "key": "field_61df883495605",
             "label": "Rêve ordinaire",
             "name": "reve_ordinaire",
@@ -314,5 +292,5 @@
     "acfe_form": 0,
     "acfe_meta": "",
     "acfe_note": "",
-    "modified": 1642040002
+    "modified": 1642783090
 }

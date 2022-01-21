@@ -26,6 +26,14 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'		=> false,
 	));
 
+	acf_add_options_page( array(
+		'page_title'	=> 'Informations du reve',
+		'menu_title'	=> 'Informations du reve',
+		'menu_slug' 	=> 'acf-informations-du-reve',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+	));
+
 }
 
 // Enable the option show in rest

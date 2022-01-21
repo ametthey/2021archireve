@@ -1,4 +1,4 @@
-import LocomotiveScroll from 'locomotive-scroll';
+// import LocomotiveScroll from 'locomotive-scroll';
 import Splitting from 'splitting';
 
 let locomotive;
@@ -9,17 +9,17 @@ const aproposWrapper = document.querySelector('.apropos--elements');
 
 if ( home ) {
 
-    window.addEventListener( 'load', (e) => {
-        locomotive = new LocomotiveScroll({
-            el: document.querySelector('[data-scroll-container]'),
-            smooth: true,
-            direction: 'vertical',
-            lerp: 0.3,
-        });
-        setTimeout(() => {
-            locomotive.update();
-        }, 5000);
-    });
+    // window.addEventListener( 'load', (e) => {
+    //     locomotive = new LocomotiveScroll({
+    //         el: document.querySelector('[data-scroll-container]'),
+    //         smooth: true,
+    //         direction: 'vertical',
+    //         lerp: 0.3,
+    //     });
+    //     setTimeout(() => {
+    //         locomotive.update();
+    //     }, 5000);
+    // });
 
     /*****************************************************************************
      *
@@ -147,12 +147,12 @@ if ( home ) {
                 header.classList.remove('-is-active');
                 texte.classList.remove('-is-active');
 
-                locomotiveUpdate();
+                // locomotiveUpdate();
 
                 if ( texte.style.maxHeight ) {
                     texte.style.maxHeight = null;
 
-                    locomotiveUpdate();
+                    // locomotiveUpdate();
                 }
 
             } else if ( !texte.classList.contains('-is-active') ) {
@@ -165,13 +165,13 @@ if ( home ) {
                         if ( theActiveText.style.maxHeight ) {
                             theActiveText.style.maxHeight  = null;
 
-                            locomotiveUpdate();
+                            // locomotiveUpdate();
                         }
                     }
                     activeElement.classList.remove('-is-active');
                 });
 
-                locomotiveUpdate();
+                // locomotiveUpdate();
 
                 header.classList.add('-is-active');
                 texte.classList.add('-is-active');

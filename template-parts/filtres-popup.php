@@ -74,21 +74,38 @@
     <p><?php the_field( '_niveau_de_lucidite', 'option' ); ?></p>
 
     <div class="filtres-popup--elements">
-    <?php if ( have_rows( 'nouveau_niveau_de_lucidite', 'option' ) ) : ?>
-        <?php while ( have_rows( 'nouveau_niveau_de_lucidite', 'option' ) ) : the_row(); ?>
-            <?php if ( have_rows( 'les_niveaux' ) ) : ?>
-                <?php while ( have_rows( 'les_niveaux' ) ) : the_row(); ?>
-                <div class="filtres--elements-item">
-                    <button class="button lucidite--item button--rounded"><?php the_sub_field( 'bouton' ); ?></button>
-
-                    <p><?php the_sub_field( 'texte' ); ?></p>
-                </div>
-                <?php endwhile; ?>
-            <?php endif; ?>
-        <?php endwhile; ?>
-    <?php else : ?>
-        <?php // no rows found ?>
-    <?php endif; ?>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-dactualite">Actualité</button>
+            <p><?php the_field( 'actualite', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded cauchemar">Cauchemar</button>
+            <p><?php the_field( 'cauchemar', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-commun">Commun</button>
+            <p><?php the_field( 'commun', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-concomitant">Concomitant</button>
+            <p><?php the_field( 'concomitant', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-creatif">Créatif</button>
+            <p><?php the_field( 'creatif', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-premonitoire">Prémonitoire</button>
+            <p><?php the_field( 'premonitoire', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-recurrent">Récurrent</button>
+            <p><?php the_field( 'recurrent', 'option' ); ?></p>
+        </div>
+        <div class="filtres--elements-item">
+            <button class="button lucidite--item button--rounded reve-sexuel">Sexuel</button>
+            <p><?php the_field( 'sexuel', 'option' ); ?></p>
+        </div>
     </div>
 
 </div>

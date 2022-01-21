@@ -3,7 +3,7 @@ import './components/lottie-animations-home.js';
 
 // HOME
 import './components/home.js'; // tout les clicks events
-// import './components/apropos.js';
+import './components/apropos.js';
 import './components/articles.js';
 import './components/filters.js';
 

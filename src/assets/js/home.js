@@ -1,4 +1,3 @@
-console.log('home.js');
 import './components/lottie-animations-home.js';
 import './components/home.js'; // tout les clicks events
 import './components/apropos.js';

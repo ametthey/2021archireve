@@ -6,7 +6,7 @@
         <h1 ><a href="<?php the_field( 'contact_instagram', 'option' ); ?>" target="_blank">@archireve</a></h1>
         <h1 ><a href="<?php the_field( 'contact_newsletter', 'option' ); ?>" target="_blank">Newsletter</a></h1>
     </div>
-    <h2 ><?php the_field( 'contact', 'option' ); ?></h2>
+    <h2 class="colored-hover"><?php the_field( 'contact', 'option' ); ?></h2>
 </div>
 
 

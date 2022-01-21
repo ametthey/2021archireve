@@ -1,3 +1,4 @@
+import removePopups from '../components/popup.js';
 const homeContainer = document.querySelector('.is-home');
 
 if ( homeContainer ) {
@@ -18,6 +19,9 @@ if ( homeContainer ) {
 
     const conProposElements = document.querySelector('.apropos--elements');
     const conProposClose = document.querySelector('.apropos-close');
+
+    const popupLucidite = document.querySelector('#popup-lucidite');
+    const popupTypologie = document.querySelector('#popup-typologie');
 
     // -----------------------------------------------------------------------------
     // EVENEMENTS SUR LE BANDEAU FILTRES
@@ -80,6 +84,8 @@ if ( homeContainer ) {
             //         behavior: 'auto'
             //     });
             // }, 500 );
+
+            removePopups( popupLucidite, popupTypologie, containerReves );
         }
 
     }
@@ -95,6 +101,8 @@ if ( homeContainer ) {
         if ( conProposClose.classList.contains('is-hidden') ) {
             conProposClose.classList.toggle('is-hidden');
         }
+
+        removePopups( popupLucidite, popupTypologie, containerReves );
     }
     function aproposClose(e) {
         containerAPropos.classList.remove('is-open');
@@ -104,5 +112,15 @@ if ( homeContainer ) {
         conProposElements.classList.add('is-hidden');
         conProposClose.classList.add('is-hidden');
         conRevesArticles.classList.remove('is-hidden');
+    }
+
+    function removePopups( popupLucidite, popupTypologie, containerReves ) {
+        if ( popupLucidite.classList.contains('is-visible') ) {
+            popupLucidite.classList.remove('is-visible');
+            containerReves.classList.remove('is-fading');
+        } else if ( popupTypologie.classList.contains('is-visible') ) {
+            popupTypologie.classList.remove('is-visible');
+            containerReves.classList.remove('is-fading');
+        }
     }
 }

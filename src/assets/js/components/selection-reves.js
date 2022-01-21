@@ -44,9 +44,9 @@ function selectYourReves( articles ) {
                     telechargerButton.buttonText.innerHTML = COUNT;
                     telechargerButton.container.classList.add("is-visible");
                     telechargerButton.button.classList.add("is-visible");
-                    console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
+                    // console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
 
-                    console.log( matchingNumber );
+                    // console.log( matchingNumber );
 
                     const theGoodTable = matchingNumber;
                     theGoodTable.classList.add( "selected--table" );
@@ -59,9 +59,9 @@ function selectYourReves( articles ) {
                     telechargerButton.buttonText.innerHTML = COUNT;
                     telechargerButton.container.classList.add("is-visible");
                     telechargerButton.button.classList.add("is-visible");
-                    console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
+                    // console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
 
-                    console.log( matchingNumber );
+                    // console.log( matchingNumber );
 
                     const theGoodTable = matchingNumber;
                     theGoodTable.classList.add( "selected--table" );
@@ -75,8 +75,8 @@ function selectYourReves( articles ) {
             } else if ( !reve.select.classList.contains("-is-selected") ) {
                 COUNT--;
                 telechargerButton.buttonText.innerHTML = COUNT;
-                console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
-                console.log( `2_ On garde le tableau mergé 😱` );
+                // console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
+                // console.log( `2_ On garde le tableau mergé 😱` );
 
                 const theBadTable = matchingNumber;
                 theBadTable.classList.remove("selected--table");
@@ -108,7 +108,7 @@ function selectYourReves( articles ) {
 
     // SELECTIONNER TOUT LES RÊVES
     telechargerButton.all.addEventListener( "click", function(e){
-        console.log(`On veut tous télécharger`);
+        // console.log(`On veut tous télécharger`);
         toggleSelection(telechargerButton, articles, COUNT, tables, tableToAdd);
     }, false);
 
@@ -126,11 +126,11 @@ function allSelected(tableToAdd, telechargerButton) {
     }
 
     if ( total === totalSelected ) {
-        console.log('all');
+        // console.log('all');
         telechargerButton.buttonAll.classList.add("-is-selected");
     } else if ( total !== totalSelected ) {
-        console.log('not all');
-        console.log( telechargerButtonAllSelected );
+        // console.log('not all');
+        // console.log( telechargerButtonAllSelected );
         telechargerButtonAllSelected.buttonAll.classList.remove("-is-selected");
     }
 }
@@ -152,11 +152,11 @@ function closeDownloadPopup(telechargerButton, COUNT, tableToAdd) {
     COUNT = 0;
     tableToAdd.length = 0;
 
-    console.log('CLOSE BUTTON');
-    console.log(`1_ le count est ${telechargerButton.buttonText.innerHTML}`);
-    console.log(`2_ On garde le tableau mergé 😱` );
-    console.log(`3_ Il n'y a plus de tableaux !` );
-    console.log(`4_ La preuve ! tableToAdd : ${tableToAdd.length}`);
+    // console.log('CLOSE BUTTON');
+    // console.log(`1_ le count est ${telechargerButton.buttonText.innerHTML}`);
+    // console.log(`2_ On garde le tableau mergé 😱` );
+    // console.log(`3_ Il n'y a plus de tableaux !` );
+    // console.log(`4_ La preuve ! tableToAdd : ${tableToAdd.length}`);
 }
 
 function openPDFViewer() {
@@ -196,7 +196,7 @@ function selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd
             number: article.dataset.number,
         }
 
-        console.log( reve );
+        // console.log( reve );
 
         telechargerButton.buttonText.innerHTML = articles.length;
         telechargerButton.buttonAll.classList.add("-is-selected");
@@ -264,7 +264,7 @@ function mergeTheTables(tableReve) {
             // On crééer une fonction pour ajouter les infos
             replaceCellsFromTable(tableReve, infoReveurKeys, infoReveurValues);
 
-            console.log( `2_ Le tableau ${tableReve.id} a été mergé` );
+            // console.log( `2_ Le tableau ${tableReve.id} a été mergé` );
         } else {
             // Silence is golden
         }
@@ -275,7 +275,7 @@ function addTableActions(theGoodTable, tableToAdd) {
     tableToAdd.push( theGoodTable );
     mergeTheTables( theGoodTable );
 
-    console.log('3_ le tableau ajouté est ' + theGoodTable.id);
+    // console.log('3_ le tableau ajouté est ' + theGoodTable.id);
 }
 
 function removeTableActions(theBadTable, tableToAdd) {
@@ -284,7 +284,7 @@ function removeTableActions(theBadTable, tableToAdd) {
         tableToAdd.splice(index, 1);
     }
 
-    console.log('3_ le tableau supprimé est ' + theBadTable.id);
+    // console.log('3_ le tableau supprimé est ' + theBadTable.id);
 }
 
 function orderSelection( tableToAdd ) {
@@ -293,9 +293,9 @@ function orderSelection( tableToAdd ) {
     const orderedList = orderedID.join(' & ');
 
     if ( orderedID.length === 0 ) {
-        console.log( `4_ Il n'y a plus de tableaux !` );
+        // console.log( `4_ Il n'y a plus de tableaux !` );
     } else {
-        console.log( `4_ les tableaux selectionnés sont ${orderedList}` );
+        // console.log( `4_ les tableaux selectionnés sont ${orderedList}` );
     }
 
 }
@@ -316,7 +316,7 @@ function removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToA
             if( popup.classList.contains('downloaded') ) {
                 popup.classList.remove('downloaded');
                 popup.classList.add('close--after-download');
-                console.log(' PDF has been downloaded');
+                // console.log(' PDF has been downloaded');
                 if( popup.classList.contains('close--after-download') ) {
                     popup.classList.remove("is-visible");
                     close.classList.add('is-closed');
@@ -326,7 +326,7 @@ function removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToA
                     });
                     text.innerHTML = '';
 
-                    console.log(tables);
+                    // console.log(tables);
                     COUNT = 0;
                     tableToAdd.length = 0;
 

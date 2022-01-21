@@ -95,7 +95,7 @@ il sera bientôt en ligne ! ", 'acf'),
 
 
 </div>
-
+<?php get_template_part('template-parts/tooltip/informations-reves'); ?>
 
 <?php get_template_part('template-parts/dessin/content', 'dessin'); ?>
 

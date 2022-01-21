@@ -27,7 +27,8 @@ get_header();
     <div class="profil--header">
         <h1><?php echo $pseudo; ?></h1>
         <div class="profil--header-links">
-            <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
+            <!-- <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>"> -->
+            <a href="<?php echo esc_url( get_home_url() . '/reveur_info/' . $pseudo );  ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
             <a href="<?php echo esc_url( get_permalink(  get_page_by_title('back-office', OBJECT , 'page')) ); ?>">
@@ -85,7 +86,7 @@ get_header();
 
 
 </div>
-
+<?php get_template_part('template-parts/tooltip/informations-reves'); ?>
 
 <?php get_template_part('template-parts/dessin/content', 'dessin'); ?>
 

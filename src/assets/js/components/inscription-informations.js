@@ -62,11 +62,14 @@ const tooltipCloseII = document.querySelector('.inscription-tooltip-close');
 const tooltipCloseImgII = document.querySelector('.inscription-tooltip-close-button');
 const tooltipCoverContainer = document.querySelector('.container--tooltip-cover');
 const tooltipTexte = document.querySelector('.inscription-tooltip-texte');
+const reveModif = document.querySelector('.single-reve');
+const reveCrea = document.querySelector('.page-template-page-creation-reve');
 
-if ( pageII || pageProfil ) {
+if ( pageII || pageProfil || reveModif || reveCrea ) {
     document.addEventListener( 'click', function(e) {
 
         if ( e.target === tooltipCoverII || e.target === tooltipCoverContainer) {
+            console.log('click');
             tooltipII.classList.toggle('is-open');
         }
 

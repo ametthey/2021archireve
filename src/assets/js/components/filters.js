@@ -41,8 +41,6 @@ if ( articlesContainer ) {
                 }
             });
 
-            console.log( $grid.isotope({ sortBy: 'tag' }) );
-
             // SEARCH TAG
             var qsRegex;
 

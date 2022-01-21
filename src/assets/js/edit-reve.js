@@ -1,4 +1,3 @@
-console.log('edit.js');
 // COMMON
 import './components/lottie-animations-else.js';
 
@@ -15,7 +14,7 @@ import './components/lottie-animations-else.js';
 // import './components/table-to-pdf.js';
 
 // INSCRIPTION INFORMATIONS
-// import './components/inscription-informations.js';
+import './components/inscription-informations.js';
 
 // BACK OFFICE
 import './components/back-office.js';

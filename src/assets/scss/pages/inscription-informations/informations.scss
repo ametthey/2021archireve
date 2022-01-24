@@ -22,6 +22,10 @@ $tooltip: 550px;
         right: -100%;
     }
 
+    @include respond(mobile) {
+        transform: translateX(-20px);
+    }
+
     &.is-open {
         transform: translateX(-#{$tooltip});
 
@@ -40,12 +44,21 @@ $tooltip: 550px;
     border-right: 1px solid $color;
     cursor: pointer;
     min-width: 50px !important;
+
+    @include respond(mobile) {
+        min-width: 20px !important;
+    }
 }
 
 .inscription-tooltip-cover {
     position: absolute;
     top: 30px;
     left: 9.6px;
+
+    @include respond(mobile) {
+        font-size: $small;
+        left: 0.5px;
+    }
 }
 
 .inscription-tooltip-texte {

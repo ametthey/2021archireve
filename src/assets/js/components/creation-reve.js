@@ -1,6 +1,6 @@
 // show everything when everything is loaded
 const creationReveContainer = document.querySelector('#form--creation-reve');
-window.addEventListener('DOMContentLoaded', function(e) {
+window.addEventListener('load', function(e) {
     if( creationReveContainer ){
         setTimeout( function(e) {
             creationReveContainer.classList.add('is-loaded');
@@ -8,11 +8,12 @@ window.addEventListener('DOMContentLoaded', function(e) {
     }
 });
 
-/*
- * Creation de la zone Contenu
- */
 
+/******************************************************************
+ * AJOUT DE LABEL POUR CONTENU & SOUVENIR DU REVE
+ *****************************************************************/
 const datePicker = document.querySelector('.acf-field-61015e94be047');
+const lieu = document.querySelector('.acf-field-6101cf2cc0b64');
 const contenuTitle = `
     <div class="acf-field acf-field-contenu">
         <div class="acf-label">
@@ -24,16 +25,6 @@ const contenuTitle = `
         </div>
     </div>
 `;
-
-if ( datePicker ){
-    datePicker.insertAdjacentHTML('afterend', contenuTitle);
-}
-
-/*
- * Creation de la zone Souvenir du reve
- */
-
-const lieu = document.querySelector('.acf-field-6101cf2cc0b64');
 const SouvenirReveTitle = `
     <div class="acf-field acf-field-souvenir-reve">
         <div class="acf-label">
@@ -41,17 +32,19 @@ const SouvenirReveTitle = `
     </div>
 `;
 
-if ( lieu ){
+if ( datePicker && lieu ){
+    // Creation de la zone Contenu
+    datePicker.insertAdjacentHTML('afterend', contenuTitle);
+    // Creation de la zone Souvenir du reve
     lieu.insertAdjacentHTML('afterend', SouvenirReveTitle);
 }
 
+/******************************************************************
+ * SELECTION DU TYPE DE CONTENU
+ *****************************************************************/
+
 const contenuTexte = document.querySelector('.acf-field-610161fcb8f44');
 const contenuDessin = document.querySelector('.acf-field-6101620bb8f45');
-
-/*
- * Selection du type de contenu
- */
-
 const buttonText = document.querySelector('.contenu--button-texte');
 const buttonDessin = document.querySelector('.contenu--button-dessin');
 const containerDessin = document.querySelector('.dessin--wrapper');
@@ -70,82 +63,34 @@ window.addEventListener( 'DOMContentLoaded', (e) => {
     }
 });
 
-/*
- * Modal pour dessin
- */
 
-
-/*
- * Modalités du sommeil
- */
+/*****************************************************************
+ * AJOUT D'UNE CLASSE IS-CHECKED TO STYLE LES BOUTONS DE MODALITÉS
+ ****************************************************************/
 
 const modaliteSommeilInputs = document.querySelectorAll('#reve--sommeil .acf-checkbox-list label input');
-modaliteSommeilInputs.forEach( input => {
-    const label = input.closest('label');
-    input.addEventListener('change', (e) => {
-        if ( input.checked ) {
-            label.classList.add('-is-checked');
-        } else {
-            label.classList.remove('-is-checked');
-        }
-    });
-});
-
-
-/*
- * Modalités de l'humeur
- */
-
-
 const modaliteHumeurInputs = document.querySelectorAll('#reve--humeur .acf-checkbox-list label input');
-modaliteHumeurInputs.forEach( input => {
-    const label = input.closest('label');
-    input.addEventListener('change', (e) => {
-        if ( input.checked ) {
-            console.log('check');
-            label.classList.add('-is-checked');
-        } else {
-            console.log('uncheck');
-            label.classList.remove('-is-checked');
-        }
-    });
-});
-
-/*
- * Modalités du sens
- */
 const modaliteSensInputs = document.querySelectorAll('#reve--sens .acf-checkbox-list label input');
-modaliteSensInputs.forEach( input => {
-    const label = input.closest('label');
-    input.addEventListener('change', (e) => {
-        if ( input.checked ) {
-            console.log('check');
-            label.classList.add('-is-checked');
-        } else {
-            console.log('uncheck');
-            label.classList.remove('-is-checked');
-        }
-    });
-});
-
-/*
- * Modalités du lieu
- */
 const modaliteLieuInputs = document.querySelectorAll('#reve--lieu .acf-checkbox-list label input');
-modaliteLieuInputs.forEach( input => {
-    const label = input.closest('label');
-    input.addEventListener('change', (e) => {
-        if ( input.checked ) {
-            console.log('check');
-            label.classList.add('-is-checked');
-        } else {
-            console.log('uncheck');
-            label.classList.remove('-is-checked');
-        }
+const modalites = [modaliteSommeilInputs, modaliteHumeurInputs, modaliteSensInputs, modaliteLieuInputs ];
+
+modalites.forEach( modalite => {
+    modalite.forEach( input => {
+        const label = input.closest('label');
+        input.addEventListener('change', (e) => {
+            if ( input.checked ) {
+                label.classList.add('-is-checked');
+            } else {
+                label.classList.remove('-is-checked');
+            }
+        });
     });
 });
 
+
+/*****************************************************************
 // MODIFIER L'EMPLACEMENT DE LA SPAN AVEC LE NOM DE LA TYPOLOGIE
+ ****************************************************************/
 const typologieListItems = document.querySelectorAll('#reve--typologie .categorychecklist-holder .acf-checkbox-list li');
 
     typologieListItems.forEach( ( li ) => {
@@ -160,8 +105,6 @@ const typologieListItems = document.querySelectorAll('#reve--typologie .category
         newSpan.innerHTML = span.innerHTML;
         span.remove();
 
-        console.log(input);
-        // insertAfter(newSpan, input);
         input.parentNode.insertBefore(newSpan, input);
     });
 

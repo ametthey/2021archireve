@@ -5,7 +5,7 @@
             $tagArray = explode(",", str_replace(" ","",$tagString));
 
             foreach( $tagArray as $tag ) :
-                echo '<div class="button--squared"><p class="taxonomy-tag ' . $tag . '">' . esc_html( $tag ) . '</p></div>';
+                echo '<div class="button--squared"><p class="taxonomy-tag ' . $tag . '" data-filter="tag">' . esc_html( $tag ) . '</p></div>';
             endforeach;
 
         ?>

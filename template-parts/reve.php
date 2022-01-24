@@ -22,32 +22,33 @@
         set_query_var( 'term_lucidite', $term_lucidite );
 
         // TAG
-        $tagElement = get_field( 'tag' );
-        $get_terms_args = array(
-            'taxonomy' => 'customtag',
-            'hide_empty' => 0,
-            'include' => $tag,
-        );
-        $tags = get_the_terms( $post->ID, 'customtag' );
+        $tagString = get_field( 'tag' );
+        $tagArray = explode(",", str_replace(" ","",$tagString));
+
+
+
 
         set_query_var('i', $i);
     ?>
 
-        <?php if ( $term_lucidite  && $term_typologie  ) : ?>
+        <?php if ( $term_lucidite  && $term_typologie  ) :
 
+?>
 
             <article
                 class=" article-reve article-<?php echo esc_html( $term_typologie->slug); ;?> border-<?php echo esc_html( $term_typologie->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?> <?php echo esc_html( $term_typologie->slug ); ?><?php
-                        if ( !empty( $tags ) ) {
-                            foreach( $tags as $tag ) {
-                                echo $tag->name . ' ';
-                            }
-                        }
+        foreach( $tagArray as $tag ) :
+            echo ' ' . $tag . ' ';
+        endforeach;
                 ?>
                  "
                 id="reve--<?php echo $i; ?>"
                 data-taxonomy="<?php echo esc_html( $term_typologie->slug ); ?> <?php echo esc_html( $term_lucidite->slug ); ?> 092020"
                 data-number="<?php echo $i; ?>"
+                <?php foreach( $tagArray as $tag ) :
+                            echo 'data-tag="' . $tag . '"';
+                        endforeach;
+                ?>
             >
 
                 <!-- HEADER DE L'ARTICLE -->

@@ -286,6 +286,10 @@
         width: 32px;
     }
 
+    @include respond(mobile) {
+        width: 20px;
+    }
+
     &.container--filtres-cover {
         cursor: pointer;
         // height: auto;

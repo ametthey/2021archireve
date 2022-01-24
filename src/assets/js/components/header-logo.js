@@ -1,8 +1,8 @@
 import lottie from 'lottie-web';
 
-headerAnimation();
+headerLogoAnimation();
 
-function headerAnimation() {
+function headerLogoAnimation() {
     const headerLottie = document.querySelector('.site-branding a');
 
     if ( headerLottie ) {

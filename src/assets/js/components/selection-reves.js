@@ -1,14 +1,38 @@
 import { tableToPDF, tableToPDFViewer } from '../components/table-to-pdf.js';
 import { replaceCellsFromTable } from '../components/selection-reves-helpers.js';
+
 const articles = document.querySelectorAll(".article-reve");
 const home = document.querySelector('.home');
+const loadingAnimationLogo  = document.querySelector('.content--home-logo');
+const targetNode = loadingAnimationLogo;
 
-window.addEventListener('load', function() {
-    if ( home  ) {
-        selectYourReves(articles);
-    }
-});
+/**********************************************************************
+ * Verifier que l'animation d'intro est fini pour charger le script
+ **********************************************************************/
+const observerOptions = {
+    attributes: true,
+}
 
+const observer = new MutationObserver(callback);
+observer.observe(targetNode, observerOptions);
+
+function callback(mutationList, observer) {
+    mutationList.forEach( (mutation) => {
+        switch(mutation.type) {
+            case 'attributes':
+                if ( mutation.target.classList.contains('is-hidden') ) {
+                    console.log('is-hidden for selection-reve');
+                    selectYourReves(articles);
+                }
+                break;
+        }
+    });
+}
+
+
+/**********************************************************************
+ * Selection des rêves function
+ **********************************************************************/
 function selectYourReves( articles ) {
     let COUNT = 0;
     const tables = [...document.querySelectorAll(".reve--to-print.post-type-reve")];
@@ -330,16 +354,11 @@ function removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToA
                     COUNT = 0;
                     tableToAdd.length = 0;
 
-                    // On réinitialise tout !
-                    // telechargerButton.buttonText.innerHTML = '';
-                    // COUNT = 0;
-                    // tableToAdd.length = 0;
                 }
 
             }
         });
     });
 
-    // observer.observe(containerReves, options);
     observer.observe(itemsContainer, options);
 }

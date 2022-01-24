@@ -64,7 +64,6 @@ if ( homeContainer ) {
 
     function filtresReveal(e) {
         containerFiltres.classList.add('is-open');
-        // containerAPropos.classList.add('is-forbidden');
         containerReves.classList.add('is-reduced');
         conFilCover.classList.add('is-hidden');
         conFilList.classList.remove('is-hidden');
@@ -74,17 +73,9 @@ if ( homeContainer ) {
         e.preventDefault();
         if ( containerFiltres.classList.contains('is-open') && conFilCover.classList.contains('is-hidden') ) {
             containerFiltres.classList.remove('is-open');
-            // containerAPropos.classList.remove('is-forbidden');
             containerReves.classList.remove('is-reduced');
             conFilCover.classList.remove('is-hidden');
             conFilList.classList.add('is-hidden');
-            // setTimeout( (e) => {
-            //     containerFiltres.scrollTo({
-            //         top: 0,
-            //         behavior: 'auto'
-            //     });
-            // }, 500 );
-
             removePopups( popupLucidite, popupTypologie, containerReves );
         }
 
@@ -93,7 +84,6 @@ if ( homeContainer ) {
     // A PROPOS
     function aproposReveal(e) {
         containerAPropos.classList.toggle('is-open');
-        // containerFiltres.classList.toggle('is-forbidden');
         conRevCover.classList.toggle('is-hidden');
         conRevesArticles.classList.toggle('is-hidden');
         conRevesArticles.classList.toggle('is-hidden');
@@ -106,7 +96,6 @@ if ( homeContainer ) {
     }
     function aproposClose(e) {
         containerAPropos.classList.remove('is-open');
-        // containerFiltres.classList.remove('is-forbidden');
         conRevCover.classList.add('is-hidden');
         conRevesArticles.classList.remove('is-hidden');
         conProposElements.classList.add('is-hidden');

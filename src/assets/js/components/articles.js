@@ -129,7 +129,6 @@ articles.forEach( article => {
 
 function filteredYears(yearsToFilter) {
     finalYears = yearsToFilter.filter( (value, index) => yearsToFilter.indexOf(value) === index  );
-    // const scd = document.querySelector('.swiper-container-date .swiper-wrapper').parentNode;
     finalYears.forEach( year => {
     const scd2 = document.querySelector('.swiper-container-date .swiper-wrapper');
     scd2.innerHTML += swiperSlideContent(year);
@@ -142,65 +141,25 @@ if ( home ) {
     filteredYears(yearsToFilter);
 }
 
-/******************************************************************************
- *
- * Affichage de l'icone DESSIN ou TEXTE
- *
- ******************************************************************************/
-
-const reveTexteDessins = document.querySelectorAll('.article-reve--text img');
-const iconeT = document.querySelector('#contenu--texte');
-const iconeD = document.querySelector('#contenu--dessin');
-const reves = [...document.querySelectorAll('.container--articles .article-reve')];
-
-window.addEventListener('load', (e) => {
-    if ( reves ) {
-        const removesNotFound = reves.filter( reve => !reve.classList.contains('article-notfound') );
-
-        removesNotFound.forEach( reve => {
-            const reveDessin = reve.querySelector('.article-reve--text img');
-            const iconeT = reve.querySelector('#contenu--texte');
-            const iconeD = reve.querySelector('#contenu--dessin');
-            const iconeDM = reve.querySelector('#contenu--dessin-mobile');
-
-            if ( reveDessin ) {
-                const reveTexteDessin = reve.querySelector('.article-reve--text img').getAttribute('src');
-
-                if ( reveTexteDessin.startsWith('data') ) {
-                    iconeD.classList.remove('wrong');
-                    iconeDM.classList.remove('wrong');
-                }
-
-            } else {
-                iconeT.classList.remove('wrong');
-            }
-
-        });
-    } else {
-        // Silence is golden
-    }
-});
-
-    function swiperSlideContent(year) {
-return `
-                    <div class="swiper-slide js">
-                        <div class="calendrier--item">
-                            <h4>${ year }</h4>
-                            <div class="calendrier--mois">
-                                <button data-filter=".janvier${year}" aria-hidden="true" class="button mois--item button--round round--white janvier ${year}">jan</button>
-                                <button data-filter=".fevrier${year}" aria-hidden="true" class="button mois--item button--round round--white fevrier ${year}">fév</button>
-                                <button data-filter=".mars${year}" aria-hidden="true" class="button mois--item button--round round--white mars ${year}">mar</button>
-                                <button data-filter=".avril${year}" aria-hidden="true" class="button mois--item button--round round--white avril ${year}">avr</button>
-                                <button data-filter=".mai${year}" aria-hidden="true" class="button mois--item button--round round--white mai ${year}">mai</button>
-                                <button data-filter=".juin${year}" aria-hidden="true" class="button mois--item button--round round--white juin ${year}">juin</button>
-                                <button data-filter=".juillet${year}" aria-hidden="true" class="button mois--item button--round round--white juillet ${year}">juillet</button>
-                                <button data-filter=".aout${year}" aria-hidden="true" class="button mois--item button--round round--white aout ${year}">aoû</button>
-                                <button data-filter=".septembre${year}" aria-hidden="true" class="button mois--item button--round round--white septembre ${year}">sep</button>
-                                <button data-filter=".octobre${year}" aria-hidden="true" class="button mois--item button--round round--white octobre ${year}">oct</button>
-                                <button data-filter=".novembre${year}" aria-hidden="true" class="button mois--item button--round round--white novembre ${year}">nov</button>
-                                <button data-filter=".decembre${year}" aria-hidden="true" class="button mois--item button--round round--white decembre ${year}">dec</button>
-                            </div>
-                        </div>
-                    </div>`
+function swiperSlideContent(year) {
+    return `
+        <div class="swiper-slide js">
+            <div class="calendrier--item">
+                <h4>${ year }</h4>
+                <div class="calendrier--mois">
+                    <button data-filter=".janvier${year}" aria-hidden="true" class="button mois--item button--round round--white janvier ${year}">jan</button>
+                    <button data-filter=".fevrier${year}" aria-hidden="true" class="button mois--item button--round round--white fevrier ${year}">fév</button>
+                    <button data-filter=".mars${year}" aria-hidden="true" class="button mois--item button--round round--white mars ${year}">mar</button>
+                    <button data-filter=".avril${year}" aria-hidden="true" class="button mois--item button--round round--white avril ${year}">avr</button>
+                    <button data-filter=".mai${year}" aria-hidden="true" class="button mois--item button--round round--white mai ${year}">mai</button>
+                    <button data-filter=".juin${year}" aria-hidden="true" class="button mois--item button--round round--white juin ${year}">juin</button>
+                    <button data-filter=".juillet${year}" aria-hidden="true" class="button mois--item button--round round--white juillet ${year}">juillet</button>
+                    <button data-filter=".aout${year}" aria-hidden="true" class="button mois--item button--round round--white aout ${year}">aoû</button>
+                    <button data-filter=".septembre${year}" aria-hidden="true" class="button mois--item button--round round--white septembre ${year}">sep</button>
+                    <button data-filter=".octobre${year}" aria-hidden="true" class="button mois--item button--round round--white octobre ${year}">oct</button>
+                    <button data-filter=".novembre${year}" aria-hidden="true" class="button mois--item button--round round--white novembre ${year}">nov</button>
+                    <button data-filter=".decembre${year}" aria-hidden="true" class="button mois--item button--round round--white decembre ${year}">dec</button>
+                </div>
+            </div>
+        </div>`
 }
-

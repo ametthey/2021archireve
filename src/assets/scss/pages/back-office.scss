@@ -192,6 +192,10 @@
             @include respond(tablet) {
                 font-size: $h5;
             }
+
+            @include respond(mobile) {
+                font-size: $small;
+            }
         }
     }
 
@@ -230,6 +234,17 @@
             left: 50%;
             transform: translate( -50%, -50% );
             width: max-content;
+
+            @include respond(tablet) {
+                h3 {
+                    font-size: $small;
+                }
+            }
+            @include respond(mobile) {
+                h3 {
+                    font-size: $smaller;
+                }
+            }
 
             &.is-hidden {
                 display: flex;

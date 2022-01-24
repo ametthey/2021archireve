@@ -1,8 +1,6 @@
 // https://getbutterfly.com/how-to-draw-on-canvas-and-save-the-result-using-vanilla-javascript/
 const container = document.querySelector('.dessin--container');
 
-
-// document.addEventListener('load', (e) => {
 if ( container ) {
 
     let count = 0;
@@ -275,18 +273,22 @@ if ( container ) {
             const Btext = contenuButtons.querySelector('.contenu--button-texte');
             const Bimage = contenuButtons.querySelector('.contenu--button-dessin');
             const Ctext = document.querySelector('#contenu--text textarea').value;
-            const Cimage = document.querySelector('#acf-dessin-1 img').src;
+            // const Cimage = document.querySelector('#acf-dessin-1 img').src;
+            const Cimage = document.querySelector('#acf-dessin-1 img').getAttribute('src');
+            const imageEdit = document.querySelector('.acf-field-dessin');
 
             if ( Ctext && Cimage ) {
                 Btext.classList.add('rounded--black', 'is-active');
                 Bimage.classList.add('rounded--black', 'is-active');
                 console.log('they exist ! ');
-            } else if ( !Ctext && !Cimage ){
+            } else if ( !Ctext && Cimage == '' ){
                 console.log('they don\'t exist');
+                imageEdit.style.display = 'none';
+                imageEdit.classList.add('empty');
             } else if ( !Ctext && Cimage ) {
                 Bimage.classList.add('rounded--black', 'is-active');
                 console.log( 'image exist' );
-            } else if ( Ctext && !Cimage ) {
+            } else if ( Ctext && Cimage == '' ) {
                 Btext.classList.add('rounded--black', 'is-active');
                 console.log( 'text exist' );
             }
@@ -458,17 +460,14 @@ function oMousePos(canvas, evt) {
 function RestartDessin(wrapperDessin) {
     const editDessin = document.querySelector('.contenu--button-dessin-edit');
     editDessin.addEventListener('click', (e) => {
-        // if ( e.target && e.target.classList === 'contenu--button-dessin-edit' ) {
         const acfDessin = document.querySelector('.acf-field-dessin');
         const containerImage = acfDessin.querySelector('.image-container');
         const image = containerImage.querySelector('img');
         if ( !wrapperDessin.classList.contains('-is-active') ) {
             wrapperDessin.classList.add('-is-active');
-            // wrapperContainerImage.remove();
         } else {
             wrapperDessin.classList.remove('-is-active');
         }
-        // }
     });
 }
 
@@ -499,4 +498,3 @@ function DeselectColor() {
         }
     });
 }
-// });

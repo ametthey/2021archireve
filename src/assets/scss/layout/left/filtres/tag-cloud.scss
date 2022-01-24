@@ -31,5 +31,10 @@
             background-color: $color;
             color: $bg;
         }
+
+        &.is-checked {
+            background-color: $color;
+            color: $bg;
+        }
     }
 }

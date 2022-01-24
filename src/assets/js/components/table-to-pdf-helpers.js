@@ -86,8 +86,6 @@ const colorsHexa =
         "rec":"#DB5931"
     }
 
-
-
 export const colors = {
     roseClair: [255, 227, 234],
     rose: [215, 133, 146],

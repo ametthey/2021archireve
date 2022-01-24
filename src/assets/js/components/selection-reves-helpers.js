@@ -13,8 +13,6 @@ const sd = {
     previewButtonClose: document.querySelector(".container--pdf-viewer button"),
 }
 
-
-
 export function replaceCellsFromTable(tableReve, reveurKeys, reveurValues) {
     const tableReveCells = tableReve.querySelectorAll('td');
 

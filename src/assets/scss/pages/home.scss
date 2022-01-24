@@ -13,7 +13,8 @@
     width: 100%;
 
     @include respond(tablet) {
-        height: calc( 100vh - 32px );
+        padding-top: 50px;
+        height: calc( 100vh - 50px );
         // overflow: hidden;
     }
 

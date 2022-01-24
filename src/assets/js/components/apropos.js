@@ -1,25 +1,11 @@
-// import LocomotiveScroll from 'locomotive-scroll';
 import Splitting from 'splitting';
 
-let locomotive;
 const home = document.querySelector('.is-home');
 const contentRight = document.querySelector('#container--apropos');
 const aproposWrapper = document.querySelector('.apropos--elements');
 
 
 if ( home ) {
-
-    // window.addEventListener( 'load', (e) => {
-    //     locomotive = new LocomotiveScroll({
-    //         el: document.querySelector('[data-scroll-container]'),
-    //         smooth: true,
-    //         direction: 'vertical',
-    //         lerp: 0.3,
-    //     });
-    //     setTimeout(() => {
-    //         locomotive.update();
-    //     }, 5000);
-    // });
 
     /*****************************************************************************
      *
@@ -130,12 +116,6 @@ if ( home ) {
      *
      *****************************************************************************/
 
-    function locomotiveUpdate() {
-        setTimeout( () => {
-            locomotive.update();
-        }, 1000 );
-    }
-
     const aproposContainer = document.querySelectorAll('.propos--collapse-container');
     aproposContainer.forEach( container => {
         const header = container.querySelector('.propos--collapse-header');
@@ -147,12 +127,8 @@ if ( home ) {
                 header.classList.remove('-is-active');
                 texte.classList.remove('-is-active');
 
-                // locomotiveUpdate();
-
                 if ( texte.style.maxHeight ) {
                     texte.style.maxHeight = null;
-
-                    // locomotiveUpdate();
                 }
 
             } else if ( !texte.classList.contains('-is-active') ) {
@@ -164,14 +140,10 @@ if ( home ) {
                         const theActiveText = activeElement;
                         if ( theActiveText.style.maxHeight ) {
                             theActiveText.style.maxHeight  = null;
-
-                            // locomotiveUpdate();
                         }
                     }
                     activeElement.classList.remove('-is-active');
                 });
-
-                // locomotiveUpdate();
 
                 header.classList.add('-is-active');
                 texte.classList.add('-is-active');

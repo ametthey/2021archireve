@@ -8,13 +8,13 @@
 .filter--title-information {
     display: grid;
     font-family: $solid;
-    font-size: 5px;
-    height: 10px;
+    font-size: 8px;
+    height: 14px;
     place-items: center;
-    width: 10px;
+    width: 14px;
     border: 1px solid $color;
     border-radius: 50%;
-    margin: 0 0 12px 0;
+    margin: 0 0 12px 4px;
 }
 
 // POPUP
@@ -38,7 +38,7 @@
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
-    transition: all 0.75s ease-in-out;
+    transition: all 0.325s ease-in-out;
 
     @include respond(tablet) {
         height: 100vh;
@@ -73,12 +73,6 @@
             right: calc( #{$ratio} / 3 );
             top: calc( #{$ratio} / 3 );
         }
-    }
-
-    &#popup-typologie {
-    }
-
-    &#popup-lucidite {
     }
 }
 

@@ -113,69 +113,16 @@
             }
         }
 
-        // ICONE TEXTE OU DESSIN
-        #contenu--texte {
-            display: block;
+        .icone--dessin,
+        .icone--texte {
             margin: 14px 0 0 0;
+            transform: scale(1);
+            transition: transform 0.325s linear;
+            will-change: transform;
 
             @include respond(tablet) {
-                margin: 6px 0 0 0;
-                width: 11px;
-            }
-
-            &.is-selected {
-                .rect--short {
-                    animation: linesShort 1s both running ease-out;
-                }
-                .rect--long {
-                    animation: linesLong 1s both running ease-out;
-                }
-            }
-
-            .rect--long {
-                width: 21px;
-            }
-
-            .rect--short {
-                width: 15px;
-            }
-
-            &.wrong {
-                display: none;
-            }
-        }
-
-        #contenu--dessin {
-            display: block;
-            margin: 14px 0 0 0;
-
-            @include respond(tablet) {
-                display: none !important;
-            }
-
-            .icone-dessin-path {
-                // stroke: $color;
-                // stroke-dasharray: 450;
-                // stroke-dashoffset: 0;
-                // stroke-miterlimit:10;
-                // stroke-width:18;
-            }
-
-            &.wrong {
-                display: none;
-            }
-        }
-
-        #contenu--dessin-mobile {
-            display: none;
-            margin: 10px 0 0 0;
-
-            @include respond(tablet) {
-                display: block;
-
-                &.wrong {
-                    display: none;
-                }
+                margin: 10px 0 0 0;
+                transform: scale(0.7);
             }
         }
     }

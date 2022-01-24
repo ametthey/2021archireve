@@ -1,8 +1,8 @@
 import Swiper, { Navigation } from 'swiper/bundle';
 import imagesLoaded from 'imagesLoaded';
 import isotope from 'isotope-layout';
-// import $ from "jquery";
 import jQueryBridget from 'jquery-bridget';
+
 jQueryBridget( 'isotope' , isotope, jQuery );
 
 /**********************************************************************
@@ -17,8 +17,10 @@ if ( articlesContainer ) {
     imageL.on( 'done', function( instance ) {
 
         (function($) {
-            // $ = require( "jquery" )( window );
 
+            /********************************************
+             * ISOTOPE CONFIGURATION
+             *******************************************/
             $grid = $('.container--articles').isotope({
                 itemSelector: '.article-reve',
                 transitionDuration: 0,
@@ -28,44 +30,78 @@ if ( articlesContainer ) {
                 visibleStyle: {
                     opacity: 1
                 },
-                getSortData: {
-                    // tag: '.taxonomy-tag parseInt'
-                    tag: '.taxonomy-tag'
-                },
-                filter: function() {
-                    var $this = $(this);
-                    var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
-                    // var selectResult = filterValue ? $this.is(filterValue) : true;
-                    // return searchResult && selectResult;
-                    return searchResult;
-                }
+                        // getSortData: {
+                        //     // tag: '.taxonomy-tag parseInt'
+                        //     tag: '.taxonomy-tag'
+                        // },
+                        // filter: function() {
+                        //     var $this = $(this);
+                        //     var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
+                        //     // var selectResult = filterValue ? $this.is(filterValue) : true;
+                        //     // return searchResult && selectResult;
+                        //     return searchResult;
+                        // }
             });
 
-            // SEARCH TAG
-            var qsRegex;
+                        //  // SEARCH TAG
+                        var qsRegex;
+                        //
+                        // var $quicksearch = $('.tagsearch').keyup( debounce( function() {
+                        //     $grid.isotope({ sortBy: 'tag' });
+                        //     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
+                        // }));
+                        //
+                        // // debounce so filtering doesn't happen every millisecond
+                        // function debounce( fn, threshold ) {
+                        //     var timeout;
+                        //     return function debounced() {
+                        //         if ( timeout ) {
+                        //             clearTimeout( timeout );
+                        //         }
+                        //         function delayed() {
+                        //             fn();
+                        //             timeout = null;
+                        //         }
+                        //         timeout = setTimeout( delayed, threshold || 100 );
+                        //     }
+                        // }
 
-            var $quicksearch = $('.tagsearch').keyup( debounce( function() {
-                $grid.isotope({ sortBy: 'tag' });
-                qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-            }));
 
+            /********************************************
+             * SEARCH FILTRE CODE
+             *  https://gist.github.com/candidosales/10e22f0a3b4676ac6aeb
+             *******************************************/
+            var quickSearch = $('#search-term');
 
-            // debounce so filtering doesn't happen every millisecond
-            function debounce( fn, threshold ) {
-                var timeout;
-                return function debounced() {
-                    if ( timeout ) {
-                        clearTimeout( timeout );
-                    }
-                    function delayed() {
-                        fn();
-                        timeout = null;
-                    }
-                    timeout = setTimeout( delayed, threshold || 100 );
+            var filterFns = {
+                tagName: function(qsRgex) {
+                    qsRegex = new RegExp( quickSearch.val(), 'gi' );
+
+                    // Recherche dans tout les tags
+                    var tagName = $(this).find('.taxonomy-tag').text();
+
+                    // Vérification que la query existe
+                    return qsRegex ? tagName.match(qsRegex) : true;
                 }
+            };
+
+            // Evenement quand on écrit
+            quickSearch.on('keyup change', function(){
+                debounce(searchFilter());
+            });
+
+            function searchFilter() {
+                var filterValue = quickSearch.attr('data-filter');
+                filterValue = filterFns[ filterValue ] || filterValue;
+                $grid.isotope({ filter: filterValue });
             }
 
 
+            /********************************************
+             * FILTRE EN CLIQUANT SUR DES BOUTONS
+             * TYPOLOGIE DE RÊVE
+             * NIVEAU DE LUCIDITE
+             *******************************************/
             //store filter for each group
             var filters = [];
 
@@ -92,6 +128,10 @@ if ( articlesContainer ) {
 
             });
 
+
+            /********************************************
+             * BOUTON POUR SUPPRIMER TOUT LES FILTRES
+             *******************************************/
             $(".clear").click(function(){
 
                 $(".button").each(function(filter){
@@ -108,6 +148,36 @@ if ( articlesContainer ) {
                 location.hash = 'filter=' + encodeURIComponent( filters.join(',') );
                 $grid.isotope()
             })
+
+            /**********************************************************************
+             * Helper Functions
+             **********************************************************************/
+            function debounce( fn, threshold ) {
+                var timeout;
+                return function debounced() {
+                    if ( timeout ) {
+                        clearTimeout( timeout );
+                    }
+                    function delayed() {
+                        fn();
+                        timeout = null;
+                    }
+                    timeout = setTimeout( delayed, threshold || 100 );
+                }
+            }
+
+            function addFilter( filter ) {
+                if ( filters.indexOf( filter ) == -1 ) {
+                    filters.push( filter );
+                }
+            }
+
+            function removeFilter( filter ) {
+                var index = filters.indexOf( filter);
+                if ( index != -1 ) {
+                    filters.splice( index, 1 );
+                }
+            }
 
             function onHashchange() {
                 var hashFilter = getHashFilter();
@@ -161,18 +231,6 @@ if ( articlesContainer ) {
                 return decodeURIComponent( matches[1] );
             }
 
-            function addFilter( filter ) {
-                if ( filters.indexOf( filter ) == -1 ) {
-                    filters.push( filter );
-                }
-            }
-
-            function removeFilter( filter ) {
-                var index = filters.indexOf( filter);
-                if ( index != -1 ) {
-                    filters.splice( index, 1 );
-                }
-            }
 
         })( jQuery );
     });
@@ -235,6 +293,3 @@ if ( articlesContainer ) {
 }
 
 
-/**********************************************************************
- * Bulles d'informations
- **********************************************************************/

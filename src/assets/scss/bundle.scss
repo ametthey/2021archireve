@@ -1,9 +1,7 @@
-// Abstracts
 @import 'abstract/mixins';
 @import 'abstract/variables';
 @import 'abstract/functions';
 
-// Vendors
 @import 'vendors/reset';
 @import 'vendors/normalize';
 @import 'vendors/normalize-button';
@@ -11,37 +9,19 @@
 @import 'vendors/swiper';
 @import 'vendors/acf/daypicker';
 @import 'vendors/plugins/user-registration';
-@import 'vendors/locomotive';
-@import 'vendors/cookie-notice';
+// @import 'vendors/locomotive';
+// @import 'vendors/cookie-notice';
 
-// Base
 @import 'base/base';
 @import 'base/colors';
 @import 'base/fonts';
-@import 'base/helpers'; ////////
-@import 'base/helpers-debug'; ///////
-@import 'base/typography'; //////
+@import 'base/helpers';
+// @import 'base/helpers-debug';
+@import 'base/typography';
 
-// COMMON
 @import 'layout/header';
 
-// HOME
-
-// FILTER
-@import 'filtres/popup';
-//
-// CONNEXION
-// INSCRIPTION
-
-
-// BACK OFFICE
-
-// MON PROFIL
-// INSCRIPTION INFORMATION
-
-// CREATION REVE
-// MODIFICATION REVE
-
+@import 'layout/left';
 @import 'layout/left/filtres/tag-search-bar';
 @import 'layout/left/filtres/tag-cloud';
 @import 'layout/left/filtres/lucidite';
@@ -49,58 +29,32 @@
 @import 'layout/left/filtres/calendrier';
 @import 'layout/left/close-button';
 @import 'layout/left/tooltip';
+@import 'layout/left/popup';
 
 @import 'layout/article/article';
 @import 'layout/article/article-header';
 @import 'layout/article/article-text';
 @import 'layout/article/article-taxonomies';
 
+@import 'layout/right';
 @import 'layout/right/a-propos';
 @import 'layout/right/a-propos-animations';
 @import 'layout/right/collapse';
 
+@import 'layout/popup-download';
+@import 'layout/download-reve';
+
 @import 'components/buttons';
 @import 'components/animations';
 
-// Layout
-@import 'layout/home';
-@import 'layout/left';
-@import 'layout/right';
-@import 'layout/back-office';
-@import 'layout/popup-download';
-
-// Home
-@import 'home/download-reve';
+// PAGE
 @import 'pages/home-new';
-
-// Pages
 @import 'pages/front-page';
 @import 'pages/connexion';
 @import 'pages/inscription';
 @import 'pages/erreur';
-
-// QUESTIONNAIRE D'INSCRIPTION & PROFIL D'UTILISATEUR
 @import 'pages/inscription-informations-and-profil-utilisateur';
-
 @import 'pages/creation-reve';
 @import 'pages/modification-reve';
-
-
-
-@import 'components/test';
-@import 'components/test-a-propos';
-
-
-// DELETE ?
-// @import 'pages/profile-utilisateur';
-// @import 'components/animations2';
-// @import 'pages/reves/title';
-// @import 'pages/reves/date';
-// @import 'pages/reves/contenu';
-// @import 'pages/reves/tag-texte';
-// @import 'pages/reves/submit';
-// @import 'pages/modification-reve';
-// @import 'pages/inscription-informations/tooltip';
-
-
-
+@import 'pages/home';
+@import 'pages/back-office';

@@ -11,9 +11,31 @@ if ( headerButton ) {
         header.classList.toggle('is-header-faded');
         headerButton.classList.toggle('is-faded');
         page.classList.toggle('header-mobile-active');
+
+        collapseHeader();
     });
 
     window.addEventListener( 'resize', removeActiveState );
+
+
+}
+
+/**********************************************************************
+ * Remove apropos mobile if resize to bigger devices
+ **********************************************************************/
+function removeActiveState() {
+    if (window.innerWidth > 600 &&  headerAPropos.classList.contains('is-active') ) {
+        headerAPropos.classList.remove('is-active');
+        page.classList.remove('header-mobile-active');
+        header.classList.remove('is-header-faded');
+        headerButton.classList.remove('is-faded');
+    }
+}
+
+/**********************************************************************
+ * COLLAPSE
+ **********************************************************************/
+function collapseHeader() {
 
     aproposContainerMobile.forEach( container => {
         const header = container.querySelector('.propos--collapse-header');
@@ -56,14 +78,5 @@ if ( headerButton ) {
             }
         });
     });
-}
 
-
-function removeActiveState() {
-    if (window.innerWidth > 600 &&  headerAPropos.classList.contains('is-active') ) {
-        headerAPropos.classList.remove('is-active');
-        page.classList.remove('header-mobile-active');
-        header.classList.remove('is-header-faded');
-        headerButton.classList.remove('is-faded');
-    }
 }

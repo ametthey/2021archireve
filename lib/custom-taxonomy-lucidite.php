@@ -25,7 +25,7 @@ function create_niveaudelucidit_tax() {
 		'public' => true,
 		'publicly_queryable' => true,
         // Show in admin
-		'show_ui' => false,
+		'show_ui' => true,
 		'show_in_menu' => true,
 		'show_in_nav_menus' => true,
 		'show_tagcloud' => true,

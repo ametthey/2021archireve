@@ -4,16 +4,14 @@
 
 #masthead {
     align-items: center;
-    background-color: rgba(255, 255, 255, 0.75);
+    background-color: $bg;;
     display: flex;
     justify-content: space-between;
     height: 50px;
     padding: 0 calc( #{$ratio} / 2 );
     position: relative;
     opacity: 1;
-    transition: background-color $rythm1 ease-in-out;
-    transition: opacity $rythm1 ease-in-out;
-    transition: transform 0.3s linear;
+    transition: all 0.325s 2s ease-out;
     width: 100%;
     z-index: 92;
 
@@ -28,9 +26,21 @@
         justify-content: center;
     }
 
+    // HOME HEADER
+    &.is-header-faded {
+        background-color: $color;
+
+        #mobile--connexion {
+            background-color: $bg;
+            border: 1px solid $color;
+
+            a {
+                color: $color;
+            }
+        }
+    }
 
     @include respond(tablet) {
-        background-color: rgba(255, 255, 255, 1);
         border-bottom: 1px solid $color;
         height: 50px;
         justify-content: space-between;
@@ -64,21 +74,6 @@
     }
 }
 
-// HOME HEADER
-.is-header-faded {
-    & > * {
-        background-color: $color !important;
-    }
-
-    #mobile--connexion {
-        background-color: $color;
-        border: 1px solid $bg;
-
-        a {
-            color: $bg;
-        }
-    }
-}
 // Bouton connexion mobile
 #mobile--connexion {
     display: none;
@@ -97,7 +92,7 @@
     display: none;
 
     &.is-faded {
-        background-color: $color;
+        background-color: $bg;
         border: 1px solid $bg;
     }
 
@@ -174,8 +169,7 @@
 }
 .container--header {
     align-items: center;
-    // border-bottom: 1px solid $color;
-    background-color: $bg;
+    // background-color: $bg;
     display: flex;
     height: 49px;
     justify-content: space-between;
@@ -245,23 +239,17 @@
     @include respond(tablet) {
         background-color: $color;
         display: flex;
-        left: 0;
-        top: 0;
-        transform: translateY(-100%);
-        width: 100%;
-        z-index: 2 !important;
-
-        // display: flex;
         flex-direction: column;
         height: auto;
-        // left: 50px;
+        left: 0;
         margin: auto;
         opacity: 1 !important;
         overflow: scroll;
-        // padding: calc( #{$ratio} * 3 ) 0 0 0 ;
-        // pointer-events: none;
         position: absolute !important;
-        // transform: translateX(100%);
-        transition: transform $rythm1 ease-in-out !important;
+        top: 0;
+        transform: translateY(-100%);
+        transition: transform 2s ease-in-out !important;
+        width: 100%;
+        z-index: 2 !important;
     }
 }

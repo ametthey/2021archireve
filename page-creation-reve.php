@@ -28,7 +28,7 @@ get_header();
         <h1><?php echo $pseudo; ?></h1>
 
         <div class="profil--header-links">
-            <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
+            <a href="<?php echo esc_url( get_home_url() . '/reveur_info/' . $pseudo );  ?>">
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
             <a href="<?php echo esc_url( get_home_url() ); ?>">

@@ -1,30 +1,36 @@
 import lottie from 'lottie-web';
-import barba from '@barba/core';
+// import barba from '@barba/core';
 
-barba.init({
-    // debug: true,
-    transitions: [{
-        once(data) {
-            const contentHomeLogo = data.next.container;
-            if ( contentHomeLogo ) {
-                loadLottieAnimation(contentHomeLogo);
-                headerAnimation();
-            } else {
-                headerAnimation();
-            }
-        }
-    }]
-});
+// barba.init({
+//     // debug: true,
+//     transitions: [{
+//         once(data) {
+//             const loadingAnimationLogo = data.next.container;
+//             // const loadingAnimationLogo = data.next.container.classList.contains('.content--home-logo');
+//             console.log( loadingAnimationLogo )
+//             if ( loadingAnimationLogo.classList.contains('content--home-logo') ) {
+//                 console.log('home');
+//                 loadLottieAnimation(loadingAnimationLogo);
+//                 headerAnimation();
+//             } else {
+//                 console.log('not home');
+//                 headerAnimation();
+//             }
+//         }
+//     }]
+// });
 
-// Without Barbajs
-// const contentHomeLogo  = document.querySelector('   ')
-// loadLottieAnimation(contentHomeLogo);
+const home = document.querySelector('.is-home');
 
-// headerAnimation();
+if ( home ) {
+    loadingAnimation();
+}
 
-function loadLottieAnimation(contentHomeLogo) {
+function loadingAnimation() {
+    const articles = document.querySelectorAll(".article-reve");
+    const loadingAnimationLogo  = document.querySelector('.content--home-logo');
     const logoAnimation = lottie.loadAnimation({
-        container: contentHomeLogo,
+        container: loadingAnimationLogo,
         renderer: 'svg',
         loop: false,
         path: '/wp-content/themes/_themename/dist/assets/images/animation/archireve.json',
@@ -33,34 +39,12 @@ function loadLottieAnimation(contentHomeLogo) {
     });
 
     logoAnimation.addEventListener( 'complete', (e) => {
-        contentHomeLogo.classList.add('is-hidden');
+        loadingAnimationLogo.classList.add('is-hidden');
+        loadLottieAProposDesktop();
+        loadLottieAProposMobile();
     });
 }
 
-function headerAnimation() {
-    const headerLottie = document.querySelector('.site-branding a');
-
-    if ( headerLottie ) {
-
-        const headerLottieAnimation = lottie.loadAnimation({
-            container: headerLottie,
-            renderer: 'svg',
-            path: '/wp-content/themes/_themename/dist/assets/images/animation/header.json',
-            assetsPath: '/wp-content/themes/_themename/',
-            progressiveLoad: true,
-        })
-
-        headerLottieAnimation.addEventListener( 'complete', (e) => {
-            setTimeout( function delayHeaderAnimation() {
-                headerLottieAnimation.goToAndPlay(0);
-            }, 10000 );
-        });
-
-        // A PROPOS
-        loadLottieAProposDesktop();
-        loadLottieAProposMobile();
-    }
-}
 
 function loadLottieAProposDesktop() {
     const aproposTitle = lottie.loadAnimation({
@@ -77,8 +61,8 @@ function loadLottieAProposDesktop() {
     });
 
     aproposTitle.play();
-
 }
+
 function loadLottieAProposMobile() {
     const aproposTitleM = lottie.loadAnimation({
         container: document.querySelector('.right--container-propos-header .propos--section-title') ,

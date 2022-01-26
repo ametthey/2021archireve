@@ -97,11 +97,14 @@ $vertF: rgba(44, 175, 56, 1);
                     text-align: center!important;
                 }
                 &:nth-of-type(2) {
+                    text-align: center!important;
+                }
+                &:nth-of-type(3) {
                     background-color: $vertC !important;
                     text-align: right!important;
                     font-style: italic;
                 }
-                &:nth-of-type(3) {
+                &:nth-of-type(4) {
                     background-color: $vertC;
                     text-align: center;
                 }
@@ -253,6 +256,11 @@ $vertF: rgba(44, 175, 56, 1);
             }
         }
     }
+}
+
+
+.table--print tr:nth-of-type(7) td:nth-of-type(2) {
+
 }
 
 // COLONNE 1 - 2 -> 7

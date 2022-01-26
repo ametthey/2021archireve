@@ -10,20 +10,22 @@
 add_action( 'wp_enqueue_scripts', '_themename_bundle_assets' );
 function _themename_bundle_assets() {
 
+    $version = '1.0.1';
+
 
     // HOME
-    if ( is_front_page() && is_home() ) {
-        wp_enqueue_style( '_themename-stylesheet-home', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', array(), filemtime( get_template_directory().'/dist/assets/css/bundle.css' ) ,  'all' );
-        wp_enqueue_script( '_themename-scripts-home', get_stylesheet_directory_uri() . '/dist/assets/js/home.js',array('jquery', 'acf-input') , filemtime( get_template_directory().'/dist/assets/js/home.js' ) ,   true );
+    if ( is_front_page() && is_home() && is_page_template('page-test.php') ) {
+        wp_enqueue_style( '_themename-stylesheet-home', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', array(), $version  ,  'all' );
+        wp_enqueue_script( '_themename-scripts-home', get_stylesheet_directory_uri() . '/dist/assets/js/home.js',array('jquery', 'acf-input') , $version  ,   true );
 
 
     // CREATION ET MODIFICATION REVE
     } elseif  ( is_page_template('page-creation-reve.php') && is_singular() ) {
-        wp_enqueue_style( '_themename-stylesheet-edit-reve', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', array(), filemtime( get_template_directory().'/dist/assets/css/bundle.css' ) ,  'all' );
-        wp_enqueue_script( '_themename-scripts-creation-reve', get_stylesheet_directory_uri() . '/dist/assets/js/edit-reve.js',array('jquery', 'acf-input') , filemtime( get_template_directory().'/dist/assets/js/edit-reve.js' ) ,   true );
+        wp_enqueue_style( '_themename-stylesheet-edit-reve', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', array(), $version ,  'all' );
+        wp_enqueue_script( '_themename-scripts-creation-reve', get_stylesheet_directory_uri() . '/dist/assets/js/edit-reve.js',array('jquery', 'acf-input') , $version ,   true );
     } else {
-        wp_enqueue_style( '_themename-stylesheet-else', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', array(), filemtime( get_template_directory().'/dist/assets/css/bundle.css' ) ,  'all' );
-        wp_enqueue_script( '_themename-scripts-else', get_stylesheet_directory_uri() . '/dist/assets/js/main.js',array('jquery', 'acf-input') , filemtime( get_template_directory().'/dist/assets/js/main.js' ) ,   true );
+        wp_enqueue_style( '_themename-stylesheet-else', get_stylesheet_directory_uri() . '/dist/assets/css/bundle.css', array(), $version ,  'all' );
+        wp_enqueue_script( '_themename-scripts-else', get_stylesheet_directory_uri() . '/dist/assets/js/main.js',array('jquery', 'acf-input') , $version ,   true );
     }
 
 }
@@ -55,7 +57,7 @@ function _themename_my_deregister_scripts() {
  *
  ***********************************************************************/
 
-add_filter( 'script_loader_tag', '_themename_defer_parsing_of_js', 10 );
+// add_filter( 'script_loader_tag', '_themename_defer_parsing_of_js', 10 );
 function _themename_defer_parsing_of_js( $url ) {
     if ( is_user_logged_in() ) return $url; //don't break WP Admin
     if ( FALSE === strpos( $url, '.js' ) ) return $url;

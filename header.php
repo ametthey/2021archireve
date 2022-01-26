@@ -14,17 +14,11 @@
     </head>
     <body <?php body_class('is-hidden') ?>>
 
-        <div data-barba="wrapper">
-        </div>
-
         <header id="masthead" class="site-header site-back-office" role="banner">
-
             <!-- Site branding -->
             <div class="site-branding">
                 <a href="<?php echo esc_url( get_home_url() ); ?>"></a>
             </div>
-
         </header>
 
-        <div data-barba="container" data-barba-namespace="back-office">
-            <div id="page">
+        <div id="page">

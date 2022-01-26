@@ -12,7 +12,7 @@
     border-right: 1px solid $color;
     height: calc( 100vh - 50px );
     transform: translateX(50px);
-    outline: none;
+    // outline: none;
     -webkit-tap-highlight-color: transparent;
     pointer-events: auto;
     position: fixed;
@@ -24,6 +24,7 @@
     white-space: nowrap;
     overflow-y: scroll;
     overflow-x: hidden;
+    pointer-events: auto;
 
 
     @include respond(tablet) {
@@ -105,12 +106,14 @@
     overflow: auto;
     opacity: 1;
     position: relative;
+    pointer-events: auto;
     transition: all 0.75s ease-in-out;
     // width: 100vw;
-    z-index: 2;
+    // z-index: 20000;
 
     margin: 0 50px;
     width: calc( 100vw - 100px );
+    z-index: -100;
 
     &.is-reduced {
         margin-left: $filter;
@@ -146,7 +149,7 @@
         opacity: 1;
         visibility: visible;
         pointer-events: auto;
-        user-select: none;
+        // user-select: none;
         // width: calc( 100vw - 100px );
         width: calc( 100% - 100px );
 
@@ -228,7 +231,7 @@
     pointer-events: auto;
     scrollbar-width: none;
     width: calc( 100% - 100px) ;
-    z-index: 0;
+    // z-index: 0;
 
     &.is-hidden {
         opacity: 0;
@@ -328,8 +331,9 @@
 
             & > * {
                 color: $color;
-                font-family: $solid;
-                font-size: 8px;
+                font-family: $covik;
+                font-size: 13px;
+                text-transform: uppercase;
 
                 // Temp avec le bandeau en noir
                 color: $bg;

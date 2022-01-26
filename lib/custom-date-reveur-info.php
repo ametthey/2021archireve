@@ -40,4 +40,4 @@
         echo '");</script>';
         return;
     }
-    add_action( 'user_register', 'changeDate', 10, 1 );
+    // add_action( 'user_register', 'changeDate', 10, 1 );

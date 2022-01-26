@@ -48,6 +48,7 @@ $numeroSmall: 60px;
 
 }
 .propos--section {
+    pointer-events: auto;
     align-items: center;
     color: $bg;
     display: flex;
@@ -118,19 +119,20 @@ $numeroSmall: 60px;
         }
     }
 
-    .button--rounded {
+    .button--inscription {
         background-color: rgba(255, 255, 255, 0) !important;
+        font-size: $h1;
+        font-family: $covik;
+        line-height: 1.4;
 
-            @include respond(tablet) {
-                padding: 5px 10px !important;
-                p {
-                    font-size: $h5 !important;
-                    line-height: 1.4 !important;
+        @include respond(tablet) {
+            padding: 5px 10px !important;
+            font-size: $h5 !important;
+            line-height: 1.4 !important;
 
-                    a {
-                        height: inherit !important;
-                    }
-                }
+            a {
+                height: inherit !important;
+            }
         }
     }
 
@@ -353,6 +355,7 @@ $numeroSmall: 60px;
 
 .propos--section-1 {
     opacity: 1!important;
+    pointer-events: auto;
 }
 
 

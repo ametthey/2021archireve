@@ -69,8 +69,13 @@ export function tableToPDF(theGoodTable) {
         // Ajouter l'image correspondant au dessin
         // https://codepen.io/someatoms/pen/vLYXWB?editors=1011
         didDrawCell: function(data, doc) {
+            const dessinZone = tableName.element.querySelector('#start-dessin img');
+
             // fillCellWithDessin(data, doc);
-            if ( data.cell.raw.id === 'start-dessin' ) {
+            if ( data.cell.raw.id === 'start-dessin' && data.cell.raw.hasChildNodes() ) {
+
+                // dessinZone.src == null || dessinZone.src == undefined )
+                // console.log( tableName.element.querySelector('#start-dessin img') );
                 dataDessin = data.cell;
                 dim = {
                     dessin: {
@@ -85,11 +90,14 @@ export function tableToPDF(theGoodTable) {
                     }
                 }
 
+            } else if ( data.cell.raw.id === 'start-dessin' && !data.cell.raw.hasChildNodes() ) {
+                // Silence is golden
             }
         }
     });
 
     addImageExternal(dim, doc);
+
     // EXPORT DU PDF
     // doc.save(`${tableName.title}.pdf`);
     doc.save(`${tableName.title}.pdf`, {returnPromise:true})

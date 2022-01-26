@@ -129,7 +129,7 @@ export const scripts = () => {
                 drop_console: true,
             }
         })))
-        // .pipe(gulpif(PRODUCTION, concat('main.js')))
+        .pipe(gulpif(PRODUCTION, concat('main.js')))
         .pipe(size({
             title: 'JavaScript',
             pretty: true,

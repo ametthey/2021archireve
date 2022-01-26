@@ -2,9 +2,9 @@
 <!-- <div class="propos&#45;&#45;section propos&#45;&#45;section&#45;5 propos&#45;&#45;section&#45;texte"> -->
     <h1 class="huge">contact</h1>
     <div class="propos-links">
-        <h1 ><a href="mailto:<?php the_field( 'contact__mail', 'option' ); ?>"><?php the_field( 'contact__mail', 'option' ); ?></a></h1>
-        <h1 ><a href="<?php the_field( 'contact_instagram', 'option' ); ?>" target="_blank">@archireve</a></h1>
-        <h1 ><a href="<?php the_field( 'contact_newsletter', 'option' ); ?>" target="_blank">Newsletter</a></h1>
+        <a href="mailto:<?php the_field( 'contact__mail', 'option' ); ?>"><h1><?php the_field( 'contact__mail', 'option' ); ?></h1></a>
+        <a href="<?php the_field( 'contact_instagram', 'option' ); ?>" target="_blank"><h1> @archireve</h1></a>
+        <a href="<?php the_field( 'contact_newsletter', 'option' ); ?>" target="_blank"><h1>Newsletter</h1></a>
     </div>
     <h2 class="colored-hover"><?php the_field( 'contact', 'option' ); ?></h2>
 </div>

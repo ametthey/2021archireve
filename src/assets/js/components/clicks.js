@@ -20,42 +20,53 @@ if ( homeContainer ) {
     const conProposElements = document.querySelector('.apropos--elements');
     const conProposClose = document.querySelector('.apropos-close');
 
-    const popupLucidite = document.querySelector('#popup-lucidite');
-    const popupTypologie = document.querySelector('#popup-typologie');
+    const conProposCover = document.querySelector('.container--apropos-cover');
+    const conProposCoverTitle = document.querySelector('.title--apropos-cover');
+
+    const popup = document.querySelector('.filtres-popup');
 
     // -----------------------------------------------------------------------------
     // EVENEMENTS SUR LE BANDEAU FILTRES
     // -----------------------------------------------------------------------------
 
-    // Click sur le bandeau filtre
-    document.addEventListener( 'click', function(e) {
-        if ( e.target.closest('#container--filtres') ) {
-            filtresReveal(e);
-            aproposClose(e);
-        }
-        // Si on clique dehors du bandeau filtre, il se ferme
-        else if ( e.target.closest('#container--apropos') || e.target.closest('#container--reves') ) {
-            filtresClose(e);
-        }
-    }, true);
+    conFilCover.addEventListener( 'click', function(e) {
+        filtresReveal(e);
+        aproposClose(e);
+    });
+
+    containerFiltres.addEventListener( 'click', function(e) {
+        filtresReveal(e);
+        aproposClose(e);
+    });
 
     // Click sur le bouton close du bandeau filtre
-    conFilClose.addEventListener('click', filtresClose, true);
+    conFilClose.addEventListener('click', function(e) {
+        filtresClose();
+    });
 
     // -----------------------------------------------------------------------------
     // EVENEMENTS SUR LE BANDEAU A PROPOS
     // -----------------------------------------------------------------------------
 
-    // Click sur le bandeau apropos
-    document.addEventListener('click', function(e) {
-        if ( e.target === containerAPropos.querySelector('.container--apropos-cover') || e.target === containerAPropos.querySelector('.title--apropos-cover')  ) {
-            aproposReveal(e);
-        }
-    }, true);
+    const aproposLinks =  containerAPropos.querySelectorAll('a');
 
-    conProposClose.addEventListener('click', aproposClose, true);
 
-    containerReves.addEventListener('click', aproposClose, true);
+    conProposCover.addEventListener('click', (e) => {
+        aproposReveal(e);
+        filtresClose(e);
+    });
+    conProposCoverTitle.addEventListener('click', (e) => {
+        aproposReveal(e);
+        filtresClose(e);
+    });
+
+
+    conProposClose.addEventListener('click', aproposClose);
+
+    containerReves.addEventListener('click', function(e) {
+        filtresClose(e);
+        aproposClose(e);
+    });
 
 
     // -----------------------------------------------------------------------------
@@ -76,7 +87,7 @@ if ( homeContainer ) {
             containerReves.classList.remove('is-reduced');
             conFilCover.classList.remove('is-hidden');
             conFilList.classList.add('is-hidden');
-            removePopups( popupLucidite, popupTypologie, containerReves );
+            removePopups(e);
         }
 
     }
@@ -92,7 +103,7 @@ if ( homeContainer ) {
             conProposClose.classList.toggle('is-hidden');
         }
 
-        removePopups( popupLucidite, popupTypologie, containerReves );
+        removePopups(e);
     }
     function aproposClose(e) {
         containerAPropos.classList.remove('is-open');
@@ -103,13 +114,12 @@ if ( homeContainer ) {
         conRevesArticles.classList.remove('is-hidden');
     }
 
-    function removePopups( popupLucidite, popupTypologie, containerReves ) {
-        if ( popupLucidite.classList.contains('is-visible') ) {
-            popupLucidite.classList.remove('is-visible');
+    function removePopups(e) {
+        if ( popup.classList.contains('is-visible') ) {
+            popup.classList.remove('is-visible');
             containerReves.classList.remove('is-fading');
-        } else if ( popupTypologie.classList.contains('is-visible') ) {
-            popupTypologie.classList.remove('is-visible');
-            containerReves.classList.remove('is-fading');
+        } else {
+            // Silence is golden
         }
     }
 }

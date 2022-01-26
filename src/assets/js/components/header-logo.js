@@ -10,7 +10,8 @@ function headerLogoAnimation() {
         const headerLottieAnimation = lottie.loadAnimation({
             container: headerLottie,
             renderer: 'svg',
-            path: '/wp-content/themes/_themename/dist/assets/images/animation/header.json',
+            // path: '/wp-content/themes/_themename/dist/assets/images/animation/header.json',
+            assetsPath: 'https://archireve.perimetre.studio/wp-content/uploads/header.json',
             progressiveLoad: true,
         })
 

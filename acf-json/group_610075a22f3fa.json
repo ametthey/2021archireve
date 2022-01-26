@@ -325,7 +325,7 @@
             {
                 "param": "options_page",
                 "operator": "==",
-                "value": "a-propos"
+                "value": "acf-a-propos"
             }
         ]
     ],
@@ -337,12 +337,6 @@
     "hide_on_screen": "",
     "active": true,
     "description": "",
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_form": 0,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1630510317
+    "show_in_rest": 0,
+    "modified": 1643046001
 }

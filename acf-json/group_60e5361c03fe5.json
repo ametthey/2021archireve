@@ -15,21 +15,18 @@
                 "class": "field-label",
                 "id": ""
             },
-            "acfe_permissions": "",
             "show_in_rest": 0,
             "edit_in_rest": 0,
             "default_value": "",
             "placeholder": "",
             "prepend": "",
             "append": "",
-            "maxlength": "",
-            "acfe_settings": "",
-            "acfe_validate": ""
+            "maxlength": ""
         },
         {
             "key": "field_60e537a66ad5a",
             "label": "",
-            "name": "age",
+            "name": "age_value",
             "type": "range",
             "instructions": "",
             "required": 1,
@@ -39,17 +36,14 @@
                 "class": "acf-range acf-range-age",
                 "id": ""
             },
-            "acfe_permissions": "",
             "show_in_rest": 0,
             "edit_in_rest": 0,
             "default_value": 50,
             "min": "",
             "max": "",
-            "step": "",
+            "step": 5,
             "prepend": "",
-            "append": "",
-            "acfe_settings": "",
-            "acfe_validate": ""
+            "append": ""
         },
         {
             "key": "field_6191ed80b5d66",
@@ -627,13 +621,16 @@
                 "class": "",
                 "id": "acf-radio-foi-origine"
             },
+            "show_in_rest": 0,
+            "edit_in_rest": 0,
             "choices": {
                 "Animiste": "Animiste",
                 "Théiste": "Théiste",
                 "Déiste": "Déiste",
                 "Agnostique": "Agnostique",
                 "Athéiste": "Athéiste",
-                "Panthéiste": "Panthéiste"
+                "Panthéiste": "Panthéiste",
+                "Non choix": "Non choix"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -663,7 +660,8 @@
                 "Déiste": "Déiste",
                 "Agnostique": "Agnostique",
                 "Athéiste": "Athéiste",
-                "Panthéiste": "Panthéiste"
+                "Panthéiste": "Panthéiste",
+                "Non choix": "Non choix"
             },
             "allow_null": 0,
             "other_choice": 0,
@@ -829,7 +827,14 @@
             {
                 "param": "page_template",
                 "operator": "==",
-                "value": "page-test-print.php"
+                "value": "page-test.php"
+            }
+        ],
+        [
+            {
+                "param": "page_type",
+                "operator": "==",
+                "value": "front_page"
             }
         ]
     ],
@@ -840,7 +845,6 @@
     "instruction_placement": "label",
     "hide_on_screen": [
         "permalink",
-        "block_editor",
         "the_content",
         "excerpt",
         "discussion",
@@ -858,16 +862,5 @@
     "active": true,
     "description": "",
     "show_in_rest": 0,
-    "acfe_display_title": "",
-    "acfe_autosync": [
-        "json"
-    ],
-    "acfe_permissions": [
-        "administrator",
-        "author"
-    ],
-    "acfe_form": 1,
-    "acfe_meta": "",
-    "acfe_note": "",
-    "modified": 1639565481
+    "modified": 1643213655
 }

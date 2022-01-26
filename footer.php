@@ -1,11 +1,9 @@
 
         <?php if ( is_front_page() && is_home() ) {
                     echo '</div>';//  #page
-                echo '</div>'; // barba namespace
         } else {
-            //         echo '</div>';//  #page
-            //     echo '</div>'; // barba namespace
-            // echo '</div>'; // barba-wrapper
+            echo '</div>';//  #page
+            // Silence is golden
         } ?>
 
         <?php wp_footer(); ?>

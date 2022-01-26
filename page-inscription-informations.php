@@ -16,25 +16,7 @@
             echo 'Je suis administrator';
         } else if ( current_user_can('author') ){
             global $current_user;
-            // get_currentuserinfo();
             wp_get_current_user();
-            ?>
-            <div class="profil--header">
-                <h1><?php echo $pseudo; ?></h1>
-
-                <div class="profil--header-links">
-                    <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
-                        <h3 class="button--rounded rounded--big">Modifier le profil</h3>
-                    </a>
-                    <a href="<?php echo esc_url( get_permalink( 134 ) ); ?>">
-                        <h3 class="button--rounded rounded--big">Voir les rêves</h3>
-                    </a>
-                    <a href="<?php echo wp_logout_url( home_url( '/home/' ) ); ?>">
-                        <h3 class="button--rounded rounded--big">Se déconnecter</h3>
-                    </a>
-                </div>
-            </div>
-            <?php
 
                 $new_user = get_user_meta($user->ID, '_new_user', true);
                 if ($new_user) {

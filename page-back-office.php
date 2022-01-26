@@ -23,7 +23,6 @@ get_header(); ?>
             echo 'Je suis administrator';
         } else if ( current_user_can('author') ){
             global $current_user;
-            // get_currentuserinfo();
             wp_get_current_user();
             ?>
 
@@ -34,7 +33,7 @@ get_header(); ?>
                 <h3 class="button--rounded rounded--big">Modifier le profil</h3>
             </a>
             <a href="<?php echo esc_url( get_home_url() ); ?>">
-                <h3 class="button--rounded rounded--big">Voir les rêves</h3>
+                <h3 class="button--rounded rounded--big">Voir tous les rêves</h3>
             </a>
             <a href="<?php echo wp_logout_url( get_home_url() ); ?>">
                 <h3 class="button--rounded rounded--big">Se déconnecter</h3>

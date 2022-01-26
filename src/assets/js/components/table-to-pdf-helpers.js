@@ -121,7 +121,10 @@ export const styleDef = {
 //  Add the dessin to the corresponding cell
 // -----------------------------------------------------------------------------
 export function addImageExternal(dim, doc) {
-    doc.addImage(dim.img.src, 'PNG', dim.dessin.x, dim.dessin.y, dim.dessin.width, dim.dessin.height);
+    if ( dim  ) {
+        doc.addImage(dim.img.src, 'PNG', dim.dessin.x, dim.dessin.y, dim.dessin.width, dim.dessin.height);
+    } else {
+    }
 }
 
 // -----------------------------------------------------------------------------

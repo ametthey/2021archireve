@@ -21,7 +21,7 @@ function callback(mutationList, observer) {
         switch(mutation.type) {
             case 'attributes':
                 if ( mutation.target.classList.contains('is-hidden') ) {
-                    console.log('is-hidden for selection-reve');
+                    // console.log('is-hidden for selection-reve');
                     selectYourReves(articles);
                 }
                 break;
@@ -133,7 +133,12 @@ function selectYourReves( articles ) {
     // SELECTIONNER TOUT LES RÊVES
     telechargerButton.all.addEventListener( "click", function(e){
         // console.log(`On veut tous télécharger`);
-        toggleSelection(telechargerButton, articles, COUNT, tables, tableToAdd);
+        // toggleSelection(telechargerButton, articles, COUNT, tables, tableToAdd);
+        if ( telechargerButton.all.classList.contains('-is-selected') ) {
+            deselectEverything(telechargerButton, articles, COUNT, tables, tableToAdd);
+        } else {
+            selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd);
+        }
     }, false);
 
     // SUPPRIMER LA POPUP DE SELECTION APRÈS LE TÉLÉCHARGEMENT D'UN REVE
@@ -224,6 +229,7 @@ function selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd
 
         telechargerButton.buttonText.innerHTML = articles.length;
         telechargerButton.buttonAll.classList.add("-is-selected");
+        telechargerButton.all.classList.add("-is-selected");
         reve.select.classList.add("-is-selected");
         reve.download.classList.add("-is-selected");
         COUNT = reve.select.length;
@@ -243,6 +249,7 @@ function deselectEverything(telechargerButton, articles, COUNT, tables, tableToA
             title: article.querySelector('.article-reve--header h1'),
             number: article.dataset.number,
         }
+        telechargerButton.all.classList.remove("-is-selected");
         telechargerButton.buttonAll.classList.remove("-is-selected");
         reve.select.classList.remove("-is-selected");
         reve.download.classList.remove("-is-selected");

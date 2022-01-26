@@ -3,10 +3,18 @@
     <div class="cover--credits">
 
         <p>©  ARCHIREVE2021</p>
-        <div class="separator">–</div>
-        <a href="#">contact</a>
-        <div class="separator">–</div>
-        <a href="#">instagram</a>
+
+        <?php $contact_vertical = get_field( 'contact_vertical', 'option' ); ?>
+        <?php if ( $contact_vertical ) : ?>
+            <div class="separator">–</div>
+            <a href="<?php echo esc_url( $contact_vertical) ; ?>">contact</a>
+        <?php endif; ?>
+
+        <?php $instagram_vertical = get_field( 'instagram_vertical', 'option' ); ?>
+        <?php if ( $instagram_vertical ) : ?>
+            <div class="separator">–</div>
+            <a href="<?php echo esc_url( $instagram_vertical) ; ?>">instagram</a>
+        <?php endif; ?>
     </div>
 
 </div>
@@ -18,12 +26,12 @@
 
     <div data-scroll-container class="content--apropos-fading-container">
 
-        <?php get_template_part( 'template-parts/apropos/content', 'right-propos-1' ); ?>
-        <?php get_template_part( 'template-parts/apropos/content', 'right-propos-2' ); ?>
-        <?php get_template_part( 'template-parts/apropos/content', 'right-propos-3' ); ?>
-        <?php get_template_part( 'template-parts/apropos/content', 'right-propos-4' ); ?>
-        <?php get_template_part( 'template-parts/apropos/content', 'right-propos-5' ); ?>
-        <?php get_template_part( 'template-parts/apropos/content', 'right-propos-6' ); ?>
+        <?php  get_template_part( 'template-parts/apropos/content', 'right-propos-1' ); ?>
+        <?php  get_template_part( 'template-parts/apropos/content', 'right-propos-2' ); ?>
+        <?php  get_template_part( 'template-parts/apropos/content', 'right-propos-3' ); ?>
+        <?php  get_template_part( 'template-parts/apropos/content', 'right-propos-4' ); ?>
+        <?php  get_template_part( 'template-parts/apropos/content', 'right-propos-5' ); ?>
+        <?php  get_template_part( 'template-parts/apropos/content', 'right-propos-6' ); ?>
 
     </div>
 </div>

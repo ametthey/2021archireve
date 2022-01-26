@@ -1,30 +1,16 @@
+import * as localForage from "localforage";
 import lottie from 'lottie-web';
-// import barba from '@barba/core';
-
-// barba.init({
-//     // debug: true,
-//     transitions: [{
-//         once(data) {
-//             const loadingAnimationLogo = data.next.container;
-//             // const loadingAnimationLogo = data.next.container.classList.contains('.content--home-logo');
-//             console.log( loadingAnimationLogo )
-//             if ( loadingAnimationLogo.classList.contains('content--home-logo') ) {
-//                 console.log('home');
-//                 loadLottieAnimation(loadingAnimationLogo);
-//                 headerAnimation();
-//             } else {
-//                 console.log('not home');
-//                 headerAnimation();
-//             }
-//         }
-//     }]
-// });
 
 const home = document.querySelector('.is-home');
+const loadingAnimationLogo  = document.querySelector('.content--home-logo');
 
 if ( home ) {
     loadingAnimation();
+} else {
+    loadLottieAProposDesktop();
+    loadLottieAProposMobile();
 }
+
 
 function loadingAnimation() {
     const articles = document.querySelectorAll(".article-reve");
@@ -40,8 +26,8 @@ function loadingAnimation() {
 
     logoAnimation.addEventListener( 'complete', (e) => {
         loadingAnimationLogo.classList.add('is-hidden');
-        loadLottieAProposDesktop();
-        loadLottieAProposMobile();
+        // loadLottieAProposDesktop();
+        // loadLottieAProposMobile();
     });
 }
 

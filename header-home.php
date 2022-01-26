@@ -110,10 +110,6 @@
 
         </header>
 
-        <!-- <div data&#45;barba="wrapper"> -->
-        <!--     <div  data&#45;barba="container" data&#45;barba&#45;namespace="home"> -->
-        <!--         <div id="first_time" class="content&#45;&#45;home&#45;logo"></div> -->
-
                     <!-- A Propos for mobile -->
                     <?php get_template_part( 'template-parts/header/apropos-mobile' ); ?>
 

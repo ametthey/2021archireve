@@ -49,6 +49,21 @@
 
         $name = get_the_author_meta( 'nickname', false );
 
+        // FUTURE AGE
+        global $current_user;
+
+        $user_registered = $current_user->user_registered;
+        $user_registered_year = date( 'Y', strtotime( $user_registered ) );
+
+        $age = get_field('age');
+        $age_conv = (int)$age;
+
+        $date_of_birth = $user_registered_year - $age_conv;
+
+        $today = date('Y');
+        $future_age = $today - $date_of_birth;
+
+
     ?>
 
         <?php
@@ -91,7 +106,7 @@
                         <td>Titre du rêve</td>
                         <td class="table--print-title"><?php echo get_the_title(); ?></p></td>
                         <td>Age</td>
-                        <td class="table-age"><?php the_field( 'age' ); ?></td>
+                        <td class="table-age"><?php echo $future_age; ?></td>
                     </tr>
 
                     <!-- 4 -->
@@ -168,7 +183,15 @@
 
                     <!-- 7 -->
                     <tr>
-                        <td colspan="2">Modalité du sommeil</td>
+                        <td >Modalité du sommeil</td>
+                        <td >
+                            <?php $sommeil = get_field( 'sommeil' ); ?>
+                            <?php if ( $sommeil ) : ?>
+                                <?php foreach ( $sommeil as $term ) : ?>
+                                    <?php echo esc_html( $term->name ); ?>
+                                <?php endforeach; ?>
+                            <?php endif; ?>
+                        </td>
                         <td>Attirance: femme/homme</td>
                         <td class="table-attirance">
                             <?php
@@ -184,12 +207,12 @@
                             Humeur
                         </td>
                         <td>
-                            <?php $sommeil = get_field( 'sommeil' ); ?>
-                            <?php if ( $sommeil ) : ?>
+                            <?php $hummeur = get_field( 'hummeur' ); ?>
+                            <?php if ( $hummeur ) : ?>
                                 <?php $get_terms_args = array(
-                                    'taxonomy' => 'modalite_sommeil',
+                                    'taxonomy' => 'modalite_humeur',
                                     'hide_empty' => 0,
-                                    'include' => $sommeil,
+                                    'include' => $hummeur,
                                 ); ?>
                                 <?php $terms = get_terms( $get_terms_args ); ?>
                                 <?php if ( $terms ) : ?>
@@ -375,9 +398,14 @@
                     </tr>
                     <!-- 22 -->
                     <tr>
+                        <?php $dessin = get_field( 'contenu_dessin' ); ?>
+                        <?php if ( $dessin ) : ?>
                         <td colspan="2" rowspan="15" id="start-dessin" style="background-image: url('<?php the_field( 'contenu_dessin' ); ?>')">
                             <img width="0" height="0" src="<?php the_field( 'contenu_dessin' ); ?>">
                         </td>
+                        <?php else : ?>
+                        <td colspan="2" rowspan="15" id="start-dessin"></td>
+                        <?php endif; ?>
                         <td>Actuelle: plaine/montagne</td>
                         <td class="table-relief-actuel">
                             <?php

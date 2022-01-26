@@ -34,6 +34,22 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 		'redirect'		=> false,
 	));
 
+    acf_add_options_page( array(
+		'page_title'	=> 'Barre vertical  contact',
+		'menu_title'	=> 'Barre vertical  contact',
+		'menu_slug' 	=> 'acf-barre-vertical--contact',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+	));
+
+	acf_add_options_page( array(
+		'page_title'	=> 'A Propos',
+		'menu_title'	=> 'A Propos',
+		'menu_slug' 	=> 'acf-a-propos',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false,
+	));
+
 }
 
 // Enable the option show in rest

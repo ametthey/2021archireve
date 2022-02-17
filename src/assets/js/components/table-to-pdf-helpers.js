@@ -53,51 +53,31 @@ export function scssToJs() {
 //  TableToPDF helpers functions and storage
 // -----------------------------------------------------------------------------
 
-function componentToHex(c) {
-    var hex = c.toString(16);
-    return hex.length == 1 ? "0" + hex : hex;
-}
+const roseClair = "FFA0B2";
+const rose =  "#D67083";
+const roseFonce = "#a24157";
+const vertClair = "#68e267";
+const vert = "#2CAF38";
+const vertFonce = "#007e00";
+const blanc = "#fcfcfc";
+const noir = "#303030";
+const bleu = "#256EFF";
+const conco = "#2CAF38";
+const rec = "#DB5931"
 
-function rgbToHex(r, g, b) {
-    return "#" + componentToHex(r) + componentToHex(g) + componentToHex(b);
-}
-
-function hexToRgb(hex) {
-    var result = /^#?([a-f\d]{2})([a-f\d]{2})([a-f\d]{2})$/i.exec(hex);
-    return result ? {
-        r: parseInt(result[1], 16),
-        g: parseInt(result[2], 16),
-        b: parseInt(result[3], 16)
-    } : null;
-}
-
-const colorsHexa =
-    {
-        "roseClair":"#efa0af",
-        "rose":"#d67083",
-        "roseFonce":"#9e5260",
-        "vertClair":"#60b768",
-        "vert":"#2caf38",
-        "vertFonce":"#269530",
-        "blanc":"#ffffff",
-        "noir":"#0a0a0a",
-        "bleu":"#256eff",
-        "conco":"#2CAF38",
-        "rec":"#DB5931"
-    }
 
 export const colors = {
-    roseClair: [255, 227, 234],
-    rose: [215, 133, 146],
-    roseFonce: [158, 82, 96],
-    vertClair: [218, 249, 217],
+    roseClair: [255, 160, 178],
+    rose: [214, 112, 131],
+    roseFonce: [162, 65, 87],
+    vertClair: [104,226,103],
     vert: [44, 175, 56],
-    vertFonce: [80, 123, 82],
-    blanc: [255, 255, 255],
-    noir: [10, 10, 10],
+    vertFonce: [0, 126, 0],
+    blanc: [252, 252, 252],
+    noir: [48, 48, 48],
     bleu: [37, 110, 255],
-    conco: [76, 165, 142],
-    rec: [219, 218, 80],
+    conco: [44, 175, 56],
+    rec: [219, 89, 49],
 }
 
 // -----------------------------------------------------------------------------

@@ -1,9 +1,10 @@
+import $ from 'jquery';
+import jQueryBridget from 'jquery-bridget';
+import isotope from 'isotope-layout';
 import Swiper, { Navigation } from 'swiper/bundle';
 import imagesLoaded from 'imagesLoaded';
-import isotope from 'isotope-layout';
-import jQueryBridget from 'jquery-bridget';
 
-jQueryBridget( 'isotope' , isotope, jQuery );
+jQueryBridget( 'isotope' , isotope, $ );
 
 /**********************************************************************
  * BARRE DE FILTRES
@@ -16,223 +17,316 @@ if ( articlesContainer ) {
 
     imageL.on( 'done', function( instance ) {
 
-        (function($) {
+        /**********************************************************************
+         * FILTERING WITH SEARCH FIELD - VANILLA JS
+         **********************************************************************/
+        // quick search regex
+        // var qsRegex;
+        //
+        // // init Isotope
+        // var iso = new isotope( '.container--articles', {
+        //     itemSelector: '.article-reve',
+        //     transitionDuration: 0,
+        //     hiddenStyle: {
+        //         opacity: 0
+        //     },
+        //     visibleStyle: {
+        //         opacity: 1
+        //     },
+        //     tagName: function( itemElem ) {
+        //         qsRegex = new RegExp( quickSearch.val(), 'gi' );
+        //
+        //         // Recherche dans tout les tags
+        //         var tagName = this.find('.taxonomy-tag').innerText;
+        //
+        //         console.log( tagName );
+        //
+        //         // Vérification que la query existe
+        //         return qsRegex ? tagName.match(qsRegex) : true;
+        //     }
+        // });
+        //
+        // // use value of search field to filter
+        // var quicksearch = document.querySelector('#search-term');
+        // quicksearch.addEventListener( 'keyup', debounce( function() {
+        //     qsRegex = new RegExp( quicksearch.value, 'gi' );
+        //     iso.arrange();
+        // }, 200 ) );
+        //
+        // // debounce so filtering doesn't happen every millisecond
+        // function debounce( fn, threshold ) {
+        //     var timeout;
+        //     threshold = threshold || 100;
+        //     return function debounced() {
+        //         clearTimeout( timeout );
+        //         var args = arguments;
+        //         var _this = this;
+        //         function delayed() {
+        //             fn.apply( _this, args );
+        //         }
+        //         timeout = setTimeout( delayed, threshold );
+        //     };
+        // }
 
-            /********************************************
-             * ISOTOPE CONFIGURATION
-             *******************************************/
-            $grid = $('.container--articles').isotope({
-                itemSelector: '.article-reve',
-                transitionDuration: 0,
-                hiddenStyle: {
-                    opacity: 0
-                },
-                visibleStyle: {
-                    opacity: 1
-                },
-                        // getSortData: {
-                        //     // tag: '.taxonomy-tag parseInt'
-                        //     tag: '.taxonomy-tag'
-                        // },
-                        // filter: function() {
-                        //     var $this = $(this);
-                        //     var searchResult = qsRegex ? $this.text().match(qsRegex) : true;
-                        //     // var selectResult = filterValue ? $this.is(filterValue) : true;
-                        //     // return searchResult && selectResult;
-                        //     return searchResult;
-                        // }
-            });
-
-                        //  // SEARCH TAG
-                        var qsRegex;
-                        //
-                        // var $quicksearch = $('.tagsearch').keyup( debounce( function() {
-                        //     $grid.isotope({ sortBy: 'tag' });
-                        //     qsRegex = new RegExp( $quicksearch.val(), 'gi' );
-                        // }));
-                        //
-                        // // debounce so filtering doesn't happen every millisecond
-                        // function debounce( fn, threshold ) {
-                        //     var timeout;
-                        //     return function debounced() {
-                        //         if ( timeout ) {
-                        //             clearTimeout( timeout );
-                        //         }
-                        //         function delayed() {
-                        //             fn();
-                        //             timeout = null;
-                        //         }
-                        //         timeout = setTimeout( delayed, threshold || 100 );
-                        //     }
-                        // }
-
-
-            /********************************************
-             * SEARCH FILTRE CODE
-             *  https://gist.github.com/candidosales/10e22f0a3b4676ac6aeb
-             *******************************************/
-            var quickSearch = $('#search-term');
-
-            var filterFns = {
-                tagName: function(qsRgex) {
-                    qsRegex = new RegExp( quickSearch.val(), 'gi' );
-
-                    // Recherche dans tout les tags
-                    var tagName = $(this).find('.taxonomy-tag').text();
-
-                    // Vérification que la query existe
-                    return qsRegex ? tagName.match(qsRegex) : true;
-                }
-            };
-
-            // Evenement quand on écrit
-            quickSearch.on('keyup change', function(){
-                debounce(searchFilter());
-            });
-
-            function searchFilter() {
-                var filterValue = quickSearch.attr('data-filter');
-                filterValue = filterFns[ filterValue ] || filterValue;
-                $grid.isotope({ filter: filterValue });
-            }
-
-
-            /********************************************
-             * FILTRE EN CLIQUANT SUR DES BOUTONS
-             * TYPOLOGIE DE RÊVE
-             * NIVEAU DE LUCIDITE
-             *******************************************/
-            //store filter for each group
-            var filters = [];
-
-            //change is-checked class on buttons
-            $('.filters').on( 'click', '.button', function( event ) {
-
-                var $target = $( event.currentTarget );
-                $target.toggleClass('is-checked');
-                var isChecked = $target.hasClass('is-checked');
-                var buttonfilter = $target.attr('data-filter');
-
-
-                if ( isChecked ) {
-                    addFilter( buttonfilter );
-
-                } else {
-                    removeFilter( buttonfilter );
-                }
-
-                //filter isotope
-                $grid.isotope();
-                location.hash = 'filter=' + encodeURIComponent( filters.join(',') );
-
-
-            });
-
-
-            /********************************************
-             * BOUTON POUR SUPPRIMER TOUT LES FILTRES
-             *******************************************/
-            $(".clear").click(function(){
-
-                $(".button").each(function(filter){
-                    $(this).removeClass("is-checked");
-                    var buttonfilter = $(this).attr('data-filter');
-                    var hashFilter = getHashFilter();
-                    var s = hashFilter.split(",");
-                    for(var i=0;i<s.length;i++){
-                        if(s[i] == buttonfilter){
-                            removeFilter( buttonfilter );
-                        }
-                    }
-                });
-                location.hash = 'filter=' + encodeURIComponent( filters.join(',') );
-                $grid.isotope()
-            })
-
-            /**********************************************************************
-             * Helper Functions
-             **********************************************************************/
-            function debounce( fn, threshold ) {
-                var timeout;
-                return function debounced() {
-                    if ( timeout ) {
-                        clearTimeout( timeout );
-                    }
-                    function delayed() {
-                        fn();
-                        timeout = null;
-                    }
-                    timeout = setTimeout( delayed, threshold || 100 );
-                }
-            }
-
-            function addFilter( filter ) {
-                if ( filters.indexOf( filter ) == -1 ) {
-                    filters.push( filter );
-                }
-            }
-
-            function removeFilter( filter ) {
-                var index = filters.indexOf( filter);
-                if ( index != -1 ) {
-                    filters.splice( index, 1 );
-                }
-            }
-
-            function onHashchange() {
-                var hashFilter = getHashFilter();
-
-                // filter isotope
-                // $grid.isotope({
-                $grid.isotope({
-                    filter: function() {
-                        var $this = $(this);
-                        var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
-                        var buttonResult = hashFilter ? $this.is( hashFilter ) : true;
-
-                        return searchResult && buttonResult;
-                    }
-                });
-            };
-
-            $grid.on( 'isotopeComplete', function( event, filteredItems ) {
-                //console.log( filteredItems.length );
-                if(filteredItems.length == 0){
-                    $(".no-results").show();
-                }else{
-                    $(".no-results").hide();
-                }
-            });
-
-            $(window).on( 'hashchange', onHashchange );
-
-            //init Isotope with hash filter
-            onHashchange();
-
-            var hashFilter = getHashFilter();
-            if ( hashFilter ) {
-                var filters = hashFilter.split(',');
-                filters.forEach( function( filter ) {
-                    var $checkbox = $(".button").filter('[data-filter="' + filter + '"]');
-                    //console.log(filter)
-                    $checkbox.addClass( 'is-checked' );
-                });
-            }
-
-            function getHashFilter() {
-                var hash = location.hash;
-                // get filter=filterName
-                var matches = location.hash.match( /filter=([^&]+)/i );
-
-                if ( !matches ) {
-                    return '';
-                }
-
-                return decodeURIComponent( matches[1] );
-            }
+        // TEST #1
+        // $(function() {
+        //
+        //     var qsRegex;
+        //
+        //     $grid = $('.container--articles').isotope({
+        //         itemSelector: '.article-reve',
+        //         transitionDuration: 0,
+        //         hiddenStyle: {
+        //             opacity: 0
+        //         },
+        //         visibileStyle: {
+        //             opacity: 1
+        //         },
+        //     });
+        //
+        //
+        //     // debounce so filtering doesn't happen every millisecond
+        //     function debounce( fn, threshold ) {
+        //         var timeout;
+        //         return function debounced() {
+        //             if ( timeout ) {
+        //                 clearTimeout( timeout );
+        //             }
+        //             function delayed() {
+        //                 fn();
+        //                 timeout = null;
+        //             }
+        //             setTimeout( delayed, threshold || 100 );
+        //         }
+        //     }
+        //
+        //     var quickSearch = $('#search-term');
+        //
+        //     // filter functions
+        //     var filterFns = {
+        //         // show if name ends with -ium
+        //         tagName: function() {
+        //             // Pega o valor do campo
+        //             var qsRegex = new RegExp( quickSearch.val(), 'gi' );
+        //
+        //             // Procura todos os títulos de produtos
+        //             var tagName = $(this).find('.taxonomy-tag').text();
+        //
+        //             //Verifica se existe
+        //             return qsRegex ? tagName.match(qsRegex) : true;
+        //         }
+        //     };
+        //
+        //
+        //     // bind filter button click
+        //     $('.filters').on( 'click', 'button', function() {
+        //         var filterValue = $( this ).attr('data-filter');
+        //         $grid.isotope({ filter: filterValue });
+        //     });
+        //
+        //     $('.filtres--list').each( function( i, buttonGroup ) {
+        //         var $buttonGroup = $( buttonGroup );
+        //         $buttonGroup.on( 'click', 'button', function() {
+        //             $buttonGroup.find('.is-checked').removeClass('is-checked');
+        //             $( this ).addClass('is-checked');
+        //         });
+        //     });
+        //
+        //     quickSearch.on('keyup change', function(){
+        //         debounce(searchFilter());
+        //     });
+        //
+        //     function searchFilter() {
+        //         var filterValue = quickSearch.attr('data-filter');
+        //         filterValue = filterFns[ filterValue ] || filterValue;
+        //         $grid.isotope({ filter: filterValue });
+        //     }
+        //
+        // });
 
 
-        })( jQuery );
+        // $(function(){
+        //     /********************************************
+        //      * ISOTOPE CONFIGURATION
+        //      *******************************************/
+        //     $grid = $('.container--articles').isotope({
+        //         itemSelector: '.article-reve',
+        //         transitionDuration: 0,
+        //         hiddenStyle: {
+        //             opacity: 0
+        //         },
+        //         visibleStyle: {
+        //             opacity: 1
+        //         },
+        //     });
+        //
+        //
+        //     /********************************************
+        //      * SEARCH FILTRE CODE
+        //      *  https://gist.github.com/candidosales/10e22f0a3b4676ac6aeb
+        //      *******************************************/
+        //     var qsRegex;
+        //     var quickSearch = $('#search-term');
+        //
+        //     var filterFns = {
+        //         tagName: function(qsRgex) {
+        //             qsRegex = new RegExp( quickSearch.val(), 'gi' );
+        //
+        //             // Recherche dans tout les tags
+        //             var tagName = $(this).find('.taxonomy-tag').text();
+        //
+        //             console.log( tagName );
+        //
+        //             // Vérification que la query existe
+        //             return qsRegex ? tagName.match(qsRegex) : true;
+        //         }
+        //     };
+        //
+        //     // Evenement quand on écrit
+        //     quickSearch.on('keyup change', function(){
+        //         debounce(searchFilter());
+        //     });
+        //
+        //     function searchFilter() {
+        //         var filterValue = quickSearch.attr('data-filter');
+        //         filterValue = filterFns[ filterValue ] || filterValue;
+        //         $grid.isotope({ filter: filterValue });
+        //
+        //         console.log( filterValue );
+        //     }
+        //
+        //
+        //     /********************************************
+        //      * FILTRE EN CLIQUANT SUR DES BOUTONS
+        //      * TYPOLOGIE DE RÊVE
+        //      * NIVEAU DE LUCIDITE
+        //      *******************************************/
+        //     //store filter for each group
+        //     var filters = [];
+        //
+        //     //change is-checked class on buttons
+        //     $('.filters').on( 'click', '.button', function( event ) {
+        //
+        //         var $target = $( event.currentTarget );
+        //         $target.toggleClass('is-checked');
+        //         var isChecked = $target.hasClass('is-checked');
+        //         var buttonfilter = $target.attr('data-filter');
+        //
+        //
+        //         if ( isChecked ) {
+        //             addFilter( buttonfilter );
+        //
+        //         } else {
+        //             removeFilter( buttonfilter );
+        //         }
+        //
+        //         //filter isotope
+        //         $grid.isotope();
+        //         location.hash = 'filter=' + encodeURIComponent( filters.join(',') );
+        //
+        //
+        //     });
+        //
+        //
+        //     /********************************************
+        //      * BOUTON POUR SUPPRIMER TOUT LES FILTRES
+        //      *******************************************/
+        //     $(".clear").click(function(){
+        //
+        //         $(".button").each(function(filter){
+        //             $(this).removeClass("is-checked");
+        //             var buttonfilter = $(this).attr('data-filter');
+        //             var hashFilter = getHashFilter();
+        //             var s = hashFilter.split(",");
+        //             for(var i=0;i<s.length;i++){
+        //                 if(s[i] == buttonfilter){
+        //                     removeFilter( buttonfilter );
+        //                 }
+        //             }
+        //         });
+        //         location.hash = 'filter=' + encodeURIComponent( filters.join(',') );
+        //         $grid.isotope()
+        //     })
+        //
+        //     /**********************************************************************
+        //      * Helper Functions
+        //      **********************************************************************/
+        //     function debounce( fn, threshold ) {
+        //         var timeout;
+        //         return function debounced() {
+        //             if ( timeout ) {
+        //                 clearTimeout( timeout );
+        //             }
+        //             function delayed() {
+        //                 fn();
+        //                 timeout = null;
+        //             }
+        //             timeout = setTimeout( delayed, threshold || 100 );
+        //         }
+        //     }
+        //
+        //     function addFilter( filter ) {
+        //         if ( filters.indexOf( filter ) == -1 ) {
+        //             filters.push( filter );
+        //         }
+        //     }
+        //
+        //     function removeFilter( filter ) {
+        //         var index = filters.indexOf( filter);
+        //         if ( index != -1 ) {
+        //             filters.splice( index, 1 );
+        //         }
+        //     }
+        //
+        //     function onHashchange() {
+        //         var hashFilter = getHashFilter();
+        //
+        //         $grid.isotope({
+        //             filter: function() {
+        //                 var $this = $(this);
+        //                 var searchResult = qsRegex ? $this.text().match( qsRegex ) : true;
+        //                 var buttonResult = hashFilter ? $this.is( hashFilter ) : true;
+        //
+        //                 return searchResult && buttonResult;
+        //             }
+        //         });
+        //     };
+        //
+        //     $grid.on( 'isotopeComplete', function( event, filteredItems ) {
+        //         //console.log( filteredItems.length );
+        //         if(filteredItems.length == 0){
+        //             $(".no-results").show();
+        //         }else{
+        //             $(".no-results").hide();
+        //         }
+        //     });
+        //
+        //     $(window).on( 'hashchange', onHashchange );
+        //
+        //     onHashchange();
+        //
+        //     var hashFilter = getHashFilter();
+        //     if ( hashFilter ) {
+        //         var filters = hashFilter.split(',');
+        //         filters.forEach( function( filter ) {
+        //             var $checkbox = $(".button").filter('[data-filter="' + filter + '"]');
+        //             $checkbox.addClass( 'is-checked' );
+        //         });
+        //     }
+        //
+        //     function getHashFilter() {
+        //         var hash = location.hash;
+        //         var matches = location.hash.match( /filter=([^&]+)/i );
+        //
+        //         if ( !matches ) {
+        //             return '';
+        //         }
+        //
+        //         return decodeURIComponent( matches[1] );
+        //     }
+        //
+        //
+        // });
     });
 
     // SI LE CONTAINER DES RÊVES NE CHARGENT PAS CORRECTEMENT
@@ -240,9 +334,19 @@ if ( articlesContainer ) {
         console.log('all images are failed');
     });
 
+    verifyAndDisplayReves();
+    filterDateLayout();
+
+}
 
 
-    // MUTATION OBSERVER POUR BIEN CHARGER LE CONTAINER DES RÊVES AVEC LE BON LAYOUT
+
+
+// -----------------------------------------------------------------------------
+// VERIFY IF LAYOUY IS CORRECT THEN LOAD AND DISPLAY IT
+// -----------------------------------------------------------------------------
+
+function verifyAndDisplayReves() {
     const targetNode = document.querySelector(".container--articles");
     const observerOptions = {
         childList: true,
@@ -263,8 +367,6 @@ if ( articlesContainer ) {
                         reve.style.position = 'relative';
                         reve.style.top = 'inherit';
                         reve.style.left = 'inherit';
-                        // reve.style.transform = 'translate3d(0px, 0px, 0px)';
-                        // reve.style.transitionDuration = '0s';
 
                         setTimeout( (e) => {
                             reve.classList.add('is-visible');
@@ -275,21 +377,21 @@ if ( articlesContainer ) {
             }
         });
     }
+}
 
-    // DATE
+// -----------------------------------------------------------------------------
+// FILTER THE DATE
+// -----------------------------------------------------------------------------
+function filterDateLayout() {
     let swiperDate = new Swiper( '.swiper-container-date', {
         allowTouchMove: false,
-        // centeredSlides: true,
         directon: 'horizontal',
         effect: 'slide',
         speed: 700,
         slidesPerView: 2,
-        // spaceBetween: 20,
         navigation: {
             nextEl: '.swiper-date-button-next',
             prevEl: '.swiper-date-button-prev',
         },
     });
 }
-
-

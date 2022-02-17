@@ -62,9 +62,12 @@
     }
 
     a {
-        display: block;
+        align-items: center;
+        display: flex;
+        justify-content: center;
     }
 
+    img,
     svg {
         width: 210px !important;
 
@@ -178,6 +181,7 @@
     width: 100%;
     z-index:2;
     position: fixed;
+    position: relative; // c'est ça qui cause le bug quand on est connecté et qu'on va sur le front
     top: 0;
     left: 0;
 

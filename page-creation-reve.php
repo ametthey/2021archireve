@@ -81,10 +81,10 @@ get_header();
 			'post_type'		=> 'reve',
 			'post_status'	=> 'pending'
         ),
-        'submit_value' => __("Publier", 'acf'),
+        'submit_value' => __("Publier", '_themename'),
         'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
         'updated_message' => __("MERCI ton Rêve est en cours de validation,
-il sera bientôt en ligne ! ", 'acf'),
+il sera bientôt en ligne ! ", '_themename'),
         'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
         'return' => '/back-office/',
 	));

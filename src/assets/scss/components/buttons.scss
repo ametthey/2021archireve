@@ -91,6 +91,7 @@ $round: 24px;
     &.rounded--white-border {
         background-color: $color;
         border: 1px solid $bg;
+        color: $bg;
 
         a {
             color: $bg;

@@ -76,7 +76,7 @@ get_header();
             'field_6101b366df9c6'
         ),
 		'post_title'	=> true,
-        'submit_value'  => __('MODIFIER LE RÊVE'),
+        'submit_value'  => __('MODIFIER LE RÊVE', '_themename'),
         'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
         'html_submit_spinner' => '<span class="acf-spinner"></span>',
     ));

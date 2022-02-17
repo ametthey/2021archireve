@@ -1,13 +1,18 @@
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
     <head>
-
         <meta charset="<?php bloginfo( 'charset' ); ?>">
         <meta name="viewport" content="width=device-width, initial-scale=1" />
 
         <link rel="profile" href="https://gmpg.org/xfn/11" />
         <?php wp_head(); ?>
+
         <link rel="stylesheet" href="https://use.typekit.net/gta0mfy.css">
+
+        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/Mono/Solide_Mirage&#45;Mono_web.woff2" as="font" type="font/woff2" crossorigin> -->
+        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/GoodGlyphs/GoodGlyphs&#45;No1.ttf" as="font" type="font/ttf" crossorigin> -->
+        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/GoodGlyphs/GoodGlyphs&#45;No1.woff" as="font" type="font/woff" crossorigin> -->
+        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/GoodGlyphs/GoodGlyphs&#45;No1.woff2" as="font" type="font/woff2" crossorigin> -->
 
     </head>
     <body <?php body_class('is-home') ?>>
@@ -16,102 +21,57 @@
 
         <header id="masthead" class="site-header header-home" role="banner">
             <div class="container--header">
-                <?php
-
-                if ( is_user_logged_in() ) {
-                    if(current_user_can('administrator')) {
-                    } else if ( current_user_can('author') ){
-                        global $current_user;
-                        $pseudo = $current_user->user_nicename;
-                        wp_get_current_user();
-                ?>
-
-                <div class="site-header-user">
-                    <div id="left--connexion" class="left--filter button--rounded left--connexion-user">
-                        <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">
-                            <p><?php echo $pseudo; ?></p>
-                        </a>
-                    </div>
-                    <div id="left--inscription" class="left--filter button--rounded left--inscription">
-                        <a href="<?php echo esc_url( get_permalink(  get_page_by_title('back-office', OBJECT , 'page')) ); ?>">
-                            <p>Mes rêves</p>
-                        </a>
-                    </div>
-                </div>
 
                 <?php
-                    }
-                } else if ( ! is_user_logged_in() ) {
-                ?>
-
-                <div class="site-header-user">
-                    <div id="left--connexion" class="left--filter button--rounded">
-                        <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
-                            <p>CONNEXION</p>
-                        </a>
-                    </div>
-                    <div id="left--inscription" class="left--filter button--rounded">
-                        <a href="<?php echo esc_url( get_permalink(  get_page_by_title('inscription', OBJECT , 'page')) ); ?>">
-                            <p>INSCRIPTION</p>
-                        </a>
-                    </div>
-                </div>
-                <?php
-                }
-
-                ?>
-
-                    <!-- Trigger a propos pour mobile -->
-                    <div id="header--mobile-apropos" class="button--round round--black"></div>
-
-                    <!-- Site branding -->
-                    <div class="site-branding">
-                        <a href="<?php echo esc_url( home_url() ); ?>" ></a>
-                    </div>
-
-                    <!-- Connexion pour mobile -->
-                    <?php
-
-                    // UTILISATEUR CONNECTE
+                    // IF USER IS LOGGED IN
                     if ( is_user_logged_in() ) {
-                        if(current_user_can('administrator')) {
-                        } else if ( current_user_can('author') ){
+
+                        // IF USER IS ADMINISTATOR
+                        if( current_user_can('administrator') ) {
+                            get_template_part('template-parts/header/connexion-inscription');
+                            get_template_part('template-parts/header/branding');
+                            get_template_part('template-parts/header/retour-aux-reves');
+                            get_template_part('template-parts/header/connexion-mobile-autre');
+
+                        // IF USER IS AUTHOR
+                        } else if ( current_user_can('author') ) {
+
+                            // get the current user
                             global $current_user;
                             $pseudo = $current_user->user_nicename;
                             wp_get_current_user();
-                    ?>
-                        <div id="mobile--connexion" class="button--rounded connexion">
-                            <!-- <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>"> -->
-                            <a href="<?php echo esc_url( get_home_url() . '/reveur_info/' . $pseudo );  ?>">
-                                <p><?php echo $pseudo; ?></p>
-                            </a>
-                        </div>
 
-                    <?php
+                            // to use $pseudo in template_parts
+                            set_query_var( 'pseudo', $pseudo );
+
+                            get_template_part('template-parts/header/pseudo-mes-reves');
+                            get_template_part('template-parts/header/branding');
+                            get_template_part('template-parts/header/retour-aux-reves');
+                            get_template_part('template-parts/header/connexion-mobile-reveur');
+
+                        // IF USER IS NOBODI !
+                        } else {
+
+                            get_template_part('template-parts/header/connexion-inscription');
+                            get_template_part('template-parts/header/branding');
+                            get_template_part('template-parts/header/retour-aux-reves');
+                            get_template_part('template-parts/header/connexion-mobile-autre');
                         }
-                    // UTILISATEUR NON CONNECTE
+
+
+                    // IF USER IS NOT LOGGED IN
                     } else if ( ! is_user_logged_in() ) {
-                    ?>
 
-                        <div id="mobile--connexion" class="button--rounded connected">
-                            <a href="<?php echo esc_url( get_permalink(  get_page_by_title('connexion', OBJECT , 'page')) ); ?>">
-                                <p>CONNEXION</p>
-                            </a>
-                        </div>
-
-                    <?php
+                        get_template_part('template-parts/header/connexion-inscription');
+                        get_template_part('template-parts/header/branding');
+                        get_template_part('template-parts/header/retour-aux-reves');
+                        get_template_part('template-parts/header/connexion-mobile-autre');
                     }
 
-                    ?>
+                ?>
 
-                    <!-- placeholder for centering -->
-                    <div class="header-empty is-hidden"><div class="back-reve button--rounded"><p>Retour aux rêves</p></div></div>
             </div>
-
         </header>
 
-                    <!-- A Propos for mobile -->
-                    <?php get_template_part( 'template-parts/header/apropos-mobile' ); ?>
-
-                    <div id="page">
-
+        <!-- A Propos for mobile -->
+        <?php get_template_part( 'template-parts/header/apropos-mobile' ); ?>

@@ -1,4 +1,3 @@
-import * as localForage from "localforage";
 import lottie from 'lottie-web';
 
 const home = document.querySelector('.is-home');
@@ -7,8 +6,8 @@ const loadingAnimationLogo  = document.querySelector('.content--home-logo');
 if ( home ) {
     loadingAnimation();
 } else {
-    loadLottieAProposDesktop();
-    loadLottieAProposMobile();
+    // loadLottieAProposDesktop();
+    // loadLottieAProposMobile();
 }
 
 
@@ -19,16 +18,22 @@ function loadingAnimation() {
         container: loadingAnimationLogo,
         renderer: 'svg',
         loop: false,
-        path: '/wp-content/themes/_themename/dist/assets/images/animation/archireve.json',
+        path: '/wp-content/themes/_themename/dist/assets/images/animation/logo-2lines-black.json',
         autoplay: true,
         progressiveLoad: true,
     });
 
     logoAnimation.addEventListener( 'complete', (e) => {
         loadingAnimationLogo.classList.add('is-hidden');
-        // loadLottieAProposDesktop();
-        // loadLottieAProposMobile();
+
+        // LANCER LES ANIMATIONS POUR LES PARTIES APROPOS EN MOBILE ET DESKTOP
+        loadLottieAProposDesktop();
+        loadLottieAProposMobile();
+
+        // MONTRER TOUT LES ARTICLES QUAND L'ANIMATION D'INTRO EST TERMINÉE
+        articles.forEach( article => article.classList.add('is-visible') );
     });
+
 }
 
 
@@ -38,7 +43,7 @@ function loadLottieAProposDesktop() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/wp-content/themes/_themename/dist/assets/images/animation/archireve-white.json',
+        path: '/wp-content/themes/_themename/dist/assets/images/animation/logo-1line-white.json',
         progressiveLoad: true,
     })
 
@@ -55,7 +60,7 @@ function loadLottieAProposMobile() {
         renderer: 'svg',
         loop: true,
         autoplay: true,
-        path: '/wp-content/themes/_themename/dist/assets/images/animation/archireve-white.json',
+        path: '/wp-content/themes/_themename/dist/assets/images/animation/logo-1line-white.json',
         progressiveLoad: true,
     })
     aproposTitleM.play();

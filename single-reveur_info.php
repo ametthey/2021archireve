@@ -85,9 +85,9 @@ get_header(); ?>
                 'field_60fe429e0c4ff', // REVE 2
             ),
             // 'post_title'    => true,
-            'submit_value' => __("Modifier le profil", 'acf'),
+            'submit_value' => __("Modifier le profil", '_themename'),
             'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
-            'updated_message' => __("Vous venez de modifier votre profil", 'acf'),
+            'updated_message' => __("Vous venez de modifier votre profil", '_themename'),
             'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
             'html_submit_spinner' => '<span class="acf-spinner"></span>',
             'return' => '/reveur_info/' . $pseudo,

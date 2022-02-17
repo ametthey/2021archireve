@@ -19,7 +19,7 @@
     require_once( 'lib/menu.php' );
     require_once( 'lib/r-debug.php' );
     require_once( 'lib/theme-supports.php' );
-    require_once( 'lib/users.php' );
+    require_once( 'lib/show-hide-admin-bar.php' );
     require_once( 'lib/custom-date-reveur-info.php' );
 
     function get_user($type = 'ID') {

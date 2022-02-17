@@ -30,9 +30,19 @@
     width: 100%;
     z-index: 1000;
 
+    position: fixed;
+    top: 0;
+    left: 0;
+
     &.is-hidden {
         pointer-events: none;
         opacity: 0;
+    }
+
+    svg {
+        &:nth-of-type(2) {
+            display: none;
+        }
     }
 }
 

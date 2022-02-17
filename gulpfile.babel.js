@@ -13,7 +13,6 @@ import named from 'vinyl-named'
 import info from './package.json';
 
 // JS
-import jshint from 'jshint';
 import concat from 'gulp-concat';
 import terser from 'gulp-terser';
 import webpack from 'webpack-stream';
@@ -23,7 +22,7 @@ import sass from 'gulp-dart-sass';
 import postcss from 'gulp-postcss';
 
 // OPTIMISATION
-import imagemin from 'gulp-imagemin';
+// import imagemin from 'gulp-imagemin';
 import autoprefixer from 'autoprefixer';
 import cssnano from 'cssnano';
 import advanced from 'cssnano-preset-advanced';
@@ -39,11 +38,11 @@ const PRODUCTION = yargs.argv.prod;
 
 const path = {
     styles: {
-        src: ['src/assets/scss/bundle.scss', 'src/assets/scss/admin.scss'],
+        src: ['src/assets/scss/bundle.scss'],
         dest: 'dist/assets/css'
     },
     scripts: {
-        src: ['src/assets/js/main.js', 'src/assets/js/home.js', 'src/assets/js/edit-reve.js'],
+        src: ['src/assets/js/main.js'],
         dest: 'dist/assets/js'
     },
     images: {
@@ -59,7 +58,6 @@ const path = {
         dest: 'packaged'
     }
 }
-
 export const clean = () => del(['dist']);
 export const styles = () => {
     return gulp.src(path.styles.src)
@@ -91,14 +89,14 @@ export const styles = () => {
 export const scripts = () => {
     // this will take the scrpts from the source folder
     return gulp.src(path.scripts.src)
-        .pipe(named())
         .pipe(sourcemaps.init())
+        .pipe(named())
         .pipe(webpack({
             module: {
                 rules: [
                     {
                         test: /\.js$/,
-                        enforce: 'pre',
+                        // enforce: 'pre',
                         exclude: /(node_modules|bower_components)/,
                         use: [
                             {
@@ -110,12 +108,12 @@ export const scripts = () => {
 
                         ]
                     }
-                ],
+                ]
             },
-            // plugins: PRODUCTION ? false : new BundleAnalyzerPlugin(),
             // plugins: [
             //     new BundleAnalyzerPlugin()
             // ],
+
             output: {
                 filename: '[name].js',
             },
@@ -124,25 +122,21 @@ export const scripts = () => {
             mode: PRODUCTION ? 'production' : 'development', // add this
 
         }))
-        .pipe(gulpif(PRODUCTION, terser({
-            compress: {
-                drop_console: true,
-            }
-        })))
-        .pipe(gulpif(PRODUCTION, concat('main.js')))
+        .pipe(sourcemaps.write())
+        .pipe( concat('main.js') )
+        .pipe(gulpif(PRODUCTION, terser()))
         .pipe(size({
             title: 'JavaScript',
-            pretty: true,
-            gzip: true,
             showFiles: true,
             showTotal: true,
+            pretty: true,
+            gzip: true,
         }))
-        .pipe(sourcemaps.write({ loadMaps: true }))
         .pipe(gulp.dest(path.scripts.dest));
 }
 export const images = () => {
     return gulp.src(path.images.src)
-        .pipe(gulpif(PRODUCTION, imagemin()))
+        // .pipe(gulpif(PRODUCTION, imagemin()))
         .pipe(size({
             title: 'Images',
             pretty: true,

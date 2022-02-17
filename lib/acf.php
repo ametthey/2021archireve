@@ -53,10 +53,10 @@ if ( function_exists( 'acf_add_options_page' ) ) {
 }
 
 // Enable the option show in rest
-add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
+// add_filter( 'acf/rest_api/field_settings/show_in_rest', '__return_true' );
 
 // Enable the option edit in rest
-add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
+// add_filter( 'acf/rest_api/field_settings/edit_in_rest', '__return_true' );
 
 // Add values to taxonomy tag
 add_filter('acf/update_value/key=field_60ec18ce6f727', 'my_acf_update_value', 10, 4);

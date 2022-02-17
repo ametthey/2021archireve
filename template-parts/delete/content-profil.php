@@ -14,7 +14,7 @@
             <?php the_content(); ?>
             <?php if ( !is_user_logged_in() ) : ?>
                     <p class="warning">
-                        <?php _e('You must be logged in to edit your profile.', 'profile'); ?>
+                        <?php _e('You must be logged in to edit your profile.', '_themename'); ?>
                     </p><!-- .warning -->
             <?php else : ?>
                 <?php if ( count($error) > 0 ) echo '<p class="error">' . implode("<br />", $error) . '</p>'; ?>

@@ -1,0 +1,937 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+Bimage	src/assets/js/components/dessin.js	/^            const Bimage = contenuButtons.querySelector('.contenu--button-dessin');$/;"	V
+Btext	src/assets/js/components/dessin.js	/^            const Btext = contenuButtons.querySelector('.contenu--button-texte');$/;"	V
+BundleAnalyzerPlugin	gulpfile.babel.js	/^const BundleAnalyzerPlugin = require('webpack-bundle-analyzer').BundleAnalyzerPlugin;$/;"	V
+COUNT	src/assets/js/components/selection-reves.js	/^                    COUNT = 0;$/;"	P
+COUNT	src/assets/js/components/selection-reves.js	/^        COUNT = 0;$/;"	P
+COUNT	src/assets/js/components/selection-reves.js	/^        COUNT = reve.select.length;$/;"	P
+COUNT	src/assets/js/components/selection-reves.js	/^    COUNT = 0;$/;"	P
+COUNT	src/assets/js/components/selection-reves.js	/^    let COUNT = 0;$/;"	V
+Cimage	src/assets/js/components/dessin.js	/^            const Cimage = document.querySelector('#acf-dessin-1 img').getAttribute('src');$/;"	V
+ClientRect	src/assets/js/components/dessin.js	/^    var ClientRect = canvas.getBoundingClientRect();$/;"	V
+Ctext	src/assets/js/components/dessin.js	/^            const Ctext = document.querySelector('#contenu--text textarea').value;$/;"	V
+DLTableToPDF	src/assets/js/components/selection-reves.js	/^function DLTableToPDF(tableToAdd) {$/;"	F
+DeselectColor	src/assets/js/components/dessin.js	/^function DeselectColor() {$/;"	F
+PRODUCTION	gulpfile.babel.js	/^const PRODUCTION = yargs.argv.prod;$/;"	V
+PreviewTableToPDF	src/assets/js/components/selection-reves.js	/^function PreviewTableToPDF() {$/;"	F
+R_Debug	lib/r-debug.php	/^class R_Debug {$/;"	c
+RestartDessin	src/assets/js/components/dessin.js	/^function RestartDessin(wrapperDessin) {$/;"	F
+Reveage	src/assets/js/components/selection-reves-helpers.js	/^    Reveage = tableReve.querySelector('.table-age');$/;"	P
+Reveattirance	src/assets/js/components/selection-reves-helpers.js	/^    Reveattirance = tableReve.querySelector('.table-attirance');$/;"	P
+ReveattirancePaysage	src/assets/js/components/selection-reves-helpers.js	/^    ReveattirancePaysage = tableReve.querySelector('.table-attirance-paysage');$/;"	P
+RevefoiActuelle	src/assets/js/components/selection-reves-helpers.js	/^    RevefoiActuelle = tableReve.querySelector('.table-foi-actuelle');$/;"	P
+RevefoiOrigine	src/assets/js/components/selection-reves-helpers.js	/^    RevefoiOrigine = tableReve.querySelector('.table-foi-origine');$/;"	P
+Revelangue	src/assets/js/components/selection-reves-helpers.js	/^    Revelangue = tableReve.querySelector('.table-langue');$/;"	P
+RevemilieuAct	src/assets/js/components/selection-reves-helpers.js	/^    RevemilieuAct = tableReve.querySelector('.table-milieu-actuel');$/;"	P
+RevemilieuOrigine	src/assets/js/components/selection-reves-helpers.js	/^    RevemilieuOrigine = tableReve.querySelector('.table-milieu-origine');$/;"	P
+RevepaysEnfance	src/assets/js/components/selection-reves-helpers.js	/^    RevepaysEnfance = tableReve.querySelector('.table-pays-enfance');$/;"	P
+RevepaysageActuel	src/assets/js/components/selection-reves-helpers.js	/^    RevepaysageActuel = tableReve.querySelector('.table-paysage-actuel');$/;"	P
+RevepaysageEnfance	src/assets/js/components/selection-reves-helpers.js	/^    RevepaysageEnfance = tableReve.querySelector('.table-paysage-enfance');$/;"	P
+Revephysiologie	src/assets/js/components/selection-reves-helpers.js	/^    Revephysiologie = tableReve.querySelector('.table-physiologie');$/;"	P
+Revepseudo	src/assets/js/components/selection-reves-helpers.js	/^    Revepseudo = tableReve.querySelector('.table-pseudo');$/;"	P
+ReverelationReve1	src/assets/js/components/selection-reves-helpers.js	/^    ReverelationReve1 = tableReve.querySelector('.table-relation-tableReve-1');$/;"	P
+ReverelationReve2	src/assets/js/components/selection-reves-helpers.js	/^    ReverelationReve2 = tableReve.querySelector('.table-relation-tableReve-2');$/;"	P
+RevereliefActuel	src/assets/js/components/selection-reves-helpers.js	/^    RevereliefActuel = tableReve.querySelector('.table-relief-actuel');$/;"	P
+RevereliefAttirance	src/assets/js/components/selection-reves-helpers.js	/^    RevereliefAttirance = tableReve.querySelector('.table-relief-attirance');$/;"	P
+RevereliefEnfance	src/assets/js/components/selection-reves-helpers.js	/^    RevereliefEnfance = tableReve.querySelector('.table-relief-enfance');$/;"	P
+Reveressenti	src/assets/js/components/selection-reves-helpers.js	/^    Reveressenti = tableReve.querySelector('.table-ressenti');$/;"	P
+RevesommeilDodo	src/assets/js/components/selection-reves-helpers.js	/^    RevesommeilDodo = tableReve.querySelector('.table-sommeil-dodo');$/;"	P
+RevesommeilDodo2	src/assets/js/components/selection-reves-helpers.js	/^    RevesommeilDodo2 = tableReve.querySelector('.table-sommeil-dodo-2');$/;"	P
+Revetravail1	src/assets/js/components/selection-reves-helpers.js	/^    Revetravail1 = tableReve.querySelector('.table-travail-1');$/;"	P
+Revetravail2	src/assets/js/components/selection-reves-helpers.js	/^    Revetravail2 = tableReve.querySelector('.table-travail-2');$/;"	P
+Revetravail3	src/assets/js/components/selection-reves-helpers.js	/^    Revetravail3 = tableReve.querySelector('.table-travail-3');$/;"	P
+RevezoneActuel	src/assets/js/components/selection-reves-helpers.js	/^    RevezoneActuel = tableReve.querySelector('.table-zone-actuel');$/;"	P
+RevezoneAttirance	src/assets/js/components/selection-reves-helpers.js	/^    RevezoneAttirance = tableReve.querySelector('.table-zone-attirance');$/;"	P
+RevezoneEnfance	src/assets/js/components/selection-reves-helpers.js	/^    RevezoneEnfance = tableReve.querySelector('.table-zone-enfance');$/;"	P
+Undo	src/assets/js/components/dessin.js	/^function Undo(){$/;"	F
+_themename_auto_redirect_after_logout	lib/connexion.php	/^function _themename_auto_redirect_after_logout(){$/;"	f
+_themename_bundle_assets	lib/enqueue-assets.php	/^function _themename_bundle_assets() {$/;"	f
+_themename_create_modalite_humeur	lib/custom-taxonomy-humeur.php	/^function _themename_create_modalite_humeur() {$/;"	f
+_themename_create_modalite_lieu	lib/custom-taxonomy-lieu.php	/^function _themename_create_modalite_lieu() {$/;"	f
+_themename_create_modalite_sens	lib/custom-taxonomy-sens.php	/^function _themename_create_modalite_sens() {$/;"	f
+_themename_custom_registration_function	lib/inscription.php	/^function _themename_custom_registration_function() {$/;"	f
+_themename_defer_parsing_of_js	lib/enqueue-assets.php	/^function _themename_defer_parsing_of_js( $url ) {$/;"	f
+_themename_image_configuration	lib/images.php	/^function _themename_image_configuration() {$/;"	f
+_themename_login_failed	lib/connexion.php	/^function _themename_login_failed() {$/;"	f
+_themename_my_deregister_scripts	lib/enqueue-assets.php	/^function _themename_my_deregister_scripts() {$/;"	f
+_themename_my_deregister_styles	lib/enqueue-assets.php	/^function _themename_my_deregister_styles() {$/;"	f
+_themename_no_more_jquery	lib/enqueue-assets.php	/^function _themename_no_more_jquery(){$/;"	f
+_themename_redirect_login_page	lib/connexion.php	/^function _themename_redirect_login_page() {$/;"	f
+_themename_redirect_user_after_login	lib/connexion.php	/^function _themename_redirect_user_after_login( $redirect_to, $request, $user  ) {$/;"	f
+_themename_remove_admin_bar_for_everyone	lib/show-hide-admin-bar.php	/^function _themename_remove_admin_bar_for_everyone() {$/;"	f
+_themename_remove_all_dashboard_metaboxes	lib/dashboard.php	/^function _themename_remove_all_dashboard_metaboxes() {$/;"	f
+_themename_remove_options_menu	lib/custom-admin-bar.php	/^function _themename_remove_options_menu(){$/;"	f
+_themename_reveur_infour_info	lib/custom-post-type-user.php	/^function _themename_reveur_infour_info() {$/;"	f
+_themename_verify_username_password	lib/connexion.php	/^function _themename_verify_username_password( $user, $username, $password ) {$/;"	f
+aTables	src/assets/js/components/selection-reves.js	/^        const aTables = Array.from(tables);$/;"	V
+acfDessin	src/assets/js/components/dessin.js	/^        const acfDessin = document.querySelector('.acf-field-dessin');$/;"	V
+acfDessins	src/assets/js/components/dessin.js	/^    const acfDessins = document.querySelectorAll('.acf-field-dessin');$/;"	V
+acfForm	src/assets/js/components/dessin.js	/^    const acfForm = document.querySelector('#form--creation-reve');$/;"	V
+activeColorName	src/assets/js/components/dessin.js	/^                    const activeColorName = selectedColor.classList.contains('color');$/;"	V
+activeElements	src/assets/js/components/apropos.js	/^                const activeElements = Array.from(document.querySelectorAll('.-is-active'));$/;"	V
+activeElements	src/assets/js/components/articles.js	/^                    const activeElements = Array.from(document.querySelectorAll('.-is-active'));$/;"	V
+activeElements	src/assets/js/components/header-mobile.js	/^                const activeElements = Array.from(document.querySelectorAll('.-is-active'));$/;"	V
+activeText	src/assets/js/components/apropos.js	/^                    const activeText = activeElement.classList.contains('propos--collapse-texte');$/;"	V
+activeText	src/assets/js/components/articles.js	/^                        const activeText = activeElement.classList.contains('article-reve--text');$/;"	V
+activeText	src/assets/js/components/header-mobile.js	/^                    const activeText = activeElement.classList.contains('propos--collapse-texte');$/;"	V
+actualite	src/assets/js/components/apropos.js	/^    const actualite =  '#99BA22';$/;"	V
+actualite	src/assets/js/components/dessin.js	/^    const actualite =  '#99BA22';$/;"	V
+addTableActions	src/assets/js/components/selection-reves.js	/^function addTableActions(theGoodTable, tableToAdd) {$/;"	F
+age	template-parts/reve/download/content-download-reve.php	/^        $age = get_field('age');$/;"	v
+age_conv	template-parts/reve/download/content-download-reve.php	/^        $age_conv = (int)$age;$/;"	v
+ajoutDessinToField	src/assets/js/components/dessin.js	/^function ajoutDessinToField(image, contenuDessin) {$/;"	F
+ajoutImage	src/assets/js/components/dessin.js	/^function ajoutImage(image){$/;"	F
+all	src/assets/js/components/selection-reves.js	/^        all: document.querySelector('.button--select .button--round'),$/;"	P
+allSelected	src/assets/js/components/selection-reves.js	/^function allSelected(tableToAdd, telechargerButton) {$/;"	F
+allowTouchMove	src/assets/js/components/filters.js	/^        allowTouchMove: false,$/;"	P
+annuler	src/assets/js/components/dessin.js	/^    const annuler = document.querySelector('#annuler');$/;"	V
+aout	src/assets/js/components/articles.js	/^                const aout = 'aout' + year;$/;"	V
+aproposClose	src/assets/js/components/clicks.js	/^    function aproposClose(e) {$/;"	F
+aproposContainer	src/assets/js/components/apropos.js	/^    const aproposContainer = document.querySelectorAll('.propos--collapse-container');$/;"	V
+aproposContainerMobile	src/assets/js/components/header-mobile.js	/^const aproposContainerMobile = document.querySelectorAll('.right--container-propos-header .propos--collapse-container');$/;"	V
+aproposLinks	src/assets/js/components/clicks.js	/^    const aproposLinks =  containerAPropos.querySelectorAll('a');$/;"	V
+aproposReveal	src/assets/js/components/clicks.js	/^    function aproposReveal(e) {$/;"	F
+aproposWrapper	src/assets/js/components/apropos.js	/^const aproposWrapper = document.querySelector('.apropos--elements');$/;"	V
+args	lib/custom-post-type-user.php	/^	$args = array($/;"	v
+args	lib/custom-post-type-user.php	/^\/\/     $args = array($/;"	v
+args	lib/custom-post-type.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-humeur.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-lieu.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-lucidite.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-sens.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-sommeil.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-tag.php	/^	$args = array($/;"	v
+args	lib/custom-taxonomy-typologie.php	/^	$args = array($/;"	v
+args	page-back-office.php	/^            $args = array($/;"	v
+args	page-connexion.php	/^    $args = array($/;"	v
+args	template-parts/delete/all.php	/^    $args = array($/;"	v
+args	template-parts/delete/content-connexion.php	/^    $args = array($/;"	v
+args	template-parts/delete/content-profil.php	/^    $args = array($/;"	v
+args	template-parts/delete/content-telecharger.php	/^        $args = array($/;"	v
+args	template-parts/delete/reve-home.php	/^        $args = array($/;"	v
+args	template-parts/delete/selected.php	/^    $args = array($/;"	v
+args	template-parts/filtres.php	/^            $args = array($/;"	v
+args	template-parts/reve.php	/^        $args = array($/;"	v
+args	template-parts/reve/download/content-download-reve.php	/^        $args = array($/;"	v
+args	template-parts/test.php	/^        $args = array($/;"	v
+argsReve	template-parts/reve/download/content-download-reve.php	/^        $argsReve = array($/;"	v
+argsReve	template-parts/test.php	/^        $argsReve = array($/;"	v
+articleHeader	src/assets/js/components/articles.js	/^    const articleHeader = article.querySelector('.article-reve--header');$/;"	V
+articleTaxonomies	src/assets/js/components/articles.js	/^    const articleTaxonomies = article.querySelector('.article-reve--taxonomies');$/;"	V
+articleTexte	src/assets/js/components/articles.js	/^    const articleTexte = article.querySelector('.article-reve--text');$/;"	V
+articles	src/assets/js/components/articles.js	/^const articles = document.querySelectorAll('.article-reve');$/;"	V
+articles	src/assets/js/components/intro-animation.js	/^    const articles = document.querySelectorAll(".article-reve");$/;"	V
+articles	src/assets/js/components/selection-reves.js	/^const articles = document.querySelectorAll(".article-reve");$/;"	V
+articlesContainer	src/assets/js/components/filters.js	/^const articlesContainer = document.querySelector('.container--articles');$/;"	V
+attributeFilter	src/assets/js/components/selection-reves.js	/^        attributeFilter: ['class'],$/;"	P
+attributes	src/assets/js/components/apropos.js	/^        attributes: true,$/;"	P
+attributes	src/assets/js/components/dessin.js	/^        attributes: true,$/;"	P
+attributes	src/assets/js/components/filters.js	/^        attributes: true,$/;"	P
+attributes	src/assets/js/components/selection-reves.js	/^        attributes: true,$/;"	P
+author_id	template-parts/delete/content-telecharger.php	/^    $author_id = get_post_field( 'post_author', $post_id );$/;"	v
+author_id	template-parts/helpers/helper-user-info.php	/^    $author_id = get_the_author_meta('ID');$/;"	v
+author_id	template-parts/reve/download/content-download-reve.php	/^        \/\/ $author_id = get_post_field( 'post_author', $custom_post );$/;"	v
+author_id	template-parts/reve/header.php	/^<?php $author_id=$post->post_author; ?>$/;"	v
+author_id	template-parts/test.php	/^        \/\/ $author_id = get_post_field( 'post_author', $custom_post );$/;"	v
+author_name	template-parts/delete/content-telecharger.php	/^    $author_name = get_the_author_meta( 'user_nicename', $author_id );$/;"	v
+author_name	template-parts/reve/download/content-download-reve.php	/^        \/\/ $author_name = get_the_author_meta( 'user_nicename', $author_id );$/;"	v
+author_name	template-parts/test.php	/^        \/\/ $author_name = get_the_author_meta( 'user_nicename', $author_id );$/;"	v
+autoplay	src/assets/js/components/intro-animation.js	/^        autoplay: true,$/;"	P
+avril	src/assets/js/components/articles.js	/^                const avril = 'avril' + year;$/;"	V
+backofficeReves	src/assets/js/components/back-office.js	/^const backofficeReves = document.querySelectorAll('.backoffice-reve');$/;"	V
+backtrace	lib/r-debug.php	/^			$backtrace = explode( ',', $backtrace );$/;"	v
+backtrace	lib/r-debug.php	/^			$backtrace = trim( array_pop( $backtrace ) );$/;"	v
+behavior	src/assets/js/components/inscription-informations.js	/^                    behavior: 'instant',$/;"	P
+behavior	src/assets/js/components/popup.js	/^                        behavior: 'instant',$/;"	P
+bgc	src/assets/js/components/table-to-pdf-helpers.js	/^            const bgc = getComputedStyle(td);$/;"	V
+bgcValue	src/assets/js/components/table-to-pdf-helpers.js	/^            const bgcValue = bgc.getPropertyValue('background-color');$/;"	V
+blanc	src/assets/js/components/table-to-pdf-helpers.js	/^    blanc: [252, 252, 252],$/;"	P
+blanc	src/assets/js/components/table-to-pdf-helpers.js	/^const blanc = "#fcfcfc";$/;"	V
+bleu	src/assets/js/components/table-to-pdf-helpers.js	/^    bleu: [37, 110, 255],$/;"	P
+bleu	src/assets/js/components/table-to-pdf-helpers.js	/^const bleu = "#256EFF";$/;"	V
+bodyEdit	src/assets/js/components/dessin.js	/^    const bodyEdit = document.querySelector('.reve-template-default');$/;"	V
+bonheur	src/assets/js/components/apropos.js	/^    const bonheur = '#1C0C5B';$/;"	V
+boutonDessin	src/assets/js/components/dessin.js	/^    const boutonDessin = document.querySelector('.contenu--button-dessin');$/;"	V
+bubble	src/assets/js/components/inscription-informations.js	/^            const bubble = range.querySelector('.bubble');$/;"	V
+build	gulpfile.babel.js	/^export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));$/;"	E
+bundle	gulpfile.babel.js	/^export const bundle = gulp.series(build, compress);$/;"	E
+button	src/assets/js/components/selection-reves.js	/^        button: document.querySelector('.button--selected-number'),$/;"	P
+buttonAll	src/assets/js/components/selection-reves.js	/^        buttonAll: document.querySelector('.button--select'),$/;"	P
+buttonAllSelected	src/assets/js/components/selection-reves-helpers.js	/^    buttonAllSelected: document.querySelector(".button--select"),$/;"	P
+buttonClose	src/assets/js/components/selection-reves.js	/^        buttonClose: document.querySelector(".popup--download-close-button"),$/;"	P
+buttonDessin	src/assets/js/components/creation-reve.js	/^const buttonDessin = document.querySelector('.contenu--button-dessin');$/;"	V
+buttonDessin	src/assets/js/components/dessin.js	/^    const buttonDessin = document.querySelector('.contenu--button-dessin');$/;"	V
+buttonDownload	src/assets/js/components/selection-reves.js	/^        buttonDownload: document.querySelector('.button--download'),$/;"	P
+buttonText	src/assets/js/components/creation-reve.js	/^const buttonText = document.querySelector('.contenu--button-texte');$/;"	V
+buttonText	src/assets/js/components/dessin.js	/^    const buttonText = document.querySelector('.contenu--button-texte');$/;"	V
+buttonText	src/assets/js/components/selection-reves.js	/^        buttonText: document.querySelector('.button--selected-number p'),$/;"	P
+buttons	src/assets/js/components/dessin.js	/^    const buttons = document.querySelector('#buttons');$/;"	V
+buttonsC	src/assets/js/components/dessin.js	/^    const buttonsC = document.querySelector('#buttons-commandes');$/;"	V
+buttonsSelectionReve	src/assets/js/components/selection-reves-helpers.js	/^    buttonsSelectionReve: document.querySelectorAll(".article-reve--download"),$/;"	P
+buttonsSelectionRevePastille	src/assets/js/components/selection-reves-helpers.js	/^    buttonsSelectionRevePastille: document.querySelectorAll(".button--select-to-download"),$/;"	P
+callback	lib/r-debug.php	/^				$callback = $function['function'];$/;"	v
+callback	src/assets/js/components/apropos.js	/^                const callback = (entries, observer) => {$/;"	F
+callback	src/assets/js/components/dessin.js	/^    function callback(mutationList, observer) {$/;"	F
+callback	src/assets/js/components/filters.js	/^    function callback(mutationList, observer) {$/;"	F
+callback	src/assets/js/components/selection-reves.js	/^    function callback(mutationList, observer) {$/;"	F
+canvas	src/assets/js/components/dessin.js	/^    const canvas = document.getElementById('dessin--canvas');$/;"	V
+cauchemar	src/assets/js/components/apropos.js	/^    const cauchemar =  '#6755AA';$/;"	V
+cauchemar	src/assets/js/components/dessin.js	/^    const cauchemar =  '#6755AA';$/;"	V
+cellColor	src/assets/js/components/table-to-pdf-helpers.js	/^    const cellColor = data.cell.raw.dataset.bgc;$/;"	V
+cellsReveur	src/assets/js/components/selection-reves.js	/^        const cellsReveur = infoReveur.querySelectorAll('td');$/;"	V
+changeDate	lib/custom-date-reveur-info.php	/^    function changeDate( $user_id ){$/;"	f
+change_mypost_date	lib/custom-post-type-user.php	/^\/\/ function change_mypost_date(){$/;"	f
+changedAttrName	src/assets/js/components/apropos.js	/^                const changedAttrName = record.attributeName;$/;"	V
+chars	src/assets/js/components/apropos.js	/^        const chars = coloredHover.querySelectorAll('.char');$/;"	V
+childList	src/assets/js/components/apropos.js	/^        childList: true,$/;"	P
+childList	src/assets/js/components/dessin.js	/^        childList: true,$/;"	P
+childList	src/assets/js/components/filters.js	/^        childList: true,$/;"	P
+class	lib/r-debug.php	/^					$class = new ReflectionClass( $callback );$/;"	v
+classes	page-back-office.php	/^            $classes = array($/;"	v
+clean	gulpfile.babel.js	/^export const clean = () => del(['dist']);$/;"	E
+clearCanvasAndShowCanvas	src/assets/js/components/dessin.js	/^    function clearCanvasAndShowCanvas() {$/;"	F
+close	src/assets/js/components/selection-reves.js	/^            const close = popup.querySelector(".popup--download-close-button");$/;"	V
+closeB	src/assets/js/components/selection-reves-helpers.js	/^    closeB: document.querySelector(".popup--download-close-button"),$/;"	P
+closeButton	src/assets/js/components/dessin.js	/^    const closeButton = document.querySelector('.dessin-close img');$/;"	V
+closeDownloadPopup	src/assets/js/components/selection-reves.js	/^function closeDownloadPopup(telechargerButton, COUNT, tableToAdd) {$/;"	F
+closeLucidite	src/assets/js/components/popup.js	/^    const closeLucidite = popupLucidite.querySelector('img');$/;"	V
+closePDFViewer	src/assets/js/components/selection-reves.js	/^function closePDFViewer() {$/;"	F
+closeTypologie	src/assets/js/components/popup.js	/^    const closeTypologie = popupTypologie.querySelector('img');$/;"	V
+closure	lib/r-debug.php	/^					$closure = new ReflectionFunction( $callback );$/;"	v
+collapseHeader	src/assets/js/components/header-mobile.js	/^function collapseHeader() {$/;"	F
+colorSelected	src/assets/js/components/dessin.js	/^        const colorSelected = color.classList.contains('color-selected');$/;"	V
+coloredHovers	src/assets/js/components/apropos.js	/^    const coloredHovers = document.querySelectorAll('.colored-hover');$/;"	V
+colors	src/assets/js/components/apropos.js	/^    const colors = [ cauchemar, concomitant, creatif, actualite, recurrent, sexuel, premonitoire, lucide, bonheur ];$/;"	A
+colors	src/assets/js/components/dessin.js	/^    const colors = [ 'noir', 'cauchemar', 'concomitant', 'creatif', 'actualite', 'recurrent', 'sexuel', 'premonitoire', 'lucide' ];$/;"	A
+colors	src/assets/js/components/dessin.js	/^    let colors = document.querySelectorAll('.color');$/;"	V
+colors	src/assets/js/components/table-to-pdf-helpers.js	/^export const colors = {$/;"	E
+colorsSCSS	src/assets/js/components/table-to-pdf-helpers.js	/^const colorsSCSS = {$/;"	O
+complete_registration	lib/inscription.php	/^function complete_registration() {$/;"	f
+compress	gulpfile.babel.js	/^export const bundle = gulp.series(build, compress);$/;"	E
+compress	gulpfile.babel.js	/^export const compress = () => {$/;"	E
+conFilClose	src/assets/js/components/clicks.js	/^    const conFilClose = document.querySelector('.content--left-close');$/;"	V
+conFilCloseImg	src/assets/js/components/clicks.js	/^    const conFilCloseImg = conFilClose.querySelector('.content--left-close-button');$/;"	V
+conFilCover	src/assets/js/components/clicks.js	/^    const conFilCover = document.querySelector('.container--filtres-cover');$/;"	V
+conFilList	src/assets/js/components/clicks.js	/^    const conFilList = containerFiltres.querySelector('.filtres--list');$/;"	V
+conProposClose	src/assets/js/components/clicks.js	/^    const conProposClose = document.querySelector('.apropos-close');$/;"	V
+conProposCover	src/assets/js/components/clicks.js	/^    const conProposCover = document.querySelector('.container--apropos-cover');$/;"	V
+conProposCoverTitle	src/assets/js/components/clicks.js	/^    const conProposCoverTitle = document.querySelector('.title--apropos-cover');$/;"	V
+conProposElements	src/assets/js/components/clicks.js	/^    const conProposElements = document.querySelector('.apropos--elements');$/;"	V
+conRevCover	src/assets/js/components/clicks.js	/^    const conRevCover = containerReves.querySelector('.container--reves-cover');$/;"	V
+conRevesArticles	src/assets/js/components/clicks.js	/^    const conRevesArticles = document.querySelector('.container--articles');$/;"	V
+conco	src/assets/js/components/table-to-pdf-helpers.js	/^    conco: 'rgb(76, 165, 142)',$/;"	P
+conco	src/assets/js/components/table-to-pdf-helpers.js	/^    conco: [44, 175, 56],$/;"	P
+conco	src/assets/js/components/table-to-pdf-helpers.js	/^const conco = "#2CAF38";$/;"	V
+concomitant	src/assets/js/components/apropos.js	/^    const concomitant =  '#2CAF38';$/;"	V
+concomitant	src/assets/js/components/dessin.js	/^    const concomitant =  '#2CAF38';$/;"	V
+constants	lib/r-debug.php	/^			$constants = $temp;$/;"	v
+constants	lib/r-debug.php	/^		$constants = get_defined_constants();$/;"	v
+contact_vertical	template-parts/apropos.php	/^        <?php $contact_vertical = get_field( 'contact_vertical', 'option' ); ?>$/;"	v
+container	src/assets/js/components/dessin.js	/^const container = document.querySelector('.dessin--container');$/;"	V
+container	src/assets/js/components/header-logo.js	/^            container: headerLottie,$/;"	P
+container	src/assets/js/components/intro-animation.js	/^        container: document.querySelector('.apropos--elements .propos--section-title') ,$/;"	P
+container	src/assets/js/components/intro-animation.js	/^        container: document.querySelector('.right--container-propos-header .propos--section-title') ,$/;"	P
+container	src/assets/js/components/intro-animation.js	/^        container: loadingAnimationLogo,$/;"	P
+container	src/assets/js/components/selection-reves.js	/^        container: document.querySelector('.popup--download'),$/;"	P
+container	src/assets/js/components/table-to-pdf-helpers.js	/^                container: document.querySelector('#start-dessin'),$/;"	P
+container	src/assets/js/components/table-to-pdf.js	/^                        container: tableName.element.querySelector('#start-dessin'),$/;"	P
+containerAPropos	src/assets/js/components/clicks.js	/^    const containerAPropos = document.querySelector('#container--apropos');$/;"	V
+containerCreationReve	src/assets/js/components/creation-reve.js	/^const containerCreationReve = document.querySelector('.content--creation-reve');$/;"	V
+containerDessin	src/assets/js/components/creation-reve.js	/^const containerDessin = document.querySelector('.dessin--wrapper');$/;"	V
+containerFiltres	src/assets/js/components/clicks.js	/^    const containerFiltres = document.querySelector('#container--filtres');$/;"	V
+containerImage	src/assets/js/components/dessin.js	/^        const containerImage = acfDessin.querySelector('.image-container');$/;"	V
+containerPDFV	src/assets/js/components/selection-reves.js	/^    const containerPDFV = document.querySelector('.container--pdf-viewer');$/;"	V
+containerReves	src/assets/js/components/clicks.js	/^    const containerReves = document.querySelector('#container--reves');$/;"	V
+containerReves	src/assets/js/components/popup.js	/^const containerReves = document.querySelector('#container--reves');$/;"	V
+containerReves	src/assets/js/components/selection-reves.js	/^    const containerReves = document.querySelector('#container--reves');$/;"	V
+contentRight	src/assets/js/components/apropos.js	/^const contentRight = document.querySelector('#container--apropos');$/;"	V
+contenuButtons	src/assets/js/components/dessin.js	/^    const contenuButtons = document.querySelector('.contenu--buttons');$/;"	V
+contenuDessin	src/assets/js/components/creation-reve.js	/^const contenuDessin = document.querySelector('.acf-field-6101620bb8f45');$/;"	V
+contenuDessin	src/assets/js/components/dessin.js	/^    const contenuDessin = document.querySelector('#acf-field_6104fb96d7330');$/;"	V
+contenuText	src/assets/js/components/dessin.js	/^    const contenuText = document.querySelector('.acf-field-610161fcb8f44');$/;"	V
+contenuTexte	src/assets/js/components/creation-reve.js	/^const contenuTexte = document.querySelector('.acf-field-610161fcb8f44');$/;"	V
+contenuTexte	src/assets/js/components/dessin.js	/^    const contenuTexte = document.querySelector('.acf-field-610161fcb8f44');$/;"	V
+copy	gulpfile.babel.js	/^export const copy = () => {$/;"	E
+count	src/assets/js/components/dessin.js	/^    let count = 0;$/;"	V
+count	template-parts/reve/download/content-download-reve.php	/^        $count = $the_count + 1;$/;"	v
+count	template-parts/test.php	/^        $count = $the_count + 1;$/;"	v
+create_customtag_tax	lib/custom-taxonomy-tag.php	/^function create_customtag_tax() {$/;"	f
+create_modalite_sommeil_tax	lib/custom-taxonomy-sommeil.php	/^function create_modalite_sommeil_tax() {$/;"	f
+create_niveaudelucidit_tax	lib/custom-taxonomy-lucidite.php	/^function create_niveaudelucidit_tax() {$/;"	f
+create_reve_cpt	lib/custom-post-type.php	/^function create_reve_cpt() {$/;"	f
+create_typologiedereve_tax	lib/custom-taxonomy-typologie.php	/^function create_typologiedereve_tax() {$/;"	f
+creatif	src/assets/js/components/apropos.js	/^    const creatif =  '#F79D65';$/;"	V
+creatif	src/assets/js/components/dessin.js	/^    const creatif =  '#F79D65';$/;"	V
+creationReveContainer	src/assets/js/components/creation-reve.js	/^const creationReveContainer = document.querySelector('#form--creation-reve');$/;"	V
+cron	lib/r-debug.php	/^		$cron = _get_cron_array();$/;"	v
+ctx	src/assets/js/components/dessin.js	/^    const ctx = canvas.getContext('2d');$/;"	V
+current_post	lib/custom-post-type-user.php	/^\/\/             $current_post = array($/;"	v
+cursorDessin	src/assets/js/components/dessin.js	/^    const cursorDessin = document.querySelector('#cursorDessin');$/;"	V
+custom_registration_shortcode	lib/inscription.php	/^function custom_registration_shortcode() {$/;"	f
+custom_reve_column	lib/custom-post-type.php	/^function custom_reve_column( $column, $post_id ) {$/;"	f
+custom_wp_new_user_notification_email	lib/inscription.php	/^        \/\/ function custom_wp_new_user_notification_email( $wp_new_user_notification_email, $username, $blogname ) {$/;"	f
+custom_wp_new_user_notification_email	lib/inscription.php	/^        function custom_wp_new_user_notification_email( $wp_new_user_notification_email, $user, $blogname ) {$/;"	f
+dataDessin	src/assets/js/components/table-to-pdf-helpers.js	/^        const dataDessin = data.cell;$/;"	V
+dataDessin	src/assets/js/components/table-to-pdf.js	/^                dataDessin = data.cell;$/;"	P
+datePicker	src/assets/js/components/creation-reve.js	/^const datePicker = document.querySelector('.acf-field-61015e94be047');$/;"	V
+dateReves	src/assets/js/components/articles.js	/^    const dateReves = article.querySelectorAll('.date--reve');$/;"	V
+date_of_birth	template-parts/reve/download/content-download-reve.php	/^        $date_of_birth = $user_registered_year - $age_conv;$/;"	v
+datetime	lib/custom-post-type-user.php	/^\/\/             $datetime  = date( 'Y-m-d H:i:s', current_time( 'timestamp', 0 ) );$/;"	v
+debounce	src/assets/js/components/dessin.js	/^function debounce( fn, threshold ) {$/;"	F
+decembre	src/assets/js/components/articles.js	/^                const decembre = 'decembre' + year;$/;"	V
+delayed	src/assets/js/components/dessin.js	/^        function delayed() {$/;"	F
+dequeue_my_css	lib/cleanup.php	/^function dequeue_my_css() {$/;"	f
+deselectEverything	src/assets/js/components/selection-reves.js	/^function deselectEverything(telechargerButton, articles, COUNT, tables, tableToAdd) {$/;"	F
+dessin	template-parts/reve/download/content-download-reve.php	/^                        <?php $dessin = get_field( 'contenu_dessin' ); ?>$/;"	v
+dessin	template-parts/reve/header.php	/^            $dessin = get_field('contenu_dessin');$/;"	v
+dessinHTML	src/assets/js/components/dessin.js	/^        dessinHTML = `$/;"	P
+dessinTermine	src/assets/js/components/dessin.js	/^    let dessinTermine = document.querySelector('.dessin--termine');$/;"	V
+dessinZone	src/assets/js/components/table-to-pdf.js	/^            const dessinZone = tableName.element.querySelector('#start-dessin img');$/;"	V
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets\/css'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets\/images'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'dist\/assets\/js'$/;"	P
+dest	gulpfile.babel.js	/^        dest: 'packaged'$/;"	P
+dev	gulpfile.babel.js	/^export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);$/;"	E
+devtool	gulpfile.babel.js	/^            devtool: !PRODUCTION ? 'inline-source-map' : false,$/;"	P
+didDrawCell	src/assets/js/components/table-to-pdf.js	/^        didDrawCell: function(data) {$/;"	M
+didDrawCell	src/assets/js/components/table-to-pdf.js	/^        didDrawCell: function(data, doc) {$/;"	M
+didParseCell	src/assets/js/components/table-to-pdf.js	/^        didParseCell: function(data) {$/;"	M
+dim	src/assets/js/components/table-to-pdf-helpers.js	/^        const dim = {$/;"	O
+directon	src/assets/js/components/filters.js	/^        directon: 'horizontal',$/;"	P
+disable_emojis	lib/cleanup.php	/^function disable_emojis() {$/;"	f
+disable_emojis_remove_dns_prefetch	lib/cleanup.php	/^function disable_emojis_remove_dns_prefetch( $urls, $relation_type ) {$/;"	f
+disable_emojis_tinymce	lib/cleanup.php	/^function disable_emojis_tinymce( $plugins ) {$/;"	f
+doc	src/assets/js/components/table-to-pdf.js	/^    const doc = new jsPDF( options );$/;"	V
+download	src/assets/js/components/selection-reves.js	/^            download: article.querySelector('.article-reve--download'),$/;"	P
+downloadButton	src/assets/js/components/selection-reves-helpers.js	/^    downloadButton: document.querySelector(".button--download"),$/;"	P
+downloadTable	src/assets/js/components/selection-reves-helpers.js	/^    downloadTable: document.querySelector(".container--reve-to-download"),$/;"	P
+drawPaths	src/assets/js/components/dessin.js	/^function drawPaths(){$/;"	F
+drawing	src/assets/js/components/dessin.js	/^    let drawing = false;$/;"	V
+dump	lib/r-debug.php	/^	static function dump() {$/;"	f
+dump_hook	lib/r-debug.php	/^	static function dump_hook( $tag, $hook ) {$/;"	f
+duration	lib/r-debug.php	/^			$duration  = sprintf( '%f', $duration );$/;"	v
+editDessin	src/assets/js/components/dessin.js	/^    const editDessin = document.querySelector('.contenu--button-dessin-edit');$/;"	V
+effect	src/assets/js/components/filters.js	/^        effect: 'slide',$/;"	P
+element	src/assets/js/components/table-to-pdf.js	/^        element: theGoodTable.querySelector('.table--print'),$/;"	P
+email	lib/inscription.php	/^        $email 		= 	sanitize_email($_POST['email']);$/;"	v
+embed	src/assets/js/components/table-to-pdf.js	/^    const embed = document.querySelector('.container--pdf-viewer embed');$/;"	V
+emoji_svg_url	lib/cleanup.php	/^        $emoji_svg_url = apply_filters( 'emoji_svg_url', 'https:\/\/s.w.org\/images\/core\/emoji\/2\/svg\/' );$/;"	v
+eraser	src/assets/js/components/dessin.js	/^    const eraser = document.querySelector('#eraser');$/;"	V
+exclude	gulpfile.babel.js	/^                        exclude: \/(node_modules|bower_components)\/,$/;"	P
+executeAfterSavePDF	src/assets/js/components/table-to-pdf.js	/^    function executeAfterSavePDF( popupContainer ) {$/;"	F
+explain_query	lib/r-debug.php	/^	static function explain_query( $query = '' ) {$/;"	f
+fevrier	src/assets/js/components/articles.js	/^                const fevrier = 'fevrier' + year;$/;"	V
+field_lucidite	template-parts/delete/content-left-lucidite.php	/^    $field_lucidite = the_field('niveau_de_lucidite_tooltip');$/;"	v
+field_lucidite	template-parts/delete/content-left.php	/^<!--                 $field_lucidite = the_field('niveau_de_lucidite_tooltip'); -->$/;"	v
+field_lucidite	template-parts/filtres.php	/^                    $field_lucidite = the_field('niveau_de_lucidite_tooltip');$/;"	v
+filename	gulpfile.babel.js	/^                filename: '[name].js',$/;"	P
+filter	lib/r-debug.php	/^	static function list_constants( $filter = false ) {$/;"	v
+filter	lib/r-debug.php	/^	static function list_hooks( $filter = false ) {$/;"	v
+filterDateLayout	src/assets/js/components/filters.js	/^function filterDateLayout() {$/;"	F
+filteredYears	src/assets/js/components/articles.js	/^function filteredYears(yearsToFilter) {$/;"	F
+filtresClose	src/assets/js/components/clicks.js	/^    function filtresClose(e) {$/;"	F
+filtresReveal	src/assets/js/components/clicks.js	/^    function filtresReveal(e) {$/;"	F
+finalValue	src/assets/js/components/dessin.js	/^        finalValue = tailleAffiche.innerHTML = val;$/;"	P
+finalValue	src/assets/js/components/inscription-informations.js	/^    finalValue = bubble.innerHTML = val;$/;"	P
+finalYears	src/assets/js/components/articles.js	/^    finalYears = yearsToFilter.filter( (value, index) => yearsToFilter.indexOf(value) === index  );$/;"	P
+flexbox	gulpfile.babel.js	/^                    flexbox: true,$/;"	P
+footer_message	template-parts/delete/content-right.php	/^            <?php $footer_message = '&copy; ' . ' ' . get_bloginfo( 'name' ); ?>$/;"	v
+for	src/assets/js/components/dessin.js	/^        for(let i = 1; i < path.length; i++){$/;"	M
+format	lib/custom-date-reveur-info.php	/^        $format = 'Y-m-d H:i:s'; \/\/ Format that wordpress uses to save dates$/;"	v
+format	src/assets/js/components/table-to-pdf-helpers.js	/^    format: 'a4',$/;"	P
+from	lib/r-debug.php	/^						echo 'anonymous class from ' . $class->getFileName() . '::' . $class->getStartLine();$/;"	c
+future_age	template-parts/reve/download/content-download-reve.php	/^        $future_age = $today - $date_of_birth;$/;"	v
+geran	src/assets/js/components/inscription-informations.js	/^const geran = document.querySelectorAll('.acf-range');$/;"	V
+getMousePos	src/assets/js/components/dessin.js	/^    function getMousePos(canvas, evt) {$/;"	F
+getMousePos	src/assets/js/components/dessin.js	/^function getMousePos(canvas, evt) {$/;"	F
+get_terms_args	page-back-office.php	/^            $get_terms_args = array($/;"	v
+get_terms_args	template-parts/delete/all.php	/^    $get_terms_args = array($/;"	v
+get_terms_args	template-parts/delete/content-telecharger.php	/^                                <?php $get_terms_args = array($/;"	v
+get_terms_args	template-parts/delete/content-telecharger.php	/^                            <?php $get_terms_args = array($/;"	v
+get_terms_args	template-parts/delete/content-telecharger.php	/^        $get_terms_args = array($/;"	v
+get_terms_args	template-parts/delete/selected.php	/^    $get_terms_args = array($/;"	v
+get_terms_args	template-parts/reve/download/content-download-reve.php	/^                                <?php $get_terms_args = array($/;"	v
+get_terms_args	template-parts/reve/download/content-download-reve.php	/^        $get_terms_args = array($/;"	v
+get_user	functions.php	/^    function get_user($type = 'ID') {$/;"	f
+grid	gulpfile.babel.js	/^                    grid: true,$/;"	P
+gulp	gulpfile.babel.js	/^export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));$/;"	E
+gulp	gulpfile.babel.js	/^export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);$/;"	E
+gzip	gulpfile.babel.js	/^            gzip: true,$/;"	P
+half	src/assets/js/components/apropos.js	/^        const half = aproposWrapper.scrollHeight \/ 2;$/;"	V
+header	src/assets/js/components/apropos.js	/^        const header = container.querySelector('.propos--collapse-header');$/;"	V
+header	src/assets/js/components/header-mobile.js	/^        const header = container.querySelector('.propos--collapse-header');$/;"	V
+header	src/assets/js/components/header-mobile.js	/^const header = document.querySelector('#masthead');$/;"	V
+header	src/assets/js/components/selection-reves.js	/^            header: article.querySelector('.article-reve--header'),$/;"	P
+headerAPropos	src/assets/js/components/header-mobile.js	/^const headerAPropos = document.querySelector('.right--container-propos-header');$/;"	V
+headerButton	src/assets/js/components/header-mobile.js	/^const headerButton = document.querySelector('#header--mobile-apropos');$/;"	V
+headerLogoAnimation	src/assets/js/components/header-logo.js	/^function headerLogoAnimation() {$/;"	F
+headerLottie	src/assets/js/components/header-logo.js	/^    const headerLottie = document.querySelector('.site-branding a');$/;"	V
+height	src/assets/js/components/table-to-pdf-helpers.js	/^                height: dataDessin.height,$/;"	P
+height	src/assets/js/components/table-to-pdf.js	/^                        height: dataDessin.height,$/;"	P
+home	src/assets/js/components/apropos.js	/^const home = document.querySelector('.is-home');$/;"	V
+home	src/assets/js/components/articles.js	/^const home = document.querySelector('.home');$/;"	V
+home	src/assets/js/components/intro-animation.js	/^const home = document.querySelector('.is-home');$/;"	V
+home	src/assets/js/components/selection-reves.js	/^const home = document.querySelector('.home');$/;"	V
+homeContainer	src/assets/js/components/clicks.js	/^const homeContainer = document.querySelector('.is-home');$/;"	V
+home_projects	page-back-office.php	/^            $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/delete/all.php	/^    $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/delete/content-telecharger.php	/^        $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/delete/reve-home.php	/^        $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/delete/selected.php	/^    $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/filtres.php	/^            $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/reve.php	/^        $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/reve/download/content-download-reve.php	/^        $home_projects = new WP_Query( $args );$/;"	v
+home_projects	template-parts/test.php	/^        $home_projects = new WP_Query( $argsReve );$/;"	v
+home_url	page-back-office.php	/^$home_url = home_url();$/;"	v
+hook	lib/r-debug.php	/^			$hook = $hook->callbacks;$/;"	v
+hook	lib/r-debug.php	/^			$hook = 'all';$/;"	v
+hook	lib/r-debug.php	/^	static function list_live_hooks( $hook = false ) {$/;"	v
+hooks	lib/r-debug.php	/^		$hooks       = $wp_filter;$/;"	v
+html	src/assets/js/components/table-to-pdf.js	/^        html: tableName.element,$/;"	P
+hummeur	template-parts/delete/content-telecharger.php	/^                        <?php $hummeur = get_field( 'hummeur' ); ?>$/;"	v
+hummeur	template-parts/reve/download/content-download-reve.php	/^                            <?php $hummeur = get_field( 'hummeur' ); ?>$/;"	v
+i	page-back-office.php	/^            if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/delete/all.php	/^    if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/delete/content-telecharger.php	/^        if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/delete/reve-home.php	/^        if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/delete/selected.php	/^    if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/filtres.php	/^            if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/reve.php	/^        if ( $home_projects->have_posts() ) : $i = 0; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++;$/;"	v
+i	template-parts/reve/download/content-download-reve.php	/^        if ( $home_projects->have_posts() ) : $i = 0; $count; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++; $count--;$/;"	v
+i	template-parts/test.php	/^        if ( $home_projects->have_posts() ) : $i = 0; $count; while ( $home_projects->have_posts() ) : $home_projects->the_post(); $i++; $count--;$/;"	v
+id	lib/custom-date-reveur-info.php	/^            $id = $post->ID;$/;"	v
+id	single-reve.php	/^    $id = get_the_ID();$/;"	v
+id	single-reveur_info.php	/^            $id = get_the_ID();$/;"	v
+if	src/assets/js/components/creation-reve.js	/^    if( creationReveContainer ){$/;"	M
+if	src/assets/js/components/selection-reves.js	/^                if( popup.classList.contains('close--after-download') ) {$/;"	M
+if	src/assets/js/components/selection-reves.js	/^            if( popup.classList.contains('downloaded') ) {$/;"	M
+image	src/assets/js/components/dessin.js	/^        const image = containerImage.querySelector('img');$/;"	V
+image	src/assets/js/components/dessin.js	/^        let image = canvas.toDataURL("image\/png");$/;"	V
+imageContainer	src/assets/js/components/dessin.js	/^    const imageContainer = document.querySelector('.image-container');$/;"	V
+imageContainer	src/assets/js/components/dessin.js	/^    let imageContainer = document.querySelector('.acf-field-dessin .image-container');$/;"	V
+imageContainers	src/assets/js/components/dessin.js	/^    const imageContainers = document.querySelectorAll('.image-container');$/;"	V
+imageDownloaded	src/assets/js/components/dessin.js	/^        let imageDownloaded = this.href = image;$/;"	V
+imageEdit	src/assets/js/components/dessin.js	/^            const imageEdit = document.querySelector('.acf-field-dessin');$/;"	V
+imageL	src/assets/js/components/filters.js	/^    const imageL = imagesLoaded( articlesContainer );$/;"	V
+imageTag	src/assets/js/components/dessin.js	/^    let imageTag = document.createElement("img");$/;"	V
+images	gulpfile.babel.js	/^export const images = () => {$/;"	E
+index	src/assets/js/components/selection-reves.js	/^    const index = tableToAdd.indexOf( theBadTable );$/;"	V
+infoReveurCellWithClass	src/assets/js/components/selection-reves.js	/^            const infoReveurCellWithClass = Array.from(infoReveurCells.querySelectorAll('td')).filter( cell => cell.getAttribute('class') );$/;"	V
+infoReveurCells	src/assets/js/components/selection-reves.js	/^            const infoReveurCells = infoReveur;$/;"	V
+infoReveurKeys	src/assets/js/components/selection-reves.js	/^            infoReveurKeys = Object.keys(infoReveurObject);$/;"	P
+infoReveurObject	src/assets/js/components/selection-reves.js	/^    const infoReveurObject = new Object();$/;"	V
+infoReveurValues	src/assets/js/components/selection-reves.js	/^            infoReveurValues = Object.values(infoReveurObject);$/;"	P
+input	lib/r-debug.php	/^	static function list_hook_details( $input = null ) {$/;"	v
+input	src/assets/js/components/creation-reve.js	/^        const input = li.querySelector('input');$/;"	V
+inscription_information	lib/connexion-first-time.php	/^        $inscription_information = home_url('\/inscription-information\/');$/;"	v
+insertAfter	src/assets/js/components/creation-reve.js	/^function insertAfter(newNode, existingNode) {$/;"	F
+insertButtonRedo	src/assets/js/components/dessin.js	/^    function insertButtonRedo(srcDessin, contenuText, wrapperDessin ) {$/;"	F
+insert_data	lib/acf.php	/^            $insert_data = wp_insert_term($/;"	v
+instagram_vertical	template-parts/apropos.php	/^        <?php $instagram_vertical = get_field( 'instagram_vertical', 'option' ); ?>$/;"	v
+irPseudo	src/assets/js/components/selection-reves.js	/^        irPseudo = Array.from(cellsReveur).find( cell => cell.classList.contains('table-pseudo') );$/;"	P
+itemsContainer	src/assets/js/components/selection-reves.js	/^    const itemsContainer = document.querySelector('.popup--download');$/;"	V
+janvier	src/assets/js/components/articles.js	/^                const janvier = 'janvier' + year;$/;"	V
+juillet	src/assets/js/components/articles.js	/^                const juillet = 'juillet' + year;$/;"	V
+juin	src/assets/js/components/articles.js	/^                const juin = 'juin' + year;$/;"	V
+key	lib/r-debug.php	/^			foreach ( $constants as $key => $constant ) {$/;"	v
+label	src/assets/js/components/creation-reve.js	/^        const label = input.closest('label');$/;"	V
+label	src/assets/js/components/creation-reve.js	/^        const label = li.querySelector('label');$/;"	V
+labels	lib/custom-post-type-user.php	/^	$labels = array($/;"	v
+labels	lib/custom-post-type.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-humeur.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-lieu.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-lucidite.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-sens.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-sommeil.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-tag.php	/^	$labels = array($/;"	v
+labels	lib/custom-taxonomy-typologie.php	/^	$labels = array($/;"	v
+left	src/assets/js/components/popup.js	/^                        left: 0,$/;"	P
+lieu	src/assets/js/components/creation-reve.js	/^const lieu = document.querySelector('.acf-field-6101cf2cc0b64');$/;"	V
+lieu	template-parts/delete/content-telecharger.php	/^                        <?php $lieu = get_field( 'lieu' ); ?>$/;"	v
+lieu	template-parts/reve/download/content-download-reve.php	/^                            <?php $lieu = get_field( 'lieu' ); ?>$/;"	v
+lineColor	src/assets/js/components/table-to-pdf-helpers.js	/^    lineColor: colors.noir,$/;"	P
+lineWidth	src/assets/js/components/table-to-pdf-helpers.js	/^    lineWidth: 1,$/;"	P
+list_constants	lib/r-debug.php	/^	static function list_constants( $filter = false ) {$/;"	f
+list_cron	lib/r-debug.php	/^	static function list_cron() {$/;"	f
+list_hook_details	lib/r-debug.php	/^	static function list_hook_details( $input = null ) {$/;"	f
+list_hooks	lib/r-debug.php	/^	static function list_hooks( $filter = false ) {$/;"	f
+list_live_hooks	lib/r-debug.php	/^	static function list_live_hooks( $hook = false ) {$/;"	f
+list_performance	lib/r-debug.php	/^	static function list_performance( $visible = false ) {$/;"	f
+list_plugins	lib/r-debug.php	/^	static function list_plugins() {$/;"	f
+list_post	lib/r-debug.php	/^	static function list_post( $post_id = null ) {$/;"	f
+list_queries	lib/r-debug.php	/^	static function list_queries() {$/;"	f
+loadLottieAProposDesktop	src/assets/js/components/intro-animation.js	/^function loadLottieAProposDesktop() {$/;"	F
+loadLottieAProposMobile	src/assets/js/components/intro-animation.js	/^function loadLottieAProposMobile() {$/;"	F
+loader	gulpfile.babel.js	/^                                loader: 'babel-loader',$/;"	P
+loadingAnimation	src/assets/js/components/intro-animation.js	/^function loadingAnimation() {$/;"	F
+loadingAnimationLogo	src/assets/js/components/intro-animation.js	/^    const loadingAnimationLogo  = document.querySelector('.content--home-logo');$/;"	V
+loadingAnimationLogo	src/assets/js/components/intro-animation.js	/^const loadingAnimationLogo  = document.querySelector('.content--home-logo');$/;"	V
+loadingAnimationLogo	src/assets/js/components/selection-reves.js	/^const loadingAnimationLogo  = document.querySelector('.content--home-logo');$/;"	V
+login	page-connexion.php	/^    $login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;$/;"	v
+login	page-connexion.php	/^    if ( $login === "failed" ) {$/;"	v
+login	page-connexion.php	/^    } elseif ( $login === "empty" ) {$/;"	v
+login	page-connexion.php	/^    } elseif ( $login === "false" ) {$/;"	v
+login	template-parts/delete/content-connexion.php	/^    $login  = (isset($_GET['login']) ) ? $_GET['login'] : 0;$/;"	v
+login	template-parts/delete/content-connexion.php	/^    if ( $login === "failed" ) {$/;"	v
+login	template-parts/delete/content-connexion.php	/^    } elseif ( $login === "empty" ) {$/;"	v
+login	template-parts/delete/content-connexion.php	/^    } elseif ( $login === "false" ) {$/;"	v
+login_page	lib/connexion.php	/^    $login_page  = home_url( 'connexion\/' );$/;"	v
+login_page	lib/connexion.php	/^  $login_page  = home_url( '\/connexion\/' );$/;"	v
+login_url	lib/inscription.php	/^            $login_url  = wp_login_url();$/;"	v
+loop	src/assets/js/components/intro-animation.js	/^        loop: false,$/;"	P
+loop	src/assets/js/components/intro-animation.js	/^        loop: true,$/;"	P
+lucide	src/assets/js/components/apropos.js	/^    const lucide =  '#c12b2b';$/;"	V
+lucide	src/assets/js/components/dessin.js	/^    const lucide =  '#c12b2b';$/;"	V
+mai	src/assets/js/components/articles.js	/^                const mai = 'mai' + year;$/;"	V
+mars	src/assets/js/components/articles.js	/^                const mars = 'mars' + year;$/;"	V
+matchingNumber	src/assets/js/components/selection-reves.js	/^            const matchingNumber = tables.find( table => table.dataset.number == reve.number );$/;"	V
+max	src/assets/js/components/dessin.js	/^        const max = taille.max ? taille.max : 100;$/;"	V
+max	src/assets/js/components/inscription-informations.js	/^    const max = range.max ? range.max : 100;$/;"	V
+mergeTheTables	src/assets/js/components/selection-reves.js	/^function mergeTheTables(tableReve) {$/;"	F
+message	lib/inscription.php	/^            $message  = __( 'Hi there,', '_themename' ) . "\/r\/n\/r\/n";$/;"	v
+min	src/assets/js/components/dessin.js	/^        const min = taille.min ? taille.min : 0;$/;"	V
+min	src/assets/js/components/inscription-informations.js	/^    const min = range.min ? range.min : 0;$/;"	V
+modaliteHumeurInputs	src/assets/js/components/creation-reve.js	/^const modaliteHumeurInputs = document.querySelectorAll('#reve--humeur .acf-checkbox-list label input');$/;"	V
+modaliteLieuInputs	src/assets/js/components/creation-reve.js	/^const modaliteLieuInputs = document.querySelectorAll('#reve--lieu .acf-checkbox-list label input');$/;"	V
+modaliteSensInputs	src/assets/js/components/creation-reve.js	/^const modaliteSensInputs = document.querySelectorAll('#reve--sens .acf-checkbox-list label input');$/;"	V
+modaliteSommeilInputs	src/assets/js/components/creation-reve.js	/^const modaliteSommeilInputs = document.querySelectorAll('#reve--sommeil .acf-checkbox-list label input');$/;"	V
+modalites	src/assets/js/components/creation-reve.js	/^const modalites = [modaliteSommeilInputs, modaliteHumeurInputs, modaliteSensInputs, modaliteLieuInputs ];$/;"	A
+mode	gulpfile.babel.js	/^            mode: PRODUCTION ? 'production' : 'development', \/\/ add this$/;"	P
+month	src/assets/js/components/articles.js	/^        const month = theNewDate.slice(0,2);$/;"	V
+mouse	src/assets/js/components/dessin.js	/^    var mouse = {x: 0, y: 0};$/;"	O
+mouseMove	src/assets/js/components/dessin.js	/^    function mouseMove(evt) {$/;"	F
+mousePos	src/assets/js/components/dessin.js	/^        let mousePos = getMousePos(canvas, evt);$/;"	V
+my_acf_update_value	lib/acf.php	/^function my_acf_update_value( $value, $post_id, $field, $original ) {$/;"	f
+mypost	template-parts/helpers/helper-user-id.php	/^    $mypost = get_page_by_title('chevaldore', OBJECT, 'reveur_info');$/;"	v
+name	lib/r-debug.php	/^					$name  = $class->getName();$/;"	v
+name	template-parts/reve/download/content-download-reve.php	/^        $name = get_the_author_meta( 'nickname', false );$/;"	v
+newSpan	src/assets/js/components/creation-reve.js	/^        const newSpan = document.createElement('span');$/;"	V
+newVal	src/assets/js/components/dessin.js	/^        const newVal = Number(((val - min) * 100) \/ (max - min));$/;"	V
+newVal	src/assets/js/components/inscription-informations.js	/^    const newVal = Number(((val - min) * 100) \/ (max - min));$/;"	V
+newValue	src/assets/js/components/apropos.js	/^                const newValue = record.target.getAttribute(changedAttrName);$/;"	V
+new_date	lib/custom-date-reveur-info.php	/^            $new_date = date( $format, strtotime( '-5 year' , strtotime( $old_date ) ) );$/;"	v
+new_date_gmt	lib/custom-date-reveur-info.php	/^            $new_date_gmt = date( $format, strtotime( '-4 year' , strtotime( $old_gmt_date ) ) );$/;"	v
+new_user	lib/connexion-first-time.php	/^	$new_user = get_user_meta($user->ID, '_new_user', true);$/;"	v
+new_user	page-inscription-informations.php	/^                $new_user = get_user_meta($user->ID, '_new_user', true);$/;"	v
+new_values	lib/custom-date-reveur-info.php	/^            $new_values = array ($/;"	v
+nextEl	src/assets/js/components/filters.js	/^            nextEl: '.swiper-date-button-next',$/;"	P
+niveau_de_lucidite	page-back-office.php	/^            $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );$/;"	v
+niveau_de_lucidite	template-parts/delete/all.php	/^    $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );$/;"	v
+niveau_de_lucidite	template-parts/delete/content-telecharger.php	/^        $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );$/;"	v
+niveau_de_lucidite	template-parts/delete/reve-home.php	/^    <?php $niveau_de_lucidite = get_field( 'niveau_de_lucidite' ); ?>$/;"	v
+niveau_de_lucidite	template-parts/delete/selected.php	/^    $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );$/;"	v
+niveau_de_lucidite	template-parts/reve.php	/^        $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );$/;"	v
+niveau_de_lucidite	template-parts/reve/download/content-download-reve.php	/^        $niveau_de_lucidite = get_field( 'niveau_de_lucidite' );$/;"	v
+noir	src/assets/js/components/dessin.js	/^    const noir = '#303030';$/;"	V
+noir	src/assets/js/components/table-to-pdf-helpers.js	/^    noir: [48, 48, 48],$/;"	P
+noir	src/assets/js/components/table-to-pdf-helpers.js	/^const noir = "#303030";$/;"	V
+novembre	src/assets/js/components/articles.js	/^                const novembre = 'novembre' + year;$/;"	V
+number	src/assets/js/components/selection-reves.js	/^            number: article.dataset.number,$/;"	P
+o	template-parts/delete/content-left-lucidite.php	/^    $o = 0;$/;"	v
+o	template-parts/delete/content-left-typologie.php	/^    $o = 0;$/;"	v
+o	template-parts/delete/content-left.php	/^<!--                 $o = 0; -->$/;"	v
+o	template-parts/filtres.php	/^                    $o = 0;$/;"	v
+oMousePos	src/assets/js/components/dessin.js	/^function oMousePos(canvas, evt) {$/;"	F
+observer	src/assets/js/components/apropos.js	/^                const observer = new IntersectionObserver(callback, options);$/;"	V
+observer	src/assets/js/components/dessin.js	/^    const observer = new MutationObserver(callback);$/;"	V
+observer	src/assets/js/components/filters.js	/^    const observer = new MutationObserver(callback);$/;"	V
+observer	src/assets/js/components/selection-reves.js	/^    const observer = new MutationObserver(callback);$/;"	V
+observerOptions	src/assets/js/components/dessin.js	/^    const observerOptions = {$/;"	O
+observerOptions	src/assets/js/components/filters.js	/^    const observerOptions = {$/;"	O
+observerOptions	src/assets/js/components/selection-reves.js	/^    const observerOptions = {$/;"	O
+octobre	src/assets/js/components/articles.js	/^                const octobre = 'octobre' + year;$/;"	V
+offset	lib/r-debug.php	/^		$offset = get_option( 'gmt_offset' ) * 3600;$/;"	v
+old_date	lib/custom-date-reveur-info.php	/^            $old_date = $post->post_date;$/;"	v
+old_gmt_date	lib/custom-date-reveur-info.php	/^            $old_gmt_date = $post->post_date_gmt;$/;"	v
+onValideDessin	src/assets/js/components/dessin.js	/^    function onValideDessin() {$/;"	F
+openPDFViewer	src/assets/js/components/selection-reves.js	/^function openPDFViewer() {$/;"	F
+options	src/assets/js/components/apropos.js	/^                let options = {$/;"	O
+options	src/assets/js/components/apropos.js	/^    let options = {$/;"	O
+options	src/assets/js/components/selection-reves.js	/^    let options = {$/;"	O
+options	src/assets/js/components/table-to-pdf-helpers.js	/^export const options = {$/;"	E
+orderSelection	src/assets/js/components/selection-reves.js	/^function orderSelection( tableToAdd ) {$/;"	F
+orderedID	src/assets/js/components/selection-reves.js	/^    const orderedID = [];$/;"	A
+orderedList	src/assets/js/components/selection-reves.js	/^    const orderedList = orderedID.join(' & ');$/;"	V
+orderedSelection	src/assets/js/components/selection-reves.js	/^    const orderedSelection = tableToAdd.forEach( table => orderedID.push(table.id) );$/;"	V
+orientation	src/assets/js/components/table-to-pdf-helpers.js	/^    orientation: 'l',$/;"	P
+output	lib/r-debug.php	/^		$output = '';$/;"	v
+page	src/assets/js/components/header-mobile.js	/^const page = document.querySelector('#page');$/;"	V
+pageII	src/assets/js/components/inscription-informations.js	/^const pageII = document.querySelector('.page-template-page-inscription-informations');$/;"	V
+pageProfil	src/assets/js/components/inscription-informations.js	/^const pageProfil = document.querySelector('.single-reveur_info');$/;"	V
+page_viewed	lib/connexion.php	/^    $page_viewed = basename($_SERVER['REQUEST_URI']);$/;"	v
+page_viewed	lib/connexion.php	/^    if( $page_viewed == "wp-login.php" && $_SERVER['REQUEST_METHOD'] == 'GET') {$/;"	v
+parent_term	lib/acf.php	/^            $parent_term = term_exists( 'customtag', 'niveaudelucidite' ); \/\/ returns an array if the taxonomy exists$/;"	v
+parent_term_id	lib/acf.php	/^            $parent_term_id = $parent_term['term_id'];         \/\/ get the numerical value of the term$/;"	v
+password	lib/inscription.php	/^        $password 	= 	esc_attr($_POST['password']);$/;"	v
+pastille	src/assets/js/components/selection-reves-helpers.js	/^    pastille: document.querySelector(".button--selected-number"),$/;"	P
+pastilleText	src/assets/js/components/selection-reves-helpers.js	/^    pastilleText: document.querySelector(".button--selected-number p"),$/;"	P
+path	gulpfile.babel.js	/^const path = {$/;"	O
+path	src/assets/js/components/header-logo.js	/^            path: '\/wp-content\/themes\/_themename\/dist\/assets\/images\/animation\/logo-1line--black.json',$/;"	P
+path	src/assets/js/components/intro-animation.js	/^        path: '\/wp-content\/themes\/_themename\/dist\/assets\/images\/animation\/logo-1line-white.json',$/;"	P
+path	src/assets/js/components/intro-animation.js	/^        path: '\/wp-content\/themes\/_themename\/dist\/assets\/images\/animation\/logo-2lines-black.json',$/;"	P
+pathsry	src/assets/js/components/dessin.js	/^    let pathsry = [];$/;"	A
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'attirance_plaine_montagne' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'attirance_ville_campagne' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'genre_attirance' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'genre_physiologie' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'genre_ressenti' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'milieux_actuel' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'milieux_origine' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'rapport_au_travail_metier' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'rapport_au_travail_type' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_actuelle_humide_seche' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_actuelle_ville_campagne' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_enfance_humide_seche' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_enfance_plaine_montage' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_enfance_ville_campagne' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_au_sommeil_appreciation_du_sommeil' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_au_sommeil_bon_mauvais' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_aux_reves_important_non' );$/;"	v
+phy_value	template-parts/delete/content-telecharger.php	/^                                $phy_value = get_field( 'relation_aux_reves_reveur_non' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'attirance_humide_seche' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'attirance_plaine_montagne' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'attirance_ville_campagne' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'genre_attirance' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'genre_physiologie' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'milieux_actuel' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'milieux_origine' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'rapport_au_travail_metier' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'rapport_au_travail_type' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_actuelle_humide_seche' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_actuelle_plaine_montage' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_actuelle_ville_campagne' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_enfance_humide_seche' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_enfance_plaine_montage' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_a_un_paysage_enfance_ville_campagne' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_au_sommeil_appreciation_du_sommeil' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_au_sommeil_bon_mauvais' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_aux_reves_important_non' );$/;"	v
+phy_value	template-parts/reve/download/content-download-reve.php	/^                                $phy_value = get_field( 'relation_aux_reves_reveur_non' );$/;"	v
+points	src/assets/js/components/dessin.js	/^    let points = [];$/;"	A
+popup	src/assets/js/components/clicks.js	/^    const popup = document.querySelector('.filtres-popup');$/;"	V
+popup	src/assets/js/components/selection-reves-helpers.js	/^    popup: document.querySelector(".popup--download"),$/;"	P
+popup	src/assets/js/components/selection-reves.js	/^            const popup = mutation.target;$/;"	V
+popupContainer	src/assets/js/components/popup.js	/^const popupContainer = document.querySelector('.filtres-popup');$/;"	V
+popupContainer	src/assets/js/components/table-to-pdf.js	/^    const popupContainer = document.querySelector('.popup--download');$/;"	V
+popupLucidite	src/assets/js/components/popup.js	/^const popupLucidite = document.querySelector('#popup-lucidite');$/;"	V
+popupTriggers	src/assets/js/components/popup.js	/^const popupTriggers = document.querySelectorAll('.content-left-container-title .filter--title-information');$/;"	V
+popupTypologie	src/assets/js/components/popup.js	/^const popupTypologie = document.querySelector('#popup-typologie');$/;"	V
+position	src/assets/js/components/apropos.js	/^        const position = aproposWrapper.scrollTop;$/;"	V
+postMessage	src/assets/js/components/back-office.js	/^        const postMessage = post.querySelector('.message--status-pending');$/;"	V
+post_class_1	page-back-office.php	/^            $post_class_1 = 'article-<?php echo esc_html( $term_typologie->slug)';$/;"	v
+post_class_2	page-back-office.php	/^            $post_class_2 = 'border-<?php echo esc_html( $term_typologie->slug )';$/;"	v
+post_class_3	page-back-office.php	/^            $post_class_3 = '<?php echo esc_html( $term_lucidite->slug ); ?>';$/;"	v
+post_class_4	page-back-office.php	/^            $post_class_4 = '<?php echo esc_html( $term_typologie->slug ); ?>';$/;"	v
+post_id	lib/r-debug.php	/^			$post_id = get_the_ID();$/;"	v
+post_id	lib/r-debug.php	/^	static function list_post( $post_id = null ) {$/;"	v
+post_id	template-parts/delete/content-telecharger.php	/^    $post_id = 135;$/;"	v
+post_id	template-parts/delete/content-telecharger.php	/^    \/\/ $post_id = get_the_ID();$/;"	v
+post_id	template-parts/helpers/helper-user-id.php	/^    $post_id = get_the_ID();$/;"	v
+post_id	template-parts/helpers/helper-user-info.php	/^    $post_id = get_the_ID();$/;"	v
+post_status	lib/custom-date-reveur-info.php	/^        $post_status = 'publish'; \/\/ we only want to change published posts$/;"	v
+post_type	lib/custom-date-reveur-info.php	/^        $post_type = 'reveur_info'; \/\/change this to your custom post type$/;"	v
+posts	lib/custom-date-reveur-info.php	/^        $posts = $wpdb->get_results( $query );$/;"	v
+postsBackOffice	src/assets/js/components/back-office.js	/^const postsBackOffice = document.querySelectorAll('.profil--reve .profil--reve-new');$/;"	V
+postsPublishedStatus	src/assets/js/components/back-office.js	/^const postsPublishedStatus = document.querySelectorAll('.profil--reve-published');$/;"	V
+premonitoire	src/assets/js/components/apropos.js	/^    const premonitoire =  '#4CA58E';$/;"	V
+premonitoire	src/assets/js/components/dessin.js	/^    const premonitoire =  '#4CA58E';$/;"	V
+preset	gulpfile.babel.js	/^                    preset: "advanced",$/;"	P
+presets	gulpfile.babel.js	/^                                    presets: ['@babel\/preset-env'],$/;"	P
+pretty	gulpfile.babel.js	/^            pretty: true,$/;"	P
+prevEl	src/assets/js/components/filters.js	/^            prevEl: '.swiper-date-button-prev',$/;"	P
+previewButton	src/assets/js/components/selection-reves-helpers.js	/^    previewButton: document.querySelector(".button--preview"),$/;"	P
+previewButtonClose	src/assets/js/components/selection-reves-helpers.js	/^    previewButtonClose: document.querySelector(".container--pdf-viewer button"),$/;"	P
+previous	src/assets/js/components/dessin.js	/^    var previous = {x: 0, y: 0};$/;"	O
+priority	lib/r-debug.php	/^		foreach ( $hook as $priority => $functions ) {$/;"	v
+profil_page	lib/connexion.php	/^    $profil_page = home_url( '\/back-office\/' );$/;"	v
+progressiveLoad	src/assets/js/components/header-logo.js	/^            progressiveLoad: true,$/;"	P
+progressiveLoad	src/assets/js/components/intro-animation.js	/^        progressiveLoad: true,$/;"	P
+proxy	gulpfile.babel.js	/^        proxy: "2021archireve.yo",$/;"	P
+pseudo	header-home.php	/^                            $pseudo = $current_user->user_nicename;$/;"	v
+pseudo	page-back-office.php	/^$pseudo = $current_user->user_nicename;$/;"	v
+pseudo	page-creation-reve.php	/^    $pseudo = $current_user->user_nicename;$/;"	v
+pseudo	page-inscription-informations.php	/^    $pseudo = $current_user->user_nicename;$/;"	v
+pseudo	single-reve.php	/^    $pseudo = $current_user->user_nicename;$/;"	v
+pseudo	single-reveur_info.php	/^            $pseudo = $current_user->user_nicename;$/;"	v
+pseudo	template-parts/debug.php	/^                $pseudo = $current_user->user_nicename;$/;"	v
+pseudoReve	src/assets/js/components/selection-reves.js	/^    const pseudoReve = tableReve.querySelector('.table-pseudo').innerText.trim();$/;"	V
+pseudoReveur	src/assets/js/components/selection-reves.js	/^        const pseudoReveur = irPseudo.innerText.trim();$/;"	V
+query	lib/custom-date-reveur-info.php	/^        $query = "SELECT ID, post_date, post_date_gmt FROM $wpdb->posts WHERE post_type = '$post_type' AND post_status = '$post_status'";$/;"	v
+query	lib/r-debug.php	/^			$query = $wpdb->last_query;$/;"	v
+query	lib/r-debug.php	/^	static function explain_query( $query = '' ) {$/;"	v
+ranges	src/assets/js/components/inscription-informations.js	/^const ranges = document.querySelectorAll('.acf-range .acf-range-wrap');$/;"	V
+rec	src/assets/js/components/table-to-pdf-helpers.js	/^    rec: [219, 89, 49],$/;"	P
+recommencer	src/assets/js/components/dessin.js	/^    const recommencer = document.querySelector('#reset');$/;"	V
+recommencerDessin	src/assets/js/components/dessin.js	/^                    const recommencerDessin = mutation.target.querySelector('.contenu--button-dessin-edit');$/;"	V
+recommencerDessin	src/assets/js/components/dessin.js	/^        const recommencerDessin = document.querySelector('.contenu--button-dessin-edit');$/;"	V
+rect	src/assets/js/components/dessin.js	/^        let rect = canvas.getBoundingClientRect();$/;"	V
+rect	src/assets/js/components/dessin.js	/^    let rect = canvas.getBoundingClientRect();$/;"	V
+recurrent	src/assets/js/components/apropos.js	/^    const recurrent =  '#DB5931';$/;"	V
+recurrent	src/assets/js/components/dessin.js	/^    const recurrent =  '#DB5931';$/;"	V
+redirect	lib/show-hide-admin-bar.php	/^    $redirect = isset( $_SERVER['HTTP_REFERER'] ) ? $_SERVER['HTTP_REFERER'] : home_url( '\/' );$/;"	v
+reg_errors	lib/inscription.php	/^    $reg_errors = new WP_Error;$/;"	v
+registration_form	lib/inscription.php	/^function registration_form( $username, $password, $email) {$/;"	f
+registration_validation	lib/inscription.php	/^\/\/ function registration_validation( $username, $password, $email, $website, $first_name, $last_name, $nickname, $bio )  {$/;"	f
+registration_validation	lib/inscription.php	/^function registration_validation( $username, $password, $email )  {$/;"	f
+reload	gulpfile.babel.js	/^export const reload = (done) => {$/;"	E
+removeActiveState	src/assets/js/components/header-mobile.js	/^function removeActiveState() {$/;"	F
+removePopupContainerAfterPDFDownload	src/assets/js/components/selection-reves.js	/^function removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToAdd) {$/;"	F
+removePopups	src/assets/js/components/clicks.js	/^    function removePopups(e) {$/;"	F
+removeTableActions	src/assets/js/components/selection-reves.js	/^function removeTableActions(theBadTable, tableToAdd) {$/;"	F
+remove_jquery_migrate	lib/enqueue-assets.php	/^function remove_jquery_migrate( $scripts ) {$/;"	f
+remove_menus	lib/custom-admin-bar.php	/^function remove_menus(){$/;"	f
+renderer	src/assets/js/components/header-logo.js	/^            renderer: 'svg',$/;"	P
+renderer	src/assets/js/components/intro-animation.js	/^        renderer: 'svg',$/;"	P
+reve	src/assets/js/components/filters.js	/^                        const reve = mutation.target;$/;"	V
+reve	src/assets/js/components/selection-reves.js	/^        const reve = {$/;"	O
+reveCrea	src/assets/js/components/inscription-informations.js	/^const reveCrea = document.querySelector('.page-template-page-creation-reve');$/;"	V
+reveModif	src/assets/js/components/inscription-informations.js	/^const reveModif = document.querySelector('.single-reve');$/;"	V
+reves	template-parts/delete/content-profil.php	/^    $reves = new WP_Query( $args );$/;"	v
+reves_projects	template-parts/reve/download/content-download-reve.php	/^        $reves_projects = new WP_Query( $argsReve );$/;"	v
+roles	lib/custom-admin-bar.php	/^    $roles = wp_get_current_user()->roles;$/;"	v
+root	src/assets/js/components/table-to-pdf.js	/^        root: theGoodTable,$/;"	P
+rootMargin	src/assets/js/components/apropos.js	/^                    rootMargin: "0px",$/;"	P
+rose	src/assets/js/components/table-to-pdf-helpers.js	/^    rose: 'rgba(214, 112, 131, 0.7)',$/;"	P
+rose	src/assets/js/components/table-to-pdf-helpers.js	/^    rose: [214, 112, 131],$/;"	P
+rose	src/assets/js/components/table-to-pdf-helpers.js	/^const rose =  "#D67083";$/;"	V
+roseClair	src/assets/js/components/table-to-pdf-helpers.js	/^    roseClair: 'rgba(214, 112, 131, 0.2)',$/;"	P
+roseClair	src/assets/js/components/table-to-pdf-helpers.js	/^    roseClair: [255, 160, 178],$/;"	P
+roseClair	src/assets/js/components/table-to-pdf-helpers.js	/^const roseClair = "FFA0B2";$/;"	V
+roseFonce	src/assets/js/components/table-to-pdf-helpers.js	/^    roseFonce: 'rgb(214, 112, 131)',$/;"	P
+roseFonce	src/assets/js/components/table-to-pdf-helpers.js	/^    roseFonce: [162, 65, 87],$/;"	P
+roseFonce	src/assets/js/components/table-to-pdf-helpers.js	/^const roseFonce = "#a24157";$/;"	V
+rules	gulpfile.babel.js	/^                rules: [$/;"	P
+scd2	src/assets/js/components/articles.js	/^    const scd2 = document.querySelector('.swiper-container-date .swiper-wrapper');$/;"	V
+script	lib/enqueue-assets.php	/^        $script = $scripts->registered['jquery'];$/;"	v
+scripts	gulpfile.babel.js	/^export const build = gulp.series(clean, gulp.parallel(styles, scripts, images, copy));$/;"	E
+scripts	gulpfile.babel.js	/^export const dev = gulp.series(clean, gulp.parallel(styles, scripts, images, copy), serve, watch);$/;"	E
+scripts	gulpfile.babel.js	/^export const scripts = () => {$/;"	E
+sd	src/assets/js/components/selection-reves-helpers.js	/^const sd = {$/;"	O
+section	src/assets/js/components/apropos.js	/^        const section = coloredHover.closest('.propos--section-1');$/;"	V
+sections	src/assets/js/components/apropos.js	/^                const sections = [...document.querySelectorAll(".propos--section")];$/;"	A
+select	src/assets/js/components/selection-reves.js	/^            select: article.querySelector('.button--select-to-download'),$/;"	P
+selectEverything	src/assets/js/components/selection-reves.js	/^function selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd) {$/;"	F
+selectYourReves	src/assets/js/components/selection-reves.js	/^function selectYourReves( articles ) {$/;"	F
+selectedColors	src/assets/js/components/dessin.js	/^                const selectedColors = Array.from(document.querySelectorAll('.color-selected'));$/;"	V
+selectedElements	src/assets/js/components/selection-reves.js	/^                    const selectedElements = Array.from(document.querySelectorAll(".-is-selected"));$/;"	V
+selectedElements	src/assets/js/components/selection-reves.js	/^    const selectedElements = Array.from(document.querySelectorAll(".-is-selected"));$/;"	V
+selectedReve	src/assets/js/components/selection-reves.js	/^            const selectedReve = reve.select.classList.toggle("-is-selected");$/;"	V
+sens	template-parts/delete/content-telecharger.php	/^                        <?php $sens = get_field( 'sens' ); ?>$/;"	v
+sens	template-parts/reve/download/content-download-reve.php	/^                            <?php $sens = get_field( 'sens' ); ?>$/;"	v
+septembre	src/assets/js/components/articles.js	/^                const septembre = 'septembre' + year;$/;"	V
+serve	gulpfile.babel.js	/^export const serve = (done) => {$/;"	E
+server	gulpfile.babel.js	/^const server = browserSync.create();$/;"	V
+setBubble	src/assets/js/components/dessin.js	/^    function setBubble(taille, tailleAffiche, cursorDessin) {$/;"	F
+setBubble	src/assets/js/components/inscription-informations.js	/^function setBubble(range, bubble) {$/;"	F
+setTimeout	src/assets/js/components/apropos.js	/^                setTimeout( function() {$/;"	M
+setTimeout	src/assets/js/components/creation-reve.js	/^        setTimeout( function(e) {$/;"	M
+setTimeout	src/assets/js/components/header-logo.js	/^            setTimeout( function delayHeaderAnimation() {$/;"	M
+setTimeout	src/assets/js/components/inscription-informations.js	/^            setTimeout( function() {$/;"	M
+set_custom_edit_reve_columns	lib/custom-post-type.php	/^function set_custom_edit_reve_columns($columns) {$/;"	f
+sexuel	src/assets/js/components/apropos.js	/^    const sexuel =  '#D67083';$/;"	V
+sexuel	src/assets/js/components/dessin.js	/^    const sexuel =  '#D67083';$/;"	V
+shapeSpace_first_user_login	lib/connexion-first-time.php	/^function shapeSpace_first_user_login($user_login, $user) {$/;"	f
+shapeSpace_register_add_meta	lib/connexion-first-time.php	/^function shapeSpace_register_add_meta($user_id) {$/;"	f
+showFiles	gulpfile.babel.js	/^            showFiles: true,$/;"	P
+showTotal	gulpfile.babel.js	/^            showTotal: true,$/;"	P
+singleReve	src/assets/js/components/dessin.js	/^    const singleReve = document.querySelector('.single-reve');$/;"	V
+skip_filter	lib/r-debug.php	/^		$skip_filter = empty( $filter );$/;"	v
+slidesPerView	src/assets/js/components/filters.js	/^        slidesPerView: 2,$/;"	P
+sommeil	template-parts/reve/download/content-download-reve.php	/^                            <?php $sommeil = get_field( 'sommeil' ); ?>$/;"	v
+span	src/assets/js/components/creation-reve.js	/^        const span = li.querySelector('span');$/;"	V
+speed	src/assets/js/components/filters.js	/^        speed: 700,$/;"	P
+src	gulpfile.babel.js	/^        src: 'src\/assets\/images\/**\/*.{jpg,jpeg,png,svg,gif,mp4,json}',$/;"	P
+src	gulpfile.babel.js	/^        src: ['**\/*', '!.DS_Store', '!node_modules{,\/**}', '!packaged{,\/**}', '!src{,\/**}', '!.babelrc' , '!gitignore' , '!gulpfile.babel.js' , '!package.json' , '!package-lock.json'],$/;"	P
+src	gulpfile.babel.js	/^        src: ['src\/assets\/**\/*', '!src\/assets\/{images,js,scss}', '!src\/assets\/{images,js,scss}\/**\/*'],$/;"	P
+src	gulpfile.babel.js	/^        src: ['src\/assets\/js\/main.js'],$/;"	P
+src	gulpfile.babel.js	/^        src: ['src\/assets\/scss\/bundle.scss'],$/;"	P
+src	src/assets/js/components/table-to-pdf-helpers.js	/^                src: document.querySelector('#start-dessin img').src,$/;"	P
+src	src/assets/js/components/table-to-pdf.js	/^                        src: tableName.element.querySelector('#start-dessin img').src,$/;"	P
+srcDessin	src/assets/js/components/dessin.js	/^    const srcDessin = document.querySelector('#acf-field_6104fb96d7330');$/;"	V
+stat	lib/r-debug.php	/^		$stat = sprintf($/;"	v
+style	src/assets/js/components/table-to-pdf-helpers.js	/^export const styleDef = {$/;"	E
+styles	gulpfile.babel.js	/^export const styles = () => {$/;"	E
+styles	src/assets/js/components/table-to-pdf.js	/^        styles: styleDef,$/;"	P
+subtree	src/assets/js/components/dessin.js	/^        subtree: true,$/;"	P
+subtree	src/assets/js/components/filters.js	/^        subtree: true$/;"	P
+swiperSlide	src/assets/js/components/articles.js	/^        const swiperSlide = document.querySelectorAll('.swiper-slide');$/;"	V
+swiperSlideContent	src/assets/js/components/articles.js	/^function swiperSlideContent(year) {$/;"	F
+switch	src/assets/js/components/articles.js	/^        switch(month) {$/;"	M
+switch	src/assets/js/components/dessin.js	/^            switch(mutation.type) {$/;"	M
+switch	src/assets/js/components/filters.js	/^            switch(mutation.type) {$/;"	M
+switch	src/assets/js/components/selection-reves.js	/^            switch(mutation.type) {$/;"	M
+switch	src/assets/js/components/table-to-pdf-helpers.js	/^            switch( bgcValue ) {$/;"	M
+switch	src/assets/js/components/table-to-pdf-helpers.js	/^    switch( cellColor ) {$/;"	M
+tableName	src/assets/js/components/table-to-pdf.js	/^    const tableName = {$/;"	O
+tableReveCells	src/assets/js/components/selection-reves-helpers.js	/^    const tableReveCells = tableReve.querySelectorAll('td');$/;"	V
+tableToAdd	src/assets/js/components/selection-reves.js	/^    const tableToAdd = [];$/;"	A
+tables	src/assets/js/components/selection-reves-helpers.js	/^    tables: document.querySelectorAll(".reve--to-print"),$/;"	P
+tables	src/assets/js/components/selection-reves.js	/^            const tables = popup.previousSibling || popup.previousElementSling;$/;"	V
+tables	src/assets/js/components/selection-reves.js	/^    const tables = [...document.querySelectorAll(".reve--to-print.post-type-reve")];$/;"	A
+tables	src/assets/js/components/table-to-pdf-helpers.js	/^    const tables = document.querySelectorAll('.table--print');$/;"	V
+tablesInfoReveur	src/assets/js/components/selection-reves.js	/^    const tablesInfoReveur = document.querySelectorAll('.reve--to-print.post-type-reveur-info');$/;"	V
+tag	lib/r-debug.php	/^		$tag = current_filter();$/;"	v
+tag	lib/r-debug.php	/^		foreach ( $hooks as $tag => $hook ) {$/;"	v
+tagArray	lib/acf.php	/^        $tagArray = explode(",", str_replace(" ","",$tagString));$/;"	v
+tagArray	template-parts/filtres.php	/^                $tagArray = explode(",", str_replace(" ","",$tagString));$/;"	v
+tagArray	template-parts/reve.php	/^        $tagArray = explode(",", str_replace(" ","",$tagString));$/;"	v
+tagArray	template-parts/reve/taxonomy/taxonomy-tag.php	/^            $tagArray = explode(",", str_replace(" ","",$tagString));$/;"	v
+tagElement	page-back-office.php	/^            $tagElement = get_field( 'tag' );$/;"	v
+tagElement	template-parts/delete/all.php	/^    $tagElement = get_field( 'tag' );$/;"	v
+tagElement	template-parts/delete/content-telecharger.php	/^        $tagElement = get_field( 'tag' );$/;"	v
+tagElement	template-parts/delete/selected.php	/^    $tagElement = get_field( 'tag' );$/;"	v
+tagElement	template-parts/reve/download/content-download-reve.php	/^        $tagElement = get_field( 'tag' );$/;"	v
+tagString	lib/acf.php	/^        $tagString = $value;$/;"	v
+tagString	template-parts/filtres.php	/^                $tagString = get_field( 'tag' );$/;"	v
+tagString	template-parts/reve.php	/^        $tagString = get_field( 'tag' );$/;"	v
+tagString	template-parts/reve/taxonomy/taxonomy-tag.php	/^            $tagString = get_field( 'tag' );$/;"	v
+tags	page-back-office.php	/^            $tags = get_the_terms( $post->ID, 'customtag' );$/;"	v
+tags	template-parts/delete/all.php	/^    $tags = get_the_terms( $post->ID, 'customtag' );$/;"	v
+tags	template-parts/delete/content-telecharger.php	/^        $tags = get_the_terms( $post->ID, 'customtag' );$/;"	v
+tags	template-parts/delete/selected.php	/^    $tags = get_the_terms( $post->ID, 'customtag' );$/;"	v
+tags	template-parts/reve/download/content-download-reve.php	/^        $tags = get_the_terms( $post->ID, 'customtag' );$/;"	v
+taille	src/assets/js/components/dessin.js	/^    const taille = document.querySelector('#taille');$/;"	V
+tailleAffiche	src/assets/js/components/dessin.js	/^    const tailleAffiche = document.querySelector(".taille--affiche");$/;"	V
+target	src/assets/js/components/apropos.js	/^    const target = document.querySelectorAll('.colored-hover');$/;"	V
+targetNode	src/assets/js/components/dessin.js	/^    const targetNode = document.querySelector(".acf-form-fields");$/;"	V
+targetNode	src/assets/js/components/filters.js	/^    const targetNode = document.querySelector(".container--articles");$/;"	V
+targetNode	src/assets/js/components/selection-reves.js	/^const targetNode = loadingAnimationLogo;$/;"	V
+tds	src/assets/js/components/table-to-pdf-helpers.js	/^        const tds = table.querySelectorAll('td');$/;"	V
+telechargerButton	src/assets/js/components/selection-reves.js	/^    const telechargerButton = {$/;"	O
+telechargerButtonAllSelected	src/assets/js/components/selection-reves.js	/^    const telechargerButtonAllSelected = {$/;"	O
+temp	lib/r-debug.php	/^			$temp = array();$/;"	v
+term	template-parts/delete/reve-home.php	/^    <?php $term = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' ); ?>$/;"	v
+term_id	lib/acf.php	/^                $term_id = $insert_data['term_id'];$/;"	v
+term_lucidite	page-back-office.php	/^            $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );$/;"	v
+term_lucidite	template-parts/delete/all.php	/^    $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );$/;"	v
+term_lucidite	template-parts/delete/content-telecharger.php	/^        $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );$/;"	v
+term_lucidite	template-parts/delete/reve-home.php	/^    <?php $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' ); ?>$/;"	v
+term_lucidite	template-parts/delete/selected.php	/^    $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );$/;"	v
+term_lucidite	template-parts/reve.php	/^        $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );$/;"	v
+term_lucidite	template-parts/reve/download/content-download-reve.php	/^        $term_lucidite = get_term_by( 'id', $niveau_de_lucidite, 'niveaudelucidite' );$/;"	v
+term_typologie	page-back-office.php	/^            $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );$/;"	v
+term_typologie	template-parts/delete/all.php	/^    $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );$/;"	v
+term_typologie	template-parts/delete/content-telecharger.php	/^        $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );$/;"	v
+term_typologie	template-parts/delete/selected.php	/^    $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );$/;"	v
+term_typologie	template-parts/reve.php	/^        $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );$/;"	v
+term_typologie	template-parts/reve/download/content-download-reve.php	/^        $term_typologie = get_term_by( 'id', $typologie_de_reve, 'typologiedereve' );$/;"	v
+terms	lib/custom-post-type.php	/^            $terms = get_the_term_list( $post_id , 'reveur' , '' , ',' , '' );$/;"	v
+terms	template-parts/delete/content-left-lucidite.php	/^    $terms = get_terms( 'niveaudelucidite' );$/;"	v
+terms	template-parts/delete/content-left-typologie.php	/^    $terms = get_terms( 'typologiedereve');$/;"	v
+terms	template-parts/delete/content-left.php	/^<!--                 $terms = get_terms( 'niveaudelucidite' ); -->$/;"	v
+terms	template-parts/delete/content-left.php	/^<!--                 $terms = get_terms( 'typologiedereve'); -->$/;"	v
+terms	template-parts/delete/content-telecharger.php	/^                                <?php $terms = get_terms( $get_terms_args ); ?>$/;"	v
+terms	template-parts/delete/content-telecharger.php	/^                            <?php $terms = get_terms( $get_terms_args ); ?>$/;"	v
+terms	template-parts/filtres.php	/^                    $terms = get_terms( 'niveaudelucidite' );$/;"	v
+terms	template-parts/filtres.php	/^                    $terms = get_terms( 'typologiedereve');$/;"	v
+terms	template-parts/reve/download/content-download-reve.php	/^                                <?php $terms = get_terms( $get_terms_args ); ?>$/;"	v
+test	gulpfile.babel.js	/^                        test: \/\\.js$\/,$/;"	P
+text	src/assets/js/components/selection-reves.js	/^            const text = popup.querySelector('.button--selected-number p');$/;"	V
+textColor	src/assets/js/components/table-to-pdf-helpers.js	/^    textColor: colors.noir,$/;"	P
+texte	src/assets/js/components/apropos.js	/^        const texte = container.querySelector('.propos--collapse-texte');$/;"	V
+texte	src/assets/js/components/header-mobile.js	/^        const texte = container.querySelector('.propos--collapse-texte');$/;"	V
+that	lib/inscription.php	/^\/\/ The callback function that will replace [book]$/;"	f
+theActiveText	src/assets/js/components/apropos.js	/^                        const theActiveText = activeElement;$/;"	V
+theActiveText	src/assets/js/components/articles.js	/^                            const theActiveText = activeElement;$/;"	V
+theActiveText	src/assets/js/components/header-mobile.js	/^                        const theActiveText = activeElement;$/;"	V
+theBadTable	src/assets/js/components/selection-reves.js	/^                const theBadTable = matchingNumber;$/;"	V
+theDate	src/assets/js/components/articles.js	/^        const theDate = JSON.stringify(date);$/;"	V
+theGoodTable	src/assets/js/components/selection-reves.js	/^                    const theGoodTable = matchingNumber;$/;"	V
+theMissingTable	src/assets/js/components/selection-reves.js	/^                const theMissingTable = table;$/;"	V
+theNewDate	src/assets/js/components/articles.js	/^        const theNewDate = theRealDate.slice(3,10);$/;"	V
+theRealDate	src/assets/js/components/articles.js	/^        const theRealDate = date.innerText;$/;"	V
+the_count	template-parts/reve/download/content-download-reve.php	/^        $the_count = $reves_projects->found_posts;$/;"	v
+the_count	template-parts/test.php	/^        $the_count = $reves_projects->found_posts;$/;"	v
+the_query	lib/custom-post-type-user.php	/^\/\/     $the_query = new WP_Query( $args );$/;"	v
+threshold	src/assets/js/components/apropos.js	/^                    threshold: 0.25$/;"	P
+time	lib/r-debug.php	/^		foreach ( $cron as $time => $entry ) {$/;"	v
+timeout	src/assets/js/components/dessin.js	/^            timeout = null;$/;"	P
+timeout	src/assets/js/components/dessin.js	/^        timeout = setTimeout( delayed, threshold || 100 );$/;"	P
+title	gulpfile.babel.js	/^            title: 'Compress',$/;"	P
+title	gulpfile.babel.js	/^            title: 'Images',$/;"	P
+title	gulpfile.babel.js	/^            title: 'JavaScript',$/;"	P
+title	gulpfile.babel.js	/^            title: 'SASS',$/;"	P
+title	src/assets/js/components/selection-reves.js	/^            title: article.querySelector('.article-reve--header h1'),$/;"	P
+title	src/assets/js/components/table-to-pdf.js	/^        title: theGoodTable.querySelector('.table--print-title').innerText.replace(\/ \/g,'-'),$/;"	P
+today	template-parts/reve/download/content-download-reve.php	/^        $today = date('Y');$/;"	v
+toggleSelection	src/assets/js/components/selection-reves.js	/^function toggleSelection(telechargerButton, articles, COUNT, tables, tableToAdd) {$/;"	F
+tooltipCloseII	src/assets/js/components/inscription-informations.js	/^const tooltipCloseII = document.querySelector('.inscription-tooltip-close');$/;"	V
+tooltipCloseImgII	src/assets/js/components/inscription-informations.js	/^const tooltipCloseImgII = document.querySelector('.inscription-tooltip-close-button');$/;"	V
+tooltipCoverContainer	src/assets/js/components/inscription-informations.js	/^const tooltipCoverContainer = document.querySelector('.container--tooltip-cover');$/;"	V
+tooltipCoverII	src/assets/js/components/inscription-informations.js	/^const tooltipCoverII = document.querySelector('.inscription-tooltip-cover');$/;"	V
+tooltipII	src/assets/js/components/inscription-informations.js	/^const tooltipII = document.querySelector('.container--inscription-informations-tooltip');$/;"	V
+tooltipTexte	src/assets/js/components/inscription-informations.js	/^const tooltipTexte = document.querySelector('.inscription-tooltip-texte');$/;"	V
+top	src/assets/js/components/inscription-informations.js	/^                    top: 0,$/;"	P
+top	src/assets/js/components/popup.js	/^                        top: 0,$/;"	P
+total	src/assets/js/components/selection-reves.js	/^    const total = articles.length;$/;"	V
+totalSelected	src/assets/js/components/selection-reves.js	/^    const totalSelected = tableToAdd.length;$/;"	V
+try_remove_wp_block_library_css	lib/enqueue-assets.php	/^function try_remove_wp_block_library_css(){$/;"	f
+typologieListItems	src/assets/js/components/creation-reve.js	/^const typologieListItems = document.querySelectorAll('#reve--typologie .categorychecklist-holder .acf-checkbox-list li');$/;"	V
+typologie_de_reve	page-back-office.php	/^            $typologie_de_reve = get_field( 'typologie_de_reve' );$/;"	v
+typologie_de_reve	template-parts/delete/all.php	/^    $typologie_de_reve = get_field( 'typologie_de_reve' );$/;"	v
+typologie_de_reve	template-parts/delete/content-telecharger.php	/^        $typologie_de_reve = get_field( 'typologie_de_reve' );$/;"	v
+typologie_de_reve	template-parts/delete/reve-home.php	/^        <?php $typologie_de_reve = get_field( 'typologie_de_reve' ); ?>$/;"	v
+typologie_de_reve	template-parts/delete/selected.php	/^    $typologie_de_reve = get_field( 'typologie_de_reve' );$/;"	v
+typologie_de_reve	template-parts/reve.php	/^        $typologie_de_reve = get_field( 'typologie_de_reve' );$/;"	v
+typologie_de_reve	template-parts/reve/download/content-download-reve.php	/^        $typologie_de_reve = get_field( 'typologie_de_reve' );$/;"	v
+unit	src/assets/js/components/table-to-pdf-helpers.js	/^    unit: 'px',$/;"	P
+uploadButton	src/assets/js/components/dessin.js	/^    const uploadButton = document.querySelector('#upload-button');$/;"	V
+urls	lib/cleanup.php	/^        $urls = array_diff( $urls, array( $emoji_svg_url ) );$/;"	v
+use	gulpfile.babel.js	/^                        use: [$/;"	P
+user	lib/inscription.php	/^        $user = wp_insert_user( $userdata );$/;"	v
+user	template-parts/helpers/helper-user-id.php	/^    $user = wp_get_current_user();$/;"	v
+user	template-parts/helpers/helper-user-info.php	/^    $user = wp_get_current_user();$/;"	v
+user_email	lib/inscription.php	/^            $user_email = stripslashes( $user->user_email );$/;"	v
+user_id_1	template-parts/helpers/helper-user-id.php	/^    $user_id_1 = get_current_user_id();$/;"	v
+user_id_1	template-parts/helpers/helper-user-info.php	/^    $user_id_1 = get_current_user_id();$/;"	v
+user_id_2	template-parts/helpers/helper-user-id.php	/^    $user_id_2 = $user->ID;$/;"	v
+user_id_2	template-parts/helpers/helper-user-info.php	/^    $user_id_2 = $user->ID;$/;"	v
+user_login	lib/inscription.php	/^            $user_login = stripslashes( $user->user_login );$/;"	v
+user_metadata	template-parts/helpers/helper-user-info.php	/^    $user_metadata = get_user_meta( $user_id_2 );$/;"	v
+user_nicename	template-parts/helpers/helper-user-info.php	/^    $user_nicename = $user->nicename;$/;"	v
+user_registered	template-parts/reve/download/content-download-reve.php	/^        $user_registered = $current_user->user_registered;$/;"	v
+user_registered_year	template-parts/reve/download/content-download-reve.php	/^        $user_registered_year = date( 'Y', strtotime( $user_registered ) );$/;"	v
+userdata	lib/inscription.php	/^        $userdata = array($/;"	v
+username	lib/connexion.php	/^    if( $username == "" || $password == "" ) {$/;"	v
+username	lib/inscription.php	/^        $username	= 	sanitize_user($_POST['username']);$/;"	v
+val	src/assets/js/components/dessin.js	/^        const val = taille.value;$/;"	V
+val	src/assets/js/components/inscription-informations.js	/^    const val = range.value;$/;"	V
+value_travail	template-parts/delete/content-telecharger.php	/^                                $value_travail = get_field( 'ne_travaille_pas' );$/;"	v
+value_travail	template-parts/reve/download/content-download-reve.php	/^                                $value_travail = get_field( 'ne_travaille_pas' );$/;"	v
+verifyAndDisplayReves	src/assets/js/components/filters.js	/^function verifyAndDisplayReves() {$/;"	F
+verifyTextAndImageActive	src/assets/js/components/dessin.js	/^        function verifyTextAndImageActive(contenuButtons) {$/;"	F
+vert	src/assets/js/components/table-to-pdf-helpers.js	/^    vert: 'rgba(44, 175, 56, 0.7)',$/;"	P
+vert	src/assets/js/components/table-to-pdf-helpers.js	/^    vert: [44, 175, 56],$/;"	P
+vert	src/assets/js/components/table-to-pdf-helpers.js	/^const vert = "#2CAF38";$/;"	V
+vertClair	src/assets/js/components/table-to-pdf-helpers.js	/^    vertClair: 'rgba(44, 175, 56, 0.2)',$/;"	P
+vertClair	src/assets/js/components/table-to-pdf-helpers.js	/^    vertClair: [104,226,103],$/;"	P
+vertClair	src/assets/js/components/table-to-pdf-helpers.js	/^const vertClair = "#68e267";$/;"	V
+vertFonce	src/assets/js/components/table-to-pdf-helpers.js	/^    vertFonce: 'rgb(44, 175, 56)',$/;"	P
+vertFonce	src/assets/js/components/table-to-pdf-helpers.js	/^    vertFonce: [0, 126, 0],$/;"	P
+vertFonce	src/assets/js/components/table-to-pdf-helpers.js	/^const vertFonce = "#007e00";$/;"	V
+visible	lib/r-debug.php	/^	static function list_performance( $visible = false ) {$/;"	v
+watch	gulpfile.babel.js	/^export const watch = () => {$/;"	E
+when	lib/r-debug.php	/^			$when = '<strong>In ' . human_time_diff( $time ) . '<\/strong> (' . $time . ' ' . date_i18n( DATE_RSS, $time + $offset ) . ')';$/;"	v
+width	src/assets/js/components/table-to-pdf-helpers.js	/^                width: dataDessin.width,$/;"	P
+width	src/assets/js/components/table-to-pdf.js	/^                        width: dataDessin.width,$/;"	P
+wps_deregister_styles	lib/enqueue-assets.php	/^function wps_deregister_styles() {$/;"	f
+wpse66093_no_admin_access	lib/show-hide-admin-bar.php	/^function wpse66093_no_admin_access()$/;"	f
+wrapperDessin	src/assets/js/components/dessin.js	/^    const wrapperDessin = document.querySelector('.dessin--wrapper');$/;"	V
+x	src/assets/js/components/dessin.js	/^            x: evt.clientX - rect.left,$/;"	P
+x	src/assets/js/components/dessin.js	/^        x: Math.round(evt.clientX - ClientRect.left),$/;"	P
+x	src/assets/js/components/dessin.js	/^        x: evt.clientX - rect.left,$/;"	P
+x	src/assets/js/components/table-to-pdf-helpers.js	/^                x: dataDessin.x,$/;"	P
+x	src/assets/js/components/table-to-pdf.js	/^                        x: dataDessin.x,$/;"	P
+y	src/assets/js/components/dessin.js	/^            y: evt.clientY - rect.top$/;"	P
+y	src/assets/js/components/dessin.js	/^        y: Math.round(evt.clientY - ClientRect.top)$/;"	P
+y	src/assets/js/components/dessin.js	/^        y: evt.clientY - rect.top$/;"	P
+y	src/assets/js/components/table-to-pdf-helpers.js	/^                y: dataDessin.y,$/;"	P
+y	src/assets/js/components/table-to-pdf.js	/^                        y: dataDessin.y,$/;"	P
+year	src/assets/js/components/articles.js	/^        const year = theNewDate.slice(3);$/;"	V
+yearsToFilter	src/assets/js/components/articles.js	/^let yearsToFilter = [];$/;"	A

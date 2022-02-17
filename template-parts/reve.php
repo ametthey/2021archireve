@@ -85,6 +85,6 @@
     <div class="popup--download">
         <?php get_template_part('template-parts/reve/download/content', 'left-buttons'); ?>
 
-        <img class="popup--download-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">
+        <img class="popup--download-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg" alt="close button">
     </div>
 

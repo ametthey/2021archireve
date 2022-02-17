@@ -6,7 +6,7 @@
 
     <!-- CLOSE BUTTON -->
     <div class="content--left-close left--filter">
-        <img class="content--left-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">
+        <img class="content--left-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg" alt="close button">
     </div>
 
     <!-- ALL FILTERS -->
@@ -17,7 +17,7 @@
         <div class="tagsearch--container left--filter">
             <div class="tagsearch-wrapper">
                 <input type="text" id="search-term" data-filter="tagName" class="tagsearch" placeholder="RECHERCHER UN TAG..." />
-                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg">
+                <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/loupe.svg" alt="loupe">
             </div>
         </div>
 
@@ -92,7 +92,7 @@
         <!-- SUPPRIMER LES FILTRES  -->
         <div class="content--left-reset-filters lucidite--container left--filter ui-group">
             <div class="js-radio-button-group">
-                <h5 class="btn clear"><img class="content--left-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">supprimer les filtres</h5>
+                <h5 class="btn clear"><img class="content--left-close-button" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg" alt="close button">supprimer les filtres</h5>
             </div>
         </div>
 

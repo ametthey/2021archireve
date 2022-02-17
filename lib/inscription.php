@@ -173,14 +173,14 @@ function complete_registration() {
             $user_login = stripslashes( $user->user_login );
             $user_email = stripslashes( $user->user_email );
             $login_url  = wp_login_url();
-            $message  = __( 'Hi there,' ) . "/r/n/r/n";
-            $message .= sprintf( __( "Welcome to %s! Here's how to log in:" ), get_option('blogname') ) . "/r/n/r/n";
+            $message  = __( 'Hi there,', '_themename' ) . "/r/n/r/n";
+            $message .= sprintf( __( "Welcome to %s! Here's how to log in:", '_themename' ), get_option('blogname') ) . "/r/n/r/n";
             $message .= wp_login_url() . "/r/n";
-            $message .= sprintf( __('Username: %s'), $user_login ) . "/r/n";
-            $message .= sprintf( __('Email: %s'), $user_email ) . "/r/n";
-            $message .= __( 'Password: The one you entered in the registration form. (For security reason, we save encripted password)' ) . "/r/n/r/n";
-            $message .= sprintf( __('If you have any problems, please contact me at %s.'), get_option('admin_email') ) . "/r/n/r/n";
-            $message .= __( 'bye!' );
+            $message .= sprintf( __('Username: %s', '_themename'), $user_login ) . "/r/n";
+            $message .= sprintf( __('Email: %s', '_themename'), $user_email ) . "/r/n";
+            $message .= __( 'Password: The one you entered in the registration form. (For security reason, we save encripted password)', '_themename' ) . "/r/n/r/n";
+            $message .= sprintf( __('If you have any problems, please contact me at %s.', '_themename'), get_option('admin_email') ) . "/r/n/r/n";
+            $message .= __( 'bye!', '_themename' );
 
             $wp_new_user_notification_email['subject'] = sprintf( '[%s] Your credentials.', $blogname );
             $wp_new_user_notification_email['headers'] = array('Content-Type: text/html; charset=UTF-8');

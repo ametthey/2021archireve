@@ -9,34 +9,41 @@ const targetNode = loadingAnimationLogo;
 /**********************************************************************
  * Verifier que l'animation d'intro est fini pour charger le script
  **********************************************************************/
-const observerOptions = {
-    attributes: true,
+if ( home ) {
+    const observerOptions = {
+        attributes: true,
+    }
+
+    const observer = new MutationObserver(callback);
+    observer.observe(targetNode, observerOptions);
+
+    function callback(mutationList, observer) {
+        mutationList.forEach( (mutation) => {
+            switch(mutation.type) {
+                case 'attributes':
+                    if ( mutation.target.classList.contains('is-hidden') ) {
+                        setTimeout( ()=> {
+                            selectYourReves(articles);
+                        }, 3000 )
+                    }
+                    break;
+            }
+        });
+    }
 }
-
-const observer = new MutationObserver(callback);
-observer.observe(targetNode, observerOptions);
-
-function callback(mutationList, observer) {
-    mutationList.forEach( (mutation) => {
-        switch(mutation.type) {
-            case 'attributes':
-                if ( mutation.target.classList.contains('is-hidden') ) {
-                    // console.log('is-hidden for selection-reve');
-                    selectYourReves(articles);
-                }
-                break;
-        }
-    });
-}
-
 
 /**********************************************************************
  * Selection des rêves function
  **********************************************************************/
 function selectYourReves( articles ) {
+
     let COUNT = 0;
+
     const tables = [...document.querySelectorAll(".reve--to-print.post-type-reve")];
+
     const tableToAdd = [];
+
+
     const telechargerButton = {
         container: document.querySelector('.popup--download'),
         button: document.querySelector('.button--selected-number'),
@@ -46,6 +53,7 @@ function selectYourReves( articles ) {
         buttonAll: document.querySelector('.button--select'),
         buttonClose: document.querySelector(".popup--download-close-button"),
     }
+
     articles.forEach( ( article ) => {
         const reve = {
             select: article.querySelector('.button--select-to-download'),
@@ -55,59 +63,58 @@ function selectYourReves( articles ) {
             number: article.dataset.number,
         }
 
+
         reve.select.addEventListener( "click", (e) => {
             const selectedReve = reve.select.classList.toggle("-is-selected");
-
             const matchingNumber = tables.find( table => table.dataset.number == reve.number );
 
             if (reve.select.classList.contains("-is-selected") ) {
                 if ( telechargerButton.buttonClose.classList.contains('is-closed') ) {
+
+                    // SI JAMAIS ON A DELA FERMER LA BOITE DE DIALOGUE, ON DOIT REMETTRE LE COMPTEUR A ZERO
                     telechargerButton.buttonClose.classList.remove('is-closed');
-                    COUNT = 0;
-                    COUNT++;
+                    COUNT = 1;
+                    // COUNT++;
                     telechargerButton.buttonText.innerHTML = COUNT;
                     telechargerButton.container.classList.add("is-visible");
                     telechargerButton.button.classList.add("is-visible");
-                    // console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
-
-                    // console.log( matchingNumber );
 
                     const theGoodTable = matchingNumber;
                     theGoodTable.classList.add( "selected--table" );
 
                     addTableActions(theGoodTable, tableToAdd);
-
                     allSelected(tableToAdd, telechargerButton);
+
+
+
                 } else {
+
+                    // ON SELECTIONNE UN REVE
                     COUNT++;
                     telechargerButton.buttonText.innerHTML = COUNT;
                     telechargerButton.container.classList.add("is-visible");
                     telechargerButton.button.classList.add("is-visible");
-                    // console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
-
-                    // console.log( matchingNumber );
-
                     const theGoodTable = matchingNumber;
                     theGoodTable.classList.add( "selected--table" );
 
                     addTableActions(theGoodTable, tableToAdd);
 
-                    allSelected(tableToAdd, telechargerButton);
 
+
+                    allSelected(tableToAdd, telechargerButton);
                 }
 
             } else if ( !reve.select.classList.contains("-is-selected") ) {
                 COUNT--;
                 telechargerButton.buttonText.innerHTML = COUNT;
-                // console.log( `1_ le count est de ${telechargerButton.buttonText.innerHTML}`);
-                // console.log( `2_ On garde le tableau mergé 😱` );
-
                 const theBadTable = matchingNumber;
                 theBadTable.classList.remove("selected--table");
 
                 removeTableActions(theBadTable, tableToAdd);
 
                 allSelected(tableToAdd);
+
+
             }
             if ( COUNT === 0 ) {
                 telechargerButton.container.classList.remove("is-visible");
@@ -122,30 +129,46 @@ function selectYourReves( articles ) {
 
     // TELECHARGER LE OU LES REVES
     telechargerButton.buttonDownload.addEventListener( "click", function(e) {
+
+
+
+
         DLTableToPDF(tableToAdd);
     }, false );
 
     // FERMER LA POPUP
     telechargerButton.buttonClose.addEventListener( "click", function(e) {
         closeDownloadPopup(telechargerButton, COUNT, tableToAdd);
+
+
     }, false);
 
     // SELECTIONNER TOUT LES RÊVES
     telechargerButton.all.addEventListener( "click", function(e){
-        // console.log(`On veut tous télécharger`);
-        // toggleSelection(telechargerButton, articles, COUNT, tables, tableToAdd);
         if ( telechargerButton.all.classList.contains('-is-selected') ) {
             deselectEverything(telechargerButton, articles, COUNT, tables, tableToAdd);
-        } else {
+            COUNT = 0;
+
+        } else if ( !telechargerButton.all.classList.contains('-is-selected') ) {
             selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd);
+
+
         }
     }, false);
 
     // SUPPRIMER LA POPUP DE SELECTION APRÈS LE TÉLÉCHARGEMENT D'UN REVE
     removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToAdd);
-
-
 }
+
+
+
+
+
+/**********************************************************************
+ *
+ *  HELPERS FUNCTIONS
+ *
+ **********************************************************************/
 
 function allSelected(tableToAdd, telechargerButton) {
     const total = articles.length;
@@ -155,11 +178,9 @@ function allSelected(tableToAdd, telechargerButton) {
     }
 
     if ( total === totalSelected ) {
-        // console.log('all');
+
         telechargerButton.buttonAll.classList.add("-is-selected");
     } else if ( total !== totalSelected ) {
-        // console.log('not all');
-        // console.log( telechargerButtonAllSelected );
         telechargerButtonAllSelected.buttonAll.classList.remove("-is-selected");
     }
 }
@@ -181,11 +202,11 @@ function closeDownloadPopup(telechargerButton, COUNT, tableToAdd) {
     COUNT = 0;
     tableToAdd.length = 0;
 
-    // console.log('CLOSE BUTTON');
-    // console.log(`1_ le count est ${telechargerButton.buttonText.innerHTML}`);
-    // console.log(`2_ On garde le tableau mergé 😱` );
-    // console.log(`3_ Il n'y a plus de tableaux !` );
-    // console.log(`4_ La preuve ! tableToAdd : ${tableToAdd.length}`);
+
+
+
+
+
 }
 
 function openPDFViewer() {
@@ -225,8 +246,6 @@ function selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd
             number: article.dataset.number,
         }
 
-        // console.log( reve );
-
         telechargerButton.buttonText.innerHTML = articles.length;
         telechargerButton.buttonAll.classList.add("-is-selected");
         telechargerButton.all.classList.add("-is-selected");
@@ -234,10 +253,28 @@ function selectEverything(telechargerButton, articles, COUNT, tables, tableToAdd
         reve.download.classList.add("-is-selected");
         COUNT = reve.select.length;
         if ( !telechargerButton.button.classList.contains("is-visible") ) telechargerButton.button.classList.add("is-visible");
-        const aTables = Array.from(tables);
-        aTables.forEach( ( table ) => ( table.classList.add("selected--table"), tableToAdd.push(table) ) );
 
     });
+
+    if ( tableToAdd.length === articles.length ) {
+
+    }  else {
+        const aTables = Array.from(tables);
+        aTables.forEach( table => {
+            if ( tableToAdd.includes( table ) ) {
+
+            } else {
+                const theMissingTable = table;
+
+
+                tableToAdd.push(theMissingTable)
+            }
+        });
+
+
+
+    }
+
 }
 
 function deselectEverything(telechargerButton, articles, COUNT, tables, tableToAdd) {
@@ -253,10 +290,14 @@ function deselectEverything(telechargerButton, articles, COUNT, tables, tableToA
         telechargerButton.buttonAll.classList.remove("-is-selected");
         reve.select.classList.remove("-is-selected");
         reve.download.classList.remove("-is-selected");
-        COUNT = 0;
         if ( telechargerButton.button.classList.contains("is-visible") ) telechargerButton.button.classList.remove("is-visible");
-        tables.forEach( ( table ) => ( table.classList.remove("selected--table") , tableToAdd.length = 0 ) );
+        tables.forEach( ( table ) => ( table.classList.remove("selected--table")  ));
 
+        // On réinitialise tout !
+        COUNT = 0;
+        telechargerButton.buttonText.innerHTML = '';
+        tableToAdd.length = 0;
+        COUNT = 0;
 
     });
 }
@@ -295,7 +336,7 @@ function mergeTheTables(tableReve) {
             // On crééer une fonction pour ajouter les infos
             replaceCellsFromTable(tableReve, infoReveurKeys, infoReveurValues);
 
-            // console.log( `2_ Le tableau ${tableReve.id} a été mergé` );
+
         } else {
             // Silence is golden
         }
@@ -306,7 +347,7 @@ function addTableActions(theGoodTable, tableToAdd) {
     tableToAdd.push( theGoodTable );
     mergeTheTables( theGoodTable );
 
-    // console.log('3_ le tableau ajouté est ' + theGoodTable.id);
+
 }
 
 function removeTableActions(theBadTable, tableToAdd) {
@@ -315,7 +356,7 @@ function removeTableActions(theBadTable, tableToAdd) {
         tableToAdd.splice(index, 1);
     }
 
-    // console.log('3_ le tableau supprimé est ' + theBadTable.id);
+
 }
 
 function orderSelection( tableToAdd ) {
@@ -324,9 +365,9 @@ function orderSelection( tableToAdd ) {
     const orderedList = orderedID.join(' & ');
 
     if ( orderedID.length === 0 ) {
-        // console.log( `4_ Il n'y a plus de tableaux !` );
+
     } else {
-        // console.log( `4_ les tableaux selectionnés sont ${orderedList}` );
+
     }
 
 }
@@ -347,7 +388,7 @@ function removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToA
             if( popup.classList.contains('downloaded') ) {
                 popup.classList.remove('downloaded');
                 popup.classList.add('close--after-download');
-                // console.log(' PDF has been downloaded');
+
                 if( popup.classList.contains('close--after-download') ) {
                     popup.classList.remove("is-visible");
                     close.classList.add('is-closed');
@@ -357,7 +398,7 @@ function removePopupContainerAfterPDFDownload(telechargerButton, COUNT, tableToA
                     });
                     text.innerHTML = '';
 
-                    // console.log(tables);
+
                     COUNT = 0;
                     tableToAdd.length = 0;
 

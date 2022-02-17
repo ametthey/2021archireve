@@ -83,9 +83,9 @@
 			'post_type'		=> 'reveur_info',
 			'post_status'	=> 'publish'
         ),
-        'submit_value' => __("Valider", 'acf'),
+        'submit_value' => __("Valider", '_themename'),
         'html_submit_button'  => '<input type="submit" class="acf-button-inscription-information" value="%s" />',
-        'updated_message' => __("merci d’avoir pris le temps de répondre à ces quelques questions. vous pouvez dès à présent commencer à archirever et flâner dans ces rêves fait de 1 et de 0.", 'acf'),
+        'updated_message' => __("merci d’avoir pris le temps de répondre à ces quelques questions. vous pouvez dès à présent commencer à archirever et flâner dans ces rêves fait de 1 et de 0.", '_themename'),
         'html_updated_message'  => '<div id="message" class="updated"><p>%s</p></div>',
         'return' => '/back-office/',
 	));

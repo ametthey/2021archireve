@@ -12,7 +12,7 @@ if ( homeContainer ) {
 
     const conFilList = containerFiltres.querySelector('.filtres--list');
 
-    const conFilClose = containerFiltres.querySelector('.content--left-close');
+    const conFilClose = document.querySelector('.content--left-close');
     const conFilCloseImg = conFilClose.querySelector('.content--left-close-button');
 
     const conRevesArticles = document.querySelector('.container--articles');
@@ -37,11 +37,10 @@ if ( homeContainer ) {
     containerFiltres.addEventListener( 'click', function(e) {
         filtresReveal(e);
         aproposClose(e);
-    });
 
-    // Click sur le bouton close du bandeau filtre
-    conFilClose.addEventListener('click', function(e) {
-        filtresClose();
+        if ( e.target == conFilClose || e.target == conFilCloseImg  ) {
+            filtresClose(e);
+        }
     });
 
     // -----------------------------------------------------------------------------
@@ -81,15 +80,11 @@ if ( homeContainer ) {
 
     }
     function filtresClose(e) {
-        e.preventDefault();
-        if ( containerFiltres.classList.contains('is-open') && conFilCover.classList.contains('is-hidden') ) {
-            containerFiltres.classList.remove('is-open');
-            containerReves.classList.remove('is-reduced');
-            conFilCover.classList.remove('is-hidden');
-            conFilList.classList.add('is-hidden');
-            removePopups(e);
-        }
-
+        containerFiltres.classList.remove('is-open');
+        containerReves.classList.remove('is-reduced');
+        conFilCover.classList.remove('is-hidden');
+        conFilList.classList.add('is-hidden');
+        removePopups(e);
     }
 
     // A PROPOS

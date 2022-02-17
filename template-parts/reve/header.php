@@ -19,7 +19,7 @@
 
         <a href="<?php the_permalink(); ?>">
             <button class="contenu--edit">
-                <img class="contenu--edit" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_edit.svg" alt="">
+                <img class="contenu--edit" src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/contenu_edit.svg" alt="contenu edit">
             </button>
         </a>
 
@@ -33,9 +33,9 @@
 
             $dessin = get_field('contenu_dessin');
             if ( empty( $dessin ) ) :
-                echo '<img class="icone--texte" src="'. get_stylesheet_directory_uri() . '/dist/assets/images/reve/icones/texte.svg">';
+                echo '<img class="icone--texte" src="'. get_stylesheet_directory_uri() . '/dist/assets/images/reve/icones/texte.svg" alt="texte">';
             else:
-                echo '<img class="icone--dessin" src="'. get_stylesheet_directory_uri() . '/dist/assets/images/reve/icones/dessin.svg">';
+                echo '<img class="icone--dessin" src="'. get_stylesheet_directory_uri() . '/dist/assets/images/reve/icones/dessin.svg" alt="dessin">';
             endif;
         ?>
 

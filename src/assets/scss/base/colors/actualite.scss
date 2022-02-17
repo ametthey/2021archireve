@@ -1,10 +1,6 @@
 .background-reve-dactualite {
     background-color: $actualite;
     transition: all 0.325s ease-in-out;
-
-    &:hover {
-        background-color: $bg;
-    }
 }
 
 .border-reve-dactualite {

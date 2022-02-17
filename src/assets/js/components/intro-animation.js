@@ -1,18 +1,61 @@
 import lottie from 'lottie-web';
-
+const articles = document.querySelectorAll(".article-reve");
 const home = document.querySelector('.is-home');
 const loadingAnimationLogo  = document.querySelector('.content--home-logo');
 
-if ( home ) {
-    loadingAnimation();
-} else {
-    // loadLottieAProposDesktop();
-    // loadLottieAProposMobile();
+/**
+ * Detect first visit or not
+ *
+ * Detect if the visitor already came during this session
+ * Or if it's the first time that he come
+ */
+function GetCookie(name) {
+    var arg=name+"=";
+    var alen=arg.length;
+    var clen=document.cookie.length;
+    var i=0;
+    while (i<clen) {
+        var j=i+alen;
+        if (document.cookie.substring(i,j)==arg)
+            return "here";
+        i=document.cookie.indexOf(" ",i)+1;
+        if (i==0) break;
+    }
+    return null;
+}
+function testFirstCookie(){
+    var visit=GetCookie("FirstTimeVisitCookie");
+    if (visit==null){
+        var expire=new Date();
+        expire=new Date(expire.getTime()+7776000000);
+        document.cookie="FirstTimeVisitCookie=here; expires="+expire + ";path=/";
+        // First visit
+        console.log( 'first visit' );
+        loadingAnimation();
+
+    } else {
+        // Returning visitor
+        console.log( 'returning visitor' );
+        loadingAnimationLogo.classList.add('is-hidden');
+        articles.forEach( article => article.classList.add('is-visible') );
+        loadLottieAProposDesktop();
+        loadLottieAProposMobile();
+    }
 }
 
 
+if  (home) {
+    testFirstCookie()
+} else {
+
+}
+
+
+
+
+
+
 function loadingAnimation() {
-    const articles = document.querySelectorAll(".article-reve");
     const loadingAnimationLogo  = document.querySelector('.content--home-logo');
     const logoAnimation = lottie.loadAnimation({
         container: loadingAnimationLogo,

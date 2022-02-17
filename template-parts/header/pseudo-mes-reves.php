@@ -1,3 +1,4 @@
+<?php $home_url = home_url(); ?>
 <div class="site-header-user">
     <div id="left--connexion" class="left--filter button--rounded left--connexion-user">
         <a href="<?php echo $home_url . '/reveur_info/' . $pseudo; ?>">

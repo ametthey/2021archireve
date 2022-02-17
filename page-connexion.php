@@ -9,7 +9,7 @@
 <div class="container--connexion">
     <h1>CONNEXION</h1>
 
-    <h2>ENTRER VOTRE ADRESSE MAIL POUR VOUS CONNECTER</h2>
+    <h2>ENTRER VOTRE ADRESSE MAIL OU VOTRE PSEUDO POUR VOUS CONNECTER</h2>
 
     <?php
 
@@ -17,7 +17,7 @@
         'echo'  => true,
         // 'redirect' => ''
         'form_id' => 'connexion_form',
-        'label_username' => 'Mail',
+        'label_username' => 'Mail / Pseudo',
         'label_password' => 'Mot de passe',
         'label_log_in'  => 'Continuer',
         'remember' => false,

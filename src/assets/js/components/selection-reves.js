@@ -10,26 +10,27 @@ const targetNode = loadingAnimationLogo;
  * Verifier que l'animation d'intro est fini pour charger le script
  **********************************************************************/
 if ( home ) {
-    const observerOptions = {
-        attributes: true,
-    }
-
-    const observer = new MutationObserver(callback);
-    observer.observe(targetNode, observerOptions);
-
-    function callback(mutationList, observer) {
-        mutationList.forEach( (mutation) => {
-            switch(mutation.type) {
-                case 'attributes':
-                    if ( mutation.target.classList.contains('is-hidden') ) {
-                        setTimeout( ()=> {
-                            selectYourReves(articles);
-                        }, 3000 )
-                    }
-                    break;
-            }
-        });
-    }
+    // const observerOptions = {
+    //     attributes: true,
+    // }
+    //
+    // const observer = new MutationObserver(callback);
+    // observer.observe(targetNode, observerOptions);
+    //
+    // function callback(mutationList, observer) {
+    //     mutationList.forEach( (mutation) => {
+    //         switch(mutation.type) {
+    //             case 'attributes':
+    //                 if ( mutation.target.classList.contains('is-hidden') ) {
+    //                 }
+    //                 break;
+    //         }
+    //     });
+    // }
+    setTimeout( ()=> {
+        selectYourReves(articles);
+        console.log( 'lol' );
+    }, 3000 )
 }
 
 /**********************************************************************
@@ -65,6 +66,7 @@ function selectYourReves( articles ) {
 
 
         reve.select.addEventListener( "click", (e) => {
+            console.log( 'what' );
             const selectedReve = reve.select.classList.toggle("-is-selected");
             const matchingNumber = tables.find( table => table.dataset.number == reve.number );
 

@@ -111,6 +111,7 @@ if ( homeContainer ) {
 
     function removePopups(e) {
         if ( popup.classList.contains('is-visible') ) {
+
             popup.classList.remove('is-visible');
             containerReves.classList.remove('is-fading');
         } else {

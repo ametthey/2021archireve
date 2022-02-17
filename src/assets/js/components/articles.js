@@ -14,7 +14,7 @@ articles.forEach( article => {
          * Affichage du contenu
          ******************************************************************************/
         article.addEventListener( 'click' , (e) => {
-            if ( e.target === articleHeader || e.target === articleHeader.querySelector('.article-reve--taxonomies') || e.target === articleHeader.querySelector('.article-header-date') || e.target === articleTaxonomies.querySelector('.article-taxonomies--typologie-icone') || e.target === articleTexte || e.target === articleTexte.querySelector('img') || e.target === articleHeader.querySelector('h1') || e.target === articleTaxonomies ) {
+            if ( e.target === articleHeader || e.target === articleHeader.querySelector('.article-reve--taxonomies') || e.target === articleHeader.querySelector('.article-header-date') || e.target === articleTaxonomies.querySelector('.article-taxonomies--typologie-icone') || e.target === articleTexte || e.target === articleTexte.querySelector('img') || e.target === articleHeader.querySelector('h1') || e.target === articleTaxonomies || e.target === articleHeader.querySelector('.article-header--author-and-date')  || e.target === articleHeader.querySelector('.article-header-author')) {
 
                 if ( articleTexte.classList.contains('-is-active') ) {
                     articleHeader.classList.remove('-is-active');

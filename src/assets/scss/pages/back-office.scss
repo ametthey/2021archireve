@@ -179,10 +179,12 @@
             border-radius: 100px;
             width: max-content;
             height: max-content;
+            transition: all 0.325s ease-in-out;
 
             &:hover {
                 background-color: $color;
                 color: $bg;
+
 
                 a {
                     color: inherit;
@@ -266,12 +268,12 @@
             transform: scale(0.8) rotate(0);
             transition: transform $rythm1 cubic-bezier(0.25, 1, 0.5, 1);
         }
-
-        &:hover {
-            img {
-                transform: scale(1.1) rotate(10deg);
-            }
-        }
+        //
+        // &:hover {
+        //     img {
+        //         transform: scale(1.1) rotate(10deg);
+        //     }
+        // }
     }
 }
 

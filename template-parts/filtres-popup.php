@@ -82,7 +82,7 @@
     <div id="popup-typologie">
         <img src="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/images/closeButton.svg">
 
-        <h4>Niveau de typologie</h4>
+        <h4>Typologie de rêve</h4>
         <p><?php the_field( '_niveau_de_lucidite', 'option' ); ?></p>
 
         <div class="filtres-popup--elements">

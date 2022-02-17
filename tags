@@ -389,6 +389,7 @@ home_projects	template-parts/reve.php	/^        $home_projects = new WP_Query( $
 home_projects	template-parts/reve/download/content-download-reve.php	/^        $home_projects = new WP_Query( $args );$/;"	v
 home_projects	template-parts/test.php	/^        $home_projects = new WP_Query( $argsReve );$/;"	v
 home_url	page-back-office.php	/^$home_url = home_url();$/;"	v
+home_url	template-parts/header/pseudo-mes-reves.php	/^<?php $home_url = home_url(); ?>$/;"	v
 hook	lib/r-debug.php	/^			$hook = $hook->callbacks;$/;"	v
 hook	lib/r-debug.php	/^			$hook = 'all';$/;"	v
 hook	lib/r-debug.php	/^	static function list_live_hooks( $hook = false ) {$/;"	v
@@ -560,8 +561,10 @@ orderedID	src/assets/js/components/selection-reves.js	/^    const orderedID = []
 orderedList	src/assets/js/components/selection-reves.js	/^    const orderedList = orderedID.join(' & ');$/;"	V
 orderedSelection	src/assets/js/components/selection-reves.js	/^    const orderedSelection = tableToAdd.forEach( table => orderedID.push(table.id) );$/;"	V
 orientation	src/assets/js/components/table-to-pdf-helpers.js	/^    orientation: 'l',$/;"	P
+outerModal	src/assets/js/components/popup.js	/^            outerModal = document.createElement('div');$/;"	P
 output	lib/r-debug.php	/^		$output = '';$/;"	v
 page	src/assets/js/components/header-mobile.js	/^const page = document.querySelector('#page');$/;"	V
+page	src/assets/js/components/popup.js	/^const page = document.querySelector('#page');$/;"	V
 pageII	src/assets/js/components/inscription-informations.js	/^const pageII = document.querySelector('.page-template-page-inscription-informations');$/;"	V
 pageProfil	src/assets/js/components/inscription-informations.js	/^const pageProfil = document.querySelector('.single-reveur_info');$/;"	V
 page_viewed	lib/connexion.php	/^    $page_viewed = basename($_SERVER['REQUEST_URI']);$/;"	v
@@ -741,6 +744,7 @@ shapeSpace_register_add_meta	lib/connexion-first-time.php	/^function shapeSpace_
 showFiles	gulpfile.babel.js	/^            showFiles: true,$/;"	P
 showTotal	gulpfile.babel.js	/^            showTotal: true,$/;"	P
 singleReve	src/assets/js/components/dessin.js	/^    const singleReve = document.querySelector('.single-reve');$/;"	V
+sizeCR	src/assets/js/components/popup.js	/^            const sizeCR = containerReves.getBoundingClientRect();$/;"	V
 skip_filter	lib/r-debug.php	/^		$skip_filter = empty( $filter );$/;"	v
 slidesPerView	src/assets/js/components/filters.js	/^        slidesPerView: 2,$/;"	P
 sommeil	template-parts/reve/download/content-download-reve.php	/^                            <?php $sommeil = get_field( 'sommeil' ); ?>$/;"	v

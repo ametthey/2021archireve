@@ -23,7 +23,7 @@ get_header(); ?>
 
         <div class="profil--header-links">
             <a href="<?php echo esc_url( get_permalink(  get_page_by_title('back-office', OBJECT , 'page')) ); ?>">
-                <h3 class="button--rounded rounded--big">Voir mes rêves</h3>
+                <h3 class="button--rounded rounded--big">Voir tout mes rêves</h3>
             </a>
             <a href="<?php echo wp_logout_url( home_url( '/home/' ) ); ?>">
                 <h3 class="button--rounded rounded--big">Se déconnecter</h3>

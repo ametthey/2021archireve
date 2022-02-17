@@ -47,7 +47,7 @@ if ( container ) {
     const contenuButtons = document.querySelector('.contenu--buttons');
 
     // PARAMETRE DU STYLÉ
-    ctx.fillStyle = "#FFF";
+    ctx.fillStyle = "#fcfcgc";
     ctx.fillRect(0, 0, canvas.width, canvas.height);
     ctx.lineJoin = 'round';
     ctx.lineCap = 'round';

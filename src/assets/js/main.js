@@ -44,4 +44,3 @@ import './components/dessin.js';
 // INSCRIPTION
 import './components/inscription-informations.js';
 
-console.log('%c Archireve', 'background: #256EFF; color: white; display: block; font-size: 24px');

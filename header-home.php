@@ -9,15 +9,12 @@
 
         <link rel="stylesheet" href="https://use.typekit.net/gta0mfy.css">
 
-        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/Mono/Solide_Mirage&#45;Mono_web.woff2" as="font" type="font/woff2" crossorigin> -->
-        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/GoodGlyphs/GoodGlyphs&#45;No1.ttf" as="font" type="font/ttf" crossorigin> -->
-        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/GoodGlyphs/GoodGlyphs&#45;No1.woff" as="font" type="font/woff" crossorigin> -->
-        <!-- <link rel="preload" href="<?php echo get_stylesheet_directory_uri(); ?>/dist/assets/fonts/GoodGlyphs/GoodGlyphs&#45;No1.woff2" as="font" type="font/woff2" crossorigin> -->
-
     </head>
-    <body <?php body_class('is-home') ?>>
+    <body <?php body_class('is-home') ?> data-barba="wrapper">
 
-        <?php get_template_part('template-parts/header/content', 'logo-home-animation'); ?>
+        <main data-barba="container" data-barba-namespace="home">
+            <?php get_template_part('template-parts/header/content', 'logo-home-animation'); ?>
+        </main>
 
         <header id="masthead" class="site-header header-home" role="banner">
             <div class="container--header">

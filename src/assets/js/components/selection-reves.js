@@ -29,7 +29,6 @@ if ( home ) {
     // }
     setTimeout( ()=> {
         selectYourReves(articles);
-        console.log( 'lol' );
     }, 3000 )
 }
 

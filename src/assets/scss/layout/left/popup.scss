@@ -96,7 +96,7 @@
         align-self: end;
         cursor: pointer;
         position: sticky;
-        top: 0;
+        top: 30px;
         right: 0;
 
         @include respond(tablet) {
